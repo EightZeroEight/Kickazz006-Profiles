@@ -1225,7 +1225,7 @@
 		<If Condition="HasQuest(&quot;A Burgher with Lies&quot;)">
 			<MoveTo X="5247.397" Y="987.0558" Z="3078.16" />
 			<Wait Seconds="2" />
-			<!--	sometimes we have the door here... is there a way to say 'if X is near, use it'
+			<!--	sometimes we have the door here, but sometimes not... is there a way to say 'if X is near, use it' - because the bot will stop if there is no object to use
 			<UseObject Name="Vault Door" X="5247.397" Y="987.0558" Z="3078.16" /> -->
 			<TalkToNpcObjective Quest="A Burgher with Lies" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" Options="1" Tracking="1" />
 			<!-- Interactwith door - Vault Door
@@ -1413,7 +1413,7 @@
 		<If Condition="HasQuest(&quot;She's Lived Long Enough&quot;)">
 			<MoveTo X="4201.292" Y="1139.27" Z="2916.706" />
 			<Wait Seconds="2" />
-			<TalkToNpcObjective Npc="Hag" X="4201.292" Y="1139.27" Z="2916.706" Options="1,1" Tracking="1"  />
+			<TalkToNpcObjective Quest="She's Lived Long Enough" Npc="Hag" X="4201.292" Y="1139.27" Z="2916.706" Options="1,1" Tracking="1"  />
 			<Wait Seconds="15" />
 			<!-- Waiting for port -->
 		</If>
@@ -1428,13 +1428,15 @@
 	<PickUpQuest Name="Slaying the Shadebent" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
 	<PickUpQuest Name="Purification Ritual" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 		
-		<If Condition="HasQuest(&quot;Stemming the Darkness&quot;)">
+		<If Condition="HasQuest(&quot;Stemming the Darkness&quot;)"> <!-- Item is not in our bags, only in our UI.  It's broked! -->
+			<MoveTo X="4744.422" Y="1104.054" Z="2475.055" />
+			<Wait Seconds="2" />
 			<MoveTo X="4744.422" Y="1104.054" Z="2475.055" />
 			<Wait Seconds="2" />
 			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Ancient Gloamseed&quot;)" />
 			<Wait Seconds="25" />
-		</If>
 			<!-- kill Malevolent Shade Well -->
+		</If>
 
 		<!-- East tower - tracking 1-->
 		<If Condition="HasQuest(&quot;Purification Ritual&quot;)">
@@ -1488,7 +1490,11 @@
 		  </Area>
 		</KillMobsObjective>
 
+		<If Condition="HasQuest(&quot;Stemming the Darkness&quot;)">
+  			<MoveTo X="4633.705" Y="1109.907" Z="2738.195" />
+			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
 	<TurnInQuest Name="Stemming the Darkness" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+			</If>
 	<PickUpQuest Name="A Woman Scorned" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 	<TurnInQuest Name="Slaying the Shadebent" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
 	<PickUpQuest Name="Flickering Shadows" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
@@ -1601,14 +1607,6 @@
 			<MoveTo X="4677.791" Y="1201.058" Z="2453.22" />
 			<Wait Seconds="5" />
 			
-			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
-			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
-			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
-			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
-			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
-			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
-			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
-			
 			<!-- we have to complete a 2 tier 'rift' thing here, but they should agro us -->
 			<KillMobsObjective Quest="A Woman Scorned" Tracking="1">
 			  <Area>
@@ -1617,13 +1615,15 @@
 				</Mobs>
 				<Hotspots>
 					<Hotspot X="4677.791" Y="1201.058" Z="2453.22" />
+					<Hotspot X="4667.724" Y="1201.045" Z="2461.604" />
+					<Hotspot X="4666.925" Y="1201.056" Z="2445.036" />
+					<Hotspot X="4683.164" Y="1201.056" Z="2444.728" />
+					<Hotspot X="4680.996" Y="1201.056" Z="2462.709" />
 				</Hotspots>
 			  </Area>
 			</KillMobsObjective>
-			<!-- gossip (quest completed)
-			<TalkToNpcObjective Quest="A Woman Scorned" Npc="Messenger of the Vigil" X="4686.682" Y="1200.99" Z="2456.472" Options="1,1" Tracking="2" />
-				<Wait Seconds="15" /> // waiting for port \\
-			-->
+			<TalkToNpcObjective Quest="A Woman Scorned" Npc="Messenger of the Vigil" X="4686.682" Y="1200.99" Z="2456.472" Options="1, 1" Tracking="2" />
+			<Wait Seconds="15" />
 		</If>
 		
 		<If Condition="HasQuest(&quot;An End to the Court&quot;)">
@@ -1674,6 +1674,7 @@
 	<PickUpQuest Name="Spreading the Word" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" /> <!-- To Scarlet Gorge -->
 	<TurnInQuest Name="A Woman Scorned" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
 	<PickUpQuest Name="Savior of Gloamwood" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
+	
 		<If Condition="HasQuest(&quot;Savior of Gloamwood&quot;)">
 			<MoveTo X="5242.353" Y="987.063" Z="3079.697" />
 			<Wait Seconds="1" />
@@ -1702,7 +1703,6 @@
 			 </If>
 		</If>
 	<PickUpQuest Name="A Hero's Duty" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" /> <!-- To Scarlet Gorge -->
-	<PickUpQuest Name="The Ancient Ward" Npc="Paula Becksten" X="3984.344" Y="1102.438" Z="2923.706" /> <!-- First Quest in Scarlet Gorge -->
 	
     <GrindTo Level="27">
       <GrindArea>
@@ -1720,6 +1720,10 @@
         </Hotspots>
       </GrindArea>
     </GrindTo>
+	
+	<!-- the npc wasn't here as of new patch
+	First Quest in Scarlet Gorge  
+	<PickUpQuest Name="The Ancient Ward" Npc="Paula Becksten" X="3984.344" Y="1102.438" Z="2923.706" /> -->
 	
 			<Python Statement="Logging.Write(&quot;End of Line&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
