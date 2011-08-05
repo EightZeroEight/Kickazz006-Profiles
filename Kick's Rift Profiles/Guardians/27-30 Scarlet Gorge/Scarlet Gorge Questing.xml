@@ -682,6 +682,8 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Vigilant Girdle&quot;)" />
 			 </If>
 		</If>
+	<TurnInQuest Name="Vile Brew" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	<PickUpQuest Name="Is It Over?" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
 		<If Condition="HasQuest(&quot;Reporting Losses&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Reporting Losses" Reward="1" Npc="Kristan Stern" X="3850.953" Y="974.8193" Z="3050.65" />
@@ -706,8 +708,6 @@
 		</If>
 	<TurnInQuest Name="The Cleansing" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
 	<TurnInQuest Name="Unloading the Burden" Npc="Mallard Drewen" X="3861.313" Y="974.8011" Z="3048.468" />
-	<TurnInQuest Name="Vile Brew" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
-	<PickUpQuest Name="Is It Over?" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
 		<!-- End of Stonecrest / Crimson Watch Quests -->
 		
 		<!-- Granitedust Gulch Quests -->
@@ -771,6 +771,8 @@
 				<Hotspot X="4234.147" Y="984.1884" Z="3286.83" />
 				<Hotspot X="4294.164" Y="954.9591" Z="3304.363" />
 				<Hotspot X="4315.009" Y="955.0612" Z="3312.259" />
+				<Hotspot X="4354.287" Y="955.2711" Z="3364.134" />
+				<Hotspot X="4313.449" Y="954.7087" Z="3373.205" />
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
@@ -1051,6 +1053,7 @@
       </GrindArea>
     </GrindTo>
 	
+			<MoveTo X="3835.097" Y="990.7261" Z="3236.065" />
 			<Python Statement="Logging.Write(&quot;Use the Elevator to Scarwood and manually load that profile.&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 
