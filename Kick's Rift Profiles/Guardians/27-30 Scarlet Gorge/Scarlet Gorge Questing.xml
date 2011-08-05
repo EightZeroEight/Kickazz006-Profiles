@@ -221,6 +221,7 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ridge Plate Legs&quot;)" />
 			 </If>
 		</If>
+	<PickUpQuest Name="Death for the Dead" Npc="Agent Gerid Kalos" X="3835.982" Y="976.5576" Z="2929.76" />
 	<TurnInQuest Name="Stone Cold Survivors" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
 	<PickUpQuest Name="The Darkest Magic" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
 	<TurnInQuest Name="Free and Clear" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
@@ -250,7 +251,7 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<UseObjectsObjective Quest="Mementos of the Dead" Tracking="1">
+		<UseObjectsObjective Quest="Mementos of the Dead" Tracking="2">
 		  <Area>
 			<Objects>
 			  <Object>Jewelry Case</Object>
@@ -310,8 +311,9 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<!-- not hasquest Something's Afoot 
-		<If Condition="not HasQuest(&quot;Something's Afoot&quot;)"> and not questcompleted
+		<!--
+		<If Condition="HasQuest(&quot;The Darkest Magic&quot;)">
+		 <If Condition="not HasQuest(&quot;Something's Afoot&quot;)">
 			<MoveTo X="3904.573" Y="971.3445" Z="3360.878" />
 			<RemoveJob>
 				<Job Name="HandleCombat" />
@@ -323,8 +325,10 @@
 			<UseObject Name="Pickaxe" X="3902.979" Y="971.5938" Z="3394.602" />
 			<Wait Seconds="5" />
 			<PickUpQuest Name="Something's Afoot" Npc="Alfred Mannew" X="3903.206" Y="971.4769" Z="3396.728" />
+		 </If>
 		</If>
 		-->
+		
 		<If Condition="HasQuest(&quot;Something's Afoot&quot;)">
 	<TurnInQuest Name="Something's Afoot" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
 		</If>
@@ -366,10 +370,8 @@
 		</UseObjectsObjective>
 
 		<If Condition="HasQuest(&quot;Words with the Dead&quot;)">
-			<Wait Seconds="12" />
-			<!--
-			<TalkToNpcObjective Npc="Pacified Spirit" X="3843.141" Y="970.6825" Z="3000.198" />
-			-->
+			<Wait Seconds="16" />
+			<TalkToNpcObjective Quest="Words with the Dead" Npc="Pacified Spirit" X="3843.141" Y="970.6825" Z="3000.198" Options="1" Tracking="2" />
 		</If>
 
 	<TurnInQuest Name="Words with the Dead" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
@@ -420,6 +422,12 @@
 	<PickUpQuest Name="The Cleansing" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
 	<PickUpQuest Name="Unloading the Burden" Npc="Mallard Drewen" X="3861.313" Y="974.8011" Z="3048.468" />
 		<!-- Stonecrest Quests -->
+
+		<If Condition="HasQuest(&quot;Vile Brew&quot;)">
+			<MoveTo X="4045.1" Y="1025.928" Z="3403.648" />
+			<Python Statement="Logging.Write(&quot;Please manually do Vile Brew&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
 
 		<!-- Gas Tanks - (Vile Brew Quest) 
 		item - Crude Explosives - waittime 4-5 sec
@@ -491,7 +499,9 @@
 		</If>
 
 		<If Condition="HasQuest(&quot;End of the Endless&quot;)"> <!-- Tracking 1 -->
-			<MoveTo X="3936.222" Y="1037.105" Z="3479.406" />
+			<MoveTo X="3936.709" Y="1037.297" Z="3477.728" />
+			<Wait Seconds="5" />
+			<MoveTo X="3934.912" Y="1037.514" Z="3483.258" />
 			<Wait Seconds="2" />
 			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Dark Phylactery&quot;)" />
 			<Wait Seconds="1" />
@@ -609,6 +619,25 @@
 		  </Area>
 		</KillMobsObjective>
 
+		<KillMobsObjective Quest="Death for the Dead" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Court Thrall</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="3935.086" Y="1037.711" Z="3472.281" />
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="4049.893" Y="1028.111" Z="3430.34" />
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+				<Hotspot X="4130.084" Y="1022.096" Z="3469.74" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
 		<If Condition="HasQuest(&quot;End of the Endless&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="End of the Endless" Reward="1" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
@@ -629,6 +658,28 @@
 	<TurnInQuest Name="End of the Endless" Reward="4" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Righteous Buckle&quot;)" />
+			 </If>
+		</If>
+		<If Condition="HasQuest(&quot;Death for the Dead&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Death for the Dead" Reward="1" Npc="Kristan Stern" X="3850.952" Y="974.8194" Z="3050.648" /> 
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Auspicious Buckle&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Death for the Dead" Reward="2" Npc="Kristan Stern" X="3850.952" Y="974.8194" Z="3050.648" /> 
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Warded Belt&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Death for the Dead" Reward="3" Npc="Kristan Stern" X="3850.952" Y="974.8194" Z="3050.648" /> 
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sanguine Cinch&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Death for the Dead" Reward="4" Npc="Kristan Stern" X="3850.952" Y="974.8194" Z="3050.648" /> 
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Vigilant Girdle&quot;)" />
 			 </If>
 		</If>
 		<If Condition="HasQuest(&quot;Reporting Losses&quot;)">
