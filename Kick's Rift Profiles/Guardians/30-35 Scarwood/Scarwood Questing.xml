@@ -409,13 +409,50 @@
 	<PickUpQuest Name="A Slight Malfunction" Npc="Sir Alvarez Nilkova" X="3823.265" Y="1120.687" Z="3683.986" />
 	<PickUpQuest Name="The Missing Saboteur" Npc="Erik Valinez" X="3827.658" Y="1119.912" Z="3690.35" />
 
+		<UseItemOnMobsObjective Quest="A Slight Malfunction" Item="Control Disruptor" CastTime="5" Cooldown="20" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Keenblade Construct</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3833.772" Y="1112.354" Z="3774.667" />
+				<Hotspot X="3853.314" Y="1108.239" Z="3826.619" />
+				<Hotspot X="3885.599" Y="1106.333" Z="3883.39" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+	<TurnInQuest Name="The Missing Saboteur" Npc="Specialist Hobson" X="3834.271" Y="1107.903" Z="3852.589" />
+	<PickUpQuest Name="A Work Stoppage" Npc="Specialist Hobson" X="3834.271" Y="1107.903" Z="3852.589" />
 	
+		<UseObjectsObjective Quest="A Work Stoppage" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Mill Machinery</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3826.546" Y="1118.233" Z="3896.471" />
+				<Hotspot X="3787.359" Y="1118.233" Z="3893.695" />
+				<Hotspot X="3805.589" Y="1118.231" Z="3836.093" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="A Slight Malfunction" Npc="Sir Alvarez Nilkova" X="3823.265" Y="1120.687" Z="3683.986" />
+	<PickUpQuest Name="The Score" Npc="Sir Alvarez Nilkova" X="3823.265" Y="1120.687" Z="3683.986" />
+		<!-- Ignoring Daily - A Repeating Malfunction -->
+	<TurnInQuest Name="A Work Stoppage" Npc="Erik Valinez" X="3827.658" Y="1119.912" Z="3690.35" />
+	<PickUpQuest Name="A Wrench in the Works" Npc="Erik Valinez" X="3827.658" Y="1119.912" Z="3690.35" />
 	
 	
 	
 	
 
 		<!-- 
+	<TurnInQuest Name="Reinforcing the 12th" Npc="Douhgar "Shorty" Saveli" X="3290.384" Y="1095.668" Z="3826.192" />
+	<PickUpQuest Name="A Balanced Diet" Npc="Douhgar "Shorty" Saveli" X="3290.384" Y="1095.668" Z="3826.192" />
+
+
 	<PickUpQuest Name="" 
 	<TurnInQuest Name="" 
 		-->

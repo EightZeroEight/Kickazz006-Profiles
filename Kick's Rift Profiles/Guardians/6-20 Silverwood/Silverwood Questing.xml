@@ -1691,6 +1691,7 @@
 
     <!-- Treant's Grove Quests -->
 		<If Condition="HasQuest(&quot;The Awakened Grove&quot;)">
+			<MoveTo X="6780.289" Y="839.1034" Z="3153.032" />
 			<UseObject Name="Altar of Reflection" X="6780.289" Y="839.1034" Z="3153.032" />
 	<TurnInQuest Name="The Awakened Grove" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
 		</If>
@@ -1738,6 +1739,7 @@
 		</KillMobsObjective>
 
 		<If Condition="HasQuest(&quot;The Angered Wood&quot;)">
+			<MoveTo X="6780.289" Y="839.1034" Z="3153.032" />
 			<UseObject Name="Altar of Reflection" X="6780.289" Y="839.1034" Z="3153.032" />
     <TurnInQuest Name="The Angered Wood" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
         </If>
@@ -1920,6 +1922,7 @@
     <!-- Point Solitude Quest -->
     <PickUpQuest Name="Lost in Solitude" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
 		<If Condition="HasQuest(&quot;Lost in Solitude&quot;)">
+ 			<MoveTo X="7179.341" Y="885.3551" Z="2944.73" />
  			<UseObject Name="Altar of Insight" X="7179.341" Y="885.3551" Z="2944.73" />
     <TurnInQuest Name="Lost in Solitude" Npc="Spirit Guide" X="7179.341" Y="885.3551" Z="2944.73" />
        </If>
@@ -2178,6 +2181,7 @@
 
     <!-- Mirror of Ages Quests -->
  		<If Condition="HasQuest(&quot;Ask the Elders&quot;)">
+ 			<MoveTo X="5718.144" Y="870.6053" Z="2841.199" />
  			<UseObject Name="Tavra Altar" X="5718.144" Y="870.6053" Z="2841.199" />
    <TurnInQuest Name="Ask the Elders" Npc="Spirit Guide" X="5718.144" Y="870.6053" Z="2841.199" />
        </If>
@@ -2216,8 +2220,8 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<!-- RunTo Npc="Spirit Guide" X="5718.144" Y="870.6053" Z="2841.199" and use gameobject Tavra Altar and then turn in quest, get next quest -->
  		<If Condition="HasQuest(&quot;Beckoning of the Blessing&quot;)">
+ 			<MoveTo X="5718.144" Y="870.6053" Z="2841.199" />
  			<UseObject Name="Tavra Altar" X="5718.144" Y="870.6053" Z="2841.199" />
     <TurnInQuest Name="Beckoning of the Blessing" Npc="Spirit Guide" X="5718.144" Y="870.6053" Z="2841.199" />
         </If>
@@ -3065,7 +3069,7 @@
 		</UseItemOnMobsObjective>
 
 		<If Condition="HasQuest(&quot;The Vigil's Shield&quot;)">
-			<!-- Use Altar of Balance <Hotspot X="6555.708" Y="908.4183" Z="3075.654" /> produces Npc="Spirit Guide" X="6556.051" Y="908.3539" Z="3075.738" -->
+ 			<MoveTo X="6556.051" Y="908.3539" Z="3075.738" />
  			<UseObject Name="Altar of Balance" X="6556.051" Y="908.3539" Z="3075.738" />
 			
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
