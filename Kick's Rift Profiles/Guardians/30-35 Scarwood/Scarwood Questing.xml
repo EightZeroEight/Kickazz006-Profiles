@@ -60,12 +60,12 @@
 		  </Area>
 		</UseObjectsObjective>
 
+		<!-- Camp Vigil Quests -->
 	<TurnInQuest Name="Lost Cargo" Npc="Captain Ledisko" X="3614.544" Y="1105.097" Z="3509.324" />
 	<PickUpQuest Name="Seeds of Their Destruction" Npc="Captain Ledisko" X="3614.544" Y="1105.097" Z="3509.324" />
 	<TurnInQuest Name="Dealing with the Defiant" Npc="Commandant Rigur" X="3644.927" Y="1104.78" Z="3498.033" />
 	<PickUpQuest Name="The Gods Are Not to be Defied" Npc="Commandant Rigur" X="3644.927" Y="1104.78" Z="3498.033" />
 	<PickUpQuest Name="Storm Chasers" Npc="Sergeant Perdaro" X="3622.419" Y="1104.878" Z="3485.102" />
-	
 	
 		<UseObjectsObjective Quest="Seeds of Their Destruction" Tracking="1">
 		  <Area>
@@ -88,6 +88,7 @@
 			  <Object>Raw Stormstone</Object>
 			</Objects>
 			<Hotspots>
+				<Hotspot X="3932.598" Y="1071.85" Z="3430.024" />
 				<Hotspot X="3961.935" Y="1080.978" Z="3440.205" />
 				<Hotspot X="3793.696" Y="1112.05" Z="3445.699" />
 				<Hotspot X="3980.531" Y="1081.385" Z="3472.472" />
@@ -104,7 +105,11 @@
 			<Hotspots>
 				<Hotspot X="3930.323" Y="1090.025" Z="3579.311" />
 				<Hotspot X="3902.057" Y="1089.961" Z="3565.979" />
-				<Hotspot X="3937.515" Y="1095.562" Z="3605.758" />
+				<Hotspot X="3925.065" Y="1088.742" Z="3625.254" />
+				<Hotspot X="3949.531" Y="1086.946" Z="3650.666" />
+				<Hotspot X="3941.397" Y="1084.453" Z="3683.23" />
+				<Hotspot X="3957.119" Y="1080.008" Z="3692.728" />
+				<Hotspot X="3970.57" Y="1080.771" Z="3700.982" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
@@ -125,19 +130,291 @@
 		  </Area>
 		</KillMobsObjective>
 
+		<!-- I died a lot on this quest, you gotta pick his legionairres off or you are toast -->
 		<KillMobsObjective Quest="The Gods Are Not to be Defied" Tracking="1">
 		  <Area>
 			<Mobs>
+			  <Mob>Legionnaire Pural</Mob>
+			  <Mob>Legionnaire Taniq</Mob>
+			  <Mob>Legionnaire Feddol</Mob>
+			  <Mob></Mob>
+			  <Mob></Mob>
 			  <Mob>Brigadier Ignatios</Mob>
 			</Mobs>
 			<Hotspots>
-				
+				<Hotspot X="4049.791" Y="1075.182" Z="3989.628" />
+				<Hotspot X="4034.001" Y="1071.397" Z="3982.94" /> <!-- Ignatios -->
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
 
+	<TurnInQuest Name="Storm Chasers" Npc="Sergeant Perdaro" X="3622.419" Y="1104.878" Z="3485.102" />
+	<TurnInQuest Name="The Gods Are Not to be Defied" Npc="Commandant Rigur" X="3644.927" Y="1104.78" Z="3498.033" />
+	<TurnInQuest Name="Seeds of Their Destruction" Npc="Advisor Kyl'radi" X="3612.726" Y="1105.063" Z="3505.042" />
+	<PickUpQuest Name="Stormborn" Npc="Advisor Kyl'radi" X="3612.726" Y="1105.063" Z="3505.042" />
+	
+		<UseObjectsObjective Quest="Stormborn" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Blessed Cenotaph</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3654.836" Y="1107.734" Z="3549.078" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuest(&quot;Stormborn&quot;)">
+			<Wait Seconds="3" />
+		</If>
+
+		<UseObjectsObjective Quest="Stormborn" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Stormbreaker Shard</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3654.836" Y="1107.734" Z="3549.078" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Stormborn" Npc="Captain Ledisko" X="3614.544" Y="1105.097" Z="3509.324" />
+	<PickUpQuest Name="Reaping the Whirlwind" Npc="Captain Ledisko" X="3614.544" Y="1105.097" Z="3509.324" />
+	
+		<If Condition="HasQuest(&quot;Reaping the Whirlwind&quot;)">
+			<MoveTo X="3952.411" Y="1077.391" Z="3701.713" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+
+		<!-- 25-30 yard range
+		<UseItemOnMobsObjective Quest="Reaping the Whirlwind" Item="Sigil of the Stormbreaker" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Electrified Naga</Mob>
+			  <Mob>Whirling Naga</Mob>
+			  <Mob>Soulfire Griffon</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3971.871" Y="1068.31" Z="3753.309" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+		-->
+	
+		<If Condition="HasQuest(&quot;Reaping the Whirlwind&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Reaping the Whirlwind" Reward="1" Npc="Captain Ledisko" X="3614.544" Y="1105.097" Z="3509.324" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Aventail of the Stormbreaker&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Reaping the Whirlwind" Reward="1" Npc="Captain Ledisko" X="3614.544" Y="1105.097" Z="3509.324" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Aventail of the Stormbreaker&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Reaping the Whirlwind" Reward="3" Npc="Captain Ledisko" X="3614.544" Y="1105.097" Z="3509.324" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Collar of the Stormbreaker&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Reaping the Whirlwind" Reward="4" Npc="Captain Ledisko" X="3614.544" Y="1105.097" Z="3509.324" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Gorget of the Stormbreaker&quot;)" />
+			 </If>
+		</If>
+	
+	<PickUpQuest Name="Stewards of the Grove" Npc="Advisor Kyl'radi" X="3612.726" Y="1105.063" Z="3505.042" />
+		<!-- End of Camp Vigil Quests -->
+		
+		<!-- Carwin's Shrine Quests -->
+	<TurnInQuest Name="Stewards of the Grove" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" />
+	<PickUpQuest Name="Fallen Revenue" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" />
+	<PickUpQuest Name="Legacy of the Grove" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />
+	<PickUpQuest Name="Reinforcing the 12th" Npc="Sergeant Revik" X="3592.27" Y="1105.48" Z="3791.615" />
+
+		<UseObjectsObjective Quest="Legacy of the Grove" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Monument of Carwin Mathos</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3505.317" Y="1105.087" Z="3721.264" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+		<UseObjectsObjective Quest="Fallen Revenue" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Dead Fall</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3548.697" Y="1104.355" Z="3649.016" />
+				<Hotspot X="3509.956" Y="1105.243" Z="3634.307" />
+				<Hotspot X="3444.677" Y="1101.199" Z="3711.626" />
+				<Hotspot X="3479.835" Y="1102.64" Z="3711.931" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Fallen Revenue" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" />
+	<PickUpQuest Name="Nurturing the Grove" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" />
+	<TurnInQuest Name="Legacy of the Grove" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />
+	<PickUpQuest Name="Shrines of Life" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />
+	<PickUpQuest Name="Benefits of Extermination" Npc="Omia Leen" X="3585.32" Y="1104.377" Z="3798.424" />
+
+		<UseObjectsObjective Quest="Nurturing the Grove" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Grove Water</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3521.005" Y="1105.107" Z="3695.057" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Nurturing the Grove" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Sapling</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3554.04" Y="1103.75" Z="3711.305" />
+				<Hotspot X="3543.113" Y="1103.216" Z="3675.753" />
+				<Hotspot X="3551.28" Y="1103.595" Z="3715.157" />
+				<Hotspot X="3496.042" Y="1100.688" Z="3598.427" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Shrines of Life" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Protective Shrine</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3519.456" Y="1101.299" Z="3802.698" />
+				<Hotspot X="3529.165" Y="1102.973" Z="3731.396" />
+				<Hotspot X="3552.68" Y="1103.614" Z="3674.728" />
+				<Hotspot X="3554.04" Y="1103.75" Z="3711.305" />
+				<Hotspot X="3543.113" Y="1103.216" Z="3675.753" />
+				<Hotspot X="3551.28" Y="1103.595" Z="3715.157" />
+				<Hotspot X="3496.042" Y="1100.688" Z="3598.427" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Shrines of Life" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Keenblade Saboteur</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3525.262" Y="1102.984" Z="3756.062" />
+				<Hotspot X="3467.827" Y="1100.878" Z="3639.387" />
+				<Hotspot X="3548.935" Y="1104.074" Z="3662.832" />
+				<Hotspot X="3519.456" Y="1101.299" Z="3802.698" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Benefits of Extermination" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Grove Swarmer</Mob>
+			  <Mob></Mob>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3554.04" Y="1103.75" Z="3711.305" />
+				<Hotspot X="3543.113" Y="1103.216" Z="3675.753" />
+				<Hotspot X="3551.28" Y="1103.595" Z="3715.157" />
+				<Hotspot X="3496.042" Y="1100.688" Z="3598.427" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Benefits of Extermination" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Grove Stinger</Mob>
+			  <Mob>Grove Drone</Mob>
+			  <Mob>Grove Wasp</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3554.04" Y="1103.75" Z="3711.305" />
+				<Hotspot X="3543.113" Y="1103.216" Z="3675.753" />
+				<Hotspot X="3551.28" Y="1103.595" Z="3715.157" />
+				<Hotspot X="3496.042" Y="1100.688" Z="3598.427" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+
+	<TurnInQuest Name="Nurturing the Grove" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" />
+		<If Condition="HasQuest(&quot;Shrines of Life&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Shrines of Life" Reward="1" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Grovekeeper's Boots&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Shrines of Life" Reward="2" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Graniteweave Slippers&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Shrines of Life" Reward="3" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Grovewalker's Heavy Boots&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Shrines of Life" Reward="4" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Granitewood Sabatons&quot;)" />
+			 </If>
+		</If>
+		<If Condition="HasQuest(&quot;Benefits of Extermination&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Benefits of Extermination" Reward="1" Npc="Omia Leen" X="3585.32" Y="1104.377" Z="3798.424" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot; Grovekeeper's Hauberkequip &quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Benefits of Extermination" Reward="2" Npc="Omia Leen" X="3585.32" Y="1104.377" Z="3798.424" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Graniteweave Robe&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Benefits of Extermination" Reward="3" Npc="Omia Leen" X="3585.32" Y="1104.377" Z="3798.424" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Grovewalker's Tunic&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Benefits of Extermination" Reward="4" Npc="Omia Leen" X="3585.32" Y="1104.377" Z="3798.424" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Granite Curiass&quot;)" />
+			 </If>
+		</If>
+
+	<PickUpQuest Name="Trouble from the Mill" Npc="Omia Leen" X="3585.32" Y="1104.377" Z="3798.424" />
+		<!-- End of Carwin's Shrine Quests -->
+		
+		<!-- Keenblade Barricade Quests -->
+	<TurnInQuest Name="Trouble from the Mill" Npc="Sir Alvarez Nilkova" X="3823.265" Y="1120.687" Z="3683.986" />
+	<PickUpQuest Name="A Slight Malfunction" Npc="Sir Alvarez Nilkova" X="3823.265" Y="1120.687" Z="3683.986" />
+	<PickUpQuest Name="The Missing Saboteur" Npc="Erik Valinez" X="3827.658" Y="1119.912" Z="3690.35" />
+
 	
 	
+	
+	
+	
+
 		<!-- 
 	<PickUpQuest Name="" 
 	<TurnInQuest Name="" 
