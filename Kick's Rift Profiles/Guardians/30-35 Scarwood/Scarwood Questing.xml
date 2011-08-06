@@ -6,6 +6,7 @@
         <Healers>
           <Healer X="3165.028" Y="1095.186" Z="3878.661" /> <!--Kain's Command-->
 		  <Healer X="3621.687" Y="1105.182" Z="3510.847" /> <!-- Camp Vigil -->
+		  <Healer X="2622.775" Y="1180.909" Z="3580.333" /> <!-- The Sagespire -->
         </Healers>
       </MendSoul>
     </AddJob>
@@ -15,6 +16,8 @@
           <Vendor X="3153.187" Y="1095.186" Z="3883.377" /> <!--Kain's Command-->
 		  <Vendor X="3508.757" Y="1087.717" Z="3502.026" /> <!-- Scarwood Pass -->
 		  <Vendor X="3647.716" Y="1105.557" Z="3508.033" /> <!-- Camp Vigil -->
+		  <Vendor X="3098.712" Y="1092.864" Z="4064.315" /> <!-- Heroes' Stand -->
+		  <Vendor X="2601.273" Y="1180.91" Z="3557.243" /> <!-- The Sagespire -->
         </Vendors>
       </Vendor>
     </AddJob>
@@ -493,7 +496,7 @@
 	<PickUpQuest Name="A Fallen Soldier" Npc="Fallen Guardian Soldier" X="3810.085" Y="1052.969" Z="3997.201" />
 		</If></If>
 		<If Condition="HasQuest(&quot;A Fallen Soldier&quot;)">
-	<TurnInQuest Name="A Fallen Soldier" Npc="Marshal Kain" 
+	<TurnInQuest Name="A Fallen Soldier" Npc="Marshal Kain" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
 		</If>
 		-->
 
@@ -640,32 +643,10 @@
 		</If>
 		
 	<TurnInQuest Name="Command Training" Npc="Fedor Saveli" X="3146.442" Y="1095.087" Z="3886.82" />
-	<PickUpQuest Name="Natrual Hazards" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" />
+	<PickUpQuest Name="Natural Hazards" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" />
 	<PickUpQuest Name="A Soldier's Dog" Npc="Gregory Bartnell" X="3166.041" Y="1095.093" Z="3873.996" />
 		
-		<If Condition="HasQuest(&quot;A Soldier's Dog&quot;)">
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-		</If>
-
-		<!-- Weird quest.  Combat use item on x3 (at 40%) and then bring back to <Hotspot X="3162.219" Y="1095.153" Z="3873.783" />.  You can get all 3 at once -->
-		<UseItemOnMobsObjective Quest="A Soldier's Dog" Item="Control Collar" CastTime="2" Cooldown="1" WhenDead="False" Tracking="1">
-		  <Area>
-			<Mobs>
-			  <Mob>Blackfang Ravager</Mob>
-			</Mobs>
-			<Hotspots>
-				<Hotspot X="3198.877" Y="1093.636" Z="3867.202" />
-				<Hotspot X="3225.63" Y="1094.795" Z="3876.091" />
-				<Hotspot X="3326.531" Y="1094.99" Z="3897.839" />
-				
-			</Hotspots>
-		  </Area>
-		</UseItemOnMobsObjective>
-
-	<TurnInQuest Name="A Soldier's Dog" Npc="Gregory Bartnell" X="3166.041" Y="1095.093" Z="3873.996" />
-		
-		<KillMobsObjective Quest="Natrual Hazards" Tracking="1">
+		<KillMobsObjective Quest="Natural Hazards" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob>Shardclaw Stalker</Mob>
@@ -681,7 +662,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<KillMobsObjective Quest="Natrual Hazards" Tracking="2">
+		<KillMobsObjective Quest="Natural Hazards" Tracking="2">
 		  <Area>
 			<Mobs>
 			  <Mob>Barkbristle Tusker</Mob>
@@ -696,13 +677,605 @@
 		  </Area>
 		</KillMobsObjective>
 
-	<TurnInQuest Name="Natrual Hazards" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" />
+		<If Condition="HasQuest(&quot;A Soldier's Dog&quot;)">
+			<MoveTo X="3198.877" Y="1093.636" Z="3867.202" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+
+		<!-- Weird quest.  Combat use item on x3 (at 40%) and then bring back to <Hotspot X="3162.219" Y="1095.153" Z="3873.783" />.  You can get all 3 at once -->
+		<UseItemOnMobsObjective Quest="A Soldier's Dog" Item="Control Collar" CastTime="2" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Blackfang Ravager</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3198.877" Y="1093.636" Z="3867.202" />
+				<Hotspot X="3225.63" Y="1094.795" Z="3876.091" />
+				<Hotspot X="3326.531" Y="1094.99" Z="3897.839" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+		
+	<TurnInQuest Name="A Soldier's Dog" Npc="Gregory Bartnell" X="3166.041" Y="1095.093" Z="3873.996" />
+
+	<TurnInQuest Name="Natural Hazards" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" />
 	<PickUpQuest Name="Redeployment" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" />
 	<TurnInQuest Name="Redeployment" Npc="Sir Isaak Kazimir" X="3126.08" Y="1095.086" Z="3874.796" />
 	<PickUpQuest Name="Supply Run" Npc="Sir Isaak Kazimir" X="3126.08" Y="1095.086" Z="3874.796" />
 	<PickUpQuest Name="Proscribed Technologies" Npc="Dame Levitia Volya" X="3134.595" Y="1095.086" Z="3869.437" />
-	<PickUpQuest Name="Care of the Wounded" Npc="Medic Laran" X="3155.502" Y="1095.086" Z="3891.513" />
+	<PickUpQuest Name="Care for the Wounded" Npc="Medic Laran" X="3155.502" Y="1095.086" Z="3891.513" />
 		
+		<If Condition="HasQuest(&quot;Proscribed Technologies&quot;)"> <!-- 5 sec / no cd -->
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			
+			<!-- 
+			<MoveTo X="3150.171" Y="1079.731" Z="4107.708" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Explosive Keg&quot;)" />
+			<Wait Seconds="5" />
+			<Hotspot X="3150.171" Y="1079.731" Z="4107.708" />
+			<Hotspot X="3275.33" Y="1087.159" Z="4080.288" />
+			<Hotspot X="3266.349" Y="1088.065" Z="4038.387" />
+			<Hotspot X="3309.852" Y="1085.961" Z="4055.128" />
+			<Hotspot X="3333.101" Y="1084.193" Z="4107.65" />
+			<Hotspot X="3372.59" Y="1079.31" Z="4192.528" />
+			<Hotspot X="3395.257" Y="1079.743" Z="4202.396" />
+			<Hotspot X="3384.673" Y="1082.167" Z="4159.875" />
+			-->
+		</If>
+
+		<UseObjectsObjective Quest="Care for the Wounded" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Pouch of Life Infused Herbs</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3328.756" Y="1082.246" Z="4083.79" />
+				<Hotspot X="3364.705" Y="1080.008" Z="4214.355" />
+				<Hotspot X="3297.018" Y="1095.485" Z="4120.378" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Supply Run" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Fellpine Moonshadow</Mob>
+			  <Mob>Fellpine Stormdancer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3105.251" Y="1081.829" Z="4104.72" />
+				<Hotspot X="3251.159" Y="1087.299" Z="4072.814" />
+				<Hotspot X="3297.018" Y="1095.485" Z="4120.378" />
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Supply Run" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Fellpine Blackthorn</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3140.566" Y="1080.958" Z="4145.494" />
+				<Hotspot X="3170.51" Y="1082.226" Z="4115.73" />
+				<Hotspot X="3266.349" Y="1088.065" Z="4038.387" />
+				<Hotspot X="3377.056" Y="1081.371" Z="4162.046" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Supply Run" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Fellpine Nightstalker</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3125.204" Y="1079.245" Z="4125.564" />
+				<Hotspot X="3138.919" Y="1079.233" Z="4127.205" />
+				<Hotspot X="3130.233" Y="1082.348" Z="4076.654" />
+				<Hotspot X="3140.495" Y="1080.654" Z="4088.651" />
+				<Hotspot X="3279.576" Y="1088.195" Z="4084.986" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Care for the Wounded" Npc="Medic Laran" X="3155.502" Y="1095.086" Z="3891.513" />
+	<PickUpQuest Name="Seeing Double" Npc="Private Bure" X="3153.82" Y="1095.151" Z="3889.202" />
+	<TurnInQuest Name="Proscribed Technologies" Npc="Dame Levitia Volya" X="3134.595" Y="1095.086" Z="3869.437" />
+		<!-- Ignoring A Struggle of Life and Death - Dungeon Quest -->
+		<If Condition="HasQuest(&quot;Supply Run&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Supply Run" Reward="1" Npc="Sir Isaak Kazimir" X="3126.08" Y="1095.086" Z="3874.796" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Fellpine Chain Coif&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Supply Run" Reward="2" Npc="Sir Isaak Kazimir" X="3126.08" Y="1095.086" Z="3874.796" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ornate Lifethread Cap&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Supply Run" Reward="3" Npc="Sir Isaak Kazimir" X="3126.08" Y="1095.086" Z="3874.796" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Faetouched Leather Helm&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Supply Run" Reward="4" Npc="Sir Isaak Kazimir" X="3126.08" Y="1095.086" Z="3874.796" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Gilded Aelfwar Helm&quot;)" />
+			 </If>
+		</If>
+
+		<If Condition="HasQuest(&quot;Seeing Double&quot;)">
+			<TalkToNpcObjective Quest="Seeing Double" Npc="Dame Levitia Volya" X="3134.595" Y="1095.086" Z="3869.437" Options="2" Tracking="1" />
+			<TalkToNpcObjective Quest="Seeing Double" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" Options="1" Tracking="1" />
+			<TalkToNpcObjective Quest="Seeing Double" Npc="Sir Guysun Lawless" X="3097.866" Y="1092.938" Z="4040.149" Options="3" Tracking="1" />
+		</If>
+
+	<TurnInQuest Name="Seeing Double" Npc="Sergeant Heinrich" X="3100.534" Y="1092.929" Z="4051.277" />
+	<PickUpQuest Name="Search and Rescue" Npc="Sergeant Heinrich" X="3100.534" Y="1092.929" Z="4051.277" />
+	<PickUpQuest Name="Clearing Out the Cobwebs" Npc="Medic Kircher" X="3101.698" Y="1092.86" Z="4063.925" />
+	<PickUpQuest Name="Bahralt's Shrine" Npc="Sir Piotr Siennicki" X="3089.546" Y="1092.925" Z="4082.911" />
+	<PickUpQuest Name="Sacred Recollection" Npc="Bohem Maroboduus" X="3089.12" Y="1092.925" Z="4084.263" />
+
+		<UseObjectsObjective Quest="Search and Rescue" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Webbed Victim</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3008.97" Y="1122.009" Z="4161.808" />
+				<Hotspot X="2997.458" Y="1121.663" Z="4161.761" />
+				<Hotspot X="3000.924" Y="1122.58" Z="4175.437" />
+				<Hotspot X="3005.755" Y="1121.196" Z="4137.213" />
+				<Hotspot X="2937.557" Y="1121.413" Z="4141.067" />
+				<Hotspot X="2955.074" Y="1121.582" Z="4122.363" />
+				<Hotspot X="2930.888" Y="1149.839" Z="4218.654" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuestAvailable(&quot;Sergeant Malsorn&quot;)">
+	<PickUpQuest Name="A Dirge for the Undying" Npc="Sergeant Malsorn" X="3003.334" Y="1120.349" Z="4151.477" />
+		</If>
+	
+		<KillMobsObjective Quest="Clearing Out the Cobwebs" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Spider Burrow</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2997.46" Y="1123.487" Z="4181.51" />
+				<Hotspot X="2964.827" Y="1122.486" Z="4167.54" />
+				<Hotspot X="2928.653" Y="1122.956" Z="4137.1" />
+				<Hotspot X="2930.888" Y="1149.839" Z="4218.654" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+		<KillMobsObjective Quest="Clearing Out the Cobwebs" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Corpsewidow Hunter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3000.924" Y="1122.58" Z="4175.437" />
+				<Hotspot X="2997.46" Y="1123.487" Z="4181.51" />
+				<Hotspot X="2964.827" Y="1122.486" Z="4167.54" />
+				<Hotspot X="2928.653" Y="1122.956" Z="4137.1" />
+				<Hotspot X="3008.97" Y="1122.009" Z="4161.808" />
+				<Hotspot X="2997.458" Y="1121.663" Z="4161.761" />
+				<Hotspot X="3000.924" Y="1122.58" Z="4175.437" />
+				<Hotspot X="3005.755" Y="1121.196" Z="4137.213" />
+				<Hotspot X="2937.557" Y="1121.413" Z="4141.067" />
+				<Hotspot X="2955.074" Y="1121.582" Z="4122.363" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- object / guy before shrine
+		-->
+		<If Condition="(HasQuest(&quot;Bahralt's Shrine&quot;)) and (not HasQuest(&quot;Evidence of the Unclean&quot;))">
+			<MoveTo X="2848.646" Y="1169.327" Z="4368.03" />
+			<UseObject Name="Two-Headed Corpse" X="2848.646" Y="1169.327" Z="4368.03" />
+			<Python Statement="Logging.Write(&quot;Get this quest,  you have another one soon, so don't go anywhere&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<Wait Seconds="2" />
+	<PickUpQuest Name="Evidence of the Unclean" Npc="Two-Headed Corpse" X="2848.646" Y="1169.327" Z="4368.03" />
+		</If> 
+		
+		<UseObjectsObjective Quest="Bahralt's Shrine" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Shrine of Bahralt</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="2796.951" Y="1164.241" Z="4310.749" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+		<!-- object / guy after shrine 
+		-->
+		<If Condition="(HasQuest(&quot;Bahralt's Shrine&quot;)) and (not HasQuest(&quot;Lost Lore&quot;))">
+			<MoveTo X="2809.556" Y="1164.245" Z="4280.622" />
+			<UseObject Name="Carwin's Journal" X="2809.556" Y="1164.245" Z="4280.622" />
+			<Python Statement="Logging.Write(&quot;Get this quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<Wait Seconds="2" />
+	<PickUpQuest Name="Lost Lore" Npc="Carwin's Journal" X="2809.556" Y="1164.245" Z="4280.622" />
+		</If> 
+		
+		<KillMobsObjective Quest="Sacred Recollection" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Undying Myrmidon</Mob>
+			  <Mob>Undying Mantis</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2856.177" Y="1169.326" Z="4337.229" />
+				<Hotspot X="2850.791" Y="1169.32" Z="4353.313" />
+				<Hotspot X="2794.979" Y="1164.264" Z="4359.813" />
+				<Hotspot X="2851.821" Y="1196.688" Z="4346.795" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="A Dirge for the Undying" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Undying Hosplite</Mob>
+			  <Mob>Undying Toxotes</Mob>
+			  <Mob>Undying Mantis</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2856.177" Y="1169.326" Z="4337.229" />
+				<Hotspot X="2850.791" Y="1169.32" Z="4353.313" />
+				<Hotspot X="2794.979" Y="1164.264" Z="4359.813" />
+				<Hotspot X="2851.821" Y="1196.688" Z="4346.795" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="A Dirge for the Undying" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Undying Hosplite</Mob>
+			  <Mob>Undying Toxotes</Mob>
+			  <Mob>Undying Mantis</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2923.628" Y="1150.534" Z="4242.755" />
+				<Hotspot X="2909.847" Y="1153.465" Z="4277.816" />
+				<Hotspot X="2886.498" Y="1149.296" Z="4254.411" />
+				<Hotspot X="2884.106" Y="1152.116" Z="4202.623" />
+				<Hotspot X="2889.325" Y="1150.453" Z="4297.228" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="A Dirge for the Undying" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Undying Hosplite</Mob>
+			  <Mob>Undying Toxotes</Mob>
+			  <Mob>Undying Mantis</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2923.628" Y="1150.534" Z="4242.755" />
+				<Hotspot X="2909.847" Y="1153.465" Z="4277.816" />
+				<Hotspot X="2886.498" Y="1149.296" Z="4254.411" />
+				<Hotspot X="2884.106" Y="1152.116" Z="4202.623" />
+				<Hotspot X="2889.325" Y="1150.453" Z="4297.228" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Evidence of the Unclean" Npc="Sergeant Heinrich" X="3100.534" Y="1092.929" Z="4051.277" />
+	<TurnInQuest Name="Lost Lore" Npc="Sir Guysun Lawless" X="3097.866" Y="1092.938" Z="4040.149" />
+	<PickUpQuest Name="Honoring the Auld Ways" Npc="Sir Guysun Lawless" X="3097.866" Y="1092.938" Z="4040.149" />
+	<TurnInQuest Name="Search and Rescue" Npc="Sergeant Heinrich" X="3100.534" Y="1092.929" Z="4051.277" />
+	<TurnInQuest Name="Clearing Out the Cobwebs" Npc="Medic Kircher" X="3101.698" Y="1092.86" Z="4063.925" />
+		<If Condition="HasQuest(&quot;A Dirge for the Undying&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="A Dirge for the Undying" Reward="1" Npc="Sergeant Malsorn" X="3003.334" Y="1120.349" Z="4151.477" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip 12th Guard Issued Leggings&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="A Dirge for the Undying" Reward="2" Npc="Sergeant Malsorn" X="3003.334" Y="1120.349" Z="4151.477" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Corpsewidow Silk Leggings&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="A Dirge for the Undying" Reward="3" Npc="Sergeant Malsorn" X="3003.334" Y="1120.349" Z="4151.477" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ageless Breeches&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="A Dirge for the Undying" Reward="4" Npc="Sergeant Malsorn" X="3003.334" Y="1120.349" Z="4151.477" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Dwarven Etched Greaves&quot;)" />
+			 </If>
+		</If>
+		<If Condition="HasQuest(&quot;Bahralt's Shrine&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Bahralt's Shrine" Reward="1" Npc="Sir Piotr Siennicki" X="3089.546" Y="1092.925" Z="4082.911" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Girdle of Mathos&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Bahralt's Shrine" Reward="2" Npc="Sir Piotr Siennicki" X="3089.546" Y="1092.925" Z="4082.911" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Dusty Ancient Sash&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Bahralt's Shrine" Reward="3" Npc="Sir Piotr Siennicki" X="3089.546" Y="1092.925" Z="4082.911" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Binding of the Undying&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Bahralt's Shrine" Reward="4" Npc="Sir Piotr Siennicki" X="3089.546" Y="1092.925" Z="4082.911" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Dwarven-Forged Waistguard&quot;)" />
+			 </If>
+		</If>
+	<TurnInQuest Name="Sacred Recollection" Npc="Bohem Maroboduus" X="3089.12" Y="1092.925" Z="4084.263" />
+	<PickUpQuest Name="No New Tale to Tell" Npc="Bohem Maroboduus" X="3089.12" Y="1092.925" Z="4084.263" />
+	<TurnInQuest Name="Honoring the Auld Ways" Npc="Ralyn Laurel" X="3142.966" Y="1095.097" Z="3886.143" />
+	<PickUpQuest Name="Insuring Their Safety" Npc="Ralyn Laurel" X="3142.966" Y="1095.097" Z="3886.143" />
+	<TurnInQuest Name="No New Tale to Tell" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+	<PickUpQuest Name="Hand of Kain" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+	<PickUpQuest Name="Relics of Another Time" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+	<TurnInQuest Name="Hand of Kain" Npc="Sir Piotr Siennicki" X="3091.874" Y="1092.925" Z="4081.587" />
+	
+	<PickUpQuest Name="Respecting the Dead" Npc="Erif Rohsal" X="3036.978" Y="1038.273" Z="3904.671" />
+	
+		<UseObjectsObjective Quest="Relics of Another Time" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Buried Relic</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="2963.23" Y="1004.035" Z="3942.423" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Relics of Another Time" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Buried Relic</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="2985.208" Y="1003.457" Z="3933.663" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Relics of Another Time" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Buried Relic</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="2911.771" Y="1001.606" Z="3959.759" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Respecting the Dead" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Fellpine Dominator</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2961.455" Y="1001.313" Z="3952.99" />
+				<Hotspot X="2937.184" Y="999.1868" Z="3987.345" />
+				<Hotspot X="2959.351" Y="1000.045" Z="3998.165" />
+				<Hotspot X="2950.822" Y="1102.255" Z="3994.072" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Insuring Their Safety" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Gorefang Wrangler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2923.593" Y="1004.227" Z="3945.631" />
+				<Hotspot X="2926.76" Y="999.266" Z="3981.746" />
+				<Hotspot X="3043.175" Y="1038.313" Z="3948.817" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Insuring Their Safety" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Gorefang Crusher</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3043.757" Y="1038.721" Z="4006.243" />
+				<Hotspot X="3043.291" Y="1038.286" Z="3942.024" />
+				<Hotspot X="3007.786" Y="1041.059" Z="4039.545" />
+				<Hotspot X="2963.23" Y="1004.035" Z="3942.423" />
+				<Hotspot X="2985.208" Y="1003.457" Z="3933.663" />
+				<Hotspot X="2911.771" Y="1001.606" Z="3959.759" />
+				<Hotspot X="2987.396" Y="1001.011" Z="3996.786" />
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Respecting the Dead" Npc="Erif Rohsal" X="3036.978" Y="1038.273" Z="3904.671" />
+	<!-- ignoring escort quest (2 players) -->
+	
+	<TurnInQuest Name="Relics of Another Time" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+	<PickUpQuest Name="King of the Tree" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+	<TurnInQuest Name="Insuring Their Safety" Npc="Ralyn Laurel" X="3142.966" Y="1095.097" Z="3886.143" />
+	<PickUpQuest Name="Ancient Seedlings" Npc="Ralyn Laurel" X="3142.966" Y="1095.097" Z="3886.143" />
+		
+		<KillMobsObjective Quest="King of the Tree" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Tactuz</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2992.754" Y="1120.426" Z="3938.714" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="Ancient Seedlings" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Auld Root</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="2992.754" Y="1120.426" Z="3938.714" />
+				<Hotspot X="2969.465" Y="1016.908" Z="3937.577" />
+				<Hotspot X="2975.931" Y="1026.88" Z="3956.689" />
+				<Hotspot X="2947.428" Y="1042.516" Z="3954.256" />
+				<Hotspot X="2963.303" Y="1086.707" Z="3954.717" />
+				<Hotspot X="2950.067" Y="1103.468" Z="3980.622" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Ancient Seedlings" Npc="Ralyn Laurel" X="3142.966" Y="1095.097" Z="3886.143" />
+	<PickUpQuest Name="One Man's Junk" Npc="Ralyn Laurel" X="3142.966" Y="1095.097" Z="3886.143" />
+		<If Condition="HasQuest(&quot;King of the Tree&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="King of the Tree" Reward="1" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Troll Link Vambraces&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="King of the Tree" Reward="2" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Researcher's Dusty Gloves&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="King of the Tree" Reward="3" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Gorefang Bracers&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="King of the Tree" Reward="4" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Tactuz's Gauntlets&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="Rededication" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+
+		<UseObjectsObjective Quest="One Man's Junk" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Drake Pile</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="2833.743" Y="1090.636" Z="3871.908" />
+				<Hotspot X="2770.874" Y="1095.299" Z="3888.296" />
+				<Hotspot X="2784.307" Y="1101.454" Z="3929.597" />
+				<Hotspot X="2803.139" Y="1097.236" Z="3954.717" />
+				<Hotspot X="2804.809" Y="1096.407" Z="3973.798" />
+				<Hotspot X="2826.336" Y="1095.929" Z="3995.491" />
+				<Hotspot X="2798.866" Y="1095.697" Z="4007.775" />
+				<Hotspot X="2752.924" Y="1097.485" Z="4015.592" />
+				<Hotspot X="2733.304" Y="1095.985" Z="4002.339" />
+				<Hotspot X="2748.623" Y="1104.093" Z="3985.458" />
+				<Hotspot X="2687.346" Y="1093.172" Z="3842.017" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<!-- The Sagespire Quests -->
+	<TurnInQuest Name="One Man's Junk" Npc="Pavel Apostol" X="2583.834" Y="1180.912" Z="3554.064" />
+	<TurnInQuest Name="Rededication" Npc="Sasha Nikadon" X="2596.92" Y="1185.931" Z="3537.632" />
+	<PickUpQuest Name="On the Books" Npc="Sasha Nikadon" X="2596.92" Y="1185.931" Z="3537.632" />
+		
+		<UseObjectsObjective Quest="On the Books" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Dusty Tome</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="2581.802" Y="1186.001" Z="3552.419" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		<If Condition="HasQuest(&quot;On the Books&quot;)">
+			<TalkToNpcObjective Quest="On the Books" Npc="Sasha Nikadon" X="2591.253" Y="1185.931" Z="3539.894" Options="2, 1" Tracking="2" />
+		</If>
+
+	<TurnInQuest Name="On the Books" Npc="Sasha Nikadon" X="2596.92" Y="1185.931" Z="3537.632" />
+	<PickUpQuest Name="Tower Defense" Npc="Sasha Nikadon" X="2596.92" Y="1185.931" Z="3537.632" />
+	<PickUpQuest Name="The Open Door" Npc="Eminia Andre" X="2601.507" Y="1180.91" Z="3569.497" />
+		
+		<If Condition="HasQuest(&quot;The Open Door&quot;)">
+			<Python Statement="Logging.Write(&quot;Please manually do both of these quests&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+
+		<!--
+		<If Condition="HasQuest(&quot;The Open Door&quot;)">
+			<RemoveJob>
+				<Job Name="HandleCombat" />
+			</RemoveJob>
+			
+			<Hotspot X="2584.837" Y="1178.257" Z="3575.942" /> // south \\
+			<Hotspot X="2568.832" Y="1178.476" Z="3544.19" /> // west \\
+			<Hotspot X="2623.715" Y="1178.502" Z="3528.112" /> // north \\
+			<Hotspot X="2647.129" Y="1178.505" Z="3564.1" /> // east \\
+			
+			<MoveTo 
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Portal Dispenser&quot;)" />
+			<Wait Seconds="5" />
+
+			<AddJob>
+				<HandleCombat />
+			</AddJob>
+		
+		</If>
+		-->
+		
+		<If Condition="HasQuest(&quot;Tower Defense&quot;)">
+			<Python Statement="Logging.Write(&quot;Please manually do both of these quests&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		
+		<KillMobsObjective Quest="Tower Defense" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+			<Hotspot X="2584.837" Y="1178.257" Z="3575.942" /> 
+			<Hotspot X="2568.832" Y="1178.476" Z="3544.19" />
+			<Hotspot X="2623.715" Y="1178.502" Z="3528.112" /> 
+			<Hotspot X="2647.129" Y="1178.505" Z="3564.1" /> 
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Tower Defense" Npc="Sasha Nikadon" X="2596.92" Y="1185.931" Z="3537.632" />
+	<TurnInQuest Name="The Open Door" Npc="Eminia Andre" X="2601.507" Y="1180.91" Z="3569.497" />
+	<PickUpQuest Name="A Temporary Solution" Npc="Eminia Andre" X="2601.507" Y="1180.91" Z="3569.497" />
+
+		<If Condition="HasQuest(&quot;A Temporary Solution&quot;)">
+			<TalkToNpcObjective Quest="A Temporary Solution" Npc="Sasha Nikadon" X="2592.945" Y="1185.931" Z="3533.845" Options="1, 1" Tracking="1" />
+		</If>
+	
+	<PickUpQuest Name="Endless Correstpondence" Npc="Protector Rysilver" X="2636.491" Y="1177.711" Z="3609.119" />
+	<PickUpQuest Name="Scouting the Opposition" Npc="Protector Carah" X="2635.188" Y="1177.881" Z="3611.467" />
+	
 	
 	
 
