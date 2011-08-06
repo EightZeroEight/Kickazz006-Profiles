@@ -444,18 +444,114 @@
 	<TurnInQuest Name="A Work Stoppage" Npc="Erik Valinez" X="3827.658" Y="1119.912" Z="3690.35" />
 	<PickUpQuest Name="A Wrench in the Works" Npc="Erik Valinez" X="3827.658" Y="1119.912" Z="3690.35" />
 	
+		<UseObjectsObjective Quest="The Score" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Mill Safe</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3814.605" Y="1138.228" Z="3873.268" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="A Wrench in the Works" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Secondary Pump Control Station</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3811.071" Y="1053.357" Z="3990.5" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="A Wrench in the Works" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Flow Monitoring Station</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3811.071" Y="1053.357" Z="3990.5" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="A Wrench in the Works" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Primary Pump Control Station</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3827.75" Y="1054.272" Z="3963.806" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<!-- 'object - corpse' that offers a quest
+		<If Condition="HasQuest(&quot;A Wrench in the Works&quot;)"> <If Condition="not HasQuest(&quot;A Fallen Soldier&quot;)">
+	<PickUpQuest Name="A Fallen Soldier" Npc="Fallen Guardian Soldier" X="3810.085" Y="1052.969" Z="3997.201" />
+		</If></If>
+		<If Condition="HasQuest(&quot;A Fallen Soldier&quot;)">
+	<TurnInQuest Name="A Fallen Soldier" Npc="Marshal Kain" 
+		</If>
+		-->
+
+	<TurnInQuest Name="The Score" Npc="Sir Alvarez Nilkova" X="3823.265" Y="1120.687" Z="3683.986" />
+		<If Condition="HasQuest(&quot;A Wrench in the Works&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="A Wrench in the Works" Reward="4" Npc="Erik Valinez" X="3827.658" Y="1119.912" Z="3690.35" />
+				<!--
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Felltouch Buckler&quot;)" />
+				-->
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="A Wrench in the Works" Reward="3" Npc="Erik Valinez" X="3827.658" Y="1119.912" Z="3690.35" />
+				<!--
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Polished Granitewood Orb&quot;)" />
+				-->
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="A Wrench in the Works" Reward="1" Npc="Erik Valinez" X="3827.658" Y="1119.912" Z="3690.35" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Grove Defender's Stiletto&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="A Wrench in the Works" Reward="2" Npc="Erik Valinez" X="3827.658" Y="1119.912" Z="3690.35" />
+				<!--
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Carved Granitewood Shield&quot;)" />
+				-->
+			 </If>
+		</If>
+		
+	<TurnInQuest Name="Reinforcing the 12th" Npc="Douhgar &quot;Shorty&quot; Saveli" X="3290.384" Y="1095.668" Z="3826.192" />
+	<PickUpQuest Name="A Balanced Diet" Npc="Douhgar &quot;Shorty&quot; Saveli" X="3290.384" Y="1095.668" Z="3826.192" />
+	<PickUpQuest Name="The Finest Cut" Npc="Ranh Burreck" X="3290.773" Y="1095.731" Z="3821.567" />
+	<PickUpQuest Name="I Could Eat an Ox" Npc="Private Musser" X="3297.402" Y="1095.461" Z="3829.149" />
+
+	
+		
+		
+		
+		
 	
 	
 	
 
 		<!-- 
-	<TurnInQuest Name="Reinforcing the 12th" Npc="Douhgar "Shorty" Saveli" X="3290.384" Y="1095.668" Z="3826.192" />
-	<PickUpQuest Name="A Balanced Diet" Npc="Douhgar "Shorty" Saveli" X="3290.384" Y="1095.668" Z="3826.192" />
-
-
 	<PickUpQuest Name="" 
 	<TurnInQuest Name="" 
 		-->
+		
+		<!--
+		<If Condition="HasQuest(&quot;A Fallen Soldier&quot;)">
+	<TurnInQuest Name="A Fallen Soldier" Npc="Marshal Kain" 
+		</If>
+		-->
+		
 	
 	
 	
