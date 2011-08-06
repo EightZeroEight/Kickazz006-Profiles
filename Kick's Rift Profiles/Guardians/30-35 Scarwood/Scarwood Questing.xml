@@ -526,18 +526,183 @@
 				-->
 			 </If>
 		</If>
+		<!-- End of Keenblade Barricade Quests -->
 		
+		<!-- Scarhide Picket Quests -->
 	<TurnInQuest Name="Reinforcing the 12th" Npc="Douhgar &quot;Shorty&quot; Saveli" X="3290.384" Y="1095.668" Z="3826.192" />
 	<PickUpQuest Name="A Balanced Diet" Npc="Douhgar &quot;Shorty&quot; Saveli" X="3290.384" Y="1095.668" Z="3826.192" />
 	<PickUpQuest Name="The Finest Cut" Npc="Ranh Burreck" X="3290.773" Y="1095.731" Z="3821.567" />
 	<PickUpQuest Name="I Could Eat an Ox" Npc="Private Musser" X="3297.402" Y="1095.461" Z="3829.149" />
 
+		<UseObjectsObjective Quest="A Balanced Diet" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Mudlace Frond</Object>
+			  <Object>Mudlace Fronds</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3546.992" Y="1086.656" Z="3858.266" />
+				<Hotspot X="3528.955" Y="1087.661" Z="3897.329" />
+				<Hotspot X="3456.548" Y="1088.423" Z="3859.576" />
+				<Hotspot X="3456.653" Y="1086.63" Z="3818.885" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="A Balanced Diet" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Snapvine Berries</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3597.107" Y="1091.248" Z="3953.399" />
+				<Hotspot X="3587.278" Y="1093.085" Z="3996.525" />
+				<Hotspot X="3519.508" Y="1086.499" Z="3956.871" />
+				<Hotspot X="3540.569" Y="1083.769" Z="3938.926" />
+				<Hotspot X="3595.591" Y="1091.087" Z="3922.302" />
+				</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+
+		<KillMobsObjective Quest="I Could Eat an Ox" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Blackfang Ravager</Mob>
+			  <Mob>Sablemane Howler</Mob>
+			  <Mob>Sablemane Alpha</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3396.176" Y="1087.219" Z="3778.823" />
+				<Hotspot X="3375.027" Y="1085.725" Z="3732.43" />
+				<Hotspot X="3329.771" Y="1085.164" Z="3702.682" />
+				<Hotspot X="3363.243" Y="1088.266" Z="3798.662" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Finest Cut" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Blackfang Ravager</Mob>
+			  <Mob>Sablemane Howler</Mob>
+			  <Mob>Sablemane Alpha</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3396.176" Y="1087.219" Z="3778.823" />
+				<Hotspot X="3375.027" Y="1085.725" Z="3732.43" />
+				<Hotspot X="3329.771" Y="1085.164" Z="3702.682" />
+				<Hotspot X="3363.243" Y="1088.266" Z="3798.662" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="HasQuest(&quot;The Finest Cut&quot;)"> <!-- Tracking 2 and 3 -->
+			<MoveTo X="3643.049" Y="1079.671" Z="4000.257" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Wolf Liver&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+
+		<KillMobsObjective Quest="I Could Eat an Ox" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Scarhide Stalker</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3606.585" Y="1093.931" Z="3991.045" />
+				<Hotspot X="3634.315" Y="1094.32" Z="3967.748" />
+				<Hotspot X="3597.107" Y="1091.248" Z="3953.399" />
+				<Hotspot X="3587.278" Y="1093.085" Z="3996.525" />
+				<Hotspot X="3519.508" Y="1086.499" Z="3956.871" />
+				<Hotspot X="3540.569" Y="1083.769" Z="3938.926" />
+				<Hotspot X="3595.591" Y="1091.087" Z="3922.302" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="The Finest Cut" Npc="Ranh Burreck" X="3290.773" Y="1095.731" Z="3821.567" />
+	<TurnInQuest Name="I Could Eat an Ox" Npc="Private Musser" X="3297.402" Y="1095.461" Z="3829.149" />
+	<TurnInQuest Name="A Balanced Diet" Npc="Douhgar &quot;Shorty&quot; Saveli" X="3290.384" Y="1095.668" Z="3826.192" />
+	<PickUpQuest Name="We Deliver!" Npc="Douhgar &quot;Shorty&quot; Saveli" X="3290.384" Y="1095.668" Z="3826.192" />
+	<TurnInQuest Name="We Deliver!" Npc="Fedor Saveli" X="3146.442" Y="1095.087" Z="3886.82" />
+	<PickUpQuest Name="Command Training" Npc="Fedor Saveli" X="3146.442" Y="1095.087" Z="3886.82" />
+		<If Condition="HasQuest(&quot;A Fallen Soldier&quot;)">
+	<TurnInQuest Name="A Fallen Soldier" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+		</If>
+		<!-- ??
+	<PickUpQuest Name="Kain's Hunt" Npc="Vol Spiridon" X="3133.033" Y="1095.086" Z="3890.319" /> -->
 	
+		<If Condition="HasQuest(&quot;Command Training&quot;)">
+			<TalkToNpcObjective Quest="Command Training" Npc="Donal Sumptor" X="3134.281" Y="1095.086" Z="3874.342" Options="1" Tracking="1" />
+			<TalkToNpcObjective Quest="Command Training" Npc="Sir Martyn Myrsol" X="3143.843" Y="1095.122" Z="3874.305" Options="1" Tracking="3" />
+			<TalkToNpcObjective Quest="Command Training" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" Options="1" Tracking="2" /> <!-- sometimes this fails, do i need 1,1 ? -->
+		</If>
 		
+	<TurnInQuest Name="Command Training" Npc="Fedor Saveli" X="3146.442" Y="1095.087" Z="3886.82" />
+	<PickUpQuest Name="Natrual Hazards" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" />
+	<PickUpQuest Name="A Soldier's Dog" Npc="Gregory Bartnell" X="3166.041" Y="1095.093" Z="3873.996" />
 		
+		<If Condition="HasQuest(&quot;A Soldier's Dog&quot;)">
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+
+		<!-- Weird quest.  Combat use item on x3 (at 40%) and then bring back to <Hotspot X="3162.219" Y="1095.153" Z="3873.783" />.  You can get all 3 at once -->
+		<UseItemOnMobsObjective Quest="A Soldier's Dog" Item="Control Collar" CastTime="2" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Blackfang Ravager</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3198.877" Y="1093.636" Z="3867.202" />
+				<Hotspot X="3225.63" Y="1094.795" Z="3876.091" />
+				<Hotspot X="3326.531" Y="1094.99" Z="3897.839" />
+				
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+	<TurnInQuest Name="A Soldier's Dog" Npc="Gregory Bartnell" X="3166.041" Y="1095.093" Z="3873.996" />
 		
+		<KillMobsObjective Quest="Natrual Hazards" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Shardclaw Stalker</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3509.923" Y="1095.049" Z="4366.653" />
+				<Hotspot X="3425.077" Y="1087.677" Z="4333.467" />
+				<Hotspot X="3404.965" Y="1095.296" Z="4289.026" />
+				<Hotspot X="3319.67" Y="1110.335" Z="4282.818" />
+				<Hotspot X="3296.394" Y="1099.043" Z="4202.005" />
+				<Hotspot X="3201.474" Y="1095.165" Z="4159.491" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Natrual Hazards" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Barkbristle Tusker</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3484.305" Y="1094.716" Z="4137.434" />
+				<Hotspot X="3446.81" Y="1095.063" Z="4166.31" />
+				<Hotspot X="3482.839" Y="1095.364" Z="4190.051" />
+				<Hotspot X="3484.725" Y="1094.8" Z="4228.15" />
+				<Hotspot X="3497.125" Y="1094.3" Z="4308.404" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Natrual Hazards" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" />
+	<PickUpQuest Name="Redeployment" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" />
+	<TurnInQuest Name="Redeployment" Npc="Sir Isaak Kazimir" X="3126.08" Y="1095.086" Z="3874.796" />
+	<PickUpQuest Name="Supply Run" Npc="Sir Isaak Kazimir" X="3126.08" Y="1095.086" Z="3874.796" />
+	<PickUpQuest Name="Proscribed Technologies" Npc="Dame Levitia Volya" X="3134.595" Y="1095.086" Z="3869.437" />
+	<PickUpQuest Name="Care of the Wounded" Npc="Medic Laran" X="3155.502" Y="1095.086" Z="3891.513" />
 		
-	
 	
 	
 
@@ -547,9 +712,6 @@
 		-->
 		
 		<!--
-		<If Condition="HasQuest(&quot;A Fallen Soldier&quot;)">
-	<TurnInQuest Name="A Fallen Soldier" Npc="Marshal Kain" 
-		</If>
 		-->
 		
 	
