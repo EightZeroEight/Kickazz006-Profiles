@@ -500,7 +500,7 @@
 	<PickUpQuest Name="A Fallen Soldier" Npc="Fallen Guardian Soldier" X="3810.085" Y="1052.969" Z="3997.201" />
 		</If></If>
 		<If Condition="HasQuest(&quot;A Fallen Soldier&quot;)">
-	<TurnInQuest Name="A Fallen Soldier" Npc="Marshal Kain" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+	<TurnInQuest Name="A Fallen Soldier" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
 		</If>
 		-->
 
@@ -1645,65 +1645,350 @@
 	<PickUpQuest Name="You ARE the Reinforcements" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
 	<PickUpQuest Name="Life-Saving Measures" Npc="Fadei Bogatyr" X="3336.683" Y="1086.825" Z="3555.187" />
 	<TurnInQuest Name="You ARE the Reinforcements" Npc="Dame Levitia Volya" X="3200.073" Y="999.6706" Z="3504.219" />
-	<TurnInQuest Name="Obey the Fist!" Npc="Dame Levitia Volya" X="3200.073" Y="999.6706" Z="3504.219" />
+	<PickUpQuest Name="Obey the Fist!" Npc="Dame Levitia Volya" X="3200.073" Y="999.6706" Z="3504.219" />
 	<PickUpQuest Name="Holding the Line" Npc="Captain Ledisko" X="3176.433" Y="999.6706" Z="3494.317" />
 	<PickUpQuest Name="There's Too Many of Them!" Npc="Private Mihai" X="3170.113" Y="999.7479" Z="3498.827" />
 	<TurnInQuest Name="Life-Saving Measures" Npc="Medic Loros" X="3164.35" Y="1000.616" Z="3526.474" />
 	<PickUpQuest Name="Local Cures" Npc="Medic Loros" X="3164.35" Y="1000.616" Z="3526.474" />
 	
+		<UseObjectsObjective Quest="Local Cures" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Umbral Sedge</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3052.076" Y="993.4512" Z="3530.302" />
+				<Hotspot X="2995.639" Y="993.7172" Z="3495.592" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Obey the Fist!" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Ansche von Kursk</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2861.577" Y="1030.661" Z="3245.353" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="Holding the Line" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Debris</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3135.03" Y="997.7767" Z="3432.615" />
+				<Hotspot X="3065.917" Y="1008.992" Z="3400.767" />
+				<Hotspot X="3050.299" Y="998.2236" Z="3357.513" />
+				<Hotspot X="3100.281" Y="997.4063" Z="3370.407" />
+				<Hotspot X="3099.414" Y="998.5068" Z="3396.47" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 	
+		<KillMobsObjective Quest="There's Too Many of Them!" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Shatterbone Creamator</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3088.415" Y="1012.915" Z="3426.309" />
+				<Hotspot X="3065.917" Y="1008.992" Z="3400.767" />
+				<Hotspot X="3038.917" Y="1001.248" Z="3385.415" />
+				<Hotspot X="3050.299" Y="998.2236" Z="3357.513" />
+				<Hotspot X="3099.414" Y="998.5068" Z="3396.47" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="There's Too Many of Them!" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Shatterbone Maurader</Mob>
+			  <Mob>Shatterbone Crusader</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3088.415" Y="1012.915" Z="3426.309" />
+				<Hotspot X="3100.281" Y="997.4063" Z="3370.407" />
+				<Hotspot X="3132.107" Y="996.9327" Z="3423.712" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="There's Too Many of Them!" Npc="Private Mihai" X="3170.113" Y="999.7479" Z="3498.827" />
+	<TurnInQuest Name="Holding the Line" Npc="Captain Ledisko" X="3176.433" Y="999.6706" Z="3494.317" />
+	<PickUpQuest Name="Unnatural Enemies" Npc="Captain Ledisko" X="3176.433" Y="999.6706" Z="3494.317" />
+	<TurnInQuest Name="Obey the Fist!" Npc="Dame Levitia Volya" X="3200.073" Y="999.6706" Z="3504.219" />
+	<PickUpQuest Name="The Heart of the Matter" Npc="Dame Levitia Volya" X="3200.073" Y="999.6706" Z="3504.219" />
+	<TurnInQuest Name="Local Cures" Npc="Medic Loros" X="3164.35" Y="1000.616" Z="3526.474" />
+	<PickUpQuest Name="Last Supper" Npc="Medic Loros" X="3164.35" Y="1000.616" Z="3526.474" />
+
+		<UseObjectsObjective Quest="Last Supper" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Hunting Cat Corpse</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="2890.643" Y="997.7728" Z="3327.94" />
+				<Hotspot X="2975.377" Y="997.6528" Z="3264.525" />
+				<Hotspot X="2935.744" Y="998.3638" Z="3325.502" />
+				<Hotspot X="2897.891" Y="999.1068" Z="3382.182" />
+				<Hotspot X="2799.011" Y="997.866" Z="3395.424" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="The Heart of the Matter" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Dreadfang</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2671.076" Y="999.3751" Z="3354.379" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Unnatural Enemies" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Deathwing Manticore</Mob>
+			  <Mob>Deathwing Matriarch</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2890.643" Y="997.7728" Z="3327.94" />
+				<Hotspot X="2949.36" Y="997.4979" Z="3265.061" />
+				<Hotspot X="2978.126" Y="1000.354" Z="3328.667" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="The Heart of the Matter" Npc="Dame Levitia Volya" X="3200.073" Y="999.6706" Z="3504.219" />
+	<PickUpQuest Name="Paging Doctor Visek" Npc="Dame Levitia Volya" X="3200.073" Y="999.6706" Z="3504.219" />
+	<TurnInQuest Name="Unnatural Enemies" Npc="Captain Ledisko" X="3176.433" Y="999.6706" Z="3494.317" />
+	<PickUpQuest Name="Abomination Annihilation" Npc="Captain Ledisko" X="3176.433" Y="999.6706" Z="3494.317" />
+	<PickUpQuest Name="Merciful Flame" Npc="Private Mihai" X="3170.595" Y="999.7363" Z="3498.716" />
+		<If Condition="HasQuest(&quot;Last Supper&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Last Supper" Reward="4" Npc="Medic Loros" X="3164.35" Y="1000.616" Z="3526.474" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Deathing Bone Loop&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Last Supper" Reward="4" Npc="Medic Loros" X="3164.35" Y="1000.616" Z="3526.474" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Last Supper" Reward="2" Npc="Medic Loros" X="3164.35" Y="1000.616" Z="3526.474" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Fadei's Toxic Band&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Last Supper" Reward="3" Npc="Medic Loros" X="3164.35" Y="1000.616" Z="3526.474" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Manticore Fang Ring&quot;)" />
+			 </If>
+		</If>
+
+	<PickUpQuest Name="A Grisly Fate" Npc="Savin Rurik" X="3045.158" Y="1017.782" Z="3186.745" />
 	
+		<KillMobsObjective Quest="A Grisly Fate" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Shatterbone Executioner</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3041.079" Y="1017.228" Z="3195.467" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="A Grisly Fate" Npc="Savin Rurik" X="3045.158" Y="1017.782" Z="3186.745" />
+
+		<If Condition="HasQuest(&quot;Merciful Flame&quot;)">
+			<Python Statement="Logging.Write(&quot;Please manually do Merciful Flame Quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		<!--
+ 			<UseObject Name="Crematory Torch" X="3076.303" Y="1017.997" Z="3217.868" />
+ 			<UseObject Name="Pile of Body Parts" X="3081.779" Y="1017.342" Z="3209.832" />
+			
+ 			<UseObject Name="Crematory Torch" 
+ 			<UseObject Name="Pile of Body Parts" 
+			
+ 			<UseObject Name="Crematory Torch" 
+ 			<UseObject Name="Pile of Body Parts" 
+			
+ 			<UseObject Name="Crematory Torch" 
+ 			<UseObject Name="Pile of Body Parts" 
+			
+ 			<UseObject Name="Crematory Torch" 
+ 			<UseObject Name="Pile of Body Parts" 
+		-->
+       </If>
+
+		<KillMobsObjective Quest="Abomination Annihilation" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Shatterbone Fleshcrafter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3070.258" Y="1017.533" Z="3225.416" />
+				<Hotspot X="3045.466" Y="1017.069" Z="3198.11" />
+				<Hotspot X="3121.668" Y="1035.746" Z="3227.745" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Abomination Annihilation" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Blightfist Ettin</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3067.548" Y="999.3633" Z="3312.22" />
+				<Hotspot X="3070.258" Y="1017.533" Z="3225.416" />
+				<Hotspot X="3047.265" Y="1017.874" Z="3216.265" />
+				<Hotspot X="3121.668" Y="1035.746" Z="3227.745" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Paging Doctor Visek" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Doctor Visek</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3121.668" Y="1035.746" Z="3227.745" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="HasQuest(&quot;Paging Doctor Visek&quot;)">
+			<Moveto X="3122.524" Y="1035.805" Z="3221.477" />
+			<Python Statement="Logging.Write(&quot;Please manually turn in Doctor Visek quest at podium and accept / do next quest and then turn it in&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+	   <!-- manually turn in quest at podium
+		<UseObjectsObjective Quest="Paging Doctor Visek" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Doctor Visek's Grimoire</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3122.524" Y="1035.805" Z="3221.477" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		-->
+		
+		<UseObjectsObjective Quest="Slave No Longer" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Soul Prism</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3119.243" Y="1035.805" Z="3220.496" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Slave No Longer" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Containment Field Controller</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3124.789" Y="1035.818" Z="3233.407" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuest(&quot;Slave No Longer&quot;)">
+			<Python Statement="Logging.Write(&quot;Use Quest item on Gnarlbone at 30 percent hp, then take the port out of there that spawns&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		
+	<TurnInQuest Name="Slave No Longer" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+		<If Condition="HasQuest(&quot;Merciful Flame&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Merciful Flame" Reward="1" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Flame Cleansed Boots&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Merciful Flame" Reward="2" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Chirurgeon's Bloody Slippers&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Merciful Flame" Reward="3" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Stitched Flesh Boots&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Merciful Flame" Reward="4" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Fallen Hero's Sabatons&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="The Last Command" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+	<TurnInQuest Name="Abomination Annihilation" Npc="Lieutenant Vorther" X="3334.406" Y="1086.808" Z="3564.929" />
+		<If Condition="HasQuest(&quot;The Last Command&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="The Last Command" Reward="1" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Coif of the Five Wards&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="The Last Command" Reward="2" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Cowl of the Spire Sages&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="The Last Command" Reward="3" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Studded Hood of the Fist&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="The Last Command" Reward="4" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Warhelm of the Manticore&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="Passing the Chain of Command" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
+	<PickUpQuest Name="Beyond Solace" Npc="Adela Anka" X="3147.72" Y="1095.086" Z="3883.611" />
+		
+    <GrindTo Level="35">
+      <GrindArea>
+        <Mobs>
+          <Mob>Darkscale Drake</Mob>
+          <Mob>Rockeye Lurker</Mob>
+          <Mob>Living Idol</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="3151.817" Y="1095.006" Z="3824.776" />
+          <Hotspot X="2726.737" Y="1092.497" Z="3722.917" />
+        </Hotspots>
+      </GrindArea>
+    </GrindTo>
 	
+		<If Condition="HasQuest(&quot;Passing the Chain of Command&quot;)">
+			<MoveTo X="3129.301" Y="1095.069" Z="3853.652" />
+		</If>
 	
-	
+			<Python Statement="Logging.Write(&quot;Go to Sanctum and turn in the 2 quests in your log and get the next 2 quests\n\nThen go to X and load X profile&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		
 		<!-- 
 	<PickUpQuest Name="" 
 	<TurnInQuest Name="" 
 		-->
-		
-		<!--
-		-->
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 
     <Loop />
   </Tasks>
