@@ -26,6 +26,7 @@
 		  <GrindArea>
 			<Mobs>
 			  <Mob>Moonshade Spectre</Mob>
+			  <Mob>Envoy of Gorvaht</Mob>
 			</Mobs>
 			<Hotspots>
 				<Hotspot X="6927.965" Y="887.8915" Z="2216.115" />
@@ -37,6 +38,15 @@
 				<Hotspot X="6860.058" Y="894.0669" Z="2188.688" />
 				<Hotspot X="6927.019" Y="887.8865" Z="2206.086" />
 				<Hotspot X="6919.026" Y="886.5353" Z="2176.424" />
+				
+				<Hotspot X="7043.422" Y="884.0413" Z="2316.667" />
+				<Hotspot X="7048.299" Y="887.2436" Z="2343.593" />
+				<Hotspot X="7057.953" Y="890.3644" Z="2363.908" />
+				<Hotspot X="7047.034" Y="892.5923" Z="2381.218" />
+				<Hotspot X="7055.406" Y="895.0189" Z="2407.029" />
+				<Hotspot X="7043.749" Y="898.6335" Z="2420.729" />
+				<Hotspot X="7072.656" Y="897.0914" Z="2435.487" />
+				<Hotspot X="7099.311" Y="895.7671" Z="2425.061" />
 			</Hotspots>
 		  </GrindArea>
 		</GrindTo>
@@ -325,6 +335,15 @@
 	<PickUpQuest Name="Drill Drecht" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
 	<PickUpQuest Name="The Reason Why" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
 	
+		<If Condition="(HasQuest(&quot;The Reason Why&quot;)) and (not HasQuest(&quot;Twilit Extermination&quot;))">
+			<MoveTo X="7081.512" Y="887.4744" Z="2337.06" />
+			<UseObject Name="Delia" X="7081.512" Y="887.4744" Z="2337.06" />
+			<Python Statement="Logging.Write(&quot;Get this quest and press start&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<Wait Seconds="2" />
+	<PickUpQuest Name="Twilit Extermination" Npc="Delia" X="7081.512" Y="887.4744" Z="2337.06" />
+		</If>
+	
 		<KillMobsObjective Quest="Drill Drecht" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -339,7 +358,7 @@
 		<UseObjectsObjective Quest="The Reason Why" Tracking="1">
 		  <Area>
 			<Objects>
-			  <Object></Object>
+			  <Object>Sacrificial Altar</Object>
 			</Objects>
 			<Hotspots>
 				<Hotspot X="7103.452" Y="914.7249" Z="2548.659" />
@@ -357,8 +376,70 @@
 		  </Area>
 		</UseObjectsObjective>
 
+		<KillMobsObjective Quest="Twilit Extermination" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Envoy of Gorvaht</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7103.452" Y="914.7249" Z="2548.659" />
+				<Hotspot X="7118.534" Y="912.7455" Z="2528.878" />
+				<Hotspot X="7088.102" Y="904.3414" Z="2481.772" />
+				<Hotspot X="7043.422" Y="884.0413" Z="2316.667" />
+				<Hotspot X="7048.299" Y="887.2436" Z="2343.593" />
+				<Hotspot X="7057.953" Y="890.3644" Z="2363.908" />
+				<Hotspot X="7047.034" Y="892.5923" Z="2381.218" />
+				<Hotspot X="7055.406" Y="895.0189" Z="2407.029" />
+				<Hotspot X="7043.749" Y="898.6335" Z="2420.729" />
+				<Hotspot X="7072.656" Y="897.0914" Z="2435.487" />
+				<Hotspot X="7099.311" Y="895.7671" Z="2425.061" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="The Reason Why" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
+		<If Condition="HasQuest(&quot;Drill Drecht&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Drill Drecht" Reward="1" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Eradicators Mail Leggings&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Drill Drecht" Reward="2" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Highland Leggings&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Drill Drecht" Reward="3" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Drecht's Cleansed Legs&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Drill Drecht" Reward="4" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Plated Twilit Leg Guards&quot;)" />
+			 </If>
+		</If>
 	
+	<PickUpQuest Name="To Know Evil" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+	<TurnInQuest Name="Twilit Extermination" Npc="Doris Fedinar" X="7273.563" Y="877.5708" Z="2133.006" />
 	
+		<UseObjectsObjective Quest="To Know Evil" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Bahralt's Anvil</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7401.27" Y="851.9261" Z="2088.665" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="To Know Evil" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+	<PickUpQuest Name="Known Unknowns" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+	<TurnInQuest Name="Known Unknowns" Npc="Alyn Pinebranch" X="7278.914" Y="880.6846" Z="2057.505" />
+	<PickUpQuest Name="Boglings Everywhere" Npc="Alyn Pinebranch" X="7278.914" Y="880.6846" Z="2057.505" />
+	<PickUpQuest Name="Sacred Plants" Npc="Bastion Pembrook" X="7276.148" Y="880.6846" Z="2060.502" />
 	
 	
 	

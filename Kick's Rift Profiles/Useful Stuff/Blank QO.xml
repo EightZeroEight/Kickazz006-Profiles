@@ -86,14 +86,6 @@
 
 		<Escort Quest="" Npc="" Tracking="1" />
 
-
-		<Else>
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-			
-		</Else>
-
-
 		<If Condition="HasQuest(&quot;&quot;)">
 			<MoveTo 
 			
@@ -109,6 +101,14 @@
 
 		</If>
 
+		<If Condition="(HasQuest(&quot;Bahralt's Shrine&quot;)) and (not HasQuest(&quot;Evidence of the Unclean&quot;))">
+			<MoveTo 
+			<UseObject Name="" 
+			<Python Statement="Logging.Write(&quot;Get this quest and press start&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<Wait Seconds="2" />
+	<PickUpQuest Name=""  />
+		</If> 
 
 
 
