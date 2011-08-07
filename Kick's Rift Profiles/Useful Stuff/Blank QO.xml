@@ -78,11 +78,13 @@
 		<If Condition="HasQuest(&quot;&quot;)">
 			<MoveTo 
 			<Wait Seconds="2" />
+			<MoveTo 
+			<Wait Seconds="2" />
 			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use itemnamehere&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 
-		<Escort Npc="" Quest="" Tracking="1" />
+		<Escort Quest="" Npc="" Tracking="1" />
 
 
 		<Else>

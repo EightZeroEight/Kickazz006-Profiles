@@ -7,6 +7,8 @@
           <Healer X="3165.028" Y="1095.186" Z="3878.661" /> <!--Kain's Command-->
 		  <Healer X="3621.687" Y="1105.182" Z="3510.847" /> <!-- Camp Vigil -->
 		  <Healer X="2622.775" Y="1180.909" Z="3580.333" /> <!-- The Sagespire -->
+		  <Healer X="3346.083" Y="1087.051" Z="3585.397" /> <!-- Camp Cestus -->
+		  <Healer X="3188.52" Y="999.7383" Z="3514.533" /> <!-- Shatterbone Barricade -->
         </Healers>
       </MendSoul>
     </AddJob>
@@ -18,6 +20,8 @@
 		  <Vendor X="3647.716" Y="1105.557" Z="3508.033" /> <!-- Camp Vigil -->
 		  <Vendor X="3098.712" Y="1092.864" Z="4064.315" /> <!-- Heroes' Stand -->
 		  <Vendor X="2601.273" Y="1180.91" Z="3557.243" /> <!-- The Sagespire -->
+		  <Vendor X="3354.521" Y="1086.808" Z="3575.044" /> <!-- Camp Cestus -->
+		  <Vendor X="3182.66" Y="999.6706" Z="3515.857" /> <!-- Shatterbone Barricade -->
         </Vendors>
       </Vendor>
     </AddJob>
@@ -1273,12 +1277,385 @@
 			<TalkToNpcObjective Quest="A Temporary Solution" Npc="Sasha Nikadon" X="2592.945" Y="1185.931" Z="3533.845" Options="1, 1" Tracking="1" />
 		</If>
 	
-	<PickUpQuest Name="Endless Correstpondence" Npc="Protector Rysilver" X="2636.491" Y="1177.711" Z="3609.119" />
+	<PickUpQuest Name="Endless Correspondence" Npc="Protector Rysilver" X="2636.491" Y="1177.711" Z="3609.119" />
 	<PickUpQuest Name="Scouting the Opposition" Npc="Protector Carah" X="2635.188" Y="1177.881" Z="3611.467" />
 	
+		<UseObjectsObjective Quest="Endless Correspondence" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Shatterbone Communique</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="2759.021" Y="1093.126" Z="3642.17" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 	
-	
+		<KillMobsObjective Quest="Endless Correspondence" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Shatterbone Courier</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2892.617" Y="1091.434" Z="3665.154" />
+				<Hotspot X="2764.241" Y="1093.024" Z="3650.009" />
+				<Hotspot X="2893.305" Y="1092.413" Z="3645.579" />
+				<Hotspot X="2954.594" Y="1103.261" Z="3689.788" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
 
+		<If Condition="HasQuest(&quot;Scouting the Opposition&quot;)">
+			<MoveTo X="2764.241" Y="1093.024" Z="3650.009" />
+			<MoveTo X="2893.305" Y="1092.413" Z="3645.579" />
+			<MoveTo X="2954.594" Y="1103.261" Z="3689.788" />
+		</If>
+	
+		<KillMobsObjective Quest="A Temporary Solution" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Rockeye Lurker</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2799.142" Y="1092.149" Z="3689.732" />
+				<Hotspot X="2843.788" Y="1092.687" Z="3707.815" />
+				<Hotspot X="2954.327" Y="1093.08" Z="3642.524" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="A Temporary Solution" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Darkscale Drake</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2808.396" Y="1103.204" Z="3592.627" />
+				<Hotspot X="2772.662" Y="1092.705" Z="3680.102" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Scouting the Opposition" Npc="Protector Carah" X="2635.188" Y="1177.881" Z="3611.467" />
+	<PickUpQuest Name="End the Endless" Npc="Protector Carah" X="2635.188" Y="1177.881" Z="3611.467" />
+	<TurnInQuest Name="Endless Correspondence" Npc="Protector Rysilver" X="2636.491" Y="1177.711" Z="3609.119" />
+	<PickUpQuest Name="Among the Endless" Npc="Protector Rysilver" X="2636.491" Y="1177.711" Z="3609.119" />
+	<TurnInQuest Name="A Temporary Solution" Npc="Eminia Andre" X="2601.507" Y="1180.91" Z="3569.497" />
+	<PickUpQuest Name="Sealing the Portal" Npc="Eminia Andre" X="2601.507" Y="1180.91" Z="3569.497" />
+	<PickUpQuest Name="Rare Berry Collection" Npc="Zerin Golek" X="2601.273" Y="1180.91" Z="3557.243" />
+	<PickUpQuest Name="Draconian Measures" Npc="Pavel Apostol" X="2585.271" Y="1180.909" Z="3557.284" />
+
+		<If Condition="HasQuest(&quot;Sealing the Portal&quot;)">
+			<MoveTo X="2588.674" Y="1178.476" Z="3522.054" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Nexus Attractor&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+
+		<KillMobsObjective Quest="Sealing the Portal" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Baelwrath</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2588.674" Y="1178.476" Z="3522.054" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="HasQuest(&quot;Sealing the Portal&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Sealing the Portal" Reward="2" Npc="Eminia Andre" X="2601.507" Y="1180.91" Z="3569.497" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Emberwood Wand&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Sealing the Portal" Reward="2" Npc="Eminia Andre" X="2601.507" Y="1180.91" Z="3569.497" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Emberwood Wand&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Sealing the Portal" Reward="1" Npc="Eminia Andre" X="2601.507" Y="1180.91" Z="3569.497" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Farseer's Bow&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Sealing the Portal" Reward="3" Npc="Eminia Andre" X="2601.507" Y="1180.91" Z="3569.497" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Spire Defender's Rifle&quot;)" />
+			 </If>
+		</If>
+
+		<UseObjectsObjective Quest="Rare Berry Collection" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Thornbranch Shrub</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="2873.118" Y="1093.603" Z="3642.037" />
+				<Hotspot X="2887.447" Y="1092.571" Z="3651.741" />
+				<Hotspot X="2861.179" Y="1093.258" Z="3672.793" />
+				<Hotspot X="2864.962" Y="1092.184" Z="3696.131" />
+				<Hotspot X="2845.095" Y="1092.381" Z="3697.318" />
+				<Hotspot X="2871.808" Y="1093.254" Z="3708.735" />
+				<Hotspot X="2852.785" Y="1093.388" Z="3740.854" />
+				<Hotspot X="2866.937" Y="1093.433" Z="3742.508" />
+				<Hotspot X="2900.854" Y="1099.382" Z="3754.868" />
+				<Hotspot X="2932.185" Y="1094.545" Z="3754.886" />
+				<Hotspot X="2956.491" Y="1094.851" Z="3723.417" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="End the Endless" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Shatterbone Mage</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2873.118" Y="1093.603" Z="3642.037" />
+				<Hotspot X="2887.447" Y="1092.571" Z="3651.741" />
+				<Hotspot X="3032.872" Y="1092.016" Z="3700.099" />
+				<Hotspot X="3042.663" Y="1088.782" Z="3671.453" />
+				<Hotspot X="2990.936" Y="1096.769" Z="3693.939" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="End the Endless" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Shatterbone Assassin</Mob>
+			  <Mob>Shatterbone Hunter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2873.118" Y="1093.603" Z="3642.037" />
+				<Hotspot X="2887.447" Y="1092.571" Z="3651.741" />
+				<Hotspot X="3032.872" Y="1092.016" Z="3700.099" />
+				<Hotspot X="3042.663" Y="1088.782" Z="3671.453" />
+				<Hotspot X="2990.936" Y="1096.769" Z="3693.939" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="End the Endless" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Shatterbone Slayer</Mob>
+			  <Mob>Shatterbone Marauder</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2895.014" Y="1093.081" Z="3619.318" />
+				<Hotspot X="3042.663" Y="1088.782" Z="3671.453" />
+				<Hotspot X="2873.118" Y="1093.603" Z="3642.037" />
+				<Hotspot X="2887.447" Y="1092.571" Z="3651.741" />
+				<Hotspot X="3032.872" Y="1092.016" Z="3700.099" />
+				<Hotspot X="3042.663" Y="1088.782" Z="3671.453" />
+				<Hotspot X="2990.936" Y="1096.769" Z="3693.939" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Among the Endless" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Shatterbone Assassin</Mob>
+			  <Mob>Shatterbone Hunter</Mob>
+			  <Mob>Shatterbone Mage</Mob>
+			  <Mob>Shatterbone Slayer</Mob>
+			  <Mob>Shatterbone Marauder</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="2895.014" Y="1093.081" Z="3619.318" />
+				<Hotspot X="3042.663" Y="1088.782" Z="3671.453" />
+				<Hotspot X="2873.118" Y="1093.603" Z="3642.037" />
+				<Hotspot X="2887.447" Y="1092.571" Z="3651.741" />
+				<Hotspot X="3032.872" Y="1092.016" Z="3700.099" />
+				<Hotspot X="3042.663" Y="1088.782" Z="3671.453" />
+				<Hotspot X="2990.936" Y="1096.769" Z="3693.939" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="HasQuest(&quot;Among the Endless&quot;)">
+			<MoveTo X="3008.933" Y="1093.918" Z="3692.542" />
+			<Wait Seconds="2" />
+			<MoveTo X="3008.933" Y="1093.918" Z="3692.542" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Cultist Uniform Piece&quot;)" /> <!-- Tracking 2 -->
+			<Wait Seconds="8" />
+			<TalkToNpcObjective Quest="Among the Endless" Npc="High Justicar Vigman" X="3003.722" Y="1096.865" Z="3669.191" Options="1, 1" Tracking="3" />
+		</If>
+		
+		<UseObjectsObjective Quest="Draconian Measures" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Darkscale Drake Eggs</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3008.166" Y="1091.75" Z="3586.814" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+	<TurnInQuest Name="End the Endless" Npc="Protector Carah" X="2635.188" Y="1177.881" Z="3611.467" />
+		<If Condition="HasQuest(&quot;Among the Endless&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Among the Endless" Reward="1" Npc="Protector Rysilver" X="2636.491" Y="1177.711" Z="3609.119" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip High Justicar's Spaulders&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Among the Endless" Reward="2" Npc="Protector Rysilver" X="2636.491" Y="1177.711" Z="3609.119" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Spire Sage's Mantle&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Among the Endless" Reward="3" Npc="Protector Rysilver" X="2636.491" Y="1177.711" Z="3609.119" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Assassin's Hardened Shoulderpads&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Among the Endless" Reward="4" Npc="Protector Rysilver" X="2636.491" Y="1177.711" Z="3609.119" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Shatterbone Cultist Pauldrons&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="An Academic Matter" Npc="Protector Rysilver" X="2636.491" Y="1177.711" Z="3609.119" />
+	<TurnInQuest Name="Rare Berry Collection" Npc="Zerin Golek" X="2601.273" Y="1180.91" Z="3557.243" />
+	<PickUpQuest Name="A Healing Extract" Npc="Zerin Golek" X="2601.273" Y="1180.91" Z="3557.243" />
+	<TurnInQuest Name="Draconian Measures" Npc="Pavel Apostol" X="2585.271" Y="1180.909" Z="3557.284" />
+	<TurnInQuest Name="An Academic Matter" Npc="Sasha Nikadon" X="2599.983" Y="1185.931" Z="3535.505" />
+	<PickUpQuest Name="The Long, Dark Watch" Npc="Sasha Nikadon" X="2599.983" Y="1185.931" Z="3535.505" />
+	
+		<If Condition="HasQuest(&quot;The Long, Dark Watch&quot;)">
+			<MoveTo X="2608.295" Y="1095.664" Z="3846.321" />
+			<Wait Seconds="2" />
+			<MoveTo X="2608.295" Y="1095.664" Z="3846.321" />
+			<Wait Seconds="2" />
+			<TalkToNpcObjective Quest="The Long, Dark Watch" Npc="Carwin Mathos" X="2608.498" Y="1095.603" Z="3848.757" Options="1, 1" Tracking="2" />
+		</If>
+	
+		<!-- Camp Cestus Quests -->
+	<TurnInQuest Name="The Long, Dark Watch" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+	<PickUpQuest Name="Into the Breach" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+	<TurnInQuest Name="A Healing Extract" Npc="Fadei Bogatyr" X="3336.683" Y="1086.825" Z="3555.187" />
+	<PickUpQuest Name="An Unhealthy Fetish" Npc="Fadei Bogatyr" X="3336.683" Y="1086.825" Z="3555.187" />
+	<TurnInQuest Name="Into the Breach" Npc="Sir Martyn Myrsol" X="3205.503" Y="1094.295" Z="3365.438" />
+	<PickUpQuest Name="The Butcher's Bill" Npc="Captain Zamora" X="3215.853" Y="1094.06" Z="3367.392" />
+	<PickUpQuest Name="The Sharp End" Npc="Sir Martyn Myrsol" X="3205.503" Y="1094.295" Z="3365.438" />
+		<Escort Quest="The Sharp End" Npc="Specialist Hobson" Tracking="1" />
+	<TurnInQuest Name="The Sharp End" Npc="Sir Martyn Myrsol" X="3205.503" Y="1094.295" Z="3365.438" />
+	<PickUpQuest Name="At Any Price" Npc="Sir Martyn Myrsol" X="3205.503" Y="1094.295" Z="3365.438" />
+	
+		<KillMobsObjective Quest="The Butcher's Bill" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Shatterbone Marksman</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3246.833" Y="1095.315" Z="3293.242" />
+				<Hotspot X="3156.022" Y="1094.185" Z="3367.298" />
+				<Hotspot X="3171.314" Y="1094.235" Z="3386.41" />
+				<Hotspot X="3210.069" Y="1094.718" Z="3322.958" />
+				<Hotspot X="3192.34" Y="1089.144" Z="3186.929" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Butcher's Bill" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Shatterbone Raider</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3246.833" Y="1095.315" Z="3293.242" />
+				<Hotspot X="3156.022" Y="1094.185" Z="3367.298" />
+				<Hotspot X="3171.314" Y="1094.235" Z="3386.41" />
+				<Hotspot X="3210.069" Y="1094.718" Z="3322.958" />
+				<Hotspot X="3192.34" Y="1089.144" Z="3186.929" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="The Butcher's Bill" Npc="Sir Martyn Myrsol" X="3205.503" Y="1094.295" Z="3365.438" />
+	<PickUpQuest Name="Payment in Kind" Npc="Captain Zamora" X="3215.853" Y="1094.06" Z="3367.392" />
+	
+		<UseObjectsObjective Quest="At Any Price" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Orb of Horror</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3043.22" Y="1093.416" Z="3241.857" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+	
+		<KillMobsObjective Quest="Payment in Kind" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Shatterbone Sorcerer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3203.894" Y="1089.055" Z="3195.243" />
+				<Hotspot X="3143.867" Y="1097.317" Z="3184.128" />
+				<Hotspot X="3230.133" Y="1089.707" Z="3215.918" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="An Unhealthy Fetish" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Shatterbone Sorcerer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3203.894" Y="1089.055" Z="3195.243" />
+				<Hotspot X="3143.867" Y="1097.317" Z="3184.128" />
+				<Hotspot X="3230.133" Y="1089.707" Z="3215.918" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Payment in Kind" Npc="Captain Zamora" X="3215.853" Y="1094.06" Z="3367.392" />
+	<TurnInQuest Name="An Unhealthy Fetish" Npc="Fadei Bogatyr" X="3336.683" Y="1086.825" Z="3555.187" />
+		<If Condition="HasQuest(&quot;&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="At Any Price" Reward="2" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Isaak's Warded Necklace&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="At Any Price" Reward="2" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Isaak's Warded Necklace&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="At Any Price" Reward="4" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Terrorforged Necklace&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="At Any Price" Reward="3" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Stoutheart Choker&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="You ARE the Reinforcements" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+	<PickUpQuest Name="Life-Saving Measures" Npc="Fadei Bogatyr" X="3336.683" Y="1086.825" Z="3555.187" />
+	<TurnInQuest Name="You ARE the Reinforcements" Npc="Dame Levitia Volya" X="3200.073" Y="999.6706" Z="3504.219" />
+	<TurnInQuest Name="Obey the Fist!" Npc="Dame Levitia Volya" X="3200.073" Y="999.6706" Z="3504.219" />
+	<PickUpQuest Name="Holding the Line" Npc="Captain Ledisko" X="3176.433" Y="999.6706" Z="3494.317" />
+	<PickUpQuest Name="There's Too Many of Them!" Npc="Private Mihai" X="3170.113" Y="999.7479" Z="3498.827" />
+	<TurnInQuest Name="Life-Saving Measures" Npc="Medic Loros" X="3164.35" Y="1000.616" Z="3526.474" />
+	<PickUpQuest Name="Local Cures" Npc="Medic Loros" X="3164.35" Y="1000.616" Z="3526.474" />
+	
+	
+	
+	
+	
+	
 		<!-- 
 	<PickUpQuest Name="" 
 	<TurnInQuest Name="" 
