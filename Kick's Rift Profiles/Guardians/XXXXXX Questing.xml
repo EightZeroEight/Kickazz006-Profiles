@@ -1,0 +1,73 @@
+﻿<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <AddJob>
+      <MendSoul>
+        <Healers>
+        </Healers>
+      </MendSoul>
+    </AddJob>
+    <AddJob>
+      <Vendor SellWhites="True" SellGreens="True" SellBlues="True" SellPurples="False">
+        <Vendors>
+        </Vendors>
+      </Vendor>
+    </AddJob>
+    <LoadMesh Name="" />
+	
+
+
+
+
+	
+		
+		<!-- 
+	<PickUpQuest Name="" 
+	<TurnInQuest Name="" 
+		-->
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    <Loop />
+  </Tasks>
+</Profile>

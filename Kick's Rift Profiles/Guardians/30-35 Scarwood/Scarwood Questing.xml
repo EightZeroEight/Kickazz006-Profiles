@@ -1981,14 +1981,14 @@
 			<MoveTo X="3129.301" Y="1095.069" Z="3853.652" />
 		</If>
 	
-			<Python Statement="Logging.Write(&quot;Go to Sanctum and turn in the 2 quests in your log and get the next 2 quests\n\nThen go to X and load X profile&quot;)" />
+			<Python Statement="Logging.Write(&quot;Go to Sanctum, complete the 2 quests and get next 2 quests, TRAIN, load Moonshade Highlands profile and press start&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		
-		<!-- 
-	<PickUpQuest Name="" 
-	<TurnInQuest Name="" 
-		-->
+	<TurnInQuest Name="Beyond Solace" Npc="Fortuna Cosani" X="7498.921" Y="887.1837" Z="3061.509" />
+	<PickUpQuest Name="Droughtlands Teleport" Npc="Fortuna Cosani" X="7498.921" Y="887.1837" Z="3061.509" />
 
+	<TurnInQuest Name="Passing the Chain of Command" Npc="Borrin Gammult" X="7515.816" Y="888.6716" Z="3047.613" />
+	<PickUpQuest Name="The Lost Dwarves" Npc="Borrin Gammult" X="7515.816" Y="888.6716" Z="3047.613" />
 
     <Loop />
   </Tasks>

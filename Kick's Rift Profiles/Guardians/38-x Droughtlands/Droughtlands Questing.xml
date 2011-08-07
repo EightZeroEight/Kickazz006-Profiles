@@ -1,0 +1,161 @@
+﻿<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <AddJob>
+      <MendSoul>
+        <Healers>
+			<Healer X="7623.525" Y="915.6268" Z="6238.701" /> <!-- Lantern Hook -->
+			
+			
+			
+			
+        </Healers>
+      </MendSoul>
+    </AddJob>
+    <AddJob>
+      <Vendor SellWhites="True" SellGreens="True" SellBlues="True" SellPurples="False">
+        <Vendors>
+			<Vendor X="7623.525" Y="915.6268" Z="6238.701" /> <!-- Lantern Hook -->
+			
+			
+			
+			
+        </Vendors>
+      </Vendor>
+    </AddJob>
+    <LoadMesh Name="Droughtlands" />
+	
+		<If Condition="HasQuest(&quot;Droughtlands Teleport&quot;)">
+	<TurnInQuest Name="Droughtlands Teleport" Npc="Hamid Altieri" X="7695.304" Y="933.6291" Z="6170.432" />
+		</If>
+		
+		<GrindTo Level="38">
+		  <GrindArea>
+			<Mobs>
+			  <Mob>Burning Idol</Mob>
+			  <Mob>Thunderwing Hatchling</Mob>
+			  <Mob>Thunderwing Roc</Mob>
+			  <Mob>Harpy Aggressor</Mob>
+			  <Mob>Harpy Runt</Mob>
+			  <Mob>Savage Longtooth</Mob>
+			  <Mob>Longtooth</Mob>
+			  <Mob>Stonegazer Chick</Mob>
+			  <Mob>Stonegazer</Mob>
+			  <Mob>Storm Idol</Mob>
+			  <Mob>Burning Idol</Mob>
+			  <Mob>Living Idol</Mob>
+			  <Mob>Geotic Idol</Mob>
+			  <Mob>Endless Idol</Mob>
+			</Mobs>         
+			<Hotspots>
+			  <Hotspot X="7645.487" Y="891.2596" Z="6045.369" />
+			  <!--Idol-->
+			  <Hotspot X="7630.312" Y="892.7047" Z="6026.646" />
+			  
+			  <Hotspot X="7461.453" Y="905.8704" Z="6012.33" />
+			  
+			  <!--Idol-->
+			  <Hotspot X="7486.648" Y="926.6058" Z="5815.078" />
+
+			  <Hotspot X="7296.352" Y="884.0683" Z="5956.71" />
+			  <Hotspot X="7320.74" Y="901.0405" Z="6049.083" />
+			  <Hotspot X="7409.779" Y="907.2349" Z="6149.839" />
+			  <Hotspot X="7419.529" Y="909.2961" Z="6108.095" />
+			  <!--Idol-->
+			  <Hotspot X="7469.328" Y="907.2191" Z="6083.716" />
+			  
+			  <Hotspot X="7550.459" Y="900.4795" Z="6109.032" />
+			  <Hotspot X="7604.195" Y="893.8384" Z="6107.623" />
+			</Hotspots>
+		  </GrindArea>
+		</GrindTo>
+		
+			<Python Statement="Logging.Write(&quot;This profile is currently not available for use&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			
+	<PickUpQuest Name="Carousing with the Cartel" Npc="Elisa Randolph" X="7645.906" Y="915.0886" Z="6267.294" />
+	<PickUpQuest Name="In the Name of Lantern Hook" Npc="Effrin Shane" X="7658.146" Y="915.0085" Z="6262.75" />
+	<PickUpQuest Name="Meeting the Merchants" Npc="Helena Brass" X="7684.427" Y="915.176" Z="6302.21" />
+	<!--
+	<PickUpQuest Name="" 
+	<PickUpQuest Name="" 
+	<PickUpQuest Name="" 
+	<PickUpQuest Name="" 
+	<PickUpQuest Name="" 
+	<PickUpQuest Name="" 
+	-->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- 
+	<PickUpQuest Name="" 
+	<TurnInQuest Name="" 
+		-->
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    <Loop />
+  </Tasks>
+</Profile>
