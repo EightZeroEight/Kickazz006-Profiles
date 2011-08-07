@@ -1,0 +1,419 @@
+﻿<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <AddJob>
+      <MendSoul>
+        <Healers>
+			<Healer X="7160.538" Y="855.8251" Z="2063.613" />
+        </Healers>
+      </MendSoul>
+    </AddJob>
+    <AddJob>
+      <Vendor SellWhites="True" SellGreens="True" SellBlues="True" SellPurples="False">
+        <Vendors>
+			<Vendor X="7264.862" Y="876.2179" Z="2109.689" />
+        </Vendors>
+      </Vendor>
+    </AddJob>
+    <LoadMesh Name="Moonshade Highlands" />
+	
+		<If Condition="HasQuest(&quot;Passing the Chain of Command&quot;)">
+	<TurnInQuest Name="Passing the Chain of Command" Npc="Borrin Gammult" X="7515.816" Y="888.6716" Z="3047.613" />
+		</If>
+	<PickUpQuest Name="The Lost Dwarves" Npc="Borrin Gammult" X="7515.816" Y="888.6716" Z="3047.613" /> <!-- Sanctum -->
+	
+		<GrindTo Level="36">
+		  <GrindArea>
+			<Mobs>
+			  <Mob>Moonshade Spectre</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6927.965" Y="887.8915" Z="2216.115" />
+				<Hotspot X="6888.164" Y="893.2388" Z="2216.893" />
+				<Hotspot X="6932.502" Y="888.0572" Z="2205.48" />
+				<Hotspot X="6944.677" Y="889.0886" Z="2254.52" />
+				<Hotspot X="6928.93" Y="893.4861" Z="2265.151" />
+				<Hotspot X="6888.164" Y="893.2388" Z="2216.893" />
+				<Hotspot X="6860.058" Y="894.0669" Z="2188.688" />
+				<Hotspot X="6927.019" Y="887.8865" Z="2206.086" />
+				<Hotspot X="6919.026" Y="886.5353" Z="2176.424" />
+			</Hotspots>
+		  </GrindArea>
+		</GrindTo>
+	
+		<!-- Three Springs Quests -->
+	<TurnInQuest Name="The Lost Dwarves" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" /> <!-- Three Springs -->
+	<PickUpQuest Name="Three Springs Blessing" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
+
+		<UseObjectsObjective Quest="Three Springs Blessing" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Western Idol</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7207.519" Y="880.8801" Z="2086.869" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Three Springs Blessing" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Eastern Idol</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7314.391" Y="877.319" Z="2107.294" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Three Springs Blessing" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
+	<PickUpQuest Name="The Fall of Moonshade" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+
+		<UseObjectsObjective Quest="The Fall of Moonshade" Tracking="4">
+		  <Area>
+			<Objects>
+			  <Object>Note from Wesley Benson</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7307.196" Y="877.0771" Z="2130.122" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuest(&quot;The Fall of Moonshade&quot;)">
+			<TalkToNpcObjective Quest="The Fall of Moonshade" Npc="Scotty" X="7271.829" Y="876.2722" Z="2118.139" Options="1" Tracking="2" />
+			<TalkToNpcObjective Quest="The Fall of Moonshade" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" Options="1" Tracking="3" />
+			<TalkToNpcObjective Quest="The Fall of Moonshade" Npc="Emin Nolar" X="7333.819" Y="889.702" Z="2039.589" Options="1" Tracking="1" />
+		</If>
+
+	<TurnInQuest Name="The Fall of Moonshade" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+	<PickUpQuest Name="Dwarven Hospitality" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+	<PickUpQuest Name="A Holy Remedy" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
+	
+		<If Condition="HasQuest(&quot;A Holy Remedy&quot;)">
+			<MoveTo X="7391.226" Y="826.4129" Z="2198.981" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest - get 6x Thontic Reeds and then use them on the Sickly Dwarves&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		
+		<UseItemOnMobsObjective Quest="A Holy Remedy" Item="Thontic Reed" CastTime="5" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Sickly Dwarf</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7319.767" Y="827.7657" Z="2207.208" />
+				<Hotspot X="7321.774" Y="823.6257" Z="2225.245" />
+				<Hotspot X="7366.477" Y="821.4052" Z="2209.872" />
+				<Hotspot X="7403.425" Y="821.2197" Z="2216.973" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<KillMobsObjective Quest="Dwarven Hospitality" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Faemist Roc</Mob>
+			  <Mob>Faemist Swooper</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7190.352" Y="893.5518" Z="2419.773" />
+				<Hotspot X="7242.975" Y="899.793" Z="2373.407" />
+				<Hotspot X="7203.871" Y="888.3936" Z="2351.096" />
+				<Hotspot X="7261.737" Y="886.804" Z="2332.633" />
+				<Hotspot X="7313.363" Y="865.8316" Z="2329.278" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="A Holy Remedy" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
+	<TurnInQuest Name="Dwarven Hospitality" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+	<PickUpQuest Name="A Dwarven Solution" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+	<PickUpQuest Name="Smuggled Goods" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
+	<PickUpQuest Name="Not On My Watch" Npc="Garret Portsmith" X="7200.064" Y="879.8456" Z="2122.307" />
+	
+		<UseObjectsObjective Quest="Smuggled Goods" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Shipping Crate</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7175.624" Y="886.8956" Z="2449.244" />
+				<Hotspot X="7190.721" Y="886.0989" Z="2474.14" />
+				<Hotspot X="7232.017" Y="889.7896" Z="2432.528" />
+				<Hotspot X="7342.563" Y="857.9221" Z="2397.739" />
+				<Hotspot X="7371.301" Y="861.7929" Z="2498.328" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="A Dwarven Solution" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Tainted Cart</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7175.624" Y="886.8956" Z="2449.244" />
+				<Hotspot X="7201.069" Y="885.7955" Z="2467.18" />
+				<Hotspot X="7232.017" Y="889.7896" Z="2432.528" />
+				<Hotspot X="7342.563" Y="857.9221" Z="2397.739" />
+				<Hotspot X="7360.283" Y="853.7664" Z="2411.736" />
+				<Hotspot X="7341.126" Y="866.9296" Z="2473.32" />
+				<Hotspot X="7371.301" Y="861.7929" Z="2498.328" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Not On My Watch" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Azure Blade Smuggler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7175.624" Y="886.8956" Z="2449.244" />
+				<Hotspot X="7201.069" Y="885.7955" Z="2467.18" />
+				<Hotspot X="7232.017" Y="889.7896" Z="2432.528" />
+				<Hotspot X="7342.563" Y="857.9221" Z="2397.739" />
+				<Hotspot X="7360.283" Y="853.7664" Z="2411.736" />
+				<Hotspot X="7371.301" Y="861.7929" Z="2498.328" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Not On My Watch" Npc="Garret Portsmith" X="7200.064" Y="879.8456" Z="2122.307" />
+	<TurnInQuest Name="A Dwarven Solution" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+	<TurnInQuest Name="Smuggled Goods" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
+	<PickUpQuest Name="Despondent Spectres" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
+	<PickUpQuest Name="Artifact Retrieval" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+	
+		<UseObjectsObjective Quest="Artifact Retrieval" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Pile of Stones</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6932.502" Y="888.0572" Z="2205.48" />
+				<Hotspot X="6944.677" Y="889.0886" Z="2254.52" />
+				<Hotspot X="6928.93" Y="893.4861" Z="2265.151" />
+				<Hotspot X="6888.164" Y="893.2388" Z="2216.893" />
+				<Hotspot X="6860.058" Y="894.0669" Z="2188.688" />
+				<Hotspot X="6927.019" Y="887.8865" Z="2206.086" />
+				<Hotspot X="6919.026" Y="886.5353" Z="2176.424" />			
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Despondent Spectres" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Moonshade Spectre</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6927.965" Y="887.8915" Z="2216.115" />
+				<Hotspot X="6888.164" Y="893.2388" Z="2216.893" />
+				<Hotspot X="6932.502" Y="888.0572" Z="2205.48" />
+				<Hotspot X="6944.677" Y="889.0886" Z="2254.52" />
+				<Hotspot X="6928.93" Y="893.4861" Z="2265.151" />
+				<Hotspot X="6888.164" Y="893.2388" Z="2216.893" />
+				<Hotspot X="6860.058" Y="894.0669" Z="2188.688" />
+				<Hotspot X="6927.019" Y="887.8865" Z="2206.086" />
+				<Hotspot X="6919.026" Y="886.5353" Z="2176.424" />			
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Despondent Spectres" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
+	<TurnInQuest Name="Artifact Retrieval" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+	<PickUpQuest Name="Testing the Ruins" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+
+		<UseObjectsObjective Quest="Testing the Ruins" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Thontic Blessed Holy Water</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7312.072" Y="889.7596" Z="2046.994" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Testing the Ruins" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+	<PickUpQuest Name="The Captain's List" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+	<PickUpQuest Name="Bringing Peace to the Past" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
+
+		<UseObjectsObjective Quest="Bringing Peace to the Past" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Central Memorial</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6866.585" Y="872.7085" Z="2062.08" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Bringing Peace to the Past" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Eastern Memorial</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6885.791" Y="885.3439" Z="2150.079" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Bringing Peace to the Past" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Western Memorial</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6806.857" Y="887.216" Z="2127.141" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+		<KillMobsObjective Quest="The Captain's List" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6714.679" Y="884.4409" Z="2079.377" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Captain's List" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Azure Blade Pillager</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6815.194" Y="888.2785" Z="2141.299" />
+				<Hotspot X="6850.229" Y="889.3524" Z="2160.924" />
+				<Hotspot X="6806.857" Y="887.216" Z="2127.141" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Bringing Peace to the Past" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
+		<If Condition="HasQuest(&quot;The Captain's List&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="The Captain's List" Reward="" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Gloves of the Captain&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="The Captain's List" Reward="" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Barghest Fur Gloves&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="The Captain's List" Reward="" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Smugglers Shipping Gloves&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="The Captain's List" Reward="" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ancient Sundered Gauntlets&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="Drill Drecht" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
+	<PickUpQuest Name="The Reason Why" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
+	
+		<KillMobsObjective Quest="Drill Drecht" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Drecht</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7125.346" Y="915.2043" Z="2545.069" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="The Reason Why" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object></Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7103.452" Y="914.7249" Z="2548.659" />
+				<Hotspot X="7118.534" Y="912.7455" Z="2528.878" />
+				<Hotspot X="7088.102" Y="904.3414" Z="2481.772" />
+				<Hotspot X="7043.422" Y="884.0413" Z="2316.667" />
+				<Hotspot X="7048.299" Y="887.2436" Z="2343.593" />
+				<Hotspot X="7057.953" Y="890.3644" Z="2363.908" />
+				<Hotspot X="7047.034" Y="892.5923" Z="2381.218" />
+				<Hotspot X="7055.406" Y="895.0189" Z="2407.029" />
+				<Hotspot X="7043.749" Y="898.6335" Z="2420.729" />
+				<Hotspot X="7072.656" Y="897.0914" Z="2435.487" />
+				<Hotspot X="7099.311" Y="895.7671" Z="2425.061" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		<!-- 
+	<PickUpQuest Name="" 
+	<TurnInQuest Name="" 
+		-->
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    <Loop />
+  </Tasks>
+</Profile>
