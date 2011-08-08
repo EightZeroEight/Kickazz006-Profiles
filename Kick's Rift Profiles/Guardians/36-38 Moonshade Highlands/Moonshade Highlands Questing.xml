@@ -568,9 +568,288 @@
 	<PickUpQuest Name="Investigating The Altars" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" />
 	<PickUpQuest Name="Water Sample" Npc="Gideon the Pious" X="7275.274" Y="880.6846" Z="2049.125" />
 	
+		<UseObjectsObjective Quest="Investigating The Altars" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>First Reverential Altar</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7291.986" Y="886.2158" Z="1913.102" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Investigating The Altars" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Second Reverential Altar</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7266.059" Y="885.491" Z="1867.288" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Investigating The Altars" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Third Reverential Altar</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7244.109" Y="898.8451" Z="1781.434" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Water Sample" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Tidal Abberation</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7322.534" Y="884.2189" Z="1861.881" />
+				<Hotspot X="7266.059" Y="885.491" Z="1867.288" />
+				<Hotspot X="7230.388" Y="884.1757" Z="1857" />
+				<Hotspot X="7266.399" Y="881.6094" Z="1925.358" />
+				<Hotspot X="7289.579" Y="902.9848" Z="1796.354" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Water Sample" Npc="Gideon the Pious" X="7275.274" Y="880.6846" Z="2049.125" />
+	<TurnInQuest Name="Investigating The Altars" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" />
+	<PickUpQuest Name="They Walk Among Us" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" />
 	
+		<UseItemOnMobsObjective Quest="They Walk Among Us" Item="Cleansing Brand" CastTime="5" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Councilwoman Aeilista</Mob>
+			  <Mob>Councilman Chan</Mob>
+			  <Mob>Councilwoman Evalina</Mob>
+			  <Mob>Councilman Bakk</Mob>
+			  <Mob>Councilman Dynn</Mob>
+			  <Mob>Councilman Armilus</Mob>
+			  <Mob>Councilwoman Aerwyna</Mob>
+			  <Mob>Councilwoman Trilis</Mob>
+			  <Mob>Councilman Miil</Mob>
+			  <Mob>Councilman Fenrix</Mob>
+			  <Mob>Councilman Dalinar</Mob>
+			  <Mob>Councilwoman Tysumi</Mob>
+			  <Mob>Councilwoman Amaryllia</Mob>
+			  <Mob>Councilman Rackin</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7328.814" Y="880.7533" Z="2043.274" />
+				<Hotspot X="7282.501" Y="880.754" Z="2053.324" />
+				<Hotspot X="7231.622" Y="878.685" Z="2062.396" />
+				<Hotspot X="7220.403" Y="880.6062" Z="2076.176" />
+				<Hotspot X="7252.4" Y="877.2672" Z="2089.034" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+	<TurnInQuest Name="They Walk Among Us" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" />
+	<PickUpQuest Name="Spiritual Liberation" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" />
+	<PickUpQuest Name="Abyssal Eradication" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" />
+	<PickUpQuest Name="Purify the Pools" Npc="Gideon the Pious" X="7275.274" Y="880.6846" Z="2049.125" />
 	
+		<UseItemOnMobsObjective Quest="Spiritual Liberation" Item="Cleansing Brand" CastTime="4" Cooldown="1" WhenDead="True" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Wandering Husk</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7291.986" Y="886.2158" Z="1913.102" />
+				<Hotspot X="7266.059" Y="885.491" Z="1867.288" />
+				<Hotspot X="7244.109" Y="898.8451" Z="1781.434" />
+				<Hotspot X="7291.515" Y="903.25" Z="1796.628" />
+				<Hotspot X="7272.228" Y="891.8265" Z="1838.306" />
+				<Hotspot X="7219.492" Y="883.9497" Z="1843.572" />
+				<Hotspot X="7259.646" Y="884.7267" Z="1886.194" />
+				<Hotspot X="7292.278" Y="934.6959" Z="1704.323" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<UseObjectsObjective Quest="Abyssal Eradication" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Abyssal Ritual Altar</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7300.691" Y="935.638" Z="1734.676" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Abyssal Eradication" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Lamoira</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7300.691" Y="935.638" Z="1734.676" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="Purify the Pools" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Corrupted Remains</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7350.763" Y="922.5755" Z="1765.567" />
+				<Hotspot X="7345.881" Y="922.6716" Z="1742.551" />
+				<Hotspot X="7381.695" Y="921.9736" Z="1771.589" />
+				<Hotspot X="7351.526" Y="922.985" Z="1784.512" />
+				<Hotspot X="7358.802" Y="921.5536" Z="1747.728" />
+				<Hotspot X="7373.163" Y="925.9296" Z="1730.307" />
+				<Hotspot X="7292.278" Y="934.6959" Z="1704.323" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Abyssal Eradication" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Abyssal Adept</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7334.225" Y="920.5739" Z="1775.418" />
+				<Hotspot X="7350.763" Y="922.5755" Z="1765.567" />
+				<Hotspot X="7345.881" Y="922.6716" Z="1742.551" />
+				<Hotspot X="7381.695" Y="921.9736" Z="1771.589" />
+				<Hotspot X="7351.526" Y="922.985" Z="1784.512" />
+				<Hotspot X="7358.802" Y="921.5536" Z="1747.728" />
+				<Hotspot X="7373.163" Y="925.9296" Z="1730.307" />
+				<Hotspot X="7292.278" Y="934.6959" Z="1704.323" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Abyssal Eradication" Tracking="4">
+		  <Area>
+			<Mobs>
+			  <Mob>Abyssal Corruptor</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7334.225" Y="920.5739" Z="1775.418" />
+				<Hotspot X="7350.763" Y="922.5755" Z="1765.567" />
+				<Hotspot X="7345.881" Y="922.6716" Z="1742.551" />
+				<Hotspot X="7381.695" Y="921.9736" Z="1771.589" />
+				<Hotspot X="7351.526" Y="922.985" Z="1784.512" />
+				<Hotspot X="7358.802" Y="921.5536" Z="1747.728" />
+				<Hotspot X="7373.163" Y="925.9296" Z="1730.307" />
+				<Hotspot X="7292.278" Y="934.6959" Z="1704.323" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Purify the Pools" Npc="Gideon the Pious" X="7275.274" Y="880.6846" Z="2049.125" />
+	<TurnInQuest Name="Spiritual Liberation" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" />
+	<!-- hit up zam and get correct loot -->
+		<If Condition="HasQuest(&quot;Abyssal Eradication&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Abyssal Eradication" Reward="2" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" /> 
+				<Wait Seconds="2" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Abyssal Eradication" Reward="2" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" /> 
+				<Wait Seconds="2" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+			<Python Statement="Logging.Write(&quot;Abyssal Eradication - I need to know what rewards are on your screen for this turnin (rogue and warrior), please report them to my quest thread
+				\n1 2
+				\n3 4
+				\n5 6
+				\nthat is the order that they come in &quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			 <!--
+	<TurnInQuest Name="Abyssal Eradication" Reward="" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" /> 
+			-->
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+			<Python Statement="Logging.Write(&quot;Abyssal Eradication - I need to know what rewards are on your screen for this turnin (rogue and warrior), please report them to my quest thread
+				\n1 2
+				\n3 4
+				\n5 6
+				\nthat is the order that they come in &quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			 <!--
+	<TurnInQuest Name="Abyssal Eradication" Reward="" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" /> 
+				-->
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="Dark Omens" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" />
+		<!-- End of Threesprings Quests -->
+		
+	<PickUpQuest Name="Razorbeast Removal" Npc="Emi Wickerwind" X="7155.574" Y="873.9032" Z="1889.825" />
+		<!-- ignoring Daily -->
 	
+		<KillMobsObjective Quest="Razorbeast Removal" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Corrupted Rooter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7173.855" Y="876.5933" Z="1920.018" />
+				<Hotspot X="7099.407" Y="865.0649" Z="1908.429" />
+				<Hotspot X="7165.526" Y="877.8956" Z="1837.455" />
+				<Hotspot X="7130.493" Y="886.5497" Z="1782.671" />
+				<Hotspot X="7086.417" Y="879.2529" Z="1828.586" />
+				<Hotspot X="7057.698" Y="880.79" Z="1783.369" />
+				<Hotspot X="6907.292" Y="907.5727" Z="1578.612" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Razorbeast Removal" Npc="Emi Wickerwind" X="7155.574" Y="873.9032" Z="1889.825" />
+	<PickUpQuest Name="Stonehorn's Herd" Npc="Emi Wickerwind" X="7155.574" Y="873.9032" Z="1889.825" />
+		
+		<KillMobsObjective Quest="Stonehorn's Herd" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Stonehorn</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7098.699" Y="925.9379" Z="1619.508" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Stonehorn's Herd" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Corrupted Ram</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7064.863" Y="885.3384" Z="1751.223" />
+				<Hotspot X="7075.963" Y="894.536" Z="1713.959" />
+				<Hotspot X="7109.491" Y="915.7664" Z="1655.415" />
+				<Hotspot X="7062.569" Y="915.7604" Z="1630.986" />
+				<Hotspot X="7135.542" Y="919.6855" Z="1666.014" />
+				<Hotspot X="7144.253" Y="934.8755" Z="1615.594" />
+				<Hotspot X="7098.699" Y="925.9379" Z="1619.508" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Stonehorn's Herd" Npc="Emi Wickerwind" X="7155.574" Y="873.9032" Z="1889.825" />
+		
+		<!-- Hammerlord Post Quests -->
+	<TurnInQuest Name="Dark Omens" Npc="Thomas Penthas" X="6810.935" Y="914.5471" Z="1803.347" />
+	<PickUpQuest Name="Tainted Tubers" Npc="Thomas Penthas" X="6810.935" Y="914.5471" Z="1803.347" />
+	<PickUpQuest Name="Save the Child" Npc="Kirsten Jones" X="6836.547" Y="914.5466" Z="1806.945" />
+	<PickUpQuest Name="Rockstrewn Squatters" Npc="Eustace Green" X="6834.345" Y="914.5639" Z="1796.717" />
+		
+		
+		
+		
 		
 		<!-- 
 	<PickUpQuest Name="" 
