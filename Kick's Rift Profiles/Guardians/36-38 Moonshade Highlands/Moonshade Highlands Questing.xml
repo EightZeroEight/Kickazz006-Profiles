@@ -1448,18 +1448,30 @@
 	<PickUpQuest Name="The Messenger" Npc="Thomas Penthas" X="6810.935" Y="914.5471" Z="1803.347" />
 	<PickUpQuest Name="Honor Them" Npc="Joseph Holden" X="6813.25" Y="914.5675" Z="1791.939" />
 		
-		<!--
 		<If Condition="HasQuest(&quot;The Messenger&quot;)">
-			<TalkToNpcObjective Quest="The Messenger"  Options="1" Tracking="1" />
+ 			<MoveTo X="6986.774" Y="1047.678" Z="1127.667" />
+			<UseObject Name="Bounding Prison" X="6986.774" Y="1047.678" Z="1127.667" />
+			<Wait Seconds="15" />
+ 			<MoveTo X="6986.774" Y="1047.678" Z="1127.667" />
+			<UseObject Name="Bounding Prison" X="6986.774" Y="1047.678" Z="1127.667" />
+			<TalkToNpcObjective Quest="The Messenger" Npc="Bahralt's Messenger" X="6989.277" Y="1047.634" Z="1127.658" Options="1" Tracking="1" />
 		</If>
 		
 		<UseObjectsObjective Quest="Honor Them" Tracking="1">
 		  <Area>
 			<Objects>
-			  <Object>Monk Remains</Object>
+			  <Object>Dwarven Monk Remain</Object>
 			</Objects>
 			<Hotspots>
-				
+				<Hotspot X="6958.542" Y="1047.486" Z="1170.883" />
+				<Hotspot X="6941.413" Y="1045.55" Z="1145.6" />
+				<Hotspot X="6921.811" Y="1047.148" Z="1110.913" />
+				<Hotspot X="6947.388" Y="1046.549" Z="1124.26" />
+				<Hotspot X="6976.188" Y="1047.451" Z="1141.752" />
+				<Hotspot X="6969.442" Y="1046.617" Z="1097.975" />
+				<Hotspot X="6953.434" Y="1046.396" Z="1082.054" />
+				<Hotspot X="6959.033" Y="1045.954" Z="1068.605" />
+				<Hotspot X="6937.625" Y="1047.257" Z="1078.08" />
 			</Hotspots>
 		  </Area>
 		</UseObjectsObjective>
@@ -1470,7 +1482,7 @@
 			  <Mob>Dorim</Mob>
 			</Mobs>
 			<Hotspots>
-				
+				<Hotspot X="6963.256" Y="1049.712" Z="1076.172" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
@@ -1478,16 +1490,57 @@
 		<KillMobsObjective Quest="Deserving of Death" Tracking="2">
 		  <Area>
 			<Mobs>
-			  <Mob>Abyssal Sobek</Mob>
+			  <Mob>Sobek Defiler</Mob>
 			</Mobs>
 			<Hotspots>
-				
+				<Hotspot X="6975.604" Y="1045.049" Z="1191.883" />
+				<Hotspot X="6958.542" Y="1047.486" Z="1170.883" />
+				<Hotspot X="6941.413" Y="1045.55" Z="1145.6" />
+				<Hotspot X="6921.811" Y="1047.148" Z="1110.913" />
+				<Hotspot X="6947.388" Y="1046.549" Z="1124.26" />
+				<Hotspot X="6976.188" Y="1047.451" Z="1141.752" />
+				<Hotspot X="6969.442" Y="1046.617" Z="1097.975" />
+				<Hotspot X="6953.434" Y="1046.396" Z="1082.054" />
+				<Hotspot X="6959.033" Y="1045.954" Z="1068.605" />
+				<Hotspot X="6937.625" Y="1047.257" Z="1078.08" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
-		-->
 		
-		
+	<TurnInQuest Name="Honor Them" Npc="Joseph Holden" X="6813.25" Y="914.5675" Z="1791.939" />
+	<TurnInQuest Name="Deserving of Death" Npc="Thomas Penthas" X="6810.935" Y="914.5471" Z="1803.347" />
+		<If Condition="HasQuest(&quot;The Messenger&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="The Messenger" Reward="1" Npc="Thomas Penthas" X="6810.935" Y="914.5471" Z="1803.347" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Helm of Truefaith&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="The Messenger" Reward="2" Npc="Thomas Penthas" X="6810.935" Y="914.5471" Z="1803.347" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Hallowed Hood&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="The Messenger" Reward="3" Npc="Thomas Penthas" X="6810.935" Y="914.5471" Z="1803.347" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Cowl of the Messenger&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="The Messenger" Reward="4" Npc="Thomas Penthas" X="6810.935" Y="914.5471" Z="1803.347" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Bascinet of the Pious&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="Onward to Reclaimer's Hold" Npc="Thomas Penthas" X="6810.935" Y="914.5471" Z="1803.347" />
+	
+		<!-- Reclaimer's Hold Quests -->
+		<!-- Ignoring dungeon quest -->
+	<TurnInQuest Name="Onward to Reclaimer's Hold" Npc="Borrin Gammult" X="6321.278" Y="909.2095" Z="1598.696" />
+	<PickUpQuest Name="Light Upon the Void" Npc="Borrin Gammult" X="6321.278" Y="909.2095" Z="1598.696" />
+	<PickUpQuest Name="Doom Abides" Npc="Lieutenant Fergon" X="6309.255" Y="910.5259" Z="1610.346" />
+	<PickUpQuest Name="Wage a Lonely War" Npc="Captain Haghen" X="6301.834" Y="910.5259" Z="1600.712" />
+	<PickUpQuest Name="The King's Craft" Npc="Captain Haghen" X="6301.834" Y="910.5259" Z="1600.712" />
+	<PickUpQuest Name="Words On a Stone" Npc="Lieutenant Rutger" X="6293.294" Y="910.5259" Z="1603.915" />
 		
 		
 		
