@@ -68,8 +68,9 @@
 			<UseObject Name="" 
         </If>
 		<If Condition="HasQuest(&quot;&quot;)">
- 			<UseObject Name="" 
-       </If>
+ 			<MoveTo 
+			<UseObject Name="" 
+		</If>
 
 		<If Condition="HasQuest(&quot;&quot;)">
 			<TalkToNpcObjective Quest=""  Options="1" Tracking="1" />

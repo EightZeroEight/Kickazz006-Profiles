@@ -4,14 +4,18 @@
     <AddJob>
       <MendSoul>
         <Healers>
-			<Healer X="7160.538" Y="855.8251" Z="2063.613" />
+			<Healer X="7160.538" Y="855.8251" Z="2063.613" /> <!-- Threesprings -->
+			<Healer X="6835.593" Y="901.4218" Z="1765.448" /> <!-- Hammerlord Post -->
+			<Healer X="6557.276" Y="909.228" Z="1570.621" /> <!-- Grey Gardens -->
         </Healers>
       </MendSoul>
     </AddJob>
     <AddJob>
       <Vendor SellWhites="True" SellGreens="True" SellBlues="True" SellPurples="False">
         <Vendors>
-			<Vendor X="7264.862" Y="876.2179" Z="2109.689" />
+			<Vendor X="7264.862" Y="876.2179" Z="2109.689" /> <!-- Threesprings -->
+			<Vendor X="6827.097" Y="914.5514" Z="1802.968" /> <!-- Hammerlord Post -->
+			<Vendor X="6310.828" Y="910.5259" Z="1594.856" /> <!-- Reclaimer's Hold -->
         </Vendors>
       </Vendor>
     </AddJob>
@@ -441,8 +445,128 @@
 	<PickUpQuest Name="Boglings Everywhere" Npc="Alyn Pinebranch" X="7278.914" Y="880.6846" Z="2057.505" />
 	<PickUpQuest Name="Sacred Plants" Npc="Bastion Pembrook" X="7276.148" Y="880.6846" Z="2060.502" />
 	
+		<UseObjectsObjective Quest="Sacred Plants" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Goddess Blossom</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6909.776" Y="854.5894" Z="1877.191" />
+				<Hotspot X="6944.184" Y="860.0351" Z="1859.459" />
+				<Hotspot X="6978.109" Y="858.2611" Z="1884.578" />
+				<Hotspot X="7007.588" Y="856.6822" Z="1898.387" />
+				<Hotspot X="7027.915" Y="857.0764" Z="1897.129" />
+				<Hotspot X="7050.039" Y="854.8151" Z="1917.915" />
+				<Hotspot X="7108.753" Y="854.7204" Z="2052.875" />
+				<Hotspot X="7051.938" Y="855.6028" Z="2095.978" />
+				<Hotspot X="7002.955" Y="854.762" Z="2095.86" />
+				<Hotspot X="6923.738" Y="854.6826" Z="2047.652" />
+				<Hotspot X="6928.599" Y="855.5071" Z="1993.33" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Boglings Everywhere" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Depraved Hurler</Mob>
+			  <Mob>Depraved Mage</Mob>
+			  <Mob>Depraved Defender</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6909.776" Y="854.5894" Z="1877.191" />
+				<Hotspot X="6944.184" Y="860.0351" Z="1859.459" />
+				<Hotspot X="6978.109" Y="858.2611" Z="1884.578" />
+				<Hotspot X="7007.588" Y="856.6822" Z="1898.387" />
+				<Hotspot X="7027.915" Y="857.0764" Z="1897.129" />
+				<Hotspot  />
+				<Hotspot  />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Boglings Everywhere" Npc="Alyn Pinebranch" X="7278.914" Y="880.6846" Z="2057.505" />
+	<PickUpQuest Name="Underwater Machinations" Npc="Alyn Pinebranch" X="7278.914" Y="880.6846" Z="2057.505" />
+	<TurnInQuest Name="Sacred Plants" Npc="Bastion Pembrook" X="7276.148" Y="880.6846" Z="2060.502" />
+	<PickUpQuest Name="Fallen Leaves" Npc="Bastion Pembrook" X="7276.148" Y="880.6846" Z="2060.502" />
 	
+		<UseObjectsObjective Quest="Underwater Machinations" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Corrupt Planar Canister</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7094.242" Y="849.5565" Z="2017.385" />
+				<Hotspot X="7038.076" Y="832.4741" Z="2039.627" />
+				<Hotspot X="7058.558" Y="833.2205" Z="2015.34" />
+				<Hotspot X="7017.004" Y="831.1705" Z="2026.677" />
+				<Hotspot X="6996.291" Y="833.629" Z="2022.547" />
+				<Hotspot X="6946.515" Y="849.7214" Z="2031.028" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Fallen Leaves" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Corrupt Shambler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7114.909" Y="853.7889" Z="2015.921" />
+				<Hotspot X="7094.242" Y="849.5565" Z="2017.385" />
+				<Hotspot X="7038.076" Y="832.4741" Z="2039.627" />
+				<Hotspot X="7058.558" Y="833.2205" Z="2015.34" />
+				<Hotspot X="7017.004" Y="831.1705" Z="2026.677" />
+				<Hotspot X="6996.291" Y="833.629" Z="2022.547" />
+				<Hotspot X="6946.515" Y="849.7214" Z="2031.028" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Fallen Leaves" Npc="Bastion Pembrook" X="7276.148" Y="880.6846" Z="2060.502" />
+	<TurnInQuest Name="Underwater Machinations" Npc="Alyn Pinebranch" X="7278.914" Y="880.6846" Z="2057.505" />
+	<PickUpQuest Name="Corruption at the Arbor" Npc="Alyn Pinebranch" X="7278.914" Y="880.6846" Z="2057.505" />
 	
+		<If Condition="HasQuest(&quot;Corruption at the Arbor&quot;)">
+ 			<MoveTo X="6975.783" Y="857.1432" Z="1971.678" />
+			<UseObject Name="Kirna's Altar" X="6975.783" Y="857.1432" Z="1971.678" />
+ 			<Wait Seconds="7" />
+		</If>
+		<KillMobsObjective Quest="Corruption at the Arbor" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Corrupt Presence</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6975.229" Y="857.0801" Z="1971.872" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="HasQuest(&quot;Corruption at the Arbor&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Corruption at the Arbor" Reward="4" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Kirna's Blessed Wand&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Corruption at the Arbor" Reward="4" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Kirna's Blessed Wand&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Corruption at the Arbor" Reward="1" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip umbral Bane Bow&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Corruption at the Arbor" Reward="1" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip umbral Bane Bow&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="Investigating The Altars" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" />
+	<PickUpQuest Name="Water Sample" Npc="Gideon the Pious" X="7275.274" Y="880.6846" Z="2049.125" />
 	
 	
 	
