@@ -471,19 +471,19 @@
 			</RemoveJob>
 
 			<MoveTo X="4003.724" Y="1029.844" Z="3504.797" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Tavril's Will&quot;)" />
 
 			<MoveTo X="3998.116" Y="1029.531" Z="3519.094"
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Tavril's Will&quot;)" />
 
 			<MoveTo X="3999.905" Y="1029.634" Z="3519.762"
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Tavril's Will&quot;)" />
 
 			<MoveTo X="4000.911" Y="1029.946" Z="3523.008"
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Tavril's Will&quot;)" />
 
 			<MoveTo X="3997.729" Y="1029.717" Z="3526.872" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Tavril's Will&quot;)" />
 			
 			<UseObject Npc="Dark Phylactery" X="3997.729" Y="1029.717" Z="3526.872" />
 			turn in quest Army of the Dead
@@ -503,7 +503,7 @@
 			<Wait Seconds="5" />
 			<MoveTo X="3934.912" Y="1037.514" Z="3483.258" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Dark Phylactery&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Dark Phylactery&quot;)" />
 			<Wait Seconds="1" />
 		</If>
 

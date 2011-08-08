@@ -56,6 +56,8 @@
 		  </Area>
 		</UseItemOnMobsObjective>
 
+			<Python Statement="Logging.Write(&quot;Can't touch this, STOP! It's Kickazz time!&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
 
 		<If Condition="HasQuest(&quot;&quot;)">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
@@ -81,7 +83,7 @@
 			<Wait Seconds="2" />
 			<MoveTo 
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use itemnamehere&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;itemnamehere&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 

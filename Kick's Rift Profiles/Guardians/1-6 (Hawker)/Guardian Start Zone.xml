@@ -419,7 +419,7 @@
     <If Condition="HasQuest(&quot;Brood of Regulos&quot;)">
       <MoveTo X="1118.211" Y="835.4714" Z="987.4492" />
       <Wait Seconds="2" />
-      <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Warding Orb of the Vigil&quot;)" />
+      <Python Statement = "SpellManager.UseItem(&quot;Warding Orb of the Vigil&quot;)" />
       <Wait Seconds="5" />
     </If>
 

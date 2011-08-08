@@ -539,7 +539,7 @@
 			<Wait Seconds="2" />
 			<MoveTo X="4916.158" Y="928.3635" Z="2417.971" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Waykeeper's Bomb&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Waykeeper's Bomb&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 		
@@ -570,7 +570,7 @@
 			<Wait Seconds="2" />
 			<MoveTo X="4993.25" Y="982.0694" Z="2237.763" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Waykeeper's Bomb&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Waykeeper's Bomb&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 		
@@ -579,7 +579,7 @@
 			<Wait Seconds="2" />
 			<MoveTo X="4976.418" Y="928.4117" Z="2374.091" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Waykeeper's Bomb&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Waykeeper's Bomb&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 		
@@ -683,7 +683,7 @@
 		<If Condition="HasQuest(&quot;The Goblin Bane&quot;)">
 			<MoveTo X="5242.908" Y="987.0568" Z="3080.501" />
 			<Wait Seconds="1" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Gloam Bell&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Gloam Bell&quot;)" />
 			<Wait Seconds="3" />
 		</If>
 	<TurnInQuest Name="The Goblin Bane" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
@@ -748,7 +748,7 @@
 		<If Condition="HasQuest(&quot;Dead Water&quot;)">
 			<MoveTo X="4320.372" Y="1100.515" Z="2766.465" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Millrush Brew&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Millrush Brew&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 		<UseObjectsObjective Quest="Dead Water" Tracking="2">
@@ -763,7 +763,7 @@
 		</UseObjectsObjective>
 		<If Condition="HasQuest(&quot;Dead Water&quot;)">
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Millrush Brew&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Millrush Brew&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 
@@ -844,7 +844,7 @@
 
 			<MoveTo X="5142.6" Y="946.6837" Z="3129.284" />
 			<Wait Seconds="1" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Medal of Valor&quot;)" /> <!-- 3 -->
+			<Python Statement = "SpellManager.UseItem(&quot;Medal of Valor&quot;)" /> <!-- 3 -->
 			<Wait Seconds="1" />
 
 			<TalkToNpcObjective Quest="Quieting the Beast" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" Options="1" Tracking="1" />
@@ -1177,7 +1177,7 @@
 	<PickUpQuest Name="Death's Defense" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 		<If Condition="HasQuest(&quot;Death's Defense&quot;)">
 			<Wait Seconds="5" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Death Shield&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Death Shield&quot;)" />
 			<Wait Seconds="2" />
 		<Escort Npc="Fiona Leone" Quest="Death's Defense" Tracking="1" />
 		</If>
@@ -1322,7 +1322,7 @@
 		<If Condition="HasQuest(&quot;The Light of Jebiah&quot;)"> 
 			<MoveTo X="4716.397" Y="1095.124" Z="2903.4" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Jebiah's Ring&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Jebiah's Ring&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 		
@@ -1359,7 +1359,7 @@
 		<If Condition="HasQuest(&quot;Cleansing Fire&quot;)"> 
 			<MoveTo X="5237.996" Y="939.1862" Z="3175.519" />
 			<Wait Seconds="1" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Cleansing Fire&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Cleansing Fire&quot;)" />
 			<Wait Seconds="2" />
 			<MoveTo X="5215.296" Y="943.7283" Z="3192.271" />
 			<Wait Seconds="60" />
@@ -1369,7 +1369,7 @@
 		<If Condition="HasQuest(&quot;Cleansing Fire&quot;)"> 
 			<MoveTo X="5208.479" Y="955.5005" Z="3221.969" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Cleansing Fire&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Cleansing Fire&quot;)" />
 			<Wait Seconds="2" />
 			<MoveTo X="5195.064" Y="957.3527" Z="3221.723" />
 			<Wait Seconds="60" />
@@ -1379,7 +1379,7 @@
 		<If Condition="HasQuest(&quot;Cleansing Fire&quot;)"> 
 			<MoveTo X="5214.01" Y="974.0383" Z="2939.08" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Cleansing Fire&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Cleansing Fire&quot;)" />
 			<Wait Seconds="2" />
 			<MoveTo X="5231.413" Y="976.0449" Z="2926.729" />
 			<Wait Seconds="60" />
@@ -1433,7 +1433,7 @@
 			<Wait Seconds="2" />
 			<MoveTo X="4744.422" Y="1104.054" Z="2475.055" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Ancient Gloamseed&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Ancient Gloamseed&quot;)" />
 			<Wait Seconds="25" />
 			<!-- kill Malevolent Shade Well -->
 		</If>
@@ -1442,7 +1442,7 @@
 		<If Condition="HasQuest(&quot;Purification Ritual&quot;)">
 			<MoveTo X="4708.716" Y="1147.294" Z="2604.068" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Shade Ward&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Shade Ward&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 		
@@ -1450,7 +1450,7 @@
 		<If Condition="HasQuest(&quot;Purification Ritual&quot;)">
 			<MoveTo X="4579.092" Y="1150.476" Z="2572.798" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Shade Ward&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Shade Ward&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 
@@ -1458,7 +1458,7 @@
 		<If Condition="HasQuest(&quot;Purification Ritual&quot;)">
 			<MoveTo X="4483.123" Y="1156.93" Z="2477.797" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Shade Ward&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Shade Ward&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 		
@@ -1678,7 +1678,7 @@
 		<If Condition="HasQuest(&quot;Savior of Gloamwood&quot;)">
 			<MoveTo X="5242.353" Y="987.063" Z="3079.697" />
 			<Wait Seconds="1" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Gloam Bell&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Gloam Bell&quot;)" />
 		</If>
 		<If Condition="HasQuest(&quot;Savior of Gloamwood&quot;)"> <!-- this needs to be ran by someone and get me the rewards that pop up --> <!-- WPN - 1=1h, 2=2h -->
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">

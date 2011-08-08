@@ -137,7 +137,7 @@
 		  <Wait Seconds="1" />
 		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;tar Centurion Osteneer&quot;)" />
 		  <Wait Seconds="1" />
-		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Harrowing Talisman&quot;)" />
+		  <Python Statement = "SpellManager.UseItem(&quot;Harrowing Talisman&quot;)" />
 		  <Wait Seconds="10" />
 
 		</If>
@@ -327,7 +327,7 @@
 		  <Wait Seconds="2" />
 		  <MoveTo  X="6341.639" Y="821.0468" Z="3797.765" />
 		  <Wait Seconds="2" />
-		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Spear of Light&quot;)" />
+		  <Python Statement = "SpellManager.UseItem(&quot;Spear of Light&quot;)" />
 		<!-- Click at <Hotspot X="6342.104" Y="821.127" Z="3797.997" /> -->
 		<!--
 		  <Wait Seconds="3" />
@@ -1314,7 +1314,7 @@
 		<If Condition="((HasQuest(&quot;The Perfect Specimen&quot;)) and (not IsQuestCompleted(&quot;The Perfect Specimen&quot;)))">
 			<MoveTo X="6608.674" Y="820.9843" Z="3518.82" />
 			<Wait Seconds="1" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Fused Faetouched Splinters&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Fused Faetouched Splinters&quot;)" />
 			<Wait Seconds="6" />
 		</If>
 
@@ -2139,7 +2139,7 @@
 		<If Condition="HasQuest(&quot;Skull and Bones&quot;)">
 		  <MoveTo X="6162.367" Y="808.0113" Z="3259.527" />
 		  <Wait Seconds="2" />
-		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Scotty's Friendship Bracelet&quot;)" />
+		  <Python Statement = "SpellManager.UseItem(&quot;Scotty's Friendship Bracelet&quot;)" />
 		  <Wait Seconds="5" />
 		  <Escort Npc="Scotty" Quest="Skull and Bones" Tracking="1" />
 		</If>

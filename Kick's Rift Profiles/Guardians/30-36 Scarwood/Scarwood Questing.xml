@@ -607,7 +607,7 @@
 		<If Condition="HasQuest(&quot;The Finest Cut&quot;)"> <!-- Tracking 2 and 3 -->
 			<MoveTo X="3643.049" Y="1079.671" Z="4000.257" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Wolf Liver&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Wolf Liver&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 
@@ -717,7 +717,7 @@
 			<!-- 
 			<MoveTo X="3150.171" Y="1079.731" Z="4107.708" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Explosive Keg&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Explosive Keg&quot;)" />
 			<Wait Seconds="5" />
 			<Hotspot X="3150.171" Y="1079.731" Z="4107.708" />
 			<Hotspot X="3275.33" Y="1087.159" Z="4080.288" />
@@ -1240,7 +1240,7 @@
 			
 			<MoveTo 
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Portal Dispenser&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Portal Dispenser&quot;)" />
 			<Wait Seconds="5" />
 
 			<AddJob>
@@ -1348,7 +1348,7 @@
 		<If Condition="HasQuest(&quot;Sealing the Portal&quot;)">
 			<MoveTo X="2588.674" Y="1178.476" Z="3522.054" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Nexus Attractor&quot;)" />
+			<Python Statement = "SpellManager.UseItem(&quot;Nexus Attractor&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 
@@ -1482,7 +1482,7 @@
 			<Wait Seconds="2" />
 			<MoveTo X="3008.933" Y="1093.918" Z="3692.542" />
 			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Cultist Uniform Piece&quot;)" /> <!-- Tracking 2 -->
+			<Python Statement = "SpellManager.UseItem(&quot;Cultist Uniform Piece&quot;)" /> <!-- Tracking 2 -->
 			<Wait Seconds="8" />
 			<TalkToNpcObjective Quest="Among the Endless" Npc="High Justicar Vigman" X="3003.722" Y="1096.865" Z="3669.191" Options="1, 1" Tracking="3" />
 		</If>
