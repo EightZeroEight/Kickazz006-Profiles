@@ -1,0 +1,99 @@
+﻿<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <AddJob>
+      <MendSoul>
+        <Healers>
+			<Healer X="4308.2" Y="1225.58" Z="2192.445" /> <!-- Whitefall Lift -->
+			<Healer X="4257.837" Y="1233.781" Z="1864.553" /> <!-- Breaker's Camp -->
+			<Healer X="3731.378" Y="1199.526" Z="1917.879" /> <!-- Sanctuary -->
+        </Healers>
+      </MendSoul>
+    </AddJob>
+    <AddJob>
+      <Vendor SellWhites="True" SellGreens="True" SellBlues="True" SellPurples="False">
+        <Vendors>
+			<Vendor X="4305.518" Y="1225.559" Z="2206.334" /> <!-- Whitefall Lift -->
+			<Vendor X="4261.726" Y="1232.725" Z="1852.819" /> <!-- Breaker's Camp -->
+			<Vendor X="3742.892" Y="1191.973" Z="1771.131" /> <!-- Whitefall / Sanctuary -->
+        </Vendors>
+      </Vendor>
+    </AddJob>
+    <LoadMesh Name="Iron Pine Peak" />
+	
+		<If Condition="HasQuest(&quot;Where the Iron Pines Peak&quot;)">
+	<TurnInQuest Name="Where the Iron Pines Peak" Npc="Garet Nicholton" X="4319.648" Y="1225.497" Z="2209.573" />
+		</If>
+		<!-- Whitefall Porticulum
+		<MoveTo X="3737.321" Y="1197.943" Z="1738.093" />
+		-->
+	<PickUpQuest Name="Bandit Raid" Npc="Garet Nicholton" X="4319.648" Y="1225.497" Z="2209.573" />
+	<PickUpQuest Name="Behind the Threat" Npc="Defender Verlin" X="4318.017" Y="1225.497" Z="2203.881" />
+	<PickUpQuest Name="Mending Defenses" Npc="Len Hallis" X="4300.182" Y="1225.497" Z="2203.856" />
+
+
+
+
+	
+		
+		<!-- 
+	<PickUpQuest Name="" 
+	<TurnInQuest Name="" 
+		-->
+
+		
+		<!-- lift - gloamwood side
+		
+		<Hotspot X="4314.545" Y="1114.813" Z="2273.555" />
+		
+			lift - iron peaks side
+			<Hotspot X="4313.075" Y="1225.173" Z="2260.121" />
+			
+		<If Condition="HasQuest(&quot;An Item of Interest&quot;)">
+	<TurnInQuest Name="An Item of Interest" Npc="Marshal Kain" X="3721.384" Y="1197.264" Z="1906.816" />
+		</If>
+		--> 
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    <Loop />
+  </Tasks>
+</Profile>

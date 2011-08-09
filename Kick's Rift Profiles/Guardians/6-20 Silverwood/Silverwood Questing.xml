@@ -1347,11 +1347,10 @@
    <PickUpQuest Name="Further Exploration" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
     <!-- To Silver Landing Quest -->
 
-		<!-- These changes are untested -->
 		<If Condition="HasQuest(&quot;The Altar of Reflection&quot;)">
   			  <MoveTo X="6530.395" Y="830.6285" Z="3255.836" />
 		 <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(6530.395, 830.6285, 3255.836)) &lt; 10*10">
-			<UseObject Name="Binding Point" X="6530.395" Y="830.6285" Z="3255.836" />
+			<UseObject Name="Altar of Reflection" X="6530.395" Y="830.6285" Z="3255.836" />
          </If>
 			<TalkToNpcObjective Quest="The Altar of Reflection" Npc="Spirit Guide" X="6530.395" Y="830.6285" Z="3255.836" Options="1" Tracking="1" />
 		</If>

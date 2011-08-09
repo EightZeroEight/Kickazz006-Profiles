@@ -87,6 +87,8 @@
 			<Wait Seconds="5" />
 		</If>
 
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;tar &quot;)" />
+
 		<Escort Quest="" Npc="" Tracking="1" />
 
 		<If Condition="HasQuest(&quot;&quot;)">
@@ -104,7 +106,7 @@
 
 		</If>
 
-		<If Condition="(HasQuest(&quot;Bahralt's Shrine&quot;)) and (not HasQuest(&quot;Evidence of the Unclean&quot;))">
+		<If Condition="(HasQuest(&quot;&quot;)) and (not HasQuest(&quot;&quot;))">
 			<MoveTo 
 			<UseObject Name="" 
 			<Python Statement="Logging.Write(&quot;Get this quest and press start&quot;)" />
@@ -147,6 +149,17 @@
 			-->
 
 
+		<GrindTo Level="">
+		  <GrindArea>
+			<Mobs>
+			  <Mob></Mob>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+			</Hotspots>
+		  </GrindArea>
+		</GrindTo>
+	
 
 
 
