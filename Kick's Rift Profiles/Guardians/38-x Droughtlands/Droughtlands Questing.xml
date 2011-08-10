@@ -412,7 +412,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<UseObjectsObjective Quest="" Tracking="1">
+		<UseObjectsObjective Quest="Burning Confrontation" Tracking="1">
 		  <Area>
 			<Objects>
 			  <Object>Centaur Tent</Object>
@@ -452,17 +452,148 @@
 		</If>
 
 	<TurnInQuest Name="Burning Confrontation" Npc="Ren Greer" X="7694.007" Y="918.2849" Z="6363.008" />
-	<PickUpQuest Name="Containment" Npc="Ren Greer" X="7694.007" Y="918.2849" Z="6363.008" />
-	<PickUpQuest Name="Scout and About" Npc="Ren Greer" X="7694.007" Y="918.2849" Z="6363.008" />
+	<PickUpQuest Name="Containment" Npc="Ben Kwally" X="7607.456" Y="915.3589" Z="6406.625" />
+	<PickUpQuest Name="Scout and About" Npc="Ben Kwally" X="7607.456" Y="915.3589" Z="6406.625" />
 	<PickUpQuest Name="Bless and Purge" Npc="Jillian Rale" X="7616.798" Y="915.329" Z="6391.132" />
 	<PickUpQuest Name="In the Bag" Npc="Rorf" X="7630.572" Y="915.3289" Z="6414.58" />
 		
+		<UseItemOnMobsObjective Quest="In the Bag" Item="Cub Sack" CastTime="4" Cooldown="1" WhenDead="False" Tracking="1"> <!-- don't use aoe abilities on this quest, loot after useitemon -->
+		  <Area>
+			<Mobs>
+			  <Mob>Longtooth Cub</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7660.254" Y="912.453" Z="6554.775" />
+				<Hotspot X="7684.857" Y="915.0782" Z="6527.118" />
+				<Hotspot X="7706.577" Y="915.0638" Z="6501.933" />
+				<Hotspot X="7700.35" Y="917.1519" Z="6448.801" />
+				<Hotspot X="7660.277" Y="914.0203" Z="6463.694" />
+				<Hotspot X="7657.594" Y="916.8206" Z="6502.497" />
+				<Hotspot X="7616.032" Y="913.044" Z="6512.794" />
+				<Hotspot X="7617.49" Y="910.6765" Z="6557.99" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<!-- These are simple moveto quests, but i think useobject will work as well until we get a moveto tracking
+			Scout and About
+			// tracking 1
+			<Hotspot X="7580.647" Y="910.3687" Z="6602.466" />
+			// tracking 2
+			<Hotspot X="7509.956" Y="915.4323" Z="6674.357" />
+			// tracking 3
+			<Hotspot X="7472.228" Y="914.5984" Z="6601.41" />
+			// tracking 4
+			<Hotspot X="7384.666" Y="913.5285" Z="6564.619" />
+			// tracking 5
+			<Hotspot X="7425.146" Y="899.0653" Z="6426.127" />
+			
+			useobject kickazz rocks
+		-->
+
+		<If Condition="HasQuest(&quot;Scout and About&quot;)">
+			<MoveTo X="7580.647" Y="910.3687" Z="6602.466" />
+			<Wait Seconds="2" />
+			
+			<MoveTo X="7509.956" Y="915.4323" Z="6674.357" />
+			<Wait Seconds="2" />
+			
+			<MoveTo X="7472.228" Y="914.5984" Z="6601.41" />
+			<Wait Seconds="2" />
+			
+			<MoveTo X="7384.666" Y="913.5285" Z="6564.619" />
+			<Wait Seconds="2" />
+			
+			<MoveTo X="7425.146" Y="899.0653" Z="6426.127" />
+			<Wait Seconds="2" />
+		</If>
 		
+		<If Condition="HasQuest(&quot;Bless and Purge&quot;)">
+			<Python Statement="Logging.Write(&quot;run around and use the item at corpses&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+
+		<!-- useitem at location task - move this above the flags
+		-->
+		<UseItemOnMobsObjective Quest="Bless and Purge" Item="Blessed Decanter" CastTime="4" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Corpse Victim</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7541.222" Y="911.7343" Z="6602.371" />
+				<Hotspot X="7483.383" Y="914.3052" Z="6590.25" />
+				<Hotspot X="7464.157" Y="913.1595" Z="6578.978" />
+				<Hotspot X="7429.903" Y="908.8348" Z="6543.262" />
+				<Hotspot X="7509.956" Y="915.4323" Z="6674.357" />
+				<Hotspot X="7379.426" Y="914.6672" Z="6584.209" />
+				<Hotspot X="7411.985" Y="916.7952" Z="6605.422" />
+				<Hotspot X="7327.876" Y="902.2943" Z="6439.866" />
+				<Hotspot X="7440.447" Y="900.3818" Z="6427.089" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
 		
+		<KillMobsObjective Quest="Containment" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Blood Scarab</Mob>
+			  <Mob>Devouring Scarab</Mob>
+			  <Mob>Ridge Scarab</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7541.222" Y="911.7343" Z="6602.371" />
+				<Hotspot X="7528.351" Y="912.0703" Z="6548.049" />
+				<Hotspot X="7519.322" Y="913.0146" Z="6606.727" />
+				<Hotspot X="7483.383" Y="914.3052" Z="6590.25" />
+				<Hotspot X="7464.157" Y="913.1595" Z="6578.978" />
+				<Hotspot X="7429.903" Y="908.8348" Z="6543.262" />
+				<Hotspot X="7509.956" Y="915.4323" Z="6674.357" />
+				<Hotspot X="7379.426" Y="914.6672" Z="6584.209" />
+				<Hotspot X="7379.426" Y="914.6672" Z="6584.209" />
+				<Hotspot X="7411.985" Y="916.7952" Z="6605.422" />
+				<Hotspot X="7327.876" Y="902.2943" Z="6439.866" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- What Once Was Lost (quest) avali at <Hotspot X="7464.037" Y="917.3021" Z="6624.657" /> from swolen corpse -->
 		
-		
-		
-		
+	<TurnInQuest Name="Containment" Npc="Ben Kwally" X="7607.456" Y="915.3589" Z="6406.625" />
+	<TurnInQuest Name="Scout and About" Npc="Ben Kwally" X="7607.456" Y="915.3589" Z="6406.625" />
+	<TurnInQuest Name="In the Bag" Npc="Rorf" X="7630.572" Y="915.3289" Z="6414.58" />
+		<If Condition="HasQuest(&quot;Bless and Purge&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Bless and Purge" Reward="1" Npc="Jillian Rale" X="7616.798" Y="915.329" Z="6391.132" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Pyrestick&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Bless and Purge" Reward="1" Npc="Jillian Rale" X="7616.798" Y="915.329" Z="6391.132" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Pyrestick&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Bless and Purge" Reward="3" Npc="Jillian Rale" X="7616.798" Y="915.329" Z="6391.132" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Second-Story Man's Gun&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Bless and Purge" Reward="4" Npc="Jillian Rale" X="7616.798" Y="915.329" Z="6391.132" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip The Deal Breaker&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="A Bloom in Desolation" Npc="Jillian Rale" X="7616.798" Y="915.329" Z="6391.132" />
+	<PickUpQuest Name="Blood Born Beetles" Npc="Mister Opal" X="7620.382" Y="915.329" Z="6386.793" />
+	<PickUpQuest Name="Ocular Onslaught" Npc="Mister Opal" X="7620.382" Y="915.329" Z="6386.793" />
+	<PickUpQuest Name="Not Forgotten" Npc="Atasha Kirren" X="7632.391" Y="915.329" Z="6396.557" />
+	<PickUpQuest Name="Ridgetooth Massacre" Npc="Sally Callens" X="7611.688" Y="915.3314" Z="6408.314" />
+	<PickUpQuest Name="The Sting" Npc="Ben Kwally" X="7607.456" Y="915.3589" Z="6406.625" />
+
+
+
+
 		
 		
 		<!-- 
