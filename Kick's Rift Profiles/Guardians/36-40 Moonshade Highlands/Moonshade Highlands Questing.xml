@@ -2078,26 +2078,9 @@
 			 </If>
 		</If>
 	
-			<Python Statement="Logging.Write(&quot;Train - then take the port to Crimson Watch and hoof it into N. Gloamwood to Iron Pines and take the elevator up&quot;)" />
+			<Python Statement="Logging.Write(&quot;Train - then take the port to Droughtlands&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		
-		<If Condition="HasQuest(&quot;Where the Iron Pines Peak&quot;)">
-	<TurnInQuest Name="Where the Iron Pines Peak" Npc="Garet Nicholton" X="4319.648" Y="1225.497" Z="2209.573" />
-		</If>
-		<If Condition="HasQuest(&quot;An Item of Interest&quot;)">
-	<TurnInQuest Name="An Item of Interest"  />
-		</If>
-		
-		<!-- lift - gloamwood side
-		<Hotspot X="4314.545" Y="1114.813" Z="2273.555" />
-		
-			lift - iron peaks side
-			<Hotspot X="4313.075" Y="1225.173" Z="2260.121" />
-		<!-- 
-	
-	<PickUpQuest Name="" 
-	<TurnInQuest Name="" 
-		-->
 		
     <Loop />
   </Tasks>

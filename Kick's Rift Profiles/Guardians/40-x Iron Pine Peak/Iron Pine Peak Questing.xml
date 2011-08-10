@@ -7,6 +7,10 @@
 			<Healer X="4308.2" Y="1225.58" Z="2192.445" /> <!-- Whitefall Lift -->
 			<Healer X="4257.837" Y="1233.781" Z="1864.553" /> <!-- Breaker's Camp -->
 			<Healer X="3731.378" Y="1199.526" Z="1917.879" /> <!-- Sanctuary -->
+			<Healer X="4178.736" Y="1298.05" Z="1426.01" /> <!-- Pilgrim's Crossing -->
+			<Healer X="4667.466" Y="1235.723" Z="1589.749" /> <!-- The Chancel of Labors -->
+			<Healer X="3409.476" Y="1222.785" Z="1986.056" /> <!-- Oathbound Pass -->
+			<Healer X="3019.404" Y="1233.076" Z="2378.364" /> <!-- Exile's Den -->
         </Healers>
       </MendSoul>
     </AddJob>
@@ -16,25 +20,154 @@
 			<Vendor X="4305.518" Y="1225.559" Z="2206.334" /> <!-- Whitefall Lift -->
 			<Vendor X="4261.726" Y="1232.725" Z="1852.819" /> <!-- Breaker's Camp -->
 			<Vendor X="3742.892" Y="1191.973" Z="1771.131" /> <!-- Whitefall / Sanctuary -->
+			<Vendor X="4178.736" Y="1298.05" Z="1426.01" /> <!-- Pilgrim's Crossing -->
+			<Vendor X="4636.097" Y="1236.042" Z="1545.469" /> <!-- The Chancel of Labors -->
+			<Vendor X="2990.365" Y="1233.077" Z="2362.416" /> <!-- Exile's Den -->
         </Vendors>
       </Vendor>
     </AddJob>
     <LoadMesh Name="Iron Pine Peak" />
 	
+			<Python Statement="Logging.Write(&quot;This profile is currently not available for use&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			
 		<If Condition="HasQuest(&quot;Where the Iron Pines Peak&quot;)">
 	<TurnInQuest Name="Where the Iron Pines Peak" Npc="Garet Nicholton" X="4319.648" Y="1225.497" Z="2209.573" />
 		</If>
 		<!-- Whitefall Porticulum
 		<MoveTo X="3737.321" Y="1197.943" Z="1738.093" />
+			<Python Statement="Logging.Write(&quot;Can't touch this, STOP! It's Kickazz time!&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		
+		The Chancel of Labors Porticulum
+		<MoveTo X="4598.397" Y="1236.005" Z="1661.874" />
+			<Python Statement="Logging.Write(&quot;Can't touch this, STOP! It's Kickazz time!&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		
+		Exile's Den Porticulum
+		<MoveTo X="2983.939" Y="1233.469" Z="2357.884" />		
+			<Python Statement="Logging.Write(&quot;Can't touch this, STOP! It's Kickazz time!&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
 		-->
+		
 	<PickUpQuest Name="Bandit Raid" Npc="Garet Nicholton" X="4319.648" Y="1225.497" Z="2209.573" />
 	<PickUpQuest Name="Behind the Threat" Npc="Defender Verlin" X="4318.017" Y="1225.497" Z="2203.881" />
 	<PickUpQuest Name="Mending Defenses" Npc="Len Hallis" X="4300.182" Y="1225.497" Z="2203.856" />
 
+		<KillMobsObjective Quest="Behind the Threat" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Carik Blackear</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4208.144" Y="1227.119" Z="2198.108" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="Mending Defenses" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Damaged Barricade</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4310.75" Y="1229.509" Z="2145.834" />
+				<Hotspot X="4354.894" Y="1235.762" Z="2127.298" />
+				<Hotspot X="4339.987" Y="1246.889" Z="2107.076" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Behind the Threat" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Ella Iceheart</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4330.67" Y="1265.369" Z="2044.343" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Bandit Raid" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Redsnow Deceiver</Mob>
+			  <Mob>Redsnow Frostmage</Mob>
+			  <Mob>Redsnow Convict</Mob>
+			  <Mob>Redsnow Raider</Mob>
+			  <Mob>Redsnow Thug</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4228.204" Y="1224.84" Z="2155.446" />
+				<Hotspot X="4201.174" Y="1241.082" Z="2171.001" />
+				<Hotspot X="4265.382" Y="1220.46" Z="2081.24" />
+				 <Hotspot X="4340.436" Y="1250.08" Z="2093.634" />
+				<Hotspot X="4330.67" Y="1265.369" Z="2044.343" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Mending Defenses" Npc="Len Hallis" X="4300.182" Y="1225.497" Z="2203.856" />
+	<PickUpQuest Name="Rush Order" Npc="Len Hallis" X="4300.182" Y="1225.497" Z="2203.856" />
+
+		<If Condition="(HasQuest(&quot;Bandit Raid&quot;)) and (not HasQuest(&quot;Jewelry Found&quot;))">
+			<Python Statement="Logging.Write(&quot;Pickup the Necklace quest from your bags - if you do not have a necklace quest in your bags, go and kill some Bandits for it&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<Wait Seconds="2" />
+	<PickUpQuest Name="Jewelry Found"  />
+		</If> 
+		
+	<TurnInQuest Name="Jewelry Found" Npc="Garet Nicholton" X="4319.648" Y="1225.497" Z="2209.573" />
+	<PickUpQuest Name="A Frosty Trinket" Npc="Garet Nicholton" X="4319.648" Y="1225.497" Z="2209.573" />
+	<TurnInQuest Name="Bandit Raid" Npc="Garet Nicholton" X="4319.648" Y="1225.497" Z="2209.573" />
+	<PickUpQuest Name="Trouble on the Bridge" Npc="Garet Nicholton" X="4319.648" Y="1225.497" Z="2209.573" />
+		<If Condition="HasQuest(&quot;Behind the Threat&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Behind the Threat" Reward="1" Npc="Defender Verlin" X="4318.017" Y="1225.497" Z="2203.881" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Glacial Hauberk&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Behind the Threat" Reward="2" Npc="Defender Verlin" X="4318.017" Y="1225.497" Z="2203.881" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Frostworn Robe&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Behind the Threat" Reward="3" Npc="Defender Verlin" X="4318.017" Y="1225.497" Z="2203.881" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Verlin's Tunic&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Behind the Threat" Reward="4" Npc="Defender Verlin" X="4318.017" Y="1225.497" Z="2203.881" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Iceworn Cuirass&quot;)" />
+			 </If>
+		</If>
+
+		<KillMobsObjective Quest="Trouble on the Bridge" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Fazil the Bridgekeeper</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4261.712" Y="1237.741" Z="1992.003" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="A Frosty Trinket" Npc="Nina Velins" X="4254.523" Y="1233.806" Z="1852.667" />
+	<PickUpQuest Name="Breaker Breakers" Npc="Nina Velins" X="4254.523" Y="1233.806" Z="1852.667" />
+	<TurnInQuest Name="Rush Order" Npc="Kern Chovalis" X="4281" Y="1230" Z="1857" /> <!-- get real loc -->
+	<PickUpQuest Name="Lost Lift Supplies" Npc="Kern Chovalis" X="4281" Y="1230" Z="1857" />
+	<TurnInQuest Name="Trouble on the Bridge" Npc="Kern Chovalis" X="4281" Y="1230" Z="1857" />
 
 
 
 	
+		
+		
+		
 		
 		<!-- 
 	<PickUpQuest Name="" 
