@@ -288,6 +288,174 @@
 	<PickUpQuest Name="Freedom from Fear" Npc="Ren Greer" X="7694.007" Y="918.2849" Z="6363.008" />
 	<PickUpQuest Name="Tools of the Enemy" Npc="Ren Greer" X="7694.007" Y="918.2849" Z="6363.008" />
 		
+		<UseObjectsObjective Quest="Freedom from Fear" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Crude Prison</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="8044.845" Y="900.1004" Z="6342.068" />
+				<Hotspot X="8072.882" Y="903.7123" Z="6285.318" />
+				<Hotspot X="8105.33" Y="902.3459" Z="6331.694" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+		<KillMobsObjective Quest="Tools of the Enemy" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Fleshrend Hierophant</Mob>
+			  <Mob>Fleshrend Shaman</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7988.045" Y="901.696" Z="6327.506" />
+				<Hotspot X="8040.743" Y="900.1071" Z="6333.507" />
+				<Hotspot X="8042.661" Y="900.5436" Z="6320.412" />
+				<Hotspot X="7997.41" Y="903.8448" Z="6313.696" />
+				<Hotspot X="8072.882" Y="903.7123" Z="6285.318" />
+				<Hotspot X="8105.33" Y="902.3459" Z="6331.694" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Tools of the Enemy" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Fleshrend Warrior</Mob>
+			  <Mob>Fleshrend Defender</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7970.685" Y="899.846" Z="6312.111" />
+				<Hotspot X="8027.167" Y="900.0862" Z="6352.713" />
+				<Hotspot X="7988.045" Y="901.696" Z="6327.506" />
+				<Hotspot X="8040.743" Y="900.1071" Z="6333.507" />
+				<Hotspot X="8042.661" Y="900.5436" Z="6320.412" />
+				<Hotspot X="7997.41" Y="903.8448" Z="6313.696" />
+				<Hotspot X="8072.882" Y="903.7123" Z="6285.318" />
+				<Hotspot X="8105.33" Y="902.3459" Z="6331.694" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Tools of the Enemy" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Fleshrend Hunter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7988.045" Y="901.696" Z="6327.506" />
+				<Hotspot X="8040.743" Y="900.1071" Z="6333.507" />
+				<Hotspot X="8042.661" Y="900.5436" Z="6320.412" />
+				<Hotspot X="7997.41" Y="903.8448" Z="6313.696" />
+				<Hotspot X="8072.882" Y="903.7123" Z="6285.318" />
+				<Hotspot X="8105.33" Y="902.3459" Z="6331.694" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+		<KillMobsObjective Quest="Clearing the Rest" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Fleshrend Hunter</Mob>
+			  <Mob>Fleshrend Warrior</Mob>
+			  <Mob>Fleshrend Hierophant</Mob>
+			  <Mob>Fleshrend Shaman</Mob>
+			  <Mob>Fleshrend Defender</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7988.045" Y="901.696" Z="6327.506" />
+				<Hotspot X="8040.743" Y="900.1071" Z="6333.507" />
+				<Hotspot X="8042.661" Y="900.5436" Z="6320.412" />
+				<Hotspot X="7997.41" Y="903.8448" Z="6313.696" />
+				<Hotspot X="8072.882" Y="903.7123" Z="6285.318" />
+				<Hotspot X="8105.33" Y="902.3459" Z="6331.694" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Clearing the Rest" Npc="Jon Tom" X="7695.842" Y="917.9638" Z="6363.862" />
+	<PickUpQuest Name="The Three Chiefs" Npc="Jon Tom" X="7695.842" Y="917.9638" Z="6363.862" />
+	<TurnInQuest Name="Freedom from Fear" Npc="Ren Greer" X="7694.007" Y="918.2849" Z="6363.008" />
+	<TurnInQuest Name="Tools of the Enemy" Npc="Ren Greer" X="7694.007" Y="918.2849" Z="6363.008" />
+	<PickUpQuest Name="Burning Confrontation" Npc="Ren Greer" X="7694.007" Y="918.2849" Z="6363.008" />
+		
+		<KillMobsObjective Quest="The Three Chiefs" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Uthul the Heirophant</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8146.096" Y="905.0994" Z="6348.729" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Three Chiefs" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Spiritmaster Tharus</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8259.507" Y="907.1596" Z="6428.627" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Three Chiefs" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Khulos the Huntmaster</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7857.18" Y="900.0792" Z="6564.358" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Centaur Tent</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7905.638" Y="897.5336" Z="6529.479" />
+				<Hotspot X="7877.608" Y="897.8168" Z="6524.378" />
+				<Hotspot X="7851.213" Y="896.6423" Z="6536.266" />
+				<Hotspot X="7857.18" Y="900.0792" Z="6564.358" />
+				<Hotspot X="7861.732" Y="900.4457" Z="6578.529" />
+				<Hotspot X="7882.301" Y="900.2275" Z="6595.625" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuest(&quot;The Three Chiefs&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="The Three Chiefs" Reward="1" Npc="Jon Tom" X="7695.842" Y="917.9638" Z="6363.862" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Immortal's Spaulders&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="The Three Chiefs" Reward="2" Npc="Jon Tom" X="7695.842" Y="917.9638" Z="6363.862" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sigiled Mantle&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="The Three Chiefs" Reward="3" Npc="Jon Tom" X="7695.842" Y="917.9638" Z="6363.862" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Chief's Mantle&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="The Three Chiefs" Reward="4" Npc="Jon Tom" X="7695.842" Y="917.9638" Z="6363.862" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Jon Tom's Pauldrons&quot;)" />
+			 </If>
+		</If>
+
+	<TurnInQuest Name="Burning Confrontation" Npc="Ren Greer" X="7694.007" Y="918.2849" Z="6363.008" />
+	<PickUpQuest Name="Containment" Npc="Ren Greer" X="7694.007" Y="918.2849" Z="6363.008" />
+	<PickUpQuest Name="Scout and About" Npc="Ren Greer" X="7694.007" Y="918.2849" Z="6363.008" />
+	<PickUpQuest Name="Bless and Purge" Npc="Jillian Rale" X="7616.798" Y="915.329" Z="6391.132" />
+	<PickUpQuest Name="In the Bag" Npc="Rorf" X="7630.572" Y="915.3289" Z="6414.58" />
 		
 		
 		
