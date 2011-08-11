@@ -5,7 +5,7 @@
       <MendSoul>
         <Healers>
 			<Healer X="7623.525" Y="915.6268" Z="6238.701" /> <!-- Lantern Hook -->
-			
+			<Hotspot X="8245.44" Y="898.3731" Z="6623.741" /> <!-- Spitescar Bank -->
 			
 			
 			
@@ -16,8 +16,7 @@
       <Vendor SellWhites="True" SellGreens="True" SellBlues="True" SellPurples="False">
         <Vendors>
 			<Vendor X="7623.525" Y="915.6268" Z="6238.701" /> <!-- Lantern Hook -->
-			
-			
+			<Hotspot X="8242.697" Y="897.8337" Z="6630.18" /> <!-- Spitescar Bank -->
 			
 			
         </Vendors>
@@ -744,8 +743,272 @@
 	<TurnInQuest Name="A Story Unfinished" Npc="Hadrik Renlo" X="7683.203" Y="911.1753" Z="6647.291" />
 	<PickUpQuest Name="Among Snakes" Npc="Hadrik Renlo" X="7683.203" Y="911.1753" Z="6647.291" />
 
+		<If Condition="(HasQuest(&quot;For Those Bled&quot;)) and (not HasQuest(&quot;Tools of the Trade&quot;))">
+			<MoveTo X="7652.69" Y="912.1622" Z="6723.915" />
+			<UseObject Name="Charred Sentry" X="7652.69" Y="912.1622" Z="6723.915" />
+			<Python Statement="Logging.Write(&quot;Get this quest and press start&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<Wait Seconds="2" />
+	<PickUpQuest Name="Tools of the Trade"  />
+		</If> 
+		
+		<KillMobsObjective Quest="For Those Bled" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Stormbrood Lookout</Mob>
+			  <Mob>Stormbrood Warrior</Mob>
+			  <Mob>Stormbrood Arcanist</Mob>
+			  <Mob>Stormbrood Warlock</Mob>
+			  <Mob>Stormbrood Ritualist</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7622.599" Y="918.2013" Z="6741.195" />
+				<Hotspot X="7667.987" Y="936.3386" Z="6764.005" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="Among Snakes" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Ethian Stonework</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7676.292" Y="936.6078" Z="6792.212" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuest(&quot;For Those Bled&quot;)">
+			<MoveTo X="7652.711" Y="936.0655" Z="6749.724" />
+			<Wait Seconds="2" />
+			<MoveTo X="7652.711" Y="936.0655" Z="6749.724" />
+			<Wait Seconds="2" />
+			<UseObject Name="Cauldron of Purified Blood" X="7652.711" Y="936.0655" Z="6749.724" />
+			<Wait Seconds="5" />
+			
+			<Python Statement="Logging.Write(&quot;Turnin this quest and get next quest (Untamed) - then do that quest manually&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+
+		<If Condition="HasQuest(&quot;Untamed&quot;)">
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+
+		<!-- combat / at range - useitemon 
+		<UseItemOnMobsObjective Quest="Untamed" Item="Blood Lure" CastTime="1" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Stormbrood Beastmaster</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7676.982" Y="936.3232" Z="6768.544" />
+				<Hotspot X="7795.967" Y="947.6961" Z="6815.384" />
+				<Hotspot X="7711.376" Y="965.8494" Z="6806.482" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+		-->
+		
+		<UseObjectsObjective Quest="Tools of the Trade" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Sinew Separator</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7748.781" Y="946.6123" Z="6769.341" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Tools of the Trade" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Ritual Blade</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7589.71" Y="969.4713" Z="6853.14" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>		
+
+		<UseObjectsObjective Quest="Tools of the Trade" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Sacrificial Sword</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7678.931" Y="1005.502" Z="6883.925" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Sothul's Demise" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Sothul of the Bloodstorm</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7739.591" Y="1017.338" Z="6894.903" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- Useitem at location -->
+		<UseItemOnMobsObjective Quest="Deliverance from Servitude" Item="Icon of Souls" CastTime="4" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7693.914" Y="938.1757" Z="6765.562" />
+				<Hotspot X="7795.967" Y="947.6961" Z="6815.384" />
+				<Hotspot X="7710.423" Y="966.0376" Z="6807.758" />
+				<Hotspot X="7696.416" Y="968.8951" Z="6831.48" />
+				<Hotspot X="7655.658" Y="970.4579" Z="6828.295" />
+				<Hotspot X="7758.073" Y="979.1235" Z="6848.793" />
+				<Hotspot X="7763.411" Y="997.7655" Z="6927.073" />
+				<Hotspot X="7745.626" Y="1002.412" Z="6948.995" />
+				<Hotspot X="7679.047" Y="1006.219" Z="6913.709" />
+				<Hotspot X="7633.454" Y="1001.984" Z="6876.946" />
+				<Hotspot X="7708.75" Y="1001.258" Z="6860.37" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<If Condition="HasQuest(&quot;Sothul's Demise&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Sothul's Demise" Reward="1" Npc="Elsin Rane" X="7693.603" Y="911.1852" Z="6640.057" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Flamechain Leg Armor&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Sothul's Demise" Reward="2" Npc="Elsin Rane" X="7693.603" Y="911.1852" Z="6640.057" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Trousers of Ereetu&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Sothul's Demise" Reward="3" Npc="Elsin Rane" X="7693.603" Y="911.1852" Z="6640.057" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Cuisse of the Emberlord&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Sothul's Demise" Reward="4" Npc="Elsin Rane" X="7693.603" Y="911.1852" Z="6640.057" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Darkfire Greaves&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="One Dodgy Cat" Npc="Elsin Rane" X="7693.603" Y="911.1852" Z="6640.057" />
+		<If Condition="HasQuest(&quot;Tools of the Trade&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Tools of the Trade" Reward="2" Npc="Elsin Rane" X="7693.603" Y="911.1852" Z="6640.057" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ring of the Last Word&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Tools of the Trade" Reward="2" Npc="Elsin Rane" X="7693.603" Y="911.1852" Z="6640.057" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ring of the Last Word&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Tools of the Trade" Reward="3" Npc="Elsin Rane" X="7693.603" Y="911.1852" Z="6640.057" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Liar's Ring&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Tools of the Trade" Reward="4" Npc="Elsin Rane" X="7693.603" Y="911.1852" Z="6640.057" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Warmonger's Band&quot;)" />
+			 </If>
+		</If>
+		<If Condition="HasQuest(&quot;Deliverance from Servitude&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Deliverance from Servitude" Reward="4" Npc="Elsin Rane" X="7693.603" Y="911.1852" Z="6640.057" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Staff of the Unseen&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Deliverance from Servitude" Reward="4" Npc="Elsin Rane" X="7693.603" Y="911.1852" Z="6640.057" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Staff of the Unseen&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Deliverance from Servitude" Reward="2" Npc="Elsin Rane" X="7693.603" Y="911.1852" Z="6640.057" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Oathbreaker&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Deliverance from Servitude" Reward="3" Npc="Elsin Rane" X="7693.603" Y="911.1852" Z="6640.057" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Mace of the Unbroken Oath&quot;)" />
+			 </If>
+		</If>
+	<TurnInQuest Name="Among Snakes" Npc="Hadrik Renlo" X="7683.203" Y="911.1753" Z="6647.291" />
+	<TurnInQuest Name="Untamed" Npc="Aldred Kallus" X="7685.935" Y="910.9007" Z="6636.806" />
+	
+		<!-- Spitescar Bank Quests -->
+	<TurnInQuest Name="One Dodgy Cat" Npc="Cornelius Magrox" X="8231.966" Y="896.4281" Z="6641.675" />
+	<PickUpQuest Name="Turn the Tables" Npc="Tyrolian Burgher " X="8244.529" Y="897.7751" Z="6631.39" />
+	<PickUpQuest Name="Lantern Hook Run" Npc="Jinanne Tonux" X="8245.218" Y="897.994" Z="6628.192" />
+	
+		<If Condition="HasQuest(&quot;Lantern Hook Run&quot;)"> <!-- Optional Quest -->
+			<TalkToNpcObjective Quest="Lantern Hook Run" Npc="Vic Tarnoh" X="8211.593" Y="892.7358" Z="6656.648" Options="1" Tracking="1" />
+			<Moveto X="8079.803" Y="893.8595" Z="6507.63" /> <!-- this quest is stupid, do we lose all of our refugee's? -->
+		</If>
+		
+		<UseObjectsObjective Quest="Turn the Tables" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Idol of the Initiate</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="8318.881" Y="908.7102" Z="6508.927" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Turn the Tables" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Fleshrend Hunter Initiate</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8318.881" Y="908.7102" Z="6508.927" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Turn the Tables" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Tyrathulus Lord of the Hunt</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8318.881" Y="908.7102" Z="6508.927" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Lantern Hook Run" Npc="Jinanne Tonux" X="8245.218" Y="897.994" Z="6628.192" /> <!-- Optional Quest -->
+	<TurnInQuest Name="Turn the Tables" Npc="Tyrolian Burgher " X="8244.529" Y="897.7751" Z="6631.39" />
+	<PickUpQuest Name="What Strange Beasts" Npc="Cornelius Magrox" X="8231.966" Y="896.4281" Z="6641.675" />
+	<PickUpQuest Name="Wrangler Wrangling" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+	<PickUpQuest Name="Killing Selnar" Npc="Hazan Fezil" X="8209.726" Y="892.7712" Z="6653.427" />
 
 
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		<!-- 
