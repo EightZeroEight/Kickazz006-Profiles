@@ -221,7 +221,10 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ridge Plate Legs&quot;)" />
 			 </If>
 		</If>
+		<!-- Npc Name -->
+		<If Condition="HasQuestAvailable(&quot;Agent Gerid Kalos&quot;)">
 	<PickUpQuest Name="Death for the Dead" Npc="Agent Gerid Kalos" X="3835.982" Y="976.5576" Z="2929.76" />
+		</If>
 	<TurnInQuest Name="Stone Cold Survivors" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
 	<PickUpQuest Name="The Darkest Magic" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
 	<TurnInQuest Name="Free and Clear" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />

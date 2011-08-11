@@ -996,8 +996,248 @@
 	<PickUpQuest Name="Wrangler Wrangling" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
 	<PickUpQuest Name="Killing Selnar" Npc="Hazan Fezil" X="8209.726" Y="892.7712" Z="6653.427" />
 
+		<KillMobsObjective Quest="Killing Selnar" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Selnar</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7857.811" Y="917.9393" Z="6765.921" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
 
+		<KillMobsObjective Quest="What Strange Beasts" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Wild Bloodstrutter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8006.012" Y="907.2551" Z="6648.494" />
+				<Hotspot X="8023.302" Y="909.3397" Z="6649.128" />
+				<Hotspot X="8043.329" Y="906.4483" Z="6623.188" />
+				<Hotspot X="8056.808" Y="910.923" Z="6642.859" />
+				<Hotspot X="8044.905" Y="912.1569" Z="6662.397" />
+				<Hotspot X="7998.057" Y="909.7456" Z="6681.648" />
+				<Hotspot X="7909.805" Y="914.9969" Z="6664.014" />
+				<Hotspot X="7909.725" Y="911.8124" Z="6689.335" />
+				<Hotspot X="7874.876" Y="907.1594" Z="6668.637" />
+				<Hotspot X="7780.582" Y="905.0697" Z="6681.224" />
+				
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
 
+		<KillMobsObjective Quest="Wrangler Wrangling" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Stormbrood Tamer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8006.012" Y="907.2551" Z="6648.494" />
+				<Hotspot X="8005.523" Y="904.9138" Z="6612.641" />
+				<Hotspot X="7998.057" Y="909.7456" Z="6681.648" />
+				<Hotspot X="7956.887" Y="908.5422" Z="6651.353" />
+				<Hotspot X="7947.576" Y="905.6053" Z="6623.948" />
+				<Hotspot X="7932.702" Y="910.5861" Z="6706.541" />
+				<Hotspot X="7780.582" Y="905.0697" Z="6681.224" />
+				<Hotspot X="7829.85" Y="909.1777" Z="6715.415" />
+				<Hotspot X="7892.75" Y="911.5239" Z="6725.504" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Killing Selnar" Npc="Hazan Fezil" X="8209.726" Y="892.7712" Z="6653.427" />
+	<TurnInQuest Name="What Strange Beasts" Npc="Cornelius Magrox" X="8231.966" Y="896.4281" Z="6641.675" />
+	<PickUpQuest Name="Big Boned" Npc="Cornelius Magrox" X="8231.966" Y="896.4281" Z="6641.675" />
+	<PickUpQuest Name="Research Recovery" Npc="Neseen Sotep" X="8234.955" Y="896.8672" Z="6639.089" />
+	<TurnInQuest Name="Wrangler Wrangling" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+	<PickUpQuest Name="Back to the Pit!" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+	<PickUpQuest Name="The Black Stuff" Npc="Lethran Solitan" X="8229.284" Y="896.1968" Z="6639.597" />
+	<PickUpQuest Name="Thicker than Blood" Npc="Lethran Solitan" X="8229.284" Y="896.1968" Z="6639.597" />
+
+		<If Condition="HasQuest(&quot;The Black Stuff&quot;)">
+			<MoveTo X="8139.801" Y="905.7034" Z="6726.653" />
+			<Wait Seconds="2" />
+			<MoveTo X="8139.801" Y="905.7034" Z="6726.653" />
+			<Wait Seconds="2" />
+			<Python Statement = "SpellManager.UseItem(&quot;Empty Jar&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+
+		<UseObjectsObjective Quest="Research Recovery" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Explorer's Spyglass</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="8075.208" Y="920.8226" Z="6750.78" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<!-- a simple moveto tracking -->
+		<UseObjectsObjective Quest="Big Boned" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object></Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="8043.022" Y="909.5103" Z="6721.557" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Research Recovery" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Speciment Grinder</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7989.471" Y="925.4904" Z="6828.805" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Research Recovery" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Sample Containers</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="8113.704" Y="923.1362" Z="6851.41" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<!-- a simple moveto tracking -->
+		<UseObjectsObjective Quest="Big Boned" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object></Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="8119.448" Y="904.0174" Z="6938.793" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Back to the Pit!" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Twisting Nether</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8139.801" Y="905.7034" Z="6726.653" />
+				<Hotspot X="8135.675" Y="910.5059" Z="6695.717" />
+				<Hotspot X="8069.31" Y="911.4258" Z="6685.443" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Thicker than Blood" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Twisting Nether</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8139.801" Y="905.7034" Z="6726.653" />
+				<Hotspot X="8135.675" Y="910.5059" Z="6695.717" />
+				<Hotspot X="8069.31" Y="911.4258" Z="6685.443" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- These mobs are level 41 and 42 -->
+	<TurnInQuest Name="Big Boned" Npc="Cornelius Magrox" X="8231.966" Y="896.4281" Z="6641.675" />
+	<TurnInQuest Name="Research Recovery" Npc="Neseen Sotep" X="8234.955" Y="896.8672" Z="6639.089" />
+		<If Condition="HasQuest(&quot;Back to the Pit!&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Back to the Pit!" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Boots of the Protector&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Back to the Pit!" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Stormbrood Slippers&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Back to the Pit!" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Scoundrel's Boots&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Back to the Pit!" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sabatons of the Order&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="The Stray One" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+	<PickUpQuest Name="The Biggest Void" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+	<PickUpQuest Name="What Remains?" Npc="Neseen Sotep" X="8234.955" Y="896.8672" Z="6639.089" />
+	<TurnInQuest Name="The Black Stuff" Npc="Lethran Solitan" X="8229.284" Y="896.1968" Z="6639.597" />
+	<TurnInQuest Name="Thicker than Blood" Npc="Lethran Solitan" X="8229.284" Y="896.1968" Z="6639.597" />
+	<PickUpQuest Name="A Piece of History" Npc="Lethran Solitan" X="8229.284" Y="896.1968" Z="6639.597" />
+
+		<KillMobsObjective Quest="The Biggest Void" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Netharius</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7994.615" Y="924.9677" Z="6911.236" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="A Piece of History" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Encased Tablet</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7990.463" Y="957.5845" Z="6906.874" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="The Stray One" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Podoxavus</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7990.463" Y="957.5845" Z="6906.874" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="What Remains?" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Enkarus Blademaster</Mob>
+			  <Mob>Enkarus Tracker</Mob>
+			  <Mob>Enkarus Stalker</Mob>
+			  <Mob>Enkarus </Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8016.04" Y="949.0953" Z="6860.538" />
+				<Hotspot X="8031.331" Y="949.1781" Z="6872.689" />
+				<Hotspot X="8067.988" Y="930.6506" Z="6817.878" />
+				<Hotspot X="8087.08" Y="928.8579" Z="6834.838" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		
+		
+		
+		
+		
+		
+		
 
 		
 		
