@@ -5,7 +5,7 @@
       <MendSoul>
         <Healers>
 			<Healer X="7623.525" Y="915.6268" Z="6238.701" /> <!-- Lantern Hook -->
-			<Hotspot X="8245.44" Y="898.3731" Z="6623.741" /> <!-- Spitescar Bank -->
+			<Healer X="8245.44" Y="898.3731" Z="6623.741" /> <!-- Spitescar Bank -->
 			
 			
 			
@@ -16,8 +16,8 @@
       <Vendor SellWhites="True" SellGreens="True" SellBlues="True" SellPurples="False">
         <Vendors>
 			<Vendor X="7623.525" Y="915.6268" Z="6238.701" /> <!-- Lantern Hook -->
-			<Hotspot X="8242.697" Y="897.8337" Z="6630.18" /> <!-- Spitescar Bank -->
-			
+			<Vendor X="8242.697" Y="897.8337" Z="6630.18" /> <!-- Spitescar Bank -->
+			<Vendor X="8522.488" Y="940.3721" Z="6642.072" /> <!-- Hunter's Camp -->
 			
         </Vendors>
       </Vendor>
@@ -1195,7 +1195,7 @@
 		<UseObjectsObjective Quest="A Piece of History" Tracking="1">
 		  <Area>
 			<Objects>
-			  <Object>Encased Tablet</Object>
+			  <Object>Artifact Tablet</Object>
 			</Objects>
 			<Hotspots>
 				<Hotspot X="7990.463" Y="957.5845" Z="6906.874" />
@@ -1230,6 +1230,61 @@
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
+
+	<TurnInQuest Name="The Biggest Void" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+		<If Condition="HasQuest(&quot;The Stray One&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="The Stray One" Reward="1" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Mantle of the Lost Disciple&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="The Stray One" Reward="2" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Mantle of Podaxavus&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="The Stray One" Reward="3" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Enkaru's Shoulders&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="The Stray One" Reward="4" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Betrayer's Pauldrons&quot;)" />
+			 </If>
+		</If>
+	<TurnInQuest Name="What Remains?" Npc="Neseen Sotep" X="8234.955" Y="896.8672" Z="6639.089" />
+		<If Condition="HasQuest(&quot;A Piece of History&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="A Piece of History" Reward="1" Npc="Lethran Solitan" X="8229.284" Y="896.1968" Z="6639.597" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Collar of the Faithful&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="A Piece of History" Reward="1" Npc="Lethran Solitan" X="8229.284" Y="896.1968" Z="6639.597" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Collar of the Faithful&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="A Piece of History" Reward="3" Npc="Lethran Solitan" X="8229.284" Y="896.1968" Z="6639.597" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Necklace of Keys&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="A Piece of History" Reward="4" Npc="Lethran Solitan" X="8229.284" Y="896.1968" Z="6639.597" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Strongarm Chain&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="Man or Moose" Npc="Cornelius Magrox" X="8231.966" Y="896.4281" Z="6641.675" />
+		<!-- End of Spitescar Bank Quests -->
+
+		<!-- Hunters' Camp Quests -->
+	<TurnInQuest Name="Man or Moose" Npc="Moose" X="8528.999" Y="940.3258" Z="6631.913" />
+	<PickUpQuest Name="When Predator Becomes Prey" Npc="Moose" X="8528.999" Y="940.3258" Z="6631.913" />
+	<PickUpQuest Name="That Which Remains" Npc="Rozalen Feerule" X="8536.723" Y="940.3481" Z="6624.524" />
+	<PickUpQuest Name="Finding Flightsong" Npc="Sureshot the Marked" X="8537.984" Y="940.2784" Z="6637.017" />
 
 		
 		
