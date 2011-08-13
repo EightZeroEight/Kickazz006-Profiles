@@ -6,7 +6,8 @@
         <Healers>
 			<Healer X="7623.525" Y="915.6268" Z="6238.701" /> <!-- Lantern Hook -->
 			<Healer X="8245.44" Y="898.3731" Z="6623.741" /> <!-- Spitescar Bank -->
-			
+			<Healer X="7382.358" Y="914.804" Z="6205.645" /> <!-- Lantern Plateau -->
+			<Healer X="8629.517" Y="917.9841" Z="6997.356" /> <!-- Fallback -->
 			
 			
         </Healers>
@@ -18,15 +19,424 @@
 			<Vendor X="7623.525" Y="915.6268" Z="6238.701" /> <!-- Lantern Hook -->
 			<Vendor X="8242.697" Y="897.8337" Z="6630.18" /> <!-- Spitescar Bank -->
 			<Vendor X="8522.488" Y="940.3721" Z="6642.072" /> <!-- Hunter's Camp -->
-			
+			<Vendor X="7392.215" Y="914.7023" Z="6201.586" /> <!-- Lantern Plateau -->
+			<Vendor X="8620.745" Y="917.9885" Z="6999.271" /> <!-- Fallback -->
+			 
         </Vendors>
       </Vendor>
     </AddJob>
     <LoadMesh Name="Droughtlands" />
 	
-		<If Condition="HasQuest(&quot;Droughtlands Teleport&quot;)">
-	<TurnInQuest Name="Droughtlands Teleport" Npc="Hamid Altieri" X="7695.304" Y="933.6291" Z="6170.432" />
+		<GrindTo Level="36">
+		  <GrindArea>
+			<Mobs>
+			  <Mob>Burning Idol</Mob>
+			  <Mob>Thunderwing Hatchling</Mob>
+			  <Mob>Thunderwing Roc</Mob>
+			  <Mob>Harpy Aggressor</Mob>
+			  <Mob>Harpy Runt</Mob>
+			  <Mob>Savage Longtooth</Mob>
+			  <Mob>Longtooth</Mob>
+			  <Mob>Stonegazer Chick</Mob>
+			  <Mob>Stonegazer</Mob>
+			  <Mob>Storm Idol</Mob>
+			  <Mob>Burning Idol</Mob>
+			  <Mob>Living Idol</Mob>
+			  <Mob>Geotic Idol</Mob>
+			  <Mob>Endless Idol</Mob>
+			</Mobs>         
+			<Hotspots>
+			  <Hotspot X="7645.487" Y="891.2596" Z="6045.369" />
+			  <!--Idol-->
+			  <Hotspot X="7630.312" Y="892.7047" Z="6026.646" />
+			  
+			  <Hotspot X="7461.453" Y="905.8704" Z="6012.33" />
+			  
+			  <!--Idol-->
+			  <Hotspot X="7486.648" Y="926.6058" Z="5815.078" />
+
+			  <Hotspot X="7296.352" Y="884.0683" Z="5956.71" />
+			  <Hotspot X="7320.74" Y="901.0405" Z="6049.083" />
+			  <Hotspot X="7409.779" Y="907.2349" Z="6149.839" />
+			  <Hotspot X="7419.529" Y="909.2961" Z="6108.095" />
+			  <!--Idol-->
+			  <Hotspot X="7469.328" Y="907.2191" Z="6083.716" />
+			  
+			  <Hotspot X="7550.459" Y="900.4795" Z="6109.032" />
+			  <Hotspot X="7604.195" Y="893.8384" Z="6107.623" />
+			</Hotspots>
+		  </GrindArea>
+		</GrindTo>
+		
+	<PickUpQuest Name="The Trapper's Unrest" Npc="Jahan Rizel" X="7163.271" Y="889.5155" Z="5962.346" />
+	<PickUpQuest Name="Cat Food" Npc="Jahan Rizel" X="7163.271" Y="889.5155" Z="5962.346" />
+	
+		<KillMobsObjective Quest="Cat Food" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Savage Longtooth</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7280.73" Y="898.9246" Z="6021.503" />
+				<Hotspot X="7319.788" Y="890.6048" Z="5988.61" />
+				<Hotspot X="7329.252" Y="888.0698" Z="5962.826" />
+				<Hotspot X="7345.433" Y="898.3051" Z="6042.542" />
+				<Hotspot X="7417.886" Y="909.2943" Z="6091.44" />
+				<Hotspot X="7380.74" Y="906.6627" Z="6086.226" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+	<TurnInQuest Name="Cat Food" Npc="Jahan Rizel" X="7163.271" Y="889.5155" Z="5962.346" />
+	<TurnInQuest Name="The Trapper's Unrest" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+		
+		<!-- Lantern Plateau Quests -->
+	<PickUpQuest Name="Bashing the Bluntfang" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+	<PickUpQuest Name="Tastes Like Chicken" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+	<PickUpQuest Name="Therein Lies the Trap" Npc="Gregor Screpp" X="7382.229" Y="914.725" Z="6213.117" />
+		
+		<UseObjectsObjective Quest="Therein Lies the Trap" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Trapper's Pack</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7110.678" Y="932.9374" Z="6325.099" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Therein Lies the Trap" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Trapper's Bedroll</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7004.254" Y="883.5453" Z="6252.485" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Therein Lies the Trap" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Trapper's Trap</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7075.522" Y="901.6171" Z="6189.792" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Bashing the Bluntfang" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Bluntfang Warrior</Mob>
+			  <Mob>Bluntfang Ravager</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7085.877" Y="903.3671" Z="6266.258" />
+				<Hotspot X="7109.373" Y="905.1196" Z="6304.463" />
+				<Hotspot X="7092.213" Y="903.6329" Z="6296.301" />
+				<Hotspot X="7122.046" Y="906.3022" Z="6283.81" />
+				<Hotspot X="7047.289" Y="896.074" Z="6185.251" />
+				<Hotspot X="7070.234" Y="900.7377" Z="6159.687" />
+				<Hotspot X="7055.902" Y="900.3986" Z="6151.886" />
+				<Hotspot X="7094.011" Y="904.3228" Z="6178.28" />
+				<Hotspot X="7075.522" Y="901.6171" Z="6189.792" />
+				<Hotspot X="7132.862" Y="912.5762" Z="6166.52" />
+				<Hotspot X="7148.313" Y="909.9838" Z="6204.528" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Tastes Like Chicken" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Stonegazer</Mob>
+			  <Mob>Stonegazer Chick</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7385.568" Y="902.3087" Z="6277.433" />
+				<Hotspot X="7347.338" Y="905.4063" Z="6250.416" />
+				<Hotspot X="7336.523" Y="912.2987" Z="6233.336" />
+				<Hotspot X="7292.348" Y="904.0154" Z="6225.604" />
+				<Hotspot X="7281.977" Y="897.1432" Z="6267.875" />
+				<Hotspot X="7417.688" Y="903.923" Z="6250.624" />
+				<Hotspot X="7458.435" Y="905.6986" Z="6197.708" />
+				<Hotspot X="7397.366" Y="904.2478" Z="6259.326" />
+				<Hotspot X="7331.997" Y="910.5848" Z="6175.975" />
+				<Hotspot X="7279.944" Y="908.3271" Z="6187.983" />
+				<Hotspot X="7285.295" Y="910.3524" Z="6148.682" />
+				<Hotspot X="7296.854" Y="904.963" Z="6095.581" />
+				<Hotspot X="7266.091" Y="909.6046" Z="6102.632" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+	<TurnInQuest Name="Tastes Like Chicken" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+		<If Condition="HasQuest(&quot;Bashing the Bluntfang&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Bashing the Bluntfang" Reward="1" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Primal Shaman's Hauberk&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Bashing the Bluntfang" Reward="2" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Robes of the Bluntfang&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Bashing the Bluntfang" Reward="3" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Retriever's Tunic&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Bashing the Bluntfang" Reward="4" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ravager's Cuirass&quot;)" />
+			 </If>
 		</If>
+	<PickUpQuest Name="Lesson of Loss" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+	<TurnInQuest Name="Therein Lies the Trap" Npc="Gregor Screpp" X="7382.229" Y="914.725" Z="6213.117" />
+	<PickUpQuest Name="Crocodelicacy" Npc="Gregor Screpp" X="7382.229" Y="914.725" Z="6213.117" />
+	<PickUpQuest Name="A Fast Friend and Old Chum" Npc="Gregor Screpp" X="7382.229" Y="914.725" Z="6213.117" />
+	<PickUpQuest Name="On the Move" Npc="Gladdox Fwyntindle" X="7385.836" Y="914.6775" Z="6202.534" />
+	<PickUpQuest Name="The Missing Professor" Npc="Adalia Merril" X="7384.686" Y="913.8361" Z="6196.334" />
+	<TurnInQuest Name="On the Move" Npc="Trevon Frendell" X="7062.62" Y="887.6359" Z="6074.287" />
+	<PickUpQuest Name="Nowhere to Run" Npc="Trevon Frendell" X="7062.62" Y="887.6359" Z="6074.287" />
+		<Escort Quest="Nowhere to Run" Npc="Trevon Frendell" Tracking="1" />
+	<TurnInQuest Name="Nowhere to Run" Npc="Trevon Frendell" X="7062.62" Y="887.6359" Z="6074.287" />
+	<PickUpQuest Name="Breakthrough" Npc="Trevon Frendell" X="7062.62" Y="887.6359" Z="6074.287" />
+
+		<UseObjectsObjective Quest="The Missing Professor" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Clue</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7106.546" Y="909.3091" Z="6186.974" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Breakthrough" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Scroll Box</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6991.154" Y="879.2526" Z="6225.821" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Crocodelicacy" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Crocodile Clutch</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6986.795" Y="880.3729" Z="6245.921" />
+				<Hotspot X="6978.604" Y="881.1119" Z="6280.757" />
+				<Hotspot X="7016.563" Y="879.9417" Z="6290.582" />
+				<Hotspot X="7011.243" Y="880.2053" Z="6360.501" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="A Fast Friend and Old Chum" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Seacap Trap</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6950.112" Y="876.2651" Z="6284.006" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="A Fast Friend and Old Chum" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Needlemouth</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6950.112" Y="876.2651" Z="6284.006" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Lesson of Loss" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Bluntfang Shaman</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7114.819" Y="894.3925" Z="6063.913" />
+				<Hotspot X="7085.877" Y="903.3671" Z="6266.258" />
+				<Hotspot X="7109.373" Y="905.1196" Z="6304.463" />
+				<Hotspot X="7092.213" Y="903.6329" Z="6296.301" />
+				<Hotspot X="7122.046" Y="906.3022" Z="6283.81" />
+				<Hotspot X="7047.289" Y="896.074" Z="6185.251" />
+				<Hotspot X="7070.234" Y="900.7377" Z="6159.687" />
+				<Hotspot X="7055.902" Y="900.3986" Z="6151.886" />
+				<Hotspot X="7094.011" Y="904.3228" Z="6178.28" />
+				<Hotspot X="7075.522" Y="901.6171" Z="6189.792" />
+				<Hotspot X="7132.862" Y="912.5762" Z="6166.52" />
+				<Hotspot X="7148.313" Y="909.9838" Z="6204.528" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+	<TurnInQuest Name="Crocodelicacy" Npc="Gregor Screpp" X="7382.229" Y="914.725" Z="6213.117" />
+		<If Condition="HasQuest(&quot;A Fast Friend and Old Chum&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="A Fast Friend and Old Chum" Reward="1" Npc="Gregor Screpp" X="7382.229" Y="914.725" Z="6213.117" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Fish Hook Belt&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="A Fast Friend and Old Chum" Reward="2" Npc="Gregor Screpp" X="7382.229" Y="914.725" Z="6213.117" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Handkerchief of the Lucky Catch&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="A Fast Friend and Old Chum" Reward="3" Npc="Gregor Screpp" X="7382.229" Y="914.725" Z="6213.117" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Razormaw Skin Belt&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="A Fast Friend and Old Chum" Reward="4" Npc="Gregor Screpp" X="7382.229" Y="914.725" Z="6213.117" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Razormaw Tooth Belt&quot;)" />
+			 </If>
+		</If>
+	<TurnInQuest Name="Lesson of Loss" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+	<PickUpQuest Name="Picked Plumage" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+	<TurnInQuest Name="Breakthrough" Npc="Gladdox Fwyntindle" X="7386.079" Y="914.6236" Z="6203.039" />
+	<TurnInQuest Name="The Missing Professor" Npc="Adalia Merril" X="7384.686" Y="913.8361" Z="6196.334" />
+	<PickUpQuest Name="A Stalwart Researcher" Npc="Adalia Merril" X="7384.686" Y="913.8361" Z="6196.334" />
+	<PickUpQuest Name="It's For What Ails You" Npc="Oslo Len" X="7398.005" Y="914.6323" Z="6207.981" />
+	<TurnInQuest Name="A Stalwart Researcher" Npc="Irrena Alfinder" X="7340.5" Y="887.9114" Z="5857.494" />
+	<PickUpQuest Name="Driven Out" Npc="Irrena Alfinder" X="7340.5" Y="887.9114" Z="5857.494" />
+
+		<!-- weird quest, you have to use mushrooms and then i think use the little Eth Ruins - ignoring for now
+	<PickUpQuest Name="Get Up and Get Down" Npc="Feras Thorne" X="7523.151" Y="933.0425" Z="5728.428" />
+		-->
+	
+		<UseObjectsObjective Quest="Driven Out" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Alfinder's Chest</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7567.423" Y="955.5201" Z="5834.924" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="It's For What Ails You" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Fairweather Root</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7436.812" Y="915.4294" Z="5949.886" />
+				<Hotspot X="7451.201" Y="925.4564" Z="5950.473" />
+				<Hotspot X="7494.465" Y="931.0812" Z="5915.382" />
+				<Hotspot X="7473.658" Y="926.7051" Z="5884.049" />
+				<Hotspot X="7451.543" Y="936.3987" Z="5862.972" />
+				<Hotspot X="7499.415" Y="929.1704" Z="5778.972" />
+				<Hotspot X="7523.431" Y="919.1299" Z="5905.745" />
+				<Hotspot X="7516.936" Y="935.5137" Z="5833.106" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Picked Plumage" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Harpy Aggressor</Mob>
+			  <Mob>Harpy Runt</Mob>
+			  <Mob>Harpy Shrieker</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7436.812" Y="915.4294" Z="5949.886" />
+				<Hotspot X="7451.201" Y="925.4564" Z="5950.473" />
+				<Hotspot X="7494.465" Y="931.0812" Z="5915.382" />
+				<Hotspot X="7473.658" Y="926.7051" Z="5884.049" />
+				<Hotspot X="7451.543" Y="936.3987" Z="5862.972" />
+				<Hotspot X="7452.022" Y="930.3888" Z="5820.25" />
+				<Hotspot X="7482.761" Y="928.9756" Z="5800.279" />
+				<Hotspot X="7499.415" Y="929.1704" Z="5778.972" />
+				<Hotspot X="7584.98" Y="932.8337" Z="5904.497" />
+				<Hotspot X="7516.936" Y="935.5137" Z="5833.106" />
+				<Hotspot X="7567.423" Y="955.5201" Z="5834.924" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Driven Out" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Harpy Aggressor</Mob>
+			  <Mob>Harpy Runt</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7436.812" Y="915.4294" Z="5949.886" />
+				<Hotspot X="7451.201" Y="925.4564" Z="5950.473" />
+				<Hotspot X="7494.465" Y="931.0812" Z="5915.382" />
+				<Hotspot X="7473.658" Y="926.7051" Z="5884.049" />
+				<Hotspot X="7451.543" Y="936.3987" Z="5862.972" />
+				<Hotspot X="7452.022" Y="930.3888" Z="5820.25" />
+				<Hotspot X="7482.761" Y="928.9756" Z="5800.279" />
+				<Hotspot X="7499.415" Y="929.1704" Z="5778.972" />
+				<Hotspot X="7584.98" Y="932.8337" Z="5904.497" />
+				<Hotspot X="7516.936" Y="935.5137" Z="5833.106" />
+				<Hotspot X="7567.423" Y="955.5201" Z="5834.924" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Driven Out" Npc="Irrena Alfinder" X="7340.5" Y="887.9114" Z="5857.494" />
+	<PickUpQuest Name="History Lesson" Npc="Irrena Alfinder" X="7340.5" Y="887.9114" Z="5857.494" />
+	<TurnInQuest Name="History Lesson" Npc="Adalia Merril" X="7384.686" Y="913.8361" Z="6196.334" />
+		<If Condition="HasQuest(&quot;Picked Plumage&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Picked Plumage" Reward="1" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Picked Plumage" Reward="2" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Picked Plumage" Reward="3" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip The Defeatherer&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Picked Plumage" Reward="4" Npc="Matius Serin" X="7382.229" Y="914.725" Z="6213.117" />
+			 </If>
+		</If>
+	<TurnInQuest Name="It's For What Ails You" Npc="Oslo Len" X="7398.005" Y="914.6323" Z="6207.981" />
+	<PickUpQuest Name="Providing the Panacea" Npc="Oslo Len" X="7398.005" Y="914.6323" Z="6207.981" />
+	<PickUpQuest Name="Time Long Gone" Npc="Gladdox Fwyntindle" X="7385.99" Y="914.6457" Z="6202.825" />
+	<TurnInQuest Name="Time Long Gone" Npc="Diana Merridain" X="7683.039" Y="915.1058" Z="6264.989" />
+	<PickUpQuest Name="To the Dogs" Npc="Diana Merridain" X="7683.039" Y="915.1058" Z="6264.989" />
+	<TurnInQuest Name="Providing the Panacea" Npc="Helena Brass" X="7684.427" Y="915.176" Z="6302.21" />
+
+		<UseObjectsObjective Quest="To the Dogs" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Pile of Dirt</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7794.612" Y="904.8632" Z="6043.517" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="To the Dogs" Npc="Diana Merridain" X="7683.039" Y="915.1058" Z="6264.989" />
 		
 		<GrindTo Level="38">
 		  <GrindArea>
@@ -68,6 +478,10 @@
 			</Hotspots>
 		  </GrindArea>
 		</GrindTo>
+		
+		<If Condition="HasQuest(&quot;Droughtlands Teleport&quot;)">
+	<TurnInQuest Name="Droughtlands Teleport" Npc="Hamid Altieri" X="7695.304" Y="933.6291" Z="6170.432" />
+		</If>
 		
 		<!-- Lantern Hook Quests -->
 		<!-- Ignoring the Bounty Notice quests (3 player) -->
@@ -1286,14 +1700,151 @@
 	<PickUpQuest Name="That Which Remains" Npc="Rozalen Feerule" X="8536.723" Y="940.3481" Z="6624.524" />
 	<PickUpQuest Name="Finding Flightsong" Npc="Sureshot the Marked" X="8537.984" Y="940.2784" Z="6637.017" />
 
-		
-		
-		
-		
-		
-		
-		
+		<UseObjectsObjective Quest="Finding Flightsong" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Eledriel's Corpse</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="8545.959" Y="974.7483" Z="6858.449" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 
+		<UseObjectsObjective Quest="That Which Remains" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Bone Pile</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="8511.227" Y="926.3089" Z="6690.123" />
+				<Hotspot X="8510.1" Y="920.2538" Z="6902.86" />
+				<Hotspot X="8550.265" Y="923.9164" Z="6872.824" />
+				<Hotspot X="8585.065" Y="918.6636" Z="6848.14" />
+				<Hotspot X="8597.666" Y="928.3559" Z="6812.059" />
+				<Hotspot X="8599.507" Y="922.3741" Z="6782.874" />
+				<Hotspot X="8544.953" Y="927.2261" Z="6704.099" />
+				<Hotspot X="8502.142" Y="937.73" Z="6717.105" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+		<KillMobsObjective Quest="When Predator Becomes Prey" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Heights Stalker</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8548.518" Y="924.3833" Z="6683.078" />
+				<Hotspot X="8385.992" Y="920.2573" Z="6915.138" />
+				<Hotspot X="8408.53" Y="921.0839" Z="6948.042" />
+				<Hotspot X="8457.431" Y="935.7289" Z="6949.109" />
+				<Hotspot X="8502.79" Y="920.4718" Z="6894.572" />
+				<Hotspot X="8514.615" Y="927.8406" Z="6941.819" />
+				<Hotspot X="8585.065" Y="918.6636" Z="6848.14" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="When Predator Becomes Prey" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Heights Prowler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8548.518" Y="924.3833" Z="6683.078" />
+				<Hotspot X="8408.53" Y="921.0839" Z="6948.042" />
+				<Hotspot X="8457.431" Y="935.7289" Z="6949.109" />
+				<Hotspot X="8502.79" Y="920.4718" Z="6894.572" />
+				<Hotspot X="8514.615" Y="927.8406" Z="6941.819" />
+				<Hotspot X="8585.065" Y="918.6636" Z="6848.14" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="When Predator Becomes Prey" Npc="Moose" X="8528.999" Y="940.3258" Z="6631.913" />
+	<PickUpQuest Name="Lecu the Claw" Npc="Moose" X="8528.999" Y="940.3258" Z="6631.913" />
+	<TurnInQuest Name="Finding Flightsong" Npc="Sureshot the Marked" X="8537.984" Y="940.2784" Z="6637.017" />
+	<PickUpQuest Name="Carrion's Song" Npc="Sureshot the Marked" X="8537.984" Y="940.2784" Z="6637.017" />
+	<TurnInQuest Name="That Which Remains" Npc="Rozalen Feerule" X="8536.723" Y="940.3481" Z="6624.524" />
+	<PickUpQuest Name="Mundane Needs of the Arcane Hand" Npc="Rozalen Feerule" X="8536.723" Y="940.3481" Z="6624.524" />
+		
+		<KillMobsObjective Quest="Lecu the Claw" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Lecu the Claw</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8446.427" Y="920.9379" Z="6908.399" />
+				<Hotspot X="8361.449" Y="916.3467" Z="6912.428" />
+				<Hotspot X="8336.1" Y="904.2123" Z="6847.464" />
+				<Hotspot X="8347.675" Y="921.1697" Z="6770.845" />
+				<Hotspot X="8367.917" Y="920.1584" Z="6754.765" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="HasQuest(&quot;Carrion's Song&quot;)">
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+
+		<!-- Carrion's Song - combat useitemon / use at range
+		<UseItemOnMobsObjective Quest="Carrion's Song" Item="Flightsong" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Carrion</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8532.222" Y="995.2682" Z="6791.661" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+		-->
+		
+		<KillMobsObjective Quest="Carrion's Song" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Carrion</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8532.222" Y="995.2682" Z="6791.661" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="HasQuest(&quot;Carrion's Song&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Carrion's Song" Reward="1" Npc="Sureshot the Marked" X="8537.984" Y="940.2784" Z="6637.017" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Hauberk of the Renown&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Carrion's Song" Reward="2" Npc="Sureshot the Marked" X="8537.984" Y="940.2784" Z="6637.017" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Robe of the Marked&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Carrion's Song" Reward="3" Npc="Sureshot the Marked" X="8537.984" Y="940.2784" Z="6637.017" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sureshot's Mantle&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Carrion's Song" Reward="4" Npc="Sureshot the Marked" X="8537.984" Y="940.2784" Z="6637.017" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Slightsong's Cuirass&quot;)" />
+			 </If>
+		</If>
+
+	<TurnInQuest Name="Lecu the Claw" Npc="Moose" X="8528.999" Y="940.3258" Z="6631.913" />
+		<!-- End of Hunters' Camp Quests -->
+		
+		<!-- Fallback Quests -->
+	<TurnInQuest Name="Mundane Needs of the Arcane Hand" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+	<PickUpQuest Name="The Queen's Prize" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+	<PickUpQuest Name="Gateway to the Warrens" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+	<PickUpQuest Name="Pesticide Genocide" Npc="Ruriel Zelus" X="8624.724" Y="917.9359" Z="7002.63" />
+	<PickUpQuest Name="Maelign the Great Queen" Npc="Melicore Rendos" X="8614.988" Y="917.9364" Z="7002.959" />
 		
 		
 		
@@ -1310,6 +1861,22 @@
 	<PickUpQuest Name="" 
 	<TurnInQuest Name="" 
 		-->
+
+		<!-- Brigand's Bluff Quests - These start at 44 -->
+		
+		<!-- 
+	<PickUpQuest Name="Aiding Adriana" 
+		
+		
+		
+		
+		-->
+		
+		
+
+
+
+
 
 		
 		<!-- 
