@@ -361,8 +361,29 @@
 		  </Area>
 		</KillMobsObjective>
 
+		<If Condition="HasQuest(&quot;Nurturing the Grove&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Nurturing the Grove" Reward="1" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Grovekeeper's Hauberk&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Nurturing the Grove" Reward="2" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Graniteweave Robe&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Nurturing the Grove" Reward="3" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Grovewalker's Tunic&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Nurturing the Grove" Reward="4" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Granitewood Curisass&quot;)" />
+			 </If>
+		</If>
 
-	<TurnInQuest Name="Nurturing the Grove" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" />
 		<If Condition="HasQuest(&quot;Shrines of Life&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Shrines of Life" Reward="1" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />

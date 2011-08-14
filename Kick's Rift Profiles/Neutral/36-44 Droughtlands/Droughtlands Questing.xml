@@ -8,6 +8,7 @@
 			<Healer X="8245.44" Y="898.3731" Z="6623.741" /> <!-- Spitescar Bank -->
 			<Healer X="7382.358" Y="914.804" Z="6205.645" /> <!-- Lantern Plateau -->
 			<Healer X="8629.517" Y="917.9841" Z="6997.356" /> <!-- Fallback -->
+			<Healer X="8642.938" Y="985.1461" Z="6442.568" /> <!-- Brigand's Bluff -->
 			
 			
         </Healers>
@@ -21,6 +22,7 @@
 			<Vendor X="8522.488" Y="940.3721" Z="6642.072" /> <!-- Hunter's Camp -->
 			<Vendor X="7392.215" Y="914.7023" Z="6201.586" /> <!-- Lantern Plateau -->
 			<Vendor X="8620.745" Y="917.9885" Z="6999.271" /> <!-- Fallback -->
+			<Vendor X="8656.103" Y="982.0172" Z="6479.786" /> <!-- Brigand's Bluff -->
 			 
         </Vendors>
       </Vendor>
@@ -1846,12 +1848,298 @@
 	<PickUpQuest Name="Pesticide Genocide" Npc="Ruriel Zelus" X="8624.724" Y="917.9359" Z="7002.63" />
 	<PickUpQuest Name="Maelign the Great Queen" Npc="Melicore Rendos" X="8614.988" Y="917.9364" Z="7002.959" />
 		
+		<If Condition="HasQuest(&quot;Gateway to the Warrens&quot;)">
+ 			<MoveTo X="8282.679" Y="912.5891" Z="7214.784" />
+		</If>
 		
+		<If Condition="HasQuest(&quot;Pesticide Genocide&quot;)">
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+
+		<!-- useitemtargetlocation before / during killing the red ants
+		<UseItemOnMobsObjective Quest="Pesticide Genocide" Item="Vial of Vicious Toxins" CastTime="1" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Mordant Swarmling</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8328.341" Y="881.5023" Z="7212.375" />
+				<Hotspot X="8303.197" Y="881.5051" Z="7173.749" />
+				<Hotspot X="8274.438" Y="881.0406" Z="7166.696" />
+				<Hotspot X="8262.638" Y="881.0635" Z="7183.315" />
+				<Hotspot X="8258.066" Y="881.0505" Z="7155.188" />
+				<Hotspot X="8238.735" Y="881.1543" Z="7176.479" />
+				<Hotspot X="8244.163" Y="881.2204" Z="7199.442" />
+				<Hotspot X="8273.074" Y="880.9741" Z="7197.217" />
+				<Hotspot X="8264.751" Y="889.4884" Z="7230.466" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+		-->
 		
+		<UseObjectsObjective Quest="The Queen's Prize" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Stone Emanator</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="8260.305" Y="881.0125" Z="7178.783" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 		
+		<KillMobsObjective Quest="Maelign the Great Queen" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Queen Maelign</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8265.937" Y="886.3926" Z="7205.807" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- This quest is kind of weird b/c I only have a 1 min buff - basically get 1-3 and then come back to Fallen Queen and you'll get a renewal of the buff after you bring the worker / soldier back
+	<PickUpQuest Name="Ant Farm" Npc="Fallen Queen" X="8265.407" Y="889.4495" Z="7222.919" />
+	
+		<UseItemOnMobsObjective Quest="Ant Farm" Item="Queen Pheromones" CastTime="1" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Mordant Soldier</Mob>
+			  <Mob>Mordant Worker</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8240.652" Y="880.9879" Z="7197.315" />
+				<Hotspot X="8263.174" Y="881.1797" Z="7170.198" />
+				<Hotspot X="8251.928" Y="881.6262" Z="7154.777" />
+				<Hotspot X="8293.328" Y="881.4604" Z="7173.085" />
+				<Hotspot X="8314.77" Y="881.517" Z="7182.512" />
+				<Hotspot X="8327.325" Y="881.5689" Z="7219.832" />
+				<Hotspot X="8304.097" Y="881.0995" Z="7219.942" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		-->
 		
+	<TurnInQuest Name="Gateway to the Warrens" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+		<If Condition="HasQuest(&quot;The Queen's Prize&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="The Queen's Prize" Reward="1" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Survivor's Waistband&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="The Queen's Prize" Reward="2" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Pyremage's Belt&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="The Queen's Prize" Reward="3" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Raider's Sash&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="The Queen's Prize" Reward="4" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Enforcer's Belt&quot;)" />
+			 </If>
+		</If>
+	<TurnInQuest Name="Pesticide Genocide" Npc="Ruriel Zelus" X="8624.724" Y="917.9359" Z="7002.63" />
+	<PickUpQuest Name="Walking with the Dead" Npc="Ruriel Zelus" X="8624.724" Y="917.9359" Z="7002.63" />
+	<TurnInQuest Name="Maelign the Great Queen" Npc="Melicore Rendos" X="8614.988" Y="917.9364" Z="7002.959" />
+	<PickUpQuest Name="Timeless Treasures of Eth" Npc="Melicore Rendos" X="8614.988" Y="917.9364" Z="7002.959" />
+
+		<KillMobsObjective Quest="Walking with the Dead" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Enkarus Reaver</Mob>
+			  <Mob>Enkarus Slayer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8219.3" Y="908.7729" Z="7155.573" />
+				<Hotspot X="8142.641" Y="909.4293" Z="7149.726" />
+				<Hotspot X="8176.013" Y="904.9191" Z="7153.997" />
+				<Hotspot X="8203.732" Y="908.3293" Z="7156.595" />
+				<Hotspot X="8207.412" Y="906.608" Z="7225.306" />
+				<Hotspot X="8233.601" Y="905.6483" Z="7242.373" />
+				<Hotspot X="8182.405" Y="908.4947" Z="7250.495" />
+				<Hotspot X="8216.403" Y="909.9055" Z="7273.674" />
+				<Hotspot X="8103.439" Y="916.3408" Z="7251.052" />
+				<Hotspot X="8114.522" Y="915.4377" Z="7281.587" />
+				<Hotspot X="8162.788" Y="914.202" Z="7331.533" />
+				<Hotspot X="8177.75" Y="914.499" Z="7346.944" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Walking with the Dead" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Enkarus Reaver</Mob>
+			  <Mob>Enkarus Slayer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8219.3" Y="908.7729" Z="7155.573" />
+				<Hotspot X="8142.641" Y="909.4293" Z="7149.726" />
+				<Hotspot X="8176.013" Y="904.9191" Z="7153.997" />
+				<Hotspot X="8203.732" Y="908.3293" Z="7156.595" />
+				<Hotspot X="8207.412" Y="906.608" Z="7225.306" />
+				<Hotspot X="8233.601" Y="905.6483" Z="7242.373" />
+				<Hotspot X="8182.405" Y="908.4947" Z="7250.495" />
+				<Hotspot X="8216.403" Y="909.9055" Z="7273.674" />
+				<Hotspot X="8103.439" Y="916.3408" Z="7251.052" />
+				<Hotspot X="8114.522" Y="915.4377" Z="7281.587" />
+				<Hotspot X="8162.788" Y="914.202" Z="7331.533" />
+				<Hotspot X="8177.75" Y="914.499" Z="7346.944" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Walking with the Dead" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Enkarus Anathema</Mob>
+			  <Mob>Enkarus Reaver</Mob>
+			  <Mob>Enkarus Slayer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8219.3" Y="908.7729" Z="7155.573" />
+				<Hotspot X="8142.641" Y="909.4293" Z="7149.726" />
+				<Hotspot X="8176.013" Y="904.9191" Z="7153.997" />
+				<Hotspot X="8203.732" Y="908.3293" Z="7156.595" />
+				<Hotspot X="8207.412" Y="906.608" Z="7225.306" />
+				<Hotspot X="8233.601" Y="905.6483" Z="7242.373" />
+				<Hotspot X="8182.405" Y="908.4947" Z="7250.495" />
+				<Hotspot X="8216.403" Y="909.9055" Z="7273.674" />
+				<Hotspot X="8103.439" Y="916.3408" Z="7251.052" />
+				<Hotspot X="8114.522" Y="915.4377" Z="7281.587" />
+				<Hotspot X="8162.788" Y="914.202" Z="7331.533" />
+				<Hotspot X="8177.75" Y="914.499" Z="7346.944" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Timeless Treasures of Eth" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Pawn of Anathema</Mob>
+			  <Mob>Enkarus Sniper</Mob>
+			  <Mob>Enkarus Anathema</Mob>
+			  <Mob>Enkarus Reaver</Mob>
+			  <Mob>Enkarus Slayer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8219.3" Y="908.7729" Z="7155.573" />
+				<Hotspot X="8142.641" Y="909.4293" Z="7149.726" />
+				<Hotspot X="8176.013" Y="904.9191" Z="7153.997" />
+				<Hotspot X="8203.732" Y="908.3293" Z="7156.595" />
+				<Hotspot X="8207.412" Y="906.608" Z="7225.306" />
+				<Hotspot X="8233.601" Y="905.6483" Z="7242.373" />
+				<Hotspot X="8182.405" Y="908.4947" Z="7250.495" />
+				<Hotspot X="8216.403" Y="909.9055" Z="7273.674" />
+				<Hotspot X="8103.439" Y="916.3408" Z="7251.052" />
+				<Hotspot X="8114.522" Y="915.4377" Z="7281.587" />
+				<Hotspot X="8162.788" Y="914.202" Z="7331.533" />
+				<Hotspot X="8177.75" Y="914.499" Z="7346.944" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Timeless Treasures of Eth" Npc="Melicore Rendos" X="8614.988" Y="917.9364" Z="7002.959" />
+	<TurnInQuest Name="Walking with the Dead" Npc="Ruriel Zelus" X="8624.724" Y="917.9359" Z="7002.63" />
+	<PickUpQuest Name="Dropping the Eth Bomb" Npc="Ruriel Zelus" X="8624.724" Y="917.9359" Z="7002.63" />
 		
+		<If Condition="HasQuest(&quot;Dropping the Eth Bomb&quot;)"> <!-- Tracking 1 -->
+			<MoveTo X="8162.403" Y="911.249" Z="7273.861" />
+			<Wait Seconds="2" />
+			<MoveTo X="8162.403" Y="911.249" Z="7273.861" />
+			<Wait Seconds="2" />
+			<Python Statement = "SpellManager.UseItem(&quot;Soul Sphere&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+
+		<KillMobsObjective Quest="Dropping the Eth Bomb" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Enkarus</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8162.403" Y="911.249" Z="7273.861" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="HasQuest(&quot;Dropping the Eth Bomb&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Dropping the Eth Bomb" Reward="1" Npc="Ruriel Zelus" X="8624.724" Y="917.9359" Z="7002.63" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Necklace of the Doomed&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Dropping the Eth Bomb" Reward="1" Npc="Ruriel Zelus" X="8624.724" Y="917.9359" Z="7002.63" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Necklace of the Doomed&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Dropping the Eth Bomb" Reward="4" Npc="Ruriel Zelus" X="8624.724" Y="917.9359" Z="7002.63" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Brilliant Necklace&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Dropping the Eth Bomb" Reward="4" Npc="Ruriel Zelus" X="8624.724" Y="917.9359" Z="7002.63" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Brilliant Necklace&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="Tough Negotiations" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+
+		<If Condition="HasQuest(&quot;Tough Negotiations&quot;)">
+			<TalkToNpcObjective Quest="Tough Negotiations" Npc="Arloon" X="8553.919" Y="931.6187" Z="7164.121" Options="1, 1" Tracking="1" />
+		</If>
+
+	<TurnInQuest Name="Tough Negotiations" Npc="Daelah" X="8592.959" Y="932.5873" Z="7173.259" />
+	<PickUpQuest Name="Equal to the Savages" Npc="Daelah" X="8592.959" Y="932.5873" Z="7173.259" />
 		
+		<If Condition="HasQuest(&quot;Equal to the Savages&quot;)">
+			<TalkToNpcObjective Quest="Equal to the Savages" Npc="Jormgar" X="8552.318" Y="931.46" Z="7178.348" Options="1" Tracking="1" />
+		</If>
+
+	<TurnInQuest Name="Equal to the Savages" Npc="Daelah" X="8592.959" Y="932.5873" Z="7173.259" />
+	<PickUpQuest Name="Close One Eye, Step to the Side" Npc="Daelah" X="8592.959" Y="932.5873" Z="7173.259" />
+	<PickUpQuest Name="Prepare to Fight" Npc="Daelah" X="8592.959" Y="932.5873" Z="7173.259" />
+		<!-- Ignoring the 2 3-person group quests -->
+		<If Condition="HasQuest(&quot;Close One Eye, Step to the Side&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Close One Eye, Step to the Side" Reward="1" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Boots of the Alliance&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Close One Eye, Step to the Side" Reward="2" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Pyremage's Slippers&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Close One Eye, Step to the Side" Reward="3" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Emissary's Boots&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Close One Eye, Step to the Side" Reward="4" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sabatons of the Accord&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="Revenge of the Stormbrood" Npc="Suraph the Pyremage" X="8625.49" Y="917.9894" Z="6999.563" />
+	<TurnInQuest Name="Prepare to Fight" Npc="Kornath" X="8510.735" Y="916.3419" Z="7370.894" />
+		<!-- Ignoring the group quests here -->
+		
+		<!-- Brigand's Bluff / Redoubt Quests -->
+	<TurnInQuest Name="Revenge of the Stormbrood" Npc="Null Aximander" X="8672.306" Y="983.1541" Z="6458.319" />
+	<PickUpQuest Name="The Battle for Redoubt" Npc="Null Aximander" X="8672.306" Y="983.1541" Z="6458.319" />
+	<PickUpQuest Name="Aiding Adriana" Npc="Kyrathi Burul" X="8670.419" Y="983.0408" Z="6462.457" />
 		
 		
 		
