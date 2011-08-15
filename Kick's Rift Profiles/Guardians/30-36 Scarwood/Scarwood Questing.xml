@@ -245,7 +245,7 @@
 		<UseObjectsObjective Quest="Legacy of the Grove" Tracking="1">
 		  <Area>
 			<Objects>
-			  <Object>Monument of Carwin Mathos</Object>
+			  <Object>Monument to Carwin Mathos</Object>
 			</Objects>
 			<Hotspots>
 				<Hotspot X="3505.317" Y="1105.087" Z="3721.264" />
@@ -1980,7 +1980,7 @@
 			<MoveTo X="3129.301" Y="1095.069" Z="3853.652" />
 		</If>
 	
-			<Python Statement="Logging.Write(&quot;Go to Sanctum, complete the 2 quests and get next 2 quests, TRAIN, load Moonshade Highlands profile and press start&quot;)" />
+			<Python Statement="Logging.Write(&quot;Go to Sanctum, complete the 2 quests and get next 2 quests, TRAIN, load Moonshade Highlands profile and press start - or Droughtlands&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		
 	<TurnInQuest Name="Beyond Solace" Npc="Fortuna Cosani" X="7498.921" Y="887.1837" Z="3061.509" />
