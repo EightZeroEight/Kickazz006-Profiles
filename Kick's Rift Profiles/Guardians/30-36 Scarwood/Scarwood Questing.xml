@@ -429,7 +429,8 @@
 			 </If>
 		</If>
 
-	<PickUpQuest Name="Trouble from the Mill" Npc="Omia Leen" X="3585.32" Y="1104.377" Z="3798.424" />
+		
+	<PickUpQuest Name="Trouble from the Mill" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" /> <!-- changed from Omia Leen to Lej -->
 		<!-- End of Carwin's Shrine Quests -->
 		
 		<!-- Keenblade Barricade Quests -->
@@ -1576,7 +1577,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-	<TurnInQuest Name="The Butcher's Bill" Npc="Sir Martyn Myrsol" X="3205.503" Y="1094.295" Z="3365.438" />
+	<TurnInQuest Name="The Butcher's Bill" Npc="Captain Zamora" X="3215.853" Y="1094.06" Z="3367.392" />
 	<PickUpQuest Name="Payment in Kind" Npc="Captain Zamora" X="3215.853" Y="1094.06" Z="3367.392" />
 	
 		<UseObjectsObjective Quest="At Any Price" Tracking="1">
@@ -1618,7 +1619,7 @@
 
 	<TurnInQuest Name="Payment in Kind" Npc="Captain Zamora" X="3215.853" Y="1094.06" Z="3367.392" />
 	<TurnInQuest Name="An Unhealthy Fetish" Npc="Fadei Bogatyr" X="3336.683" Y="1086.825" Z="3555.187" />
-		<If Condition="HasQuest(&quot;&quot;)">
+		<If Condition="HasQuest(&quot;At Any Price&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="At Any Price" Reward="2" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
 				<Wait Seconds="2" />

@@ -59,6 +59,74 @@
 	<PickUpQuest Name="Body Harvest" Npc="Tarik" X="7036.423" Y="883.7914" Z="6778.16" />
 	<PickUpQuest Name="Golden Affronts" Npc="Tarik" X="7036.423" Y="883.7914" Z="6778.16" />
 
+		<UseItemOnMobsObjective Quest="Harsh Medicine" Item="Drawing Flask" CastTime="3" Cooldown="1" WhenDead="True" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Sandstone Striker</Mob>
+			  <Mob>Sandstone Scourge</Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<UseObjectsObjective Quest="Body Harvest" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Trader Corpse</Object>
+			</Objects>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Kicking Stones" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Sunwarmed Stoneling</Mob>
+			  <Mob>Skittering Stoneling</Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
 
 
 

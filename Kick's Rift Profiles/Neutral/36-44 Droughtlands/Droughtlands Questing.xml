@@ -676,7 +676,7 @@
 		</KillMobsObjective>
 
 	<TurnInQuest Name="Burying Blackclaw" Npc="Darel Ranes" X="7646.465" Y="915.0975" Z="6265.207" />
-		<If Condition="HasQuest(&quot;&quot;)">
+		<If Condition="HasQuest(&quot;In the Name of Lantern Hook&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="In the Name of Lantern Hook" Reward="1" Npc="Effrin Shane" X="7658.146" Y="915.0085" Z="6262.75" />
 				<Wait Seconds="2" />
