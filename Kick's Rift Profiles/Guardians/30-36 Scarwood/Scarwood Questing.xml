@@ -1869,7 +1869,7 @@
 
 		<If Condition="HasQuest(&quot;Paging Doctor Visek&quot;)">
 			<Moveto X="3122.524" Y="1035.805" Z="3221.477" />
-			<Python Statement="Logging.Write(&quot;Please manually turn in Doctor Visek quest at podium and accept / do next quest and then turn it in&quot;)" />
+			<Python Statement="Logging.Write(&quot;Please manually turn in Doctor Visek quest at podium and accept / do next quest and then turn it in - Slave No Longer &quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 
@@ -1909,11 +1909,15 @@
 		</UseObjectsObjective>
 
 		<If Condition="HasQuest(&quot;Slave No Longer&quot;)">
+		<If Condition="((HasQuest(&quot;Slave No Longer&quot;)) and (not IsQuestObjectiveCompleted(&quot;Slave No Longer&quot;, 3)))">
 			<Python Statement="Logging.Write(&quot;Use Quest item on Gnarlbone at 30 percent hp, then take the port out of there that spawns&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 		
+		<If Condition="(HasQuest(&quot;Slave No Longer&quot;))">
+			<MoveTo X="3339.747" Y="1086.808" Z="3556.31" />
 	<TurnInQuest Name="Slave No Longer" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
+		</If>
 		<If Condition="HasQuest(&quot;Merciful Flame&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Merciful Flame" Reward="1" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
