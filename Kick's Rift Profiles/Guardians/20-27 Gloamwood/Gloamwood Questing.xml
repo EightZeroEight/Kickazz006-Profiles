@@ -737,7 +737,6 @@
 		<!-- Think of the Children - Daily available.  kill 8 spiders, free 3 victims.  Ignoring for now -->
 
 		<!-- To Tearfall Run -->
-		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
 		<If Condition="HasQuest(&quot;Planting Hope&quot;)">
   			<MoveTo X="4633.705" Y="1109.907" Z="2738.195" />
  			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
@@ -767,7 +766,6 @@
 			<Wait Seconds="5" />
 		</If>
 
-		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
 		<If Condition="HasQuest(&quot;Dead Water&quot;)">
    			<MoveTo X="4633.705" Y="1109.907" Z="2738.195" />
 			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
@@ -830,7 +828,6 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
 		<If Condition="HasQuest(&quot;In Death as in Life&quot;)">
  			<MoveTo X="4633.705" Y="1109.907" Z="2738.195" />
  			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
@@ -1721,9 +1718,6 @@
       </GrindArea>
     </GrindTo>
 	
-	<!-- the npc wasn't here as of new patch
-	First Quest in Scarlet Gorge  
-	<PickUpQuest Name="The Ancient Ward" Npc="Paula Becksten" X="3984.344" Y="1102.438" Z="2923.706" /> -->
 	
 			<Python Statement="Logging.Write(&quot;End of Line&quot;)" />
 			<Python Statement="GigaBot.Stop()" />

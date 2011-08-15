@@ -516,14 +516,10 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<!-- 'object - corpse' that offers a quest
-		<If Condition="HasQuest(&quot;A Wrench in the Works&quot;)"> <If Condition="not HasQuest(&quot;A Fallen Soldier&quot;)">
 	<PickUpQuest Name="A Fallen Soldier" Npc="Fallen Guardian Soldier" X="3810.085" Y="1052.969" Z="3997.201" />
-		</If></If>
 		<If Condition="HasQuest(&quot;A Fallen Soldier&quot;)">
 	<TurnInQuest Name="A Fallen Soldier" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
 		</If>
-		-->
 
 	<TurnInQuest Name="The Score" Npc="Sir Alvarez Nilkova" X="3823.265" Y="1120.687" Z="3683.986" />
 		<If Condition="HasQuest(&quot;A Wrench in the Works&quot;)">
@@ -591,7 +587,6 @@
 				</Hotspots>
 		  </Area>
 		</UseObjectsObjective>
-
 
 		<KillMobsObjective Quest="I Could Eat an Ox" Tracking="1">
 		  <Area>
@@ -902,16 +897,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<!-- object / guy before shrine
-		-->
-		<If Condition="(HasQuest(&quot;Bahralt's Shrine&quot;)) and (not HasQuest(&quot;Evidence of the Unclean&quot;))">
-			<MoveTo X="2848.646" Y="1169.327" Z="4368.03" />
-			<UseObject Name="Two-Headed Corpse" X="2848.646" Y="1169.327" Z="4368.03" />
-			<Python Statement="Logging.Write(&quot;Get this quest,  you have another one soon, so don't go anywhere&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-			<Wait Seconds="2" />
 	<PickUpQuest Name="Evidence of the Unclean" Npc="Two-Headed Corpse" X="2848.646" Y="1169.327" Z="4368.03" />
-		</If> 
 		
 		<UseObjectsObjective Quest="Bahralt's Shrine" Tracking="1">
 		  <Area>
@@ -924,16 +910,7 @@
 		  </Area>
 		</UseObjectsObjective>
 		
-		<!-- object / guy after shrine 
-		-->
-		<If Condition="(HasQuest(&quot;Bahralt's Shrine&quot;)) and (not HasQuest(&quot;Lost Lore&quot;))">
-			<MoveTo X="2809.556" Y="1164.245" Z="4280.622" />
-			<UseObject Name="Carwin's Journal" X="2809.556" Y="1164.245" Z="4280.622" />
-			<Python Statement="Logging.Write(&quot;Get this quest&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-			<Wait Seconds="2" />
 	<PickUpQuest Name="Lost Lore" Npc="Carwin's Journal" X="2809.556" Y="1164.245" Z="4280.622" />
-		</If> 
 		
 		<KillMobsObjective Quest="Sacred Recollection" Tracking="1">
 		  <Area>
@@ -1248,7 +1225,7 @@
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 
-		<!--
+		<!-- The Open Door
 		<If Condition="HasQuest(&quot;The Open Door&quot;)">
 			<RemoveJob>
 				<Job Name="HandleCombat" />
@@ -1894,7 +1871,8 @@
 			<Python Statement="Logging.Write(&quot;Please manually turn in Doctor Visek quest at podium and accept / do next quest and then turn it in&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
-	   <!-- manually turn in quest at podium
+
+		<!-- manually turn in quest at podium
 		<UseObjectsObjective Quest="Paging Doctor Visek" Tracking="2">
 		  <Area>
 			<Objects>

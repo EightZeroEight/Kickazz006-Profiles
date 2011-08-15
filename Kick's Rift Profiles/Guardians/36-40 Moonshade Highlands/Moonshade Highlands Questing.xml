@@ -1976,6 +1976,7 @@
 		  </Area>
 		</UseItemOnMobsObjective>
 		-->
+		
 		<If Condition="HasQuest(&quot;The Churning Fates&quot;)">
 			<MoveTo X="6126.155" Y="993.2482" Z="1387.907" />
 			<Wait Seconds="2" />

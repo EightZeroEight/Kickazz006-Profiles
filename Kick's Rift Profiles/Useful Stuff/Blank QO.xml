@@ -6,21 +6,27 @@
 	<TurnInQuest Name="" Reward="1" 
 
 
+		<If Condition="((HasQuest(&quot;&quot;)) and (not IsQuestObjectiveCompleted(&quot;&quot;, 1)))">
+			<Python Statement="Logging.Write(&quot;Please manually do quest  objective () - then press start&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		<If Condition="((HasQuest(&quot;&quot;)) and (IsQuestObjectiveCompleted(&quot;&quot;, 1)))">
+		</If>
+		
 		<If Condition="((HasQuest(&quot;&quot;)) and (not IsQuestCompleted(&quot;&quot;)))">
 		</If>
-		<If Condition="HasQuest(&quot;&quot;)">
+		<If Condition="((HasQuest(&quot;&quot;)) and (IsQuestCompleted(&quot;&quot;)))">
+		</If>
+		
+		<If Condition="(HasQuest(&quot;&quot;))">
 		</If>
 		
 		<!-- Npc Name -->
 		<If Condition="HasQuestAvailable(&quot;&quot;)">
 		</If>
 
-
-
-			<MoveTo 
-			<Wait Seconds="" />
-
-			<Wait Seconds="1" />
+		
+			<Wait Seconds="2" />
 			<Python Statement = "GigaRift.Me.ClearTarget()" />
 
 		<UseObjectsObjective Quest="" Tracking="1">
@@ -145,26 +151,12 @@
 
 
 		<If Condition="HasQuest(&quot;&quot;)">
-			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
-	<TurnInQuest 
-				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
-			</If>
-			 <If Condition="Me.Class == UnitClass.Mage">
-	<TurnInQuest 
-				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
-			 </If>
-			 <If Condition="Me.Class == UnitClass.Rogue">
-	<TurnInQuest 
-				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
-			 </If>
-			 <If Condition="Me.Class == UnitClass.Warrior">
-	<TurnInQuest 
-				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
-			 </If>
+			<MoveTo  />
+			<Python Statement="Logging.Write(&quot;Abyssal Eradication - I need to know what rewards are on your screen for this turnin (class and reward), please report them to my quest thread
+				\n1 2
+				\n3 4
+				\n5 6
+				\nthat is the order that they come in &quot;)" />
 		</If>
 
 			<!-- Rogues:
@@ -186,6 +178,22 @@
 	
 
 
+
+		<If Condition="(HasQuest(&quot;&quot;))">
+			<Python Statement="Logging.Write(&quot;I have the quest&quot;)" />
+		</If>	
+		
+		<If Condition="((HasQuest(&quot;&quot;)) and (not IsQuestCompleted(&quot;&quot;)))">
+			<Python Statement="Logging.Write(&quot;This quest is in my log and not completed&quot;)" />
+		</If>	
+		
+		<If Condition="((HasQuest(&quot;&quot;)) and (IsQuestCompleted(&quot;&quot;)))">
+			<Python Statement="Logging.Write(&quot;This quest is in my log and is completed&quot;)" />
+		</If>
+		
+			<Wait Seconds="2" />
+			<Python Statement="GigaBot.Stop()" />
+			<Wait Seconds="2" />
 
 
 

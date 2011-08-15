@@ -746,7 +746,6 @@
 		  </Area>
 		</UseItemOnMobsObjective>
 
-		<!-- various mesh issues - i tried to fix a lot of the issues - but the bot keeps wanting to walk up buildings and stuff -->
 		<UseObjectsObjective Quest="Midterm Mayhem" Tracking="4">
 		  <Area>
 			<Objects>
@@ -1302,7 +1301,6 @@
 		</UseItemOnMobsObjective>
 		-->
 
-		<!-- These changes are untested -->
 		<If Condition="HasQuest(&quot;Saving the Spirit Guide&quot;)">
 			<MoveTo X="6583.324" Y="820.7825" Z="3630.43" />
 			<UseObject Name="Binding Point" X="6583.324" Y="820.7825" Z="3630.43" />
@@ -1355,7 +1353,7 @@
 			<TalkToNpcObjective Quest="The Altar of Reflection" Npc="Spirit Guide" X="6530.395" Y="830.6285" Z="3255.836" Options="1" Tracking="1" />
 		</If>
 
-    <!-- for some reason when you turn in this quest, you spin in circles -->
+    <!-- for some reason when you turn in this quest, you spin in circles - mesh issue? -->
 		<If Condition="HasQuest(&quot;The Altar of Reflection&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="The Altar of Reflection" Reward="1" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
@@ -2539,7 +2537,6 @@
     <PickUpQuest Name="The Power of Life" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
     <PickUpQuest Name="To Understand One's Foe" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
 
-		<!-- Very, very high agro / death area -->
 		<KillMobsObjective Quest="The Power of Life" Tracking="2">
 		  <Area>
 			<Mobs>

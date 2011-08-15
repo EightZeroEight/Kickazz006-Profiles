@@ -20,26 +20,9 @@
     </AddJob>
     <LoadMesh Name="Scarlet Gorge" />
 	
-	<!-- this npc seems to no longer be here for me, nor does olaf sternbrew
-	First Quest in Scarlet Gorge 
-	<PickUpQuest Name="The Ancient Ward" Npc="Paula Becksten" X="3984.344" Y="1102.438" Z="2923.706" /> -->
 		<If Condition="HasQuest(&quot;A Hero's Duty&quot;)">
 	<TurnInQuest Name="A Hero's Duty" Npc="Fyvel Goodman" X="3962.215" Y="1079.18" Z="3028.994" />
 		</If>
-	<!-- <TurnInQuest Name="The Ancient Ward" Npc="Olaf Sternbrew" X="3979.377" Y="1079.183" Z="3043.311" />  Activate Ancient Wardstone Spell 
-	<PickUpQuest Name="By the Power of the Vigil" Npc="Olaf Sternbrew" X="3979.377" Y="1079.183" Z="3043.311" />
-		<If Condition="HasQuest(&quot;By the Power of the Vigil&quot;)">
-			<MoveTo X="3975.19" Y="1079.238" Z="3045.252" />
-			// Rift is wanting to target a wardstone that is at crimson instead of right in front of us \\
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-			
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;tar Ancient Wardstone&quot;)" />
-			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;cast Activate Ancient Wardstone&quot;)" />
-			<Wait Seconds="10" />
-		</If>
-	<TurnInQuest Name="By the Power of the Vigil" Npc="Olaf Sternbrew" X="3979.377" Y="1079.183" Z="3043.311" /> -->
 		<!-- Ignoring Tracking the Endless Court (Dungeon Quest) from Professor Whent -->
 	<PickUpQuest Name="Into Scarlet Gorge" Npc="Fyvel Goodman" X="3962.215" Y="1079.18" Z="3028.994" />
 	
@@ -221,7 +204,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ridge Plate Legs&quot;)" />
 			 </If>
 		</If>
-		<!-- Npc Name -->
 		<If Condition="HasQuestAvailable(&quot;Agent Gerid Kalos&quot;)">
 	<PickUpQuest Name="Death for the Dead" Npc="Agent Gerid Kalos" X="3835.982" Y="976.5576" Z="2929.76" />
 		</If>
@@ -798,7 +780,6 @@
 			 </If>
 		</If>
 
-		<!-- check to see if Freeing x3 quests are avail now, or only after turning in the get thee gone / planar invaders -->
 	<PickUpQuest Name="Freeing Nambus Parm" Npc="Nambus Parm" X="4535.488" Y="918.3859" Z="3478.854" />
 	<PickUpQuest Name="Freeing Sandra Roe" Npc="Sandra Roe" X="4533.518" Y="918.3859" Z="3482.393" />
 	<PickUpQuest Name="Freeing Sedrick Finely" Npc="Sedrick Finely" X="4531.066" Y="918.3859" Z="3479.75" />
@@ -975,7 +956,7 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Rock Ridge Schynbalds&quot;)" />
 			 </If>
 		</If>
-	<!-- Ignoring Daily - but it's scripted b/c i picked it up
+	<!-- Ignoring Daily
 	<PickUpQuest Name="Rise Up" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" /> -->
 	<PickUpQuest Name="Caged and Abused" Npc="Peter Narren" X="4274.768" Y="953.672" Z="3453.574" /> 
 	

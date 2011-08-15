@@ -9,8 +9,7 @@
 			<Healer X="7382.358" Y="914.804" Z="6205.645" /> <!-- Lantern Plateau -->
 			<Healer X="8629.517" Y="917.9841" Z="6997.356" /> <!-- Fallback -->
 			<Healer X="8642.938" Y="985.1461" Z="6442.568" /> <!-- Brigand's Bluff -->
-			
-			
+			<Healer X="7021.577" Y="886.8774" Z="6777.892" /> <!-- Sandaxle Pit -->
         </Healers>
       </MendSoul>
     </AddJob>
@@ -23,7 +22,7 @@
 			<Vendor X="7392.215" Y="914.7023" Z="6201.586" /> <!-- Lantern Plateau -->
 			<Vendor X="8620.745" Y="917.9885" Z="6999.271" /> <!-- Fallback -->
 			<Vendor X="8656.103" Y="982.0172" Z="6479.786" /> <!-- Brigand's Bluff -->
-			 
+			<Vendor X="7043.081" Y="883.6149" Z="6774.437" /> <!-- Sandaxle Pit -->
         </Vendors>
       </Vendor>
     </AddJob>
@@ -1696,6 +1695,30 @@
 	<PickUpQuest Name="Man or Moose" Npc="Cornelius Magrox" X="8231.966" Y="896.4281" Z="6641.675" />
 		<!-- End of Spitescar Bank Quests -->
 
+		<GrindTo Level="42">
+		  <GrindArea TargetMinLevel="1" TargetMaxLevel="46">
+			<Mobs>
+			  <Mob>Fleshrend Defender</Mob>
+			  <Mob>Fleshrend Warrior</Mob>
+			  <Mob>Blackhorn Grazer</Mob>
+			  <Mob>Longtooth Hunter</Mob>
+			  <Mob>Storm Idol</Mob>
+			  <Mob>Burning Idol</Mob>
+			  <Mob>Living Idol</Mob>
+			  <Mob>Geotic Idol</Mob>
+			  <Mob>Endless Idol</Mob>
+			</Mobs>
+			<Hotspots>
+			  <Hotspot X="7900.248" Y="891.4436" Z="6420.652" />
+			  <Hotspot X="8006.461" Y="903.6537" Z="6598.638" />
+			  <Hotspot X="8086.001" Y="890.9511" Z="6559.859" />
+			  <Hotspot X="8222.338" Y="898.0765" Z="6535.527" />
+			  <Hotspot X="8051.951" Y="891.5494" Z="6456.686" />
+			  <Hotspot X="7905.292" Y="891.5" Z="6382.604" />
+			</Hotspots>
+		  </GrindArea>
+    </GrindTo>
+
 		<!-- Hunters' Camp Quests -->
 	<TurnInQuest Name="Man or Moose" Npc="Moose" X="8528.999" Y="940.3258" Z="6631.913" />
 	<PickUpQuest Name="When Predator Becomes Prey" Npc="Moose" X="8528.999" Y="940.3258" Z="6631.913" />
@@ -2136,100 +2159,419 @@
 	<TurnInQuest Name="Prepare to Fight" Npc="Kornath" X="8510.735" Y="916.3419" Z="7370.894" />
 		<!-- Ignoring the group quests here -->
 		
+		<GrindTo Level="43">
+		  <GrindArea>
+			<Mobs>
+			  <Mob>Heights Stalker</Mob>
+			  <Mob>Heights Prowler</Mob>
+			  <Mob>Lecu the Claw</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8548.518" Y="924.3833" Z="6683.078" />
+				<Hotspot X="8385.992" Y="920.2573" Z="6915.138" />
+				<Hotspot X="8408.53" Y="921.0839" Z="6948.042" />
+				<Hotspot X="8457.431" Y="935.7289" Z="6949.109" />
+				<Hotspot X="8502.79" Y="920.4718" Z="6894.572" />
+				<Hotspot X="8514.615" Y="927.8406" Z="6941.819" />
+				<Hotspot X="8585.065" Y="918.6636" Z="6848.14" />
+				<Hotspot X="8446.427" Y="920.9379" Z="6908.399" />
+				<Hotspot X="8361.449" Y="916.3467" Z="6912.428" />
+				<Hotspot X="8336.1" Y="904.2123" Z="6847.464" />
+				<Hotspot X="8347.675" Y="921.1697" Z="6770.845" />
+				<Hotspot X="8367.917" Y="920.1584" Z="6754.765" />
+		   </Hotspots>
+		  </GrindArea>
+		</GrindTo>
+	
 		<!-- Brigand's Bluff / Redoubt Quests -->
 	<TurnInQuest Name="Revenge of the Stormbrood" Npc="Null Aximander" X="8672.306" Y="983.1541" Z="6458.319" />
 	<PickUpQuest Name="The Battle for Redoubt" Npc="Null Aximander" X="8672.306" Y="983.1541" Z="6458.319" />
 	<PickUpQuest Name="Aiding Adriana" Npc="Kyrathi Burul" X="8670.419" Y="983.0408" Z="6462.457" />
 		
-		
-		
-		
-		
-		<!-- 
-	<PickUpQuest Name="" 
-	<TurnInQuest Name="" 
-		-->
+		<If Condition="HasQuest(&quot;Aiding Adriana&quot;)">
+			<TalkToNpcObjective Quest="Aiding Adriana" Npc="Adriana Weaver" X="8793.122" Y="941.4197" Z="6797.034" Options="1, 1" Tracking="1" />
+		</If>
 
-		<!-- Brigand's Bluff Quests - These start at 44 -->
-		
-		<!-- 
-	<PickUpQuest Name="Aiding Adriana" 
-		
-		
-		
-		
-		-->
-		
-		
+	<TurnInQuest Name="Aiding Adriana" Npc="Adriana Weaver" X="8793.122" Y="941.4197" Z="6797.034" />
+	<PickUpQuest Name="Adriana's Amulet" Npc="Adriana Weaver" X="8793.122" Y="941.4197" Z="6797.034" />
 
+		<KillMobsObjective Quest="Adriana's Amulet" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Stormbrood Mage</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8805.813" Y="946.9648" Z="6813.896" />
+				<Hotspot X="8755.964" Y="962.4335" Z="6781.263" />
+				<Hotspot X="8749.424" Y="941.2585" Z="6801.606" />
+				<Hotspot X="8804.065" Y="926.463" Z="6885.918" />
+				<Hotspot X="8861.394" Y="937.887" Z="6896.628" />
+				<Hotspot X="8857.414" Y="949.656" Z="6827.095" />
+				<Hotspot X="8908.956" Y="960.824" Z="6813.296" />
+				<Hotspot X="8741.358" Y="929.601" Z="6953.562" />
+				<Hotspot X="8735.805" Y="951.5753" Z="6963.522" />
+				<Hotspot X="8780.351" Y="963.1793" Z="6983.641" />
+				<Hotspot X="8716.178" Y="927.1146" Z="6932.13" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+	<TurnInQuest Name="Adriana's Amulet" Npc="Adriana Weaver" X="8793.122" Y="941.4197" Z="6797.034" />
+	<PickUpQuest Name="In the Image of My Enemy" Npc="Adriana Weaver" X="8793.122" Y="941.4197" Z="6797.034" />
 
+		<If Condition="HasQuest(&quot;In the Image of My Enemy&quot;)">
+         <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(8793.122, 941.4197, 6797.034)) &lt; 10*10">
+			<TalkToNpcObjective Quest="In the Image of My Enemy" Npc="Adriana Weaver" X="8793.122" Y="941.4197" Z="6797.034" Options="1, 1" />
+         </If>
+			<TalkToNpcObjective Quest="In the Image of My Enemy" Npc="Arble Bloodfang" X="8907.971" Y="963.2712" Z="6914.821" Options="1" Tracking="1" />
+			<TalkToNpcObjective Quest="In the Image of My Enemy" Npc="Irben the Taskmaster" X="8994.273" Y="976.0864" Z="6905.58" Options="1" Tracking="2" />
+			<TalkToNpcObjective Quest="In the Image of My Enemy" Npc="Ronaar Longtongue" X="8978.072" Y="1029.268" Z="6679.77" Options="1" Tracking="3" />
+		</If>
 
+		<KillMobsObjective Quest="The Battle for Redoubt" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Stormbrood Guard</Mob>
+			  <Mob>Stormbrood Assassin</Mob>
+			  <Mob>Stormbrood Mage</Mob>
+			  <Mob>Stormbrood </Mob>
+			  <Mob>Stormbrood </Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8754.204" Y="925.2651" Z="6836.954" />
+				<Hotspot X="8805.813" Y="946.9648" Z="6813.896" />
+				<Hotspot X="8755.964" Y="962.4335" Z="6781.263" />
+				<Hotspot X="8749.424" Y="941.2585" Z="6801.606" />
+				<Hotspot X="8804.065" Y="926.463" Z="6885.918" />
+				<Hotspot X="8861.394" Y="937.887" Z="6896.628" />
+				<Hotspot X="8857.414" Y="949.656" Z="6827.095" />
+				<Hotspot X="8908.956" Y="960.824" Z="6813.296" />
+				<Hotspot X="8741.358" Y="929.601" Z="6953.562" />
+				<Hotspot X="8735.805" Y="951.5753" Z="6963.522" />
+				<Hotspot X="8780.351" Y="963.1793" Z="6983.641" />
+				<Hotspot X="8716.178" Y="927.1146" Z="6932.13" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+		<KillMobsObjective Quest="The Battle for Redoubt" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Stormbrood Guard</Mob>
+			  <Mob>Stormbrood Assassin</Mob>
+			  <Mob>Stormbrood Mage</Mob>
+			  <Mob>Stormbrood </Mob>
+			  <Mob>Stormbrood </Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8754.204" Y="925.2651" Z="6836.954" />
+				<Hotspot X="8805.813" Y="946.9648" Z="6813.896" />
+				<Hotspot X="8755.964" Y="962.4335" Z="6781.263" />
+				<Hotspot X="8749.424" Y="941.2585" Z="6801.606" />
+				<Hotspot X="8804.065" Y="926.463" Z="6885.918" />
+				<Hotspot X="8861.394" Y="937.887" Z="6896.628" />
+				<Hotspot X="8857.414" Y="949.656" Z="6827.095" />
+				<Hotspot X="8908.956" Y="960.824" Z="6813.296" />
+				<Hotspot X="8741.358" Y="929.601" Z="6953.562" />
+				<Hotspot X="8735.805" Y="951.5753" Z="6963.522" />
+				<Hotspot X="8780.351" Y="963.1793" Z="6983.641" />
+				<Hotspot X="8716.178" Y="927.1146" Z="6932.13" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+		<KillMobsObjective Quest="The Battle for Redoubt" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Stormbrood Guard</Mob>
+			  <Mob>Stormbrood Assassin</Mob>
+			  <Mob>Stormbrood Mage</Mob>
+			  <Mob>Stormbrood </Mob>
+			  <Mob>Stormbrood </Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8754.204" Y="925.2651" Z="6836.954" />
+				<Hotspot X="8805.813" Y="946.9648" Z="6813.896" />
+				<Hotspot X="8755.964" Y="962.4335" Z="6781.263" />
+				<Hotspot X="8749.424" Y="941.2585" Z="6801.606" />
+				<Hotspot X="8804.065" Y="926.463" Z="6885.918" />
+				<Hotspot X="8861.394" Y="937.887" Z="6896.628" />
+				<Hotspot X="8857.414" Y="949.656" Z="6827.095" />
+				<Hotspot X="8908.956" Y="960.824" Z="6813.296" />
+				<Hotspot X="8741.358" Y="929.601" Z="6953.562" />
+				<Hotspot X="8735.805" Y="951.5753" Z="6963.522" />
+				<Hotspot X="8780.351" Y="963.1793" Z="6983.641" />
+				<Hotspot X="8716.178" Y="927.1146" Z="6932.13" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+	<TurnInQuest Name="The Battle for Redoubt" Npc="Null Aximander" X="8672.306" Y="983.1541" Z="6458.319" />
+		<If Condition="HasQuest(&quot;In the Image of My Enemy&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="In the Image of My Enemy" Reward="1" Npc="Null Aximander" X="8672.306" Y="983.1541" Z="6458.319" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Girdle of Divinity&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="In the Image of My Enemy" Reward="2" Npc="Null Aximander" X="8672.306" Y="983.1541" Z="6458.319" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sash of the Last Ritual&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="In the Image of My Enemy" Reward="3" Npc="Null Aximander" X="8672.306" Y="983.1541" Z="6458.319" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Scavenger's Belt&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="In the Image of My Enemy" Reward="4" Npc="Null Aximander" X="8672.306" Y="983.1541" Z="6458.319" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Watcher's Tassets&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="Thwarting the Emberlord" Npc="Null Aximander" X="8672.306" Y="983.1541" Z="6458.319" />
+	<PickUpQuest Name="Death of the High Priests" Npc="Kyrathi Burul" X="8670.345" Y="983.0475" Z="6462.396" />
+	<PickUpQuest Name="The Big Push" Npc="Ishanti Leigh" X="8669.814" Y="983.0625" Z="6462.256" />
 
+		<KillMobsObjective Quest="The Big Push" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Stormbrood Annihilator</Mob>
+			  <Mob>Stormbrood Myrmidon</Mob>
+			  <Mob>Stormbrood Magus</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8836.513" Y="936.5046" Z="6888.998" />
+				<Hotspot X="8866.455" Y="937.9232" Z="6901.279" />
+				<Hotspot X="8887.503" Y="937.8793" Z="6872.939" />
+				<Hotspot X="8913.395" Y="975.9512" Z="6893.137" />
+				<Hotspot X="8956.412" Y="975.1924" Z="6914.087" />
+				<Hotspot X="8959.255" Y="975.6967" Z="6814.243" />
+				<Hotspot X="8994.819" Y="1012.053" Z="6757.246" />
+				<Hotspot X="8962.816" Y="1016.415" Z="6721.388" />
+				<Hotspot X="8915.197" Y="1016.982" Z="6682.05" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
 
+		<KillMobsObjective Quest="The Big Push" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Stormbrood Annihilator</Mob>
+			  <Mob>Stormbrood Myrmidon</Mob>
+			  <Mob>Stormbrood Magus</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8836.513" Y="936.5046" Z="6888.998" />
+				<Hotspot X="8866.455" Y="937.9232" Z="6901.279" />
+				<Hotspot X="8887.503" Y="937.8793" Z="6872.939" />
+				<Hotspot X="8913.395" Y="975.9512" Z="6893.137" />
+				<Hotspot X="8956.412" Y="975.1924" Z="6914.087" />
+				<Hotspot X="8959.255" Y="975.6967" Z="6814.243" />
+				<Hotspot X="8994.819" Y="1012.053" Z="6757.246" />
+				<Hotspot X="8962.816" Y="1016.415" Z="6721.388" />
+				<Hotspot X="8915.197" Y="1016.982" Z="6682.05" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Big Push" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Stormbrood Annihilator</Mob>
+			  <Mob>Stormbrood Myrmidon</Mob>
+			  <Mob>Stormbrood Magus</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8836.513" Y="936.5046" Z="6888.998" />
+				<Hotspot X="8866.455" Y="937.9232" Z="6901.279" />
+				<Hotspot X="8887.503" Y="937.8793" Z="6872.939" />
+				<Hotspot X="8913.395" Y="975.9512" Z="6893.137" />
+				<Hotspot X="8956.412" Y="975.1924" Z="6914.087" />
+				<Hotspot X="8959.255" Y="975.6967" Z="6814.243" />
+				<Hotspot X="8994.819" Y="1012.053" Z="6757.246" />
+				<Hotspot X="8962.816" Y="1016.415" Z="6721.388" />
+				<Hotspot X="8915.197" Y="1016.982" Z="6682.05" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Death of the High Priests" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Haratotek</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8856.796" Y="1013.01" Z="6714.993" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Death of the High Priests" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Agastem</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8859.613" Y="1013.01" Z="6742.132" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="((HasQuest(&quot;Thwarting the Emberlord&quot;)) and (not IsQuestObjectiveCompleted(&quot;Thwarting the Emberlord&quot;, 1)))">
+			<Python Statement="Logging.Write(&quot;Please manually do quest Thwarting the Emberlord objective (1) - then press start&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
 		
-		<!-- 
-		Porticulum in 
-		<MoveTo X="" Y="" Z="" />
+		<KillMobsObjective Quest="Thwarting the Emberlord" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Morkael</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8864.746" Y="1013.01" Z="6729.211" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="Thwarting the Emberlord" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Ethian Displacer</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="8857.367" Y="1013.186" Z="6728.68" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuest(&quot;Thwarting the Emberlord&quot;)">
+			<Wait Seconds="3" />
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Thwarting the Emberlord" Reward="3" Npc="Cathar" X="8847.75" Y="1134.285" Z="6729.647" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Morkael's Regret&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+			<Python Statement="Logging.Write(&quot;Abyssal Eradication - I need to know what rewards are on your screen for this turnin (class and reward), please report them to my quest thread
+				\n1 2
+				\n3 4
+				\n5 6
+				\nthat is the order that they come in &quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<!--
+	<TurnInQuest Name="Thwarting the Emberlord" Reward="" Npc="Cathar" X="8847.75" Y="1134.285" Z="6729.647" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
+				-->
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+			<Python Statement="Logging.Write(&quot;Abyssal Eradication - I need to know what rewards are on your screen for this turnin (class and reward), please report them to my quest thread
+				\n1 2
+				\n3 4
+				\n5 6
+				\nthat is the order that they come in &quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<!--
+	<TurnInQuest Name="Thwarting the Emberlord" Reward="" Npc="Cathar" X="8847.75" Y="1134.285" Z="6729.647" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
+				-->
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+			<Python Statement="Logging.Write(&quot;Abyssal Eradication - I need to know what rewards are on your screen for this turnin (class and reward), please report them to my quest thread
+				\n1 2
+				\n3 4
+				\n5 6
+				\nthat is the order that they come in &quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<!--
+	<TurnInQuest Name="Thwarting the Emberlord" Reward="" Npc="Cathar" X="8847.75" Y="1134.285" Z="6729.647" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
+				-->
+			 </If>
+		</If>
+	<PickUpQuest Name="Words of the Damned" Npc="Cathar" X="8847.75" Y="1134.285" Z="6729.647" />
+ 		<If Condition="(HasQuest(&quot;Words of the Damned&quot;))">
+		 <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(8845.47, 1134.35, 6729.488)) &lt; 10*10">
+ 			<Wait Seconds="2" />
+			<TalkToNpcObjective Quest="Words of the Damned" Npc="Cathar" X="8847.75" Y="1134.285" Z="6729.647" Options="2, 1" />
+			<!-- This was supposed to send me to the bluff, but it didn't; it chose gossip option 1 instead of 2 -->
+		 </If>
+		</If>
+	<TurnInQuest Name="Words of the Damned" Npc="Null Aximander" X="8672.306" Y="983.1541" Z="6458.319" />
+	<PickUpQuest Name="First Eth, then Mathosia" Npc="Null Aximander" X="8672.306" Y="983.1541" Z="6458.319" /> <!-- To Stillmoor -->
+	<TurnInQuest Name="Death of the High Priests" Npc="Kyrathi Burul" X="8670.345" Y="983.0475" Z="6462.396" />
+		<If Condition="HasQuest(&quot;The Big Push&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="The Big Push" Reward="1" Npc="Ishanti Leigh" X="8669.814" Y="983.0625" Z="6462.256" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Hauberk of Divinity&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="The Big Push" Reward="2" Npc="Ishanti Leigh" X="8669.814" Y="983.0625" Z="6462.256" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Robe of the Last Ritual&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="The Big Push" Reward="3" Npc="Ishanti Leigh" X="8669.814" Y="983.0625" Z="6462.256" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Scavenger's Tunic&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="The Big Push" Reward="4" Npc="Ishanti Leigh" X="8669.814" Y="983.0625" Z="6462.256" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Watcher's Cuirass&quot;)" />
+			 </If>
+		</If>
+	<PickUpQuest Name="Cry for Help" Npc="Ishanti Leigh" X="8669.814" Y="983.0625" Z="6462.256" /> <!-- To Shimmersand -->
+
+		<GrindTo Level="44" >
+		  <GrindArea>
+			<Mobs>
+			  <Mob>Stormbrood Guard</Mob>
+			  <Mob>Stormbrood Assassin</Mob>
+			  <Mob>Stormbrood Mage</Mob>
+			  <Mob>Stormbrood </Mob>
+			  <Mob>Stormbrood </Mob>
+			  <Mob>Stormbrood Annihilator</Mob>
+			  <Mob>Stormbrood Myrmidon</Mob>
+			  <Mob>Stormbrood Magus</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="8754.204" Y="925.2651" Z="6836.954" />
+				<Hotspot X="8805.813" Y="946.9648" Z="6813.896" />
+				<Hotspot X="8755.964" Y="962.4335" Z="6781.263" />
+				<Hotspot X="8749.424" Y="941.2585" Z="6801.606" />
+				<Hotspot X="8804.065" Y="926.463" Z="6885.918" />
+				<Hotspot X="8861.394" Y="937.887" Z="6896.628" />
+				<Hotspot X="8857.414" Y="949.656" Z="6827.095" />
+				<Hotspot X="8908.956" Y="960.824" Z="6813.296" />
+				<Hotspot X="8741.358" Y="929.601" Z="6953.562" />
+				<Hotspot X="8735.805" Y="951.5753" Z="6963.522" />
+				<Hotspot X="8780.351" Y="963.1793" Z="6983.641" />
+				<Hotspot X="8716.178" Y="927.1146" Z="6932.13" />
+				
+				<Hotspot X="8836.513" Y="936.5046" Z="6888.998" />
+				<Hotspot X="8866.455" Y="937.9232" Z="6901.279" />
+				<Hotspot X="8887.503" Y="937.8793" Z="6872.939" />
+				<Hotspot X="8913.395" Y="975.9512" Z="6893.137" />
+				<Hotspot X="8956.412" Y="975.1924" Z="6914.087" />
+				<Hotspot X="8959.255" Y="975.6967" Z="6814.243" />
+				<Hotspot X="8994.819" Y="1012.053" Z="6757.246" />
+				<Hotspot X="8962.816" Y="1016.415" Z="6721.388" />
+				<Hotspot X="8915.197" Y="1016.982" Z="6682.05" />
+			</Hotspots>
+		  </GrindArea>
+		</GrindTo>
+	
+			<Python Statement="Logging.Write(&quot;Train - then take the port to Droughtlands and load Shimmersand Profile!&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
 		
-		Porticulum in 
-		<MoveTo X="" Y="" Z="" />
-		
-		Porticulum in 
-		<MoveTo X="" Y="" Z="" />
-		
-		-->
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		<If Condition="(HasQuest(&quot;Cry for Help&quot;))">
+	<TurnInQuest Name="Cry for Help" Npc="Gunji" X="7039.698" Y="883.7867" Z="6765.427" />
+		</If>
 		
     <Loop />
   </Tasks>

@@ -1,0 +1,116 @@
+﻿<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <AddJob>
+      <MendSoul>
+        <Healers>
+			<Healer X="7708.562" Y="917.3669" Z="6359.512" /> <!-- Lantern Hook -->
+			<Healer X="7623.488" Y="915.7373" Z="6238.449" /> <!-- Lantern Hook -->
+			<Healer X="6513.109" Y="886.249" Z="7047.043" /> <!-- Fortune's Shore -->
+			<Healer X="6099.354" Y="979.5236" Z="7291.879" /> <!-- Wyrmbane Spire -->
+			<Healer X="7021.577" Y="886.8774" Z="6777.892" /> <!-- Sandaxle Pit -->
+			
+        </Healers>
+      </MendSoul>
+    </AddJob>
+    <AddJob>
+      <Vendor>
+        <Vendors>
+			<Vendor X="7594.341" Y="915.2083" Z="6330.176" /> <!-- Lantern Hook -->
+			<Vendor X="6624.151" Y="880.2174" Z="7034.096" /> <!-- Fortune's Shore -->
+			<Vendor X="6090.015" Y="978.959" Z="7298.863" /> <!-- Wyrmbane Spire -->
+			<Vendor X="7043.081" Y="883.6149" Z="6774.437" /> <!-- Sandaxle Pit -->
+			
+        </Vendors>
+      </Vendor>
+    </AddJob>
+    <LoadMesh Name="Shimmersand" />
+	
+    <GrindTo Level="43">
+      <GrindArea TargetMinLevel="1" TargetMaxLevel="46">
+        <Mobs>
+          <Mob>Fleshrend Defender</Mob>
+          <Mob>Fleshrend Warrior</Mob>
+          <Mob>Blackhorn Grazer</Mob>
+          <Mob>Longtooth Hunter</Mob>
+          <Mob>Storm Idol</Mob>
+          <Mob>Burning Idol</Mob>
+          <Mob>Living Idol</Mob>
+          <Mob>Geotic Idol</Mob>
+          <Mob>Endless Idol</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="7900.248" Y="891.4436" Z="6420.652" />
+          <Hotspot X="8006.461" Y="903.6537" Z="6598.638" />
+          <Hotspot X="8086.001" Y="890.9511" Z="6559.859" />
+          <Hotspot X="8222.338" Y="898.0765" Z="6535.527" />
+          <Hotspot X="8051.951" Y="891.5494" Z="6456.686" />
+          <Hotspot X="7905.292" Y="891.5" Z="6382.604" />
+        </Hotspots>
+      </GrindArea>
+    </GrindTo>
+
+		<If Condition="(HasQuest(&quot;Cry for Help&quot;))">
+	<TurnInQuest Name="Cry for Help" Npc="Gunji" X="7039.698" Y="883.7867" Z="6765.427" />
+		</If>
+	<PickUpQuest Name="Harsh Medicine" Npc="Gunji" X="7039.698" Y="883.7867" Z="6765.427" />
+	<PickUpQuest Name="Kicking Stones" Npc="Gunji" X="7039.698" Y="883.7867" Z="6765.427" />
+	<PickUpQuest Name="The Ogres' Prize" Npc="Thamber Barklynn" X="7033.639" Y="884.3212" Z="6774.675" />
+	<PickUpQuest Name="Body Harvest" Npc="Tarik" X="7036.423" Y="883.7914" Z="6778.16" />
+	<PickUpQuest Name="Golden Affronts" Npc="Tarik" X="7036.423" Y="883.7914" Z="6778.16" />
+
+
+
+
+	
+		
+		<!-- 
+	<PickUpQuest Name="" 
+	<TurnInQuest Name="" 
+		-->
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    <Loop />
+  </Tasks>
+</Profile>
