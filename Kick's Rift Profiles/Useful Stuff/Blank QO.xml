@@ -139,18 +139,6 @@
 
 		</If>
 
-		<If Condition="(HasQuest(&quot;&quot;)) and (not HasQuest(&quot;&quot;))">
-			<MoveTo 
-			<UseObject Name="" 
-			<Python Statement="Logging.Write(&quot;Get this quest and press start&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-			<Wait Seconds="2" />
-	<PickUpQuest Name=""  />
-		</If> 
-
-
-
-
 
 
 		<If Condition="HasQuest(&quot;&quot;)">

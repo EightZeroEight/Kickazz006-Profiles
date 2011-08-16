@@ -33,8 +33,9 @@
 
 		<!--Select rewards-->
 		<If Condition="HasQuest(&quot;A Dim, Dark Eye&quot;)">
-		<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="A Dim, Dark Eye" Npc="Messenger of the Vigil" X="6071.291" Y="820.4066" Z="3961.944" Reward="3" />
+			<Wait Seconds="2" />
 			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Missionary's Warhammer&quot;)" />
 		  <!--<ElseIf Condition="Me.Class == UnitClass.Rogue">
 			<TurnInQuest Name="www" Npc="www" X="1" Y="1" Z="1" Reward="1" />
@@ -45,33 +46,18 @@
 		  <ElseIf Condition="Me.Class == UnitClass.Warrior">
 			<TurnInQuest Name="www" Npc="www" X="1" Y="1" Z="1" Reward="1" />
 		  </ElseIf>-->
-		  <Else>
-			<Python Statement="Logging.Write(&quot;Please manually turn in the first quest and select the correct reward!&quot;)" />
+			<Else>
+			<Python Statement="Logging.Write(&quot;A Dim, Dark Eye - I need to know what rewards are on your screen for this turnin (class and reward), please report them to my quest thread
+				\n1 2
+				\n3 4
+				\n5 6
+				\nthat is the order that they come in &quot;)" />
 			<Python Statement="GigaBot.Stop()" />
-		  </Else>
-		</If>
+			</Else>
+			</If>
 		</If>
 
     <PickUpQuest Name="The Return" Npc="Messenger of the Vigil" X="6071.291" Y="820.4066" Z="3961.944" />
-
-		<!--Equip rewards-->
-		<If Condition="HasQuest(&quot;The Return&quot;)">
-		  <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
-			<!--<ElseIf Condition="Me.Class == UnitClass.Rogue">
-			  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip www&quot;)" />
-			</ElseIf>
-			<ElseIf Condition="Me.Class == UnitClass.Mage">
-			  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip www&quot;)" />
-			</ElseIf>
-			<ElseIf Condition="Me.Class == UnitClass.Warrior">
-			  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip www&quot;)" />
-			</ElseIf>-->
-			<Else>
-			  <Python Statement="Logging.Write(&quot;Please manually turn in the quest and equip the correct item!&quot;)" />
-			  <Python Statement="GigaBot.Stop()" />
-			</Else>
-		  </If>
-		</If>
 
 		<If Condition="HasQuest(&quot;The Return&quot;)">
 			<TalkToNpcObjective Quest="The Return" Npc="Sienna Faralon" X="6094.229" Y="820.5621" Z="3982.417" Options="1, 1" Tracking="1" />
@@ -120,7 +106,6 @@
     <TurnInQuest Name="Fire Upon the Water" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
     <PickUpQuest Name="Moral Chasm" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
 
-		<If Condition="HasQuest(&quot;Moral Chasm&quot;)">
 		  <UseObjectsObjective Quest="Moral Chasm" Tracking="1">
 			<Area>
 			  <Objects>
@@ -132,7 +117,7 @@
 			</Area>
 		  </UseObjectsObjective>
 
-		  <!-- tracking 2 -->
+		<If Condition="((HasQuest(&quot;Moral Chasm&quot;)) and (not IsQuestObjectiveCompleted(&quot;Moral Chasm&quot;, 2)))">
 		  <MoveTo  X="6135.959" Y="866.2277" Z="4067.066" />
 		  <Wait Seconds="1" />
 		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;tar Centurion Osteneer&quot;)" />
@@ -197,80 +182,45 @@
 
 		<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067" Reward="1" />
-		  <ElseIf Condition="Me.Class == UnitClass.Rogue">
-	<TurnInQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067" Reward="3" />
-		  </ElseIf>
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Honored Legmail&quot;)" />
 		  <ElseIf Condition="Me.Class == UnitClass.Mage">
 	<TurnInQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067" Reward="2" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Enduring Breeches&quot;)" />
+		  </ElseIf>
+		  <ElseIf Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067" Reward="3" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Boiled Leather Pants&quot;)" />
 		  </ElseIf>
 		  <ElseIf Condition="Me.Class == UnitClass.Warrior">
 	<TurnInQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067" Reward="4" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Ascended Greaves&quot;)" />
 		  </ElseIf>
-		  <Else>
-			<Python Statement="Logging.Write(&quot;Please manually turn in the first quest and select the correct reward!&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-		  </Else>
 		</If>
-
     <PickUpQuest Name="Out of the Hands of Evil" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067"/>
-
-		<If Condition="HasQuest(&quot;Out of the Hands of Evil&quot;)">
-		  <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Honored Legmail&quot;)" />
-			<ElseIf Condition="Me.Class == UnitClass.Rogue">
-			  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Boiled Leather Pants&quot;)" />
-			</ElseIf>
-			<ElseIf Condition="Me.Class == UnitClass.Mage">
-			  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Enduring Breeches&quot;)" />
-			</ElseIf>
-			<ElseIf Condition="Me.Class == UnitClass.Warrior">
-			  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Ascended Greaves&quot;)" />
-			</ElseIf>
-			<Else>
-			  <Python Statement="Logging.Write(&quot;Please manually turn in the quest and equip the correct item!&quot;)" />
-			  <Python Statement="GigaBot.Stop()" />
-			</Else>
-		  </If>
-		</If>
-
 	<TurnInQuest Name="Divine Inspiration" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
 		<If Condition="HasQuest(&quot;Offworld Woes&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
-	<TurnInQuest Name="Offworld Woes" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" Reward="4" />
+	<TurnInQuest Name="Offworld Woes" Reward="4" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
-	<TurnInQuest Name="Offworld Woes" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" Reward="3" />
+	<TurnInQuest Name="Offworld Woes" Reward="3" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
-	<TurnInQuest Name="Offworld Woes" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" Reward="1" />
+	<TurnInQuest Name="Offworld Woes" Reward="1"Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6"  />
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Hardened Slicer&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
-	<TurnInQuest Name="Offworld Woes" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" Reward="2" />
+	<TurnInQuest Name="Offworld Woes" Reward="2" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
 			 </If>
 		</If>
-
     <PickUpQuest Name="Wanton Flame" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
     <PickUpQuest Name="Help From Above" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
-	
 	<PickUpQuest Name="Recovered Notes" Object="Scattered Stones" X="6281.302" Y="820.6832" Z="3737.72" />
-
-		<KillMobsObjective Quest="Help From Above" Tracking="1">
-		  <Area>
-			<Mobs>
-			  <Mob></Mob>
-			</Mobs>
-			<Hotspots>
-			  <Hotspot X="6332.151" Y="819.7353" Z="3796.275" />
-			  <Hotspot X="6279.939" Y="820.6118" Z="3740.049" />
-			  <Hotspot X="6279.939" Y="820.6118" Z="3740.049" />
-			  <Hotspot X="6286.425" Y="820.5268" Z="3739.669" />
-			  <Hotspot X="6264.49" Y="821.8066" Z="3802.338" />
-			  <Hotspot X="6237.458" Y="826.0478" Z="3819.406" />
-			</Hotspots>
-		  </Area>
-		</KillMobsObjective>
 
 		<UseObjectsObjective Quest="Out of the Hands of Evil" Tracking="3">
 		  <Area>
@@ -305,9 +255,25 @@
 		  </Area>
 		</UseObjectsObjective>
 
+		<KillMobsObjective Quest="Help From Above" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Maelforge Ember</Mob>
+			</Mobs>
+			<Hotspots>
+			  <Hotspot X="6332.151" Y="819.7353" Z="3796.275" />
+			  <Hotspot X="6279.939" Y="820.6118" Z="3740.049" />
+			  <Hotspot X="6279.939" Y="820.6118" Z="3740.049" />
+			  <Hotspot X="6286.425" Y="820.5268" Z="3739.669" />
+			  <Hotspot X="6264.49" Y="821.8066" Z="3802.338" />
+			  <Hotspot X="6237.458" Y="826.0478" Z="3819.406" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
 		<!-- This is a UseItem and then click the AoE Circle on ground(UseItemTargetLocation from WoW).  Do note, this npc is not targettable -->
 
-		<If Condition="HasQuest(&quot;Wanton Flame&quot;)">
+		<If Condition="((HasQuest(&quot;Wanton Flame&quot;)) and (not IsQuestObjectiveCompleted(&quot;Wanton Flame&quot;, 1)))">
 		  <MoveTo  X="6341" Y="820.9684" Z="3798.137" />
 		  
 		  <Python Statement="Logging.Write(&quot;Bot doesn't Click the AoE Effect after using item&quot;)" />
@@ -325,8 +291,6 @@
 		</If>
 
     <TurnInQuest Name="Wanton Flame" Npc="Spirit of Carwin" X="6244.929" Y="835.0805" Z="3876.081" />
-    <!-- We learned Planar Lure -->
-	
     <TurnInQuest Name="Out of the Hands of Evil" Reward="1" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067"/>
 		<If Condition="HasQuest(&quot;Help From Above&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
@@ -350,7 +314,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Virtuous Claymore&quot;)" />
 			 </If>
 		</If>
-
     <PickUpQuest Name="Carrying the Light" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
 	<TurnInQuest Name="Recovered Notes" Npc="Legate Nathen Creen" X="6205.787" Y="831.1597" Z="3847.033" />
 
@@ -381,13 +344,12 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Brilliant Waistguard&quot;)" />
 			 </If>
 		</If>
-
 	<PickUpQuest Name="Singed Hives"  Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
     <PickUpQuest Name="Agitated Wildlife"  Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
     <!-- Ignoring Daily - Guardian of Ways and Means - kill 10 creatures from rifts / invasions Npc="Berthold Stronn" X="6208.949" Y="820.8959" Z="3582.466" -->
 
 		<!-- Singed Hives.  Bot doesn't want to kill the stupid hives! -->
-		<If Condition="HasQuest(&quot;Singed Hives&quot;)">
+		<If Condition="((HasQuest(&quot;Singed Hives&quot;)) and (not IsQuestObjectiveCompleted(&quot;Singed Hives&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="Logging.Write(&quot;Bot doesn't kill Vespid Hives. It walks up to it and then leaves.  If I use combatbot, it kills it - but if i get extra agro, it doesn't re-target afterwards&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
@@ -495,7 +457,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Warpwood Shortbow&quot;)" />
 			 </If>
 		</If>
-
    <PickUpQuest Name="Seek Out Argent Glade" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
     <!-- if con hasquest Seek Out Argent Glade - force train -->
     <!-- End of Sterling Hills Quests -->
