@@ -71,21 +71,21 @@
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
 			</If>
-			 <If Condition="Me.Class == UnitClass.Mage">
+			<If Condition="Me.Class == UnitClass.Mage">
 	<TurnInQuest 
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
-			 </If>
-			 <If Condition="Me.Class == UnitClass.Rogue">
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
 	<TurnInQuest 
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
-			 </If>
-			 <If Condition="Me.Class == UnitClass.Warrior">
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
 	<TurnInQuest 
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
-			 </If>
+			</If>
 		</If>
 
 
@@ -142,12 +142,12 @@
 
 
 		<If Condition="HasQuest(&quot;&quot;)">
-			<MoveTo  />
 			<Python Statement="Logging.Write(&quot;Abyssal Eradication - I need to know what rewards are on your screen for this turnin (class and reward), please report them to my quest thread
 				\n1 2
 				\n3 4
 				\n5 6
 				\nthat is the order that they come in &quot;)" />
+			<Python Statement="GigaBot.Stop()" />
 		</If>
 
 			<!-- Rogues:

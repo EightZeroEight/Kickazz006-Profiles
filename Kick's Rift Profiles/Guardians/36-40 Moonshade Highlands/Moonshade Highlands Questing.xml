@@ -105,7 +105,7 @@
 	<PickUpQuest Name="Dwarven Hospitality" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
 	<PickUpQuest Name="A Holy Remedy" Npc="Talvar Methyn" X="7208.179" Y="879.5001" Z="2127.357" />
 	
-		<If Condition="HasQuest(&quot;A Holy Remedy&quot;)">
+		<If Condition="((HasQuest(&quot;A Holy Remedy&quot;)) and (not IsQuestObjectiveCompleted(&quot;A Holy Remedy&quot;, 1)))">
 			<MoveTo X="7391.226" Y="826.4129" Z="2198.981" />
 			<Python Statement="Logging.Write(&quot;Please manually do quest - get 6x Thontic Reeds and then use them on the Sickly Dwarves&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
@@ -424,7 +424,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Plated Twilit Leg Guards&quot;)" />
 			 </If>
 		</If>
-	
 	<PickUpQuest Name="To Know Evil" Npc="Hartigan" X="7205.285" Y="879.9077" Z="2128.225" />
 	<TurnInQuest Name="Twilit Extermination" Npc="Doris Fedinar" X="7273.563" Y="877.5708" Z="2133.006" />
 	
@@ -527,8 +526,8 @@
 	<TurnInQuest Name="Underwater Machinations" Npc="Alyn Pinebranch" X="7278.914" Y="880.6846" Z="2057.505" />
 	<PickUpQuest Name="Corruption at the Arbor" Npc="Alyn Pinebranch" X="7278.914" Y="880.6846" Z="2057.505" />
 	
-		<If Condition="HasQuest(&quot;Corruption at the Arbor&quot;)">
- 			<MoveTo X="6975.783" Y="857.1432" Z="1971.678" />
+ 		<If Condition="((HasQuest(&quot;Corruption at the Arbor&quot;)) and (not IsQuestObjectiveCompleted(&quot;Corruption at the Arbor&quot;, 1)))">
+			<MoveTo X="6975.783" Y="857.1432" Z="1971.678" />
 			<UseObject Name="Kirna's Altar" X="6975.783" Y="857.1432" Z="1971.678" />
  			<Wait Seconds="7" />
 		</If>
@@ -961,7 +960,7 @@
 	<TurnInQuest Name="Regret Wrought in Stone" Npc="Sergeant Ognin" X="6507.919" Y="895.0104" Z="2127.267" />
 	<PickUpQuest Name="His People's Shield" Npc="Sergeant Ognin" X="6507.919" Y="895.0104" Z="2127.267" />
 		
-		<If Condition="HasQuest(&quot;His People's Shield&quot;)">
+		<If Condition="((HasQuest(&quot;His People's Shield&quot;)) and (not IsQuestObjectiveCompleted(&quot;His People's Shield&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
@@ -1172,7 +1171,7 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<If Condition="HasQuest(&quot;Eternal Custodian&quot;)"> <!-- 3 -->
+		<If Condition="((HasQuest(&quot;Eternal Custodian&quot;)) and (not IsQuestObjectiveCompleted(&quot;Eternal Custodian&quot;, 3)))">
 			<MoveTo X="6699.368" Y="913.9586" Z="1516.431" />
 			<Wait Seconds="2" />
 			<MoveTo X="6699.368" Y="913.9586" Z="1516.431" />
@@ -1203,7 +1202,7 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<If Condition="HasQuest(&quot;Eternal Custodian&quot;)"> <!-- 2 -->
+		<If Condition="((HasQuest(&quot;Eternal Custodian&quot;)) and (not IsQuestObjectiveCompleted(&quot;Eternal Custodian&quot;, 2)))">
 			<MoveTo X="6720.275" Y="923.4541" Z="1458.963" />
 			<Wait Seconds="2" />
 			<MoveTo X="6720.275" Y="923.4541" Z="1458.963" />
@@ -1212,7 +1211,7 @@
 			<Wait Seconds="5" />
 		</If>
 
-		<If Condition="HasQuest(&quot;Eternal Custodian&quot;)"> <!-- 1 -->
+		<If Condition="((HasQuest(&quot;Eternal Custodian&quot;)) and (not IsQuestObjectiveCompleted(&quot;Eternal Custodian&quot;, 1)))">
 			<MoveTo X="6693.034" Y="924.2395" Z="1456.712" />
 			<Wait Seconds="2" />
 			<MoveTo X="6693.034" Y="924.2395" Z="1456.712" />
@@ -1221,12 +1220,12 @@
 			<Wait Seconds="5" />
 		</If>
 
-		<If Condition="HasQuest(&quot;Fragmented History&quot;)">
+		<If Condition="((HasQuest(&quot;Fragmented History&quot;)) and (not IsQuestObjectiveCompleted(&quot;Fragmented History&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 
-		<!-- bell
+		<!-- Fragmented History - Collect 8 Bell Fragments 
 		<KillMobsObjective Quest="Fragmented History" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -1448,8 +1447,8 @@
 	<PickUpQuest Name="The Messenger" Npc="Thomas Penthas" X="6810.935" Y="914.5471" Z="1803.347" />
 	<PickUpQuest Name="Honor Them" Npc="Joseph Holden" X="6813.25" Y="914.5675" Z="1791.939" />
 		
-		<If Condition="HasQuest(&quot;The Messenger&quot;)">
- 			<MoveTo X="6986.774" Y="1047.678" Z="1127.667" />
+ 		<If Condition="((HasQuest(&quot;The Messenger&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Messenger&quot;, 1)))">
+			<MoveTo X="6986.774" Y="1047.678" Z="1127.667" />
 			<UseObject Name="Bounding Prison" X="6986.774" Y="1047.678" Z="1127.667" />
 			<Wait Seconds="15" />
  			<MoveTo X="6986.774" Y="1047.678" Z="1127.667" />
@@ -1631,14 +1630,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<If Condition="(HasQuest(&quot;Words On a Stone&quot;)) and (not HasQuest(&quot;Into Bahralt's Keeping&quot;))">
-			<MoveTo X="6144.022" Y="922.4827" Z="1589.009" />
-			<UseObject Name="Runebinder's Lament" X="6144.022" Y="922.4827" Z="1589.009" />
-			<Python Statement="Logging.Write(&quot;Get this quest and press start&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-			<Wait Seconds="2" />
-	<PickUpQuest Name="Into Bahralt's Keeping" Npc="Runebinder's Lament" X="6144.022" Y="922.4827" Z="1589.009" />
-		</If> 
+	<PickUpQuest Name="Into Bahralt's Keeping" Object="Runebinder's Lament" X="6144.022" Y="922.4827" Z="1589.009" />
 		
 		<UseObjectsObjective Quest="Words On a Stone" Tracking="1">
 		  <Area>
@@ -1769,7 +1761,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<If Condition="HasQuest(&quot;Unorthodox Methods&quot;)">
+		<If Condition="((HasQuest(&quot;Unorthodox Methods&quot;)) and (not IsQuestObjectiveCompleted(&quot;Unorthodox Methods&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
@@ -1852,14 +1844,7 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<If Condition="(HasQuest(&quot;Death's Embrace&quot;)) and (not HasQuest(&quot;An Item of Interest&quot;))">
-			<MoveTo X="6645.11" Y="979.4308" Z="1190.17" />
-			<UseObject Name="Strange Looking Rarity" X="6645.11" Y="979.4308" Z="1190.17" />
-			<Python Statement="Logging.Write(&quot;Get this quest and press start&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-			<Wait Seconds="2" />
 	<PickUpQuest Name="An Item of Interest" Npc="Strange Looking Rarity" X="6645.11" Y="979.4308" Z="1190.17" />
-		</If> 
 		
 		<UseObjectsObjective Quest="Death's Embrace" Tracking="2">
 		  <Area>
@@ -1905,7 +1890,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Belt of Abyssal Demise&quot;)" />
 			 </If>
 		</If>
-		
 	<PickUpQuest Name="Gave As Good As Got" Npc="Captain Haghen" X="6301.842" Y="910.5259" Z="1600.708" />
 	<TurnInQuest Name="Gave As Good As Got" Npc="General Stanig" X="6469.563" Y="928.4256" Z="1429.976" />
 	<PickUpQuest Name="The Drift of Wind and Tide" Npc="General Stanig" X="6469.563" Y="928.4256" Z="1429.976" />
@@ -1921,7 +1905,15 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<If Condition="HasQuest(&quot;The Drift of Wind and Tide&quot;)">
+		<If Condition="((HasQuest(&quot;The Drift of Wind and Tide&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Drift of Wind and Tide&quot;, 2)))">
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		<If Condition="((HasQuest(&quot;The Drift of Wind and Tide&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Drift of Wind and Tide&quot;, 3)))">
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		<If Condition="((HasQuest(&quot;The Drift of Wind and Tide&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Drift of Wind and Tide&quot;, 4)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
@@ -1977,7 +1969,7 @@
 		</UseItemOnMobsObjective>
 		-->
 		
-		<If Condition="HasQuest(&quot;The Churning Fates&quot;)">
+		<If Condition="((HasQuest(&quot;The Churning Fates&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Churning Fates&quot;, 1)))">
 			<MoveTo X="6126.155" Y="993.2482" Z="1387.907" />
 			<Wait Seconds="2" />
 			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;tar Shadebound Monstrosity&quot;)" />
@@ -2019,7 +2011,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Chestplate of Liberation&quot;)" />
 			 </If>
 		</If>
-
 	<PickUpQuest Name="Where the Iron Pines Peak" Npc="Captain Haghen" X="6301.842" Y="910.5259" Z="1600.708" />
 	<PickUpQuest Name="Assemble the Council" Npc="Borrin Gammult" X="6321.278" Y="909.2095" Z="1598.696" />
 	
@@ -2054,6 +2045,8 @@
 			</Hotspots>
 		  </GrindArea>
 		</GrindTo>
+		
+		<MoveTo X="6321.278" Y="909.2095" Z="1598.696" />
 		
 		<!-- Use porticulum to Threesprings -->
 		<If Condition="HasQuest(&quot;Assemble the Council&quot;)">

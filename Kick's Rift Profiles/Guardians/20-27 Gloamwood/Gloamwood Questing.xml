@@ -183,10 +183,9 @@
 	<TurnInQuest Name="March of the Defenders" Npc="Lieutenant Ezan" X="5751.195" Y="959.2689" Z="3678.103" /> <!-- You will probably die here after the recruits die -->
 		<!-- I didn't get any agro here - but I don't know if the bot is going to use the road or pull mobs. IE: i haven't tested this quest, only did it by hand -->
 	<PickUpQuest Name="Havoc Trail" Npc="Lieutenant Ezan" X="5751.195" Y="959.2689" Z="3678.103" /> 
-		<!-- <Escort Npc="Injured Recruit" Quest="Havoc Trail" Tracking="1" /> -->
 		<If Condition="HasQuest(&quot;Havoc Trail&quot;)">
 			<MoveTo X="5686.117" Y="982.5849" Z="3425.082" />
-			<Wait Seconds="5" />
+			<Wait Seconds="7" />
 		</If>
 	<TurnInQuest Name="Havoc Trail" Npc="Captain Trebian" X="5673.396" Y="982.5151" Z="3426.573" /> 
 		<!-- End of Silkweb Outpost Quests -->
@@ -279,7 +278,6 @@
 	<PickUpQuest Name="Pried from Their Dead Hands" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
 	<PickUpQuest Name="Blood of the Ancients" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
 	<PickUpQuest Name="Bleeding Green" Npc="Waykeeper Thil" X="5383.333" Y="954.0413" Z="2708.337" />
-		<!-- RunTo <Hotspot X="5409.1" Y="959.9289" Z="2647.35" /> and interactwith gameobject Forest Altar to summon Laria -->
 		<If Condition="HasQuest(&quot;The Seed of History&quot;)">
   			<MoveTo X="5409.313" Y="959.6286" Z="2648.996" />
 			<UseObject Name="Forest Altar" X="5409.313" Y="959.6286" Z="2648.996" />
@@ -463,12 +461,7 @@
 	<TurnInQuest Name="Blood of the Ancients" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
 	<PickUpQuest Name="Field Tested, Goblin Approved" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
 
-		<!-- Use Item at Range 20-30 yards, or combat useitemon.  I had to do this quest manually -->
-		<If Condition="HasQuest(&quot;Field Tested, Goblin Approved&quot;)">
-			<Python Statement="Logging.Write(&quot;Run around and use the Goblin Venom on goblins, and then kill them&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-		</If>
-		<UseItemOnMobsObjective Quest="Field Tested, Goblin Approved" Item="Goblin Venom" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
+		<UseItemOnMobsObjective Quest="Field Tested, Goblin Approved" Item="Goblin Venom" UseRange="20" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob>Barkeater Basher</Mob>
@@ -534,7 +527,7 @@
 	-->
 	<!-- do goblin camps (1), turn in The Waykeeper's Keeper and then 3 / Graul (head 2), then 2, then removing head 3 (cave), then 1 / nizak (head 1) -->
 	
-		<If Condition="HasQuest(&quot;Fire and Venom&quot;)">
+		<If Condition="((HasQuest(&quot;Fire and Venom&quot;)) and (not IsQuestObjectiveCompleted(&quot;Fire and Venom&quot;, 3)))">
 			<MoveTo X="4916.158" Y="928.3635" Z="2417.971" />
 			<Wait Seconds="2" />
 			<MoveTo X="4916.158" Y="928.3635" Z="2417.971" />
@@ -565,7 +558,7 @@
 		  </Area>
 		</KillMobsObjective>
 		
-		<If Condition="HasQuest(&quot;Fire and Venom&quot;)"> 
+		<If Condition="((HasQuest(&quot;Fire and Venom&quot;)) and (not IsQuestObjectiveCompleted(&quot;Fire and Venom&quot;, 1)))">
 			<MoveTo X="4993.25" Y="982.0694" Z="2237.763" />
 			<Wait Seconds="2" />
 			<MoveTo X="4993.25" Y="982.0694" Z="2237.763" />
@@ -574,7 +567,7 @@
 			<Wait Seconds="5" />
 		</If>
 		
-		<If Condition="HasQuest(&quot;Fire and Venom&quot;)">
+		<If Condition="((HasQuest(&quot;Fire and Venom&quot;)) and (not IsQuestObjectiveCompleted(&quot;Fire and Venom&quot;, 2)))">
 			<MoveTo X="4976.418" Y="928.4117" Z="2374.091" />
 			<Wait Seconds="2" />
 			<MoveTo X="4976.418" Y="928.4117" Z="2374.091" />
@@ -730,6 +723,7 @@
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
+
 	<TurnInQuest Name="Janina's Revenge" Npc="Nigel Solemn" X="5448.421" Y="1030.687" Z="2855.515" />
 		
 		<!-- To Silkweb Pass Again -->
@@ -744,7 +738,7 @@
 	<TurnInQuest Name="Planting Hope" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 	<PickUpQuest Name="Dead Water" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 
-		<If Condition="HasQuest(&quot;Dead Water&quot;)">
+		<If Condition="((HasQuest(&quot;Dead Water&quot;)) and (not IsQuestObjectiveCompleted(&quot;Dead Water&quot;, 1)))">
 			<MoveTo X="4320.372" Y="1100.515" Z="2766.465" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Millrush Brew&quot;)" />
@@ -978,9 +972,9 @@
 
 	<TurnInQuest Name="Up the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
 	<PickUpQuest Name="A Family Heirloom" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-		<If Condition="HasQuest(&quot;Mysterious Messages&quot;)">
+		<If Condition="((HasQuest(&quot;Mysterious Messages&quot;)) and (not IsQuestObjectiveCompleted(&quot;&quot;, 1)))">
 			<MoveTo X="4994.621" Y="1074.922" Z="2715.552" />
-			<Python Statement="Logging.Write(&quot;Please manually do quest and turn it in&quot;)" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 		<!-- this won't work for this quest, you'll have to runto and useitem Rubbing Paper, wait, and run to next and stick it in a while.
@@ -1006,7 +1000,6 @@
 		
 		huge fire invasion atm so i can't do anything
 		-->
-
 	
 	<TurnInQuest Name="Mysterious Messages" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 	<TurnInQuest Name="Trouble in the Wood" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" /> 
@@ -1232,7 +1225,6 @@
 		</If>
 	<TurnInQuest Name="A Burgher with Lies" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
 	<PickUpQuest Name="Secret of the Pines" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
-
 		<If Condition="HasQuest(&quot;Secret of the Pines&quot;)">
   			<MoveTo X="4633.705" Y="1109.907" Z="2738.195" />
 			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
@@ -1315,8 +1307,7 @@
 			 </If>
 		</If>
 	
-		<!-- Tracking 1-->
-		<If Condition="HasQuest(&quot;The Light of Jebiah&quot;)"> 
+		<If Condition="((HasQuest(&quot;The Light of Jebiah&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Light of Jebiah&quot;, 1)))">
 			<MoveTo X="4716.397" Y="1095.124" Z="2903.4" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Jebiah's Ring&quot;)" />
@@ -1352,8 +1343,7 @@
 	<PickUpQuest Name="Cleansing Fire" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
 		
 		<!-- this quest has major issues -->
-			<!--  Tracking 1 -->
-		<If Condition="HasQuest(&quot;Cleansing Fire&quot;)"> 
+		<If Condition="((HasQuest(&quot;Cleansing Fire&quot;)) and (not IsQuestObjectiveCompleted(&quot;Cleansing Fire&quot;, 1)))">
 			<MoveTo X="5237.996" Y="939.1862" Z="3175.519" />
 			<Wait Seconds="1" />
 			<Python Statement = "SpellManager.UseItem(&quot;Cleansing Fire&quot;)" />
@@ -1362,8 +1352,7 @@
 			<Wait Seconds="60" />
 		</If>
 			
-			<!-- Tracking 2 -->
-		<If Condition="HasQuest(&quot;Cleansing Fire&quot;)"> 
+		<If Condition="((HasQuest(&quot;Cleansing Fire&quot;)) and (not IsQuestObjectiveCompleted(&quot;Cleansing Fire&quot;, 2)))">
 			<MoveTo X="5208.479" Y="955.5005" Z="3221.969" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Cleansing Fire&quot;)" />
@@ -1372,8 +1361,7 @@
 			<Wait Seconds="60" />
 		</If>
 		
-			<!-- Tracking 3 -->
-		<If Condition="HasQuest(&quot;Cleansing Fire&quot;)"> 
+		<If Condition="((HasQuest(&quot;Cleansing Fire&quot;)) and (not IsQuestObjectiveCompleted(&quot;Cleansing Fire&quot;, 3)))">
 			<MoveTo X="5214.01" Y="974.0383" Z="2939.08" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Cleansing Fire&quot;)" />
@@ -1406,13 +1394,11 @@
 		</If>
 	<PickUpQuest Name="She's Lived Long Enough" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
 		
-		<!-- Tracking 1 -->
-		<If Condition="HasQuest(&quot;She's Lived Long Enough&quot;)">
+		<If Condition="((HasQuest(&quot;She's Lived Long Enough&quot;)) and (not IsQuestObjectiveCompleted(&quot;She's Lived Long Enough&quot;, 1)))">
 			<MoveTo X="4201.292" Y="1139.27" Z="2916.706" />
 			<Wait Seconds="2" />
 			<TalkToNpcObjective Quest="She's Lived Long Enough" Npc="Hag" X="4201.292" Y="1139.27" Z="2916.706" Options="1,1" Tracking="1"  />
 			<Wait Seconds="15" />
-			<!-- Waiting for port -->
 		</If>
 		
 		<If Condition="HasQuest(&quot;She's Lived Long Enough&quot;)">
@@ -1425,7 +1411,7 @@
 	<PickUpQuest Name="Slaying the Shadebent" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
 	<PickUpQuest Name="Purification Ritual" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 		
-		<If Condition="HasQuest(&quot;Stemming the Darkness&quot;)"> <!-- Item is not in our bags, only in our UI.  It's broked! -->
+		<If Condition="((HasQuest(&quot;Stemming the Darkness&quot;)) and (not IsQuestObjectiveCompleted(&quot;Stemming the Darkness&quot;, 1)))">
 			<MoveTo X="4744.422" Y="1104.054" Z="2475.055" />
 			<Wait Seconds="2" />
 			<MoveTo X="4744.422" Y="1104.054" Z="2475.055" />
@@ -1435,24 +1421,21 @@
 			<!-- kill Malevolent Shade Well -->
 		</If>
 
-		<!-- East tower - tracking 1-->
-		<If Condition="HasQuest(&quot;Purification Ritual&quot;)">
+		<If Condition="((HasQuest(&quot;Purification Ritual&quot;)) and (not IsQuestObjectiveCompleted(&quot;Purification Ritual&quot;, 1)))">
 			<MoveTo X="4708.716" Y="1147.294" Z="2604.068" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Shade Ward&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 		
-		<!-- South tower - tracking 2-->
-		<If Condition="HasQuest(&quot;Purification Ritual&quot;)">
+		<If Condition="((HasQuest(&quot;Purification Ritual&quot;)) and (not IsQuestObjectiveCompleted(&quot;Purification Ritual&quot;, 2)))">
 			<MoveTo X="4579.092" Y="1150.476" Z="2572.798" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Shade Ward&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 
-		<!-- West tower - trackng 3 -->
-		<If Condition="HasQuest(&quot;Purification Ritual&quot;)">
+		<If Condition="((HasQuest(&quot;Purification Ritual&quot;)) and (not IsQuestObjectiveCompleted(&quot;Purification Ritual&quot;, 3)))">
 			<MoveTo X="4483.123" Y="1156.93" Z="2477.797" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Shade Ward&quot;)" />
@@ -1598,7 +1581,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<If Condition="HasQuest(&quot;A Woman Scorned&quot;)">
+		<If Condition="((HasQuest(&quot;A Woman Scorned&quot;)) and (not IsQuestObjectiveCompleted(&quot;A Woman Scorned&quot;, 1)))">
 			<MoveTo X="4703.349" Y="1201.058" Z="2451.533" />
 			<Wait Seconds="2" />
 			<MoveTo X="4677.791" Y="1201.058" Z="2453.22" />
@@ -1619,6 +1602,9 @@
 				</Hotspots>
 			  </Area>
 			</KillMobsObjective>
+		</If>
+			
+		<If Condition="((HasQuest(&quot;A Woman Scorned&quot;)) and (not IsQuestObjectiveCompleted(&quot;A Woman Scorned&quot;, 2)))">
 			<TalkToNpcObjective Quest="A Woman Scorned" Npc="Messenger of the Vigil" X="4686.682" Y="1200.99" Z="2456.472" Options="1, 1" Tracking="2" />
 			<Wait Seconds="15" />
 		</If>
@@ -1672,7 +1658,7 @@
 	<TurnInQuest Name="A Woman Scorned" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
 	<PickUpQuest Name="Savior of Gloamwood" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
 	
-		<If Condition="HasQuest(&quot;Savior of Gloamwood&quot;)">
+		<If Condition="((HasQuest(&quot;Savior of Gloamwood&quot;)) and (not IsQuestObjectiveCompleted(&quot;Savior of Gloamwood&quot;, 1)))">
 			<MoveTo X="5242.353" Y="987.063" Z="3079.697" />
 			<Wait Seconds="1" />
 			<Python Statement = "SpellManager.UseItem(&quot;Gloam Bell&quot;)" />
@@ -1683,21 +1669,39 @@
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Icon of the Forest Mender&quot;)" />
 			</If>
-			 <If Condition="Me.Class == UnitClass.Mage">
+			<If Condition="Me.Class == UnitClass.Mage">
+			<Python Statement="Logging.Write(&quot;Savior of Gloamwood - I need to know what rewards are on your screen for this turnin (class and reward), please report them to my quest thread
+				\n1 2
+				\n3 4
+				\n5 6
+				\nthat is the order that they come in &quot;)" />
+			<Python Statement="GigaBot.Stop()" />
 	<TurnInQuest Name="Savior of Gloamwood" Reward="2" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Spire of the Sisters&quot;)" />
-			 </If>
-			 <If Condition="Me.Class == UnitClass.Rogue">
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
+			<Python Statement="Logging.Write(&quot;Savior of Gloamwood - I need to know what rewards are on your screen for this turnin (class and reward), please report them to my quest thread
+				\n1 2
+				\n3 4
+				\n5 6
+				\nthat is the order that they come in &quot;)" />
+			<Python Statement="GigaBot.Stop()" />
 	<TurnInQuest Name="Savior of Gloamwood" Reward="1" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Talon of the Hag&quot;)" />
-			 </If>
-			 <If Condition="Me.Class == UnitClass.Warrior">
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
+			<Python Statement="Logging.Write(&quot;Savior of Gloamwood - I need to know what rewards are on your screen for this turnin (class and reward), please report them to my quest thread
+				\n1 2
+				\n3 4
+				\n5 6
+				\nthat is the order that they come in &quot;)" />
+			<Python Statement="GigaBot.Stop()" />
 	<TurnInQuest Name="Savior of Gloamwood" Reward="2" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Shadefall&quot;)" />
-			 </If>
+			</If>
 		</If>
 	<PickUpQuest Name="A Hero's Duty" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" /> <!-- To Scarlet Gorge -->
 	
@@ -1718,7 +1722,8 @@
       </GrindArea>
     </GrindTo>
 	
-	
+			<MoveTo X="3962.215" Y="1079.18" Z="3028.994" />
+			
 			<Python Statement="Logging.Write(&quot;End of Line&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 

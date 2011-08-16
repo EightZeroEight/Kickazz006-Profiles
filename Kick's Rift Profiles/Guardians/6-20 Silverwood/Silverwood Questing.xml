@@ -2763,7 +2763,7 @@
     <PickUpQuest Name="Remember the Chosen" Npc="Emilyn Summers" X="6418.971" Y="895.0527" Z="3166.429" />
 
 		<!-- The mesh in the towers may need to be tweaked -->
-		<If Condition="HasQuest(&quot;Remember the Chosen&quot;)">
+		<If Condition="((HasQuest(&quot;Remember the Chosen&quot;)) and (not IsQuestCompleted(&quot;Remember the Chosen&quot;)))">
 		<UseObjectsObjective Quest="Remember the Chosen" Tracking="2">
 		  <!-- E -->
 		  <Area>

@@ -189,14 +189,14 @@
 	<TurnInQuest Name="Stormborn" Npc="Captain Ledisko" X="3614.544" Y="1105.097" Z="3509.324" />
 	<PickUpQuest Name="Reaping the Whirlwind" Npc="Captain Ledisko" X="3614.544" Y="1105.097" Z="3509.324" />
 	
-		<If Condition="HasQuest(&quot;Reaping the Whirlwind&quot;)">
+		<If Condition="((HasQuest(&quot;Reaping the Whirlwind&quot;)) and (not IsQuestObjectiveCompleted(&quot;Reaping the Whirlwind&quot;, 1)))">
 			<MoveTo X="3952.411" Y="1077.391" Z="3701.713" />
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 
-		<!-- 25-30 yard range
-		<UseItemOnMobsObjective Quest="Reaping the Whirlwind" Item="Sigil of the Stormbreaker" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
+		<!-- 25-30 yard range - test this 
+		<UseItemOnMobsObjective Quest="Reaping the Whirlwind" UseRange="25" Item="Sigil of the Stormbreaker" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob>Electrified Naga</Mob>
@@ -232,7 +232,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Gorget of the Stormbreaker&quot;)" />
 			 </If>
 		</If>
-	
 	<PickUpQuest Name="Stewards of the Grove" Npc="Advisor Kyl'radi" X="3612.726" Y="1105.063" Z="3505.042" />
 		<!-- End of Camp Vigil Quests -->
 		
@@ -383,7 +382,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Granitewood Curisass&quot;)" />
 			 </If>
 		</If>
-
 		<If Condition="HasQuest(&quot;Shrines of Life&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Shrines of Life" Reward="1" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />
@@ -428,9 +426,7 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Granite Curiass&quot;)" />
 			 </If>
 		</If>
-
-		
-	<PickUpQuest Name="Trouble from the Mill" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" /> <!-- changed from Omia Leen to Lej -->
+	<PickUpQuest Name="Trouble from the Mill" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" />
 		<!-- End of Carwin's Shrine Quests -->
 		
 		<!-- Keenblade Barricade Quests -->
@@ -521,7 +517,6 @@
 		<If Condition="HasQuest(&quot;A Fallen Soldier&quot;)">
 	<TurnInQuest Name="A Fallen Soldier" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
 		</If>
-
 	<TurnInQuest Name="The Score" Npc="Sir Alvarez Nilkova" X="3823.265" Y="1120.687" Z="3683.986" />
 		<If Condition="HasQuest(&quot;A Wrench in the Works&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
@@ -621,7 +616,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<If Condition="HasQuest(&quot;The Finest Cut&quot;)"> <!-- Tracking 2 and 3 -->
+		<If Condition="((HasQuest(&quot;&quot;)) and (not IsQuestObjectiveCompleted(&quot;&quot;, 2)))"> <!-- Tracking 2 and 3 -->
 			<MoveTo X="3643.049" Y="1079.671" Z="4000.257" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Wolf Liver&quot;)" />
@@ -660,7 +655,7 @@
 		<If Condition="HasQuest(&quot;Command Training&quot;)">
 			<TalkToNpcObjective Quest="Command Training" Npc="Donal Sumptor" X="3134.281" Y="1095.086" Z="3874.342" Options="1" Tracking="1" />
 			<TalkToNpcObjective Quest="Command Training" Npc="Sir Martyn Myrsol" X="3143.843" Y="1095.122" Z="3874.305" Options="1" Tracking="3" />
-			<TalkToNpcObjective Quest="Command Training" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" Options="1" Tracking="2" /> <!-- sometimes this fails, do i need 1,1 ? -->
+			<TalkToNpcObjective Quest="Command Training" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" Options="1, 1" Tracking="2" /> <!-- Sometimes this fails -->
 		</If>
 		
 	<TurnInQuest Name="Command Training" Npc="Fedor Saveli" X="3146.442" Y="1095.087" Z="3886.82" />
@@ -698,7 +693,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<If Condition="HasQuest(&quot;A Soldier's Dog&quot;)">
+		<If Condition="((HasQuest(&quot;A Soldier's Dog&quot;)) and (not IsQuestObjectiveCompleted(&quot;A Soldier's Dog&quot;, 1)))">
 			<MoveTo X="3198.877" Y="1093.636" Z="3867.202" />
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
@@ -727,7 +722,7 @@
 	<PickUpQuest Name="Proscribed Technologies" Npc="Dame Levitia Volya" X="3134.595" Y="1095.086" Z="3869.437" />
 	<PickUpQuest Name="Care for the Wounded" Npc="Medic Laran" X="3155.502" Y="1095.086" Z="3891.513" />
 		
-		<If Condition="HasQuest(&quot;Proscribed Technologies&quot;)"> <!-- 5 sec / no cd -->
+		<If Condition="((HasQuest(&quot;Proscribed Technologies&quot;)) and (not IsQuestObjectiveCompleted(&quot;Proscribed Technologies&quot;, 1)))"> <!-- 5 sec / no cd -->
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 			
@@ -832,9 +827,9 @@
 		</If>
 
 		<If Condition="HasQuest(&quot;Seeing Double&quot;)">
-			<TalkToNpcObjective Quest="Seeing Double" Npc="Dame Levitia Volya" X="3134.595" Y="1095.086" Z="3869.437" Options="2" Tracking="1" />
+			<TalkToNpcObjective Quest="Seeing Double" Npc="Dame Levitia Volya" X="3134.595" Y="1095.086" Z="3869.437" Options="1" Tracking="2" />
 			<TalkToNpcObjective Quest="Seeing Double" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" Options="1" Tracking="1" />
-			<TalkToNpcObjective Quest="Seeing Double" Npc="Sir Guysun Lawless" X="3097.866" Y="1092.938" Z="4040.149" Options="3" Tracking="1" />
+			<TalkToNpcObjective Quest="Seeing Double" Npc="Sir Guysun Lawless" X="3097.866" Y="1092.938" Z="4040.149" Options="1" Tracking="3" />
 		</If>
 
 	<TurnInQuest Name="Seeing Double" Npc="Sergeant Heinrich" X="3100.534" Y="1092.929" Z="4051.277" />
@@ -1035,7 +1030,6 @@
 	<PickUpQuest Name="Hand of Kain" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
 	<PickUpQuest Name="Relics of Another Time" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
 	<TurnInQuest Name="Hand of Kain" Npc="Sir Piotr Siennicki" X="3091.874" Y="1092.925" Z="4081.587" />
-	
 	<PickUpQuest Name="Respecting the Dead" Npc="Erif Rohsal" X="3036.978" Y="1038.273" Z="3904.671" />
 	
 		<UseObjectsObjective Quest="Relics of Another Time" Tracking="3">
@@ -1118,7 +1112,6 @@
 
 	<TurnInQuest Name="Respecting the Dead" Npc="Erif Rohsal" X="3036.978" Y="1038.273" Z="3904.671" />
 	<!-- ignoring escort quest (2 players) -->
-	
 	<TurnInQuest Name="Relics of Another Time" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
 	<PickUpQuest Name="King of the Tree" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
 	<TurnInQuest Name="Insuring Their Safety" Npc="Ralyn Laurel" X="3142.966" Y="1095.097" Z="3886.143" />
@@ -1221,7 +1214,7 @@
 	<PickUpQuest Name="Tower Defense" Npc="Sasha Nikadon" X="2596.92" Y="1185.931" Z="3537.632" />
 	<PickUpQuest Name="The Open Door" Npc="Eminia Andre" X="2601.507" Y="1180.91" Z="3569.497" />
 		
-		<If Condition="HasQuest(&quot;The Open Door&quot;)">
+		<If Condition="((HasQuest(&quot;The Open Door&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Open Door&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do both of these quests&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
@@ -1249,7 +1242,7 @@
 		</If>
 		-->
 		
-		<If Condition="HasQuest(&quot;Tower Defense&quot;)">
+		<If Condition="((HasQuest(&quot;Tower Defense&quot;)) and (not IsQuestObjectiveCompleted(&quot;Tower Defense&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do both of these quests&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
@@ -1304,9 +1297,14 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<If Condition="HasQuest(&quot;Scouting the Opposition&quot;)">
+		<!-- Are these right? -->
+		<If Condition="((HasQuest(&quot;Scouting the Opposition&quot;)) and (not IsQuestObjectiveCompleted(&quot;Scouting the Opposition&quot;, 1)))">
 			<MoveTo X="2764.241" Y="1093.024" Z="3650.009" />
+		</If>
+		<If Condition="((HasQuest(&quot;Scouting the Opposition&quot;)) and (not IsQuestObjectiveCompleted(&quot;Scouting the Opposition&quot;, 2)))">
 			<MoveTo X="2893.305" Y="1092.413" Z="3645.579" />
+		</If>
+		<If Condition="((HasQuest(&quot;Scouting the Opposition&quot;)) and (not IsQuestObjectiveCompleted(&quot;Scouting the Opposition&quot;, 3)))">
 			<MoveTo X="2954.594" Y="1103.261" Z="3689.788" />
 		</If>
 	
@@ -1344,14 +1342,14 @@
 	<PickUpQuest Name="Rare Berry Collection" Npc="Zerin Golek" X="2601.273" Y="1180.91" Z="3557.243" />
 	<PickUpQuest Name="Draconian Measures" Npc="Pavel Apostol" X="2585.271" Y="1180.909" Z="3557.284" />
 
-		<If Condition="HasQuest(&quot;Sealing the Portal&quot;)">
+		<If Condition="((HasQuest(&quot;Sealing the Portal&quot;)) and (not IsQuestObjectiveCompleted(&quot;Sealing the Portal&quot;, 1)))">
 			<MoveTo X="2588.674" Y="1178.476" Z="3522.054" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Nexus Attractor&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 
-		<KillMobsObjective Quest="Sealing the Portal" Tracking="1">
+		<KillMobsObjective Quest="Sealing the Portal" Tracking="2">
 		  <Area>
 			<Mobs>
 			  <Mob>Baelwrath</Mob>
@@ -1476,13 +1474,15 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<If Condition="HasQuest(&quot;Among the Endless&quot;)">
+		<If Condition="((HasQuest(&quot;Among the Endless&quot;)) and (not IsQuestObjectiveCompleted(&quot;Among the Endless&quot;, 2)))">
 			<MoveTo X="3008.933" Y="1093.918" Z="3692.542" />
 			<Wait Seconds="2" />
 			<MoveTo X="3008.933" Y="1093.918" Z="3692.542" />
 			<Wait Seconds="2" />
-			<Python Statement = "SpellManager.UseItem(&quot;Cultist Uniform Piece&quot;)" /> <!-- Tracking 2 -->
+			<Python Statement = "SpellManager.UseItem(&quot;Cultist Uniform Piece&quot;)" />
 			<Wait Seconds="8" />
+		</If>
+		<If Condition="((HasQuest(&quot;Among the Endless&quot;)) and (not IsQuestObjectiveCompleted(&quot;Among the Endless&quot;, 3)))">
 			<TalkToNpcObjective Quest="Among the Endless" Npc="High Justicar Vigman" X="3003.722" Y="1096.865" Z="3669.191" Options="1, 1" Tracking="3" />
 		</If>
 		
@@ -1527,11 +1527,13 @@
 	<TurnInQuest Name="An Academic Matter" Npc="Sasha Nikadon" X="2599.983" Y="1185.931" Z="3535.505" />
 	<PickUpQuest Name="The Long, Dark Watch" Npc="Sasha Nikadon" X="2599.983" Y="1185.931" Z="3535.505" />
 	
-		<If Condition="HasQuest(&quot;The Long, Dark Watch&quot;)">
+		<If Condition="((HasQuest(&quot;The Long, Dark Watch&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Long, Dark Watch&quot;, 1)))">
 			<MoveTo X="2608.295" Y="1095.664" Z="3846.321" />
 			<Wait Seconds="2" />
 			<MoveTo X="2608.295" Y="1095.664" Z="3846.321" />
 			<Wait Seconds="2" />
+		</If>
+		<If Condition="((HasQuest(&quot;The Long, Dark Watch&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Long, Dark Watch&quot;, 2)))">
 			<TalkToNpcObjective Quest="The Long, Dark Watch" Npc="Carwin Mathos" X="2608.498" Y="1095.603" Z="3848.757" Options="1, 1" Tracking="2" />
 		</If>
 	
@@ -1808,7 +1810,7 @@
 
 	<TurnInQuest Name="A Grisly Fate" Npc="Savin Rurik" X="3045.158" Y="1017.782" Z="3186.745" />
 
-		<If Condition="HasQuest(&quot;Merciful Flame&quot;)">
+		<If Condition="((HasQuest(&quot;Merciful Flame&quot;)) and (not IsQuestObjectiveCompleted(&quot;Merciful Flame&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do Merciful Flame Quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		<!--
@@ -1897,7 +1899,7 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<UseObjectsObjective Quest="Slave No Longer" Tracking="1">
+		<UseObjectsObjective Quest="Slave No Longer" Tracking="2">
 		  <Area>
 			<Objects>
 			  <Object>Containment Field Controller</Object>
@@ -1908,7 +1910,6 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<If Condition="HasQuest(&quot;Slave No Longer&quot;)">
 		<If Condition="((HasQuest(&quot;Slave No Longer&quot;)) and (not IsQuestObjectiveCompleted(&quot;Slave No Longer&quot;, 3)))">
 			<Python Statement="Logging.Write(&quot;Use Quest item on Gnarlbone at 30 percent hp, then take the port out of there that spawns&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
@@ -1996,4 +1997,5 @@
 
     <Loop />
   </Tasks>
+
 </Profile>

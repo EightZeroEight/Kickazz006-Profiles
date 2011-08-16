@@ -40,6 +40,7 @@
 		<!-- Riverfell Quests - Ignoring Dailies at the N Wardstone -->
 	<PickUpQuest Name="Foul Patrols" Npc="Yannis Violet" X="3834.065" Y="979.7368" Z="2912.681" />
 	<PickUpQuest Name="Going Up" Npc="Cheev Nash" X="3833.206" Y="979.4971" Z="2914.862" />
+	
 		<If Condition="HasQuest(&quot;Stone Cold Survivors&quot;)">
 			<TalkToNpcObjective Quest="Stone Cold Survivors" Npc="Stonecrest Survivor" X="4007.363" Y="980.4062" Z="2704.074" Options="1,1" Tracking="1" />
 			<!-- This quest talks w/ the wrong damn npc.  It targets the farthest one for some reason and not the lady one right there in front! :( -->
@@ -252,8 +253,8 @@
 				Gossip2: Gather Lost Soul
 				loot window
 		-->
-		<If Condition="HasQuest(&quot;Ensnaring Anima&quot;)">
-			<Python Statement="Logging.Write(&quot;Bot doesn't do this quest - read the xml&quot;)" />
+		<If Condition="((HasQuest(&quot;Ensnaring Anima&quot;)) and (not IsQuestObjectiveCompleted(&quot;Ensnaring Anima&quot;, 1)))">
+			<Python Statement="Logging.Write(&quot;\nBot doesn't do this quest - UseItemTargetLocation on ghosts and then interactwith it x2, then loot the window&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 	 
@@ -296,7 +297,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<!--
+		<!-- Something's Afoot (has issues)
 		<If Condition="HasQuest(&quot;The Darkest Magic&quot;)">
 		 <If Condition="not HasQuest(&quot;Something's Afoot&quot;)">
 			<MoveTo X="3904.573" Y="971.3445" Z="3360.878" />
@@ -354,7 +355,7 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<If Condition="HasQuest(&quot;Words with the Dead&quot;)">
+		<If Condition="((HasQuest(&quot;Words with the Dead&quot;)) and (not IsQuestObjectiveCompleted(&quot;Words with the Dead&quot;, 2)))">
 			<Wait Seconds="16" />
 			<TalkToNpcObjective Quest="Words with the Dead" Npc="Pacified Spirit" X="3843.141" Y="970.6825" Z="3000.198" Options="1" Tracking="2" />
 		</If>
@@ -363,7 +364,7 @@
 	<PickUpQuest Name="Free Souls" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
 	<PickUpQuest Name="Let Them Go" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
 	
-		<If Condition="HasQuest(&quot;Free Souls&quot;)">
+		<If Condition="((HasQuest(&quot;Free Souls&quot;)) and (not IsQuestObjectiveCompleted(&quot;Free Souls&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 			<!-- UseItemAtLocation Tracking 1 - for Free Souls - 3 sec cast.  Soul Chime is the itemname
@@ -408,7 +409,7 @@
 	<PickUpQuest Name="Unloading the Burden" Npc="Mallard Drewen" X="3861.313" Y="974.8011" Z="3048.468" />
 		<!-- Stonecrest Quests -->
 
-		<If Condition="HasQuest(&quot;Vile Brew&quot;)">
+		<If Condition="((HasQuest(&quot;Vile Brew&quot;)) and (not IsQuestObjectiveCompleted(&quot;Vile Brew&quot;, 1)))">
 			<MoveTo X="4045.1" Y="1025.928" Z="3403.648" />
 			<Python Statement="Logging.Write(&quot;Please manually do Vile Brew&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
@@ -441,7 +442,7 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<If Condition="HasQuest(&quot;Army of the Dead&quot;)">
+		<If Condition="((HasQuest(&quot;Army of the Dead&quot;)) and (not IsQuestObjectiveCompleted(&quot;Army of the Dead&quot;, 1)))">
 			<!-- I need the devs to do this quest - I can't just head butt this with useitem .  I need to move and use the item and anything else that is attacking me i need to face them and use the item (ie: throw fire at anything near me) -->
 			
 			
@@ -483,7 +484,7 @@
 		-->
 		</If>
 
-		<If Condition="HasQuest(&quot;End of the Endless&quot;)"> <!-- Tracking 1 -->
+		<If Condition="((HasQuest(&quot;End of the Endless&quot;)) and (not IsQuestObjectiveCompleted(&quot;End of the Endless&quot;, 1)))">
 			<MoveTo X="3936.709" Y="1037.297" Z="3477.728" />
 			<Wait Seconds="5" />
 			<MoveTo X="3934.912" Y="1037.514" Z="3483.258" />
@@ -779,7 +780,6 @@
 	<TurnInQuest Name="Colluding with Evil" Reward="1" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
 			 </If>
 		</If>
-
 	<PickUpQuest Name="Freeing Nambus Parm" Npc="Nambus Parm" X="4535.488" Y="918.3859" Z="3478.854" />
 	<PickUpQuest Name="Freeing Sandra Roe" Npc="Sandra Roe" X="4533.518" Y="918.3859" Z="3482.393" />
 	<PickUpQuest Name="Freeing Sedrick Finely" Npc="Sedrick Finely" X="4531.066" Y="918.3859" Z="3479.75" />
@@ -1038,6 +1038,7 @@
     </GrindTo>
 	
 			<MoveTo X="3835.097" Y="990.7261" Z="3236.065" />
+			
 			<Python Statement="Logging.Write(&quot;Use the Elevator to Scarwood and manually load that profile.&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 
