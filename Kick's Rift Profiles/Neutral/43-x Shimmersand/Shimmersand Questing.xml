@@ -9,6 +9,9 @@
 			<Healer X="6513.109" Y="886.249" Z="7047.043" /> <!-- Fortune's Shore -->
 			<Healer X="6099.354" Y="979.5236" Z="7291.879" /> <!-- Wyrmbane Spire -->
 			<Healer X="7021.577" Y="886.8774" Z="6777.892" /> <!-- Sandaxle Pit -->
+			<Healer X="6992.08" Y="886.5347" Z="7061.991" /> <!-- Nomad's Furnace -->
+			
+			
 			
         </Healers>
       </MendSoul>
@@ -20,6 +23,10 @@
 			<Vendor X="6624.151" Y="880.2174" Z="7034.096" /> <!-- Fortune's Shore -->
 			<Vendor X="6090.015" Y="978.959" Z="7298.863" /> <!-- Wyrmbane Spire -->
 			<Vendor X="7043.081" Y="883.6149" Z="6774.437" /> <!-- Sandaxle Pit -->
+			<Vendor X="7006.137" Y="886.1289" Z="7082.724" /> <!-- Nomad's Furnace -->
+
+			
+			
 			
         </Vendors>
       </Vendor>
@@ -53,20 +60,31 @@
 		<If Condition="(HasQuest(&quot;Cry for Help&quot;))">
 	<TurnInQuest Name="Cry for Help" Npc="Gunji" X="7039.698" Y="883.7867" Z="6765.427" />
 		</If>
+		
+		<!-- Sandaxle Pit Quests -->
 	<PickUpQuest Name="Harsh Medicine" Npc="Gunji" X="7039.698" Y="883.7867" Z="6765.427" />
 	<PickUpQuest Name="Kicking Stones" Npc="Gunji" X="7039.698" Y="883.7867" Z="6765.427" />
 	<PickUpQuest Name="The Ogres' Prize" Npc="Thamber Barklynn" X="7033.639" Y="884.3212" Z="6774.675" />
 	<PickUpQuest Name="Body Harvest" Npc="Tarik" X="7036.423" Y="883.7914" Z="6778.16" />
 	<PickUpQuest Name="Golden Affronts" Npc="Tarik" X="7036.423" Y="883.7914" Z="6778.16" />
 
-		<UseItemOnMobsObjective Quest="Harsh Medicine" Item="Drawing Flask" CastTime="3" Cooldown="1" WhenDead="True" Tracking="1">
+		<UseItemOnMobsObjective Quest="Harsh Medicine" Item="Drawing Flask" CastTime="6" Cooldown="1" WhenDead="True" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob>Sandstone Striker</Mob>
 			  <Mob>Sandstone Scourge</Mob>
+			  <Mob>Sandstone Sultan</Mob>
 			</Mobs>
 			<Hotspots>
-				
+				<Hotspot X="7059.42" Y="885.5287" Z="6820.417" />
+				<Hotspot X="7001.271" Y="886.2075" Z="6863.457" />
+				<Hotspot X="7075.88" Y="885.8376" Z="6863.177" />
+				<Hotspot X="7087.068" Y="891.1031" Z="6920.402" />
+				<Hotspot X="7055.332" Y="890.7195" Z="6931.263" />
+				<Hotspot X="6991.566" Y="879.1757" Z="6955.425" />
+				<Hotspot X="6988.302" Y="881.6392" Z="6920.736" />
+				<Hotspot X="6938.53" Y="882.4925" Z="6954.952" />
+				<Hotspot X="7044.492" Y="880.7719" Z="7028.318" />
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
@@ -77,7 +95,16 @@
 			  <Object>Trader Corpse</Object>
 			</Objects>
 			<Hotspots>
-				
+				<Hotspot X="7082.669" Y="893.3545" Z="6787.188" />
+				<Hotspot X="7044.874" Y="885.3742" Z="6821.518" />
+				<Hotspot X="6996.054" Y="885.8483" Z="6838.442" />
+				<Hotspot X="7001.271" Y="886.2075" Z="6863.457" />
+				<Hotspot X="7043.03" Y="884.1102" Z="6858.015" />
+				<Hotspot X="7070.225" Y="886.212" Z="6844.949" />
+				<Hotspot X="7088.473" Y="885.0508" Z="6862.876" />
+				<Hotspot X="7055.332" Y="890.7195" Z="6931.263" />
+				<Hotspot X="6988.302" Y="881.6392" Z="6920.736" />
+				<Hotspot X="6938.53" Y="882.4925" Z="6954.952" />
 			</Hotspots>
 		  </Area>
 		</UseObjectsObjective>
@@ -89,46 +116,128 @@
 			  <Mob>Skittering Stoneling</Mob>
 			</Mobs>
 			<Hotspots>
-				
+				<Hotspot X="7110.862" Y="888.2352" Z="6875.478" />
+				<Hotspot X="7082.669" Y="893.3545" Z="6787.188" />
+				<Hotspot X="7044.874" Y="885.3742" Z="6821.518" />
+				<Hotspot X="6996.054" Y="885.8483" Z="6838.442" />
+				<Hotspot X="7001.271" Y="886.2075" Z="6863.457" />
+				<Hotspot X="7043.03" Y="884.1102" Z="6858.015" />
+				<Hotspot X="7070.225" Y="886.212" Z="6844.949" />
+				<Hotspot X="7088.473" Y="885.0508" Z="6862.876" />
+				<Hotspot X="7055.332" Y="890.7195" Z="6931.263" />
+				<Hotspot X="6988.302" Y="881.6392" Z="6920.736" />
+				<Hotspot X="6938.53" Y="882.4925" Z="6954.952" />
+				<Hotspot X="7044.492" Y="880.7719" Z="7028.318" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
 
-		<KillMobsObjective Quest="" Tracking="1">
+	<PickUpQuest Name="Secrets of the Sands" Npc="Hiddensands Treasure Map" X="7253.555" Y="948.8688" Z="6776.06" />
+	
+		<UseObjectsObjective Quest="Secrets of the Sands" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Discarded Waste</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7242.303" Y="948.092" Z="6753.786" />
+				<Hotspot X="7243.389" Y="950.5034" Z="6710.406" />
+				<Hotspot X="7275.824" Y="952.9177" Z="6734.525" />
+				<Hotspot X="7326.724" Y="954.9122" Z="6773.958" />
+				<Hotspot X="7356.853" Y="964.6986" Z="6798.661" />
+				<Hotspot X="7375.575" Y="966.5145" Z="6819.778" />
+				<Hotspot X="7329.111" Y="975.8186" Z="6907.845" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Golden Affronts" Tracking="2">
 		  <Area>
 			<Mobs>
+			  <Mob>Chief Bloatmouth</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7469.045" Y="974.529" Z="6983.653" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Ogres' Prize" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Sunstruck Aggressor</Mob>
+			  <Mob>Sunstruck Brute</Mob>
+			  <Mob>Sunstruck Caller</Mob>
+			  <Mob></Mob>
+			  <Mob></Mob>
 			  <Mob></Mob>
 			</Mobs>
 			<Hotspots>
-				
+				<Hotspot X="7234.353" Y="940.6546" Z="6812.044" />
+				<Hotspot X="7232.294" Y="951.5754" Z="6767.94" />
+				<Hotspot X="7242.303" Y="948.092" Z="6753.786" />
+				<Hotspot X="7243.389" Y="950.5034" Z="6710.406" />
+				<Hotspot X="7275.824" Y="952.9177" Z="6734.525" />
+				<Hotspot X="7326.724" Y="954.9122" Z="6773.958" />
+				<Hotspot X="7356.853" Y="964.6986" Z="6798.661" />
+				<Hotspot X="7375.575" Y="966.5145" Z="6819.778" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
 
-		<KillMobsObjective Quest="" Tracking="1">
+		<KillMobsObjective Quest="Golden Affronts" Tracking="1">
 		  <Area>
 			<Mobs>
-			  <Mob></Mob>
+			  <Mob>Golden Maw Crusher</Mob>
+			  <Mob>Golden Maw Rifleman</Mob>
 			</Mobs>
 			<Hotspots>
-				
+				<Hotspot X="7339.969" Y="967.2171" Z="6886.995" />
+				<Hotspot X="7384.836" Y="973.0537" Z="6922.282" />
+				<Hotspot X="7330.445" Y="976.4912" Z="6910.19" />
+				<Hotspot X="7448.104" Y="976.082" Z="6966.353" />
+				<Hotspot X="7497.572" Y="976.5259" Z="6983.046" />
+				<Hotspot X="7428.541" Y="977.1998" Z="7004.101" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
 
-		<KillMobsObjective Quest="" Tracking="1">
+	<TurnInQuest Name="Secrets of the Sands" Npc="Hiddensands Treasure Map" X="7253.555" Y="948.8688" Z="6776.06" />
+	<PickUpQuest Name="Jewels in the Heights" Npc="Hiddensands Treasure Map" X="7253.555" Y="948.8688" Z="6776.06" />
+
+		<UseObjectsObjective Quest="Jewels in the Heights" Tracking="1">
 		  <Area>
-			<Mobs>
-			  <Mob></Mob>
-			</Mobs>
+			<Objects>
+			  <Object>Cache of Akala</Object>
+			</Objects>
 			<Hotspots>
-				
+				<Hotspot X="7306.155" Y="956.108" Z="6726.474" />
 			</Hotspots>
 		  </Area>
-		</KillMobsObjective>
+		</UseObjectsObjective>
 
+		<UseObjectsObjective Quest="Jewels in the Heights" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Akala's Riches</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7306.155" Y="956.108" Z="6726.474" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 
-
+	<TurnInQuest Name="Harsh Medicine" Npc="Gunji" X="7039.698" Y="883.7867" Z="6765.427" />
+	<TurnInQuest Name="Kicking Stones" Npc="Gunji" X="7039.698" Y="883.7867" Z="6765.427" />
+	<TurnInQuest Name="Body Harvest" Npc="Tarik" X="7036.423" Y="883.7914" Z="6778.16" />
+	<TurnInQuest Name="Golden Affronts" Npc="Tarik" X="7036.423" Y="883.7914" Z="6778.16" />
+	<TurnInQuest Name="Jewels in the Heights" Npc="Thamber Barklynn" X="7033.639" Y="884.3212" Z="6774.675" />
+	<TurnInQuest Name="The Ogres' Prize" Npc="Thamber Barklynn" X="7033.639" Y="884.3212" Z="6774.675" />
+	<PickUpQuest Name="Road to Ruins" Npc="Thamber Barklynn" X="7033.639" Y="884.3212" Z="6774.675" />
+	<PickUpQuest Name="Wanton Flames" Npc="Thamber Barklynn" X="7033.639" Y="884.3212" Z="6774.675" />
+	<PickUpQuest Name="A Hard Road to Travel" Npc="Tarik" X="7036.423" Y="883.7914" Z="6778.16" />
+	<PickUpQuest Name="Behind Their Eyes, A Storm" Npc="Raniyah Sahlah" X="7036.591" Y="884.0159" Z="6767.344" />
+	<PickUpQuest Name="In the Tower's Shadow" Npc="Raniyah Sahlah" X="7036.591" Y="884.0159" Z="6767.344" />
 
 	
 		
