@@ -35,6 +35,7 @@
 		<If Condition="HasQuest(&quot;A Dim, Dark Eye&quot;)">
 		<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="A Dim, Dark Eye" Npc="Messenger of the Vigil" X="6071.291" Y="820.4066" Z="3961.944" Reward="3" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Missionary's Warhammer&quot;)" />
 		  <!--<ElseIf Condition="Me.Class == UnitClass.Rogue">
 			<TurnInQuest Name="www" Npc="www" X="1" Y="1" Z="1" Reward="1" />
 		  </ElseIf>
@@ -56,7 +57,6 @@
 		<!--Equip rewards-->
 		<If Condition="HasQuest(&quot;The Return&quot;)">
 		  <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Missionary's Warhammer&quot;)" />
 			<!--<ElseIf Condition="Me.Class == UnitClass.Rogue">
 			  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip www&quot;)" />
 			</ElseIf>
@@ -74,22 +74,22 @@
 		</If>
 
 		<If Condition="HasQuest(&quot;The Return&quot;)">
-			<TalkToNpcObjective Quest="The Return" Npc="Sienna Faralon" X="6094.229" Y="820.5621" Z="3982.417" Options="1,1" Tracking="1" />
-			<TalkToNpcObjective Quest="The Return" Npc="Alwin Demler" X="6071.847" Y="820.7329" Z="3998.7" Options="1,1" Tracking="2" />
+			<TalkToNpcObjective Quest="The Return" Npc="Sienna Faralon" X="6094.229" Y="820.5621" Z="3982.417" Options="1, 1" Tracking="1" />
+			<TalkToNpcObjective Quest="The Return" Npc="Alwin Demler" X="6071.847" Y="820.7329" Z="3998.7" Options="1, 1" Tracking="2" />
 		</If>
 
     <TurnInQuest Name="The Return" Npc="Captain Glott" X="6103.346" Y="823.1987" Z="4011.844" />
     <PickUpQuest Name="Last Breath" Npc="Captain Glott" X="6103.346" Y="823.1987" Z="4011.844" />
 
 		<If Condition="HasQuest(&quot;Last Breath&quot;)">
-			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6132.797" Y="818" Z="4028.809" Options="1,1" Tracking="1" />
-			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6058.352" Y="818" Z="4043.66" Options="1,1" Tracking="1"  />
-			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6038.548" Y="818" Z="4047.186" Options="1,1" Tracking="1"  />
-			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6042.759" Y="819.0661" Z="4065.603" Options="1,1" Tracking="1"  />
-			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6079.757" Y="819.0661" Z="4073.073"  Options="1,1" Tracking="1" />
-			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6098.454" Y="818" Z="4070.521" Options="1,1" Tracking="1"  />
-			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6113.77" Y="818" Z="4059.406" Options="1,1" Tracking="1" />
-			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6132.797" Y="818" Z="4028.809" Options="1,1" Tracking="1" />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6132.797" Y="818" Z="4028.809" Options="1, 1" Tracking="1" />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6058.352" Y="818" Z="4043.66" Options="1, 1" Tracking="1"  />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6038.548" Y="818" Z="4047.186" Options="1, 1" Tracking="1"  />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6042.759" Y="819.0661" Z="4065.603" Options="1, 1" Tracking="1"  />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6079.757" Y="819.0661" Z="4073.073"  Options="1, 1" Tracking="1" />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6098.454" Y="818" Z="4070.521" Options="1, 1" Tracking="1"  />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6113.77" Y="818" Z="4059.406" Options="1, 1" Tracking="1" />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6132.797" Y="818" Z="4028.809" Options="1, 1" Tracking="1" />
 		</If>
 
     <TurnInQuest Name="Last Breath" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
@@ -254,17 +254,7 @@
     <PickUpQuest Name="Wanton Flame" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
     <PickUpQuest Name="Help From Above" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
 	
-	<!-- bot still doesn't accept quest, even after sticking in the pickup
-		<If Condition="HasQuest(&quot;Wanton Flame&quot;)">
-		  <If Condition="not HasQuest(&quot;Recovered Notes&quot;)">
-			<MoveTo X="6281.302" Y="820.6832" Z="3737.72" />
-
-			<If Condition="Vector3.DistanceSqr(Me.Location, Vector3(6281.302, 820.6832, 3737.72)) &lt; 10*10">
-				<UseObject Name="Scattered Stones" X="6281.302" Y="820.6832" Z="3737.72" />
-				<Wait Seconds="2" />
-				<PickUpQuest Name="Recovered Notes" Object="Scattered Stones" X="6281.302" Y="820.6832" Z="3737.72" />
-		</If></If></If>
-	-->
+	<PickUpQuest Name="Recovered Notes" Object="Scattered Stones" X="6281.302" Y="820.6832" Z="3737.72" />
 
 		<KillMobsObjective Quest="Help From Above" Tracking="1">
 		  <Area>
@@ -362,10 +352,7 @@
 		</If>
 
     <PickUpQuest Name="Carrying the Light" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
-
- 		<If Condition="HasQuest(&quot;Recovered Notes&quot;)">
-   <TurnInQuest Name="Recovered Notes" Npc="Legate Nathen Creen" X="6205.787" Y="831.1597" Z="3847.033" />
-		</If>
+	<TurnInQuest Name="Recovered Notes" Npc="Legate Nathen Creen" X="6205.787" Y="831.1597" Z="3847.033" />
 
 		<!-- ignoring 
     <PickUpQuest Name="A Tear in Telara" Npc="Legate Nathen Creen" X="6205.787" Y="831.1597" Z="3847.033" /> -->
@@ -399,8 +386,7 @@
     <PickUpQuest Name="Agitated Wildlife"  Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
     <!-- Ignoring Daily - Guardian of Ways and Means - kill 10 creatures from rifts / invasions Npc="Berthold Stronn" X="6208.949" Y="820.8959" Z="3582.466" -->
 
-		<!-- Singed Hives.  Bot doesn't want to kill the stupid hives! 
-		-->
+		<!-- Singed Hives.  Bot doesn't want to kill the stupid hives! -->
 		<If Condition="HasQuest(&quot;Singed Hives&quot;)">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="Logging.Write(&quot;Bot doesn't kill Vespid Hives. It walks up to it and then leaves.  If I use combatbot, it kills it - but if i get extra agro, it doesn't re-target afterwards&quot;)" />
@@ -608,7 +594,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sabatons of the Advocate&quot;)" />
 			 </If>
 		</If>
-
     <TurnInQuest Name="On the Verge" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
     <PickUpQuest Name="Minions of Maelforge" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
     <PickUpQuest Name="Immolation Avenged" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
@@ -694,7 +679,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Defender's Armor&quot;)" />
 			 </If>
 		</If>
-
 		<If Condition="HasQuest(&quot;Immolation Avenged&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Immolation Avenged" Reward="1" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
@@ -717,7 +701,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Avenger's Gauntlets&quot;)" />
 			 </If>
 		</If>
-
     <PickUpQuest Name="Brougan Grote" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
     <!-- End of South Argent Glade Quests -->
 
@@ -929,7 +912,6 @@
 			-->
 			 </If>
 		</If>
-
     <TurnInQuest Name="Big Brother Hazer" Npc="Murbo Malm" X="5981.471" Y="812.1272" Z="3059.051" />
     <PickUpQuest Name="Trial of the Three Elements" Npc="Murbo Malm" X="5981.471" Y="812.1272" Z="3059.051" />
 
@@ -1074,9 +1056,8 @@
     <TurnInQuest Name="Teacher's Pet" Reward="1" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
 			 </If>
 		</If>
-
-   <!-- End of Central Argent Glade Quests -->
     <PickUpQuest Name="Bug Off" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+   <!-- End of Central Argent Glade Quests -->
 
 		<UseObjectsObjective Quest="Bug Off" Tracking="1">
 		  <Area>
@@ -1132,7 +1113,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Quicksilver Girdle&quot;)" />
 			 </If>
 		</If>
-
     <PickUpQuest Name="Ritual Reappropriation" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
     <PickUpQuest Name="Unusual Belongings" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
     <PickUpQuest Name="Stolen Implements" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
@@ -1143,9 +1123,7 @@
 		</If>
     <PickUpQuest Name="Dirty Stinking Marsh" Npc="Kelnin Malm" X="6528.14" Y="828.5143" Z="3329.785" />
 		<!-- If someone is currently Escorting Scotty, he won't be avail to escort and keeps clicking the window open and closed -->
-		<If Condition="HasQuest(&quot;Dirty Stinking Marsh&quot;)">
-			<Escort Npc="Scotty" Quest="Dirty Stinking Marsh" Tracking="1" />
-		</If>
+		<Escort Quest="Dirty Stinking Marsh" Npc="Scotty" Tracking="1" />
     <TurnInQuest Name="Dirty Stinking Marsh" Npc="Kelnin Malm" X="6528.14" Y="828.5143" Z="3329.785" />
 
 		<UseObjectsObjective Quest="Stolen Implements" Tracking="1">
@@ -1267,20 +1245,15 @@
     <TurnInQuest Name="An Oppressive Odor" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
 		<If Condition="HasQuest(&quot;Stolen Implements&quot;)">
     <TurnInQuest Name="Stolen Implements" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
-				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Bogling Knapsack&quot;)" />
+			<Wait Seconds="2" />
+			<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Bogling Knapsack&quot;)" />
 		</If>
     <TurnInQuest Name="Unusual Belongings" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
     <PickUpQuest Name="Anti-Intelligence Report" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
     <PickUpQuest Name="The Perfect Specimen" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
 
-		<If Condition="HasQuest(&quot;Anti-Intelligence Report&quot;)">
-			<Python Statement="Logging.Write(&quot;Please go around and use the wand on boglings&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-		</If>
-
-		  <!-- Range 20-30 needs to be added.  This can be used in combat if we need to temp disable it 
-		<UseItemOnMobsObjective Quest="Anti-Intelligence Report" Item="Simplicity Wand" CastTime="3" Cooldown="10" WhenDead="False" Tracking="1">
+		<!-- Verify this works and / or tweak this (20-30 range) -->
+		<UseItemOnMobsObjective Quest="Anti-Intelligence Report" UseRange="20" Item="Simplicity Wand" CastTime="3" Cooldown="10" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob>Bogling Thief</Mob>
@@ -1299,21 +1272,19 @@
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
-		-->
+
+		<If Condition="((HasQuest(&quot;The Perfect Specimen&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Perfect Specimen&quot;, 1)))">
+			<MoveTo X="6608.674" Y="820.9843" Z="3518.82" />
+			<Wait Seconds="1" />
+			<Python Statement = "SpellManager.UseItem(&quot;Fused Faetouched Splinters&quot;)" />
+			<Wait Seconds="6" />
+		</If>
 
 		<If Condition="HasQuest(&quot;Saving the Spirit Guide&quot;)">
 			<MoveTo X="6583.324" Y="820.7825" Z="3630.43" />
 			<UseObject Name="Binding Point" X="6583.324" Y="820.7825" Z="3630.43" />
 			<UseObject Name="Binding Point" X="6583.324" Y="820.7825" Z="3630.43" />
 			<TalkToNpcObjective Quest="Saving the Spirit Guide" Npc="Spirit Guide" X="6583.324" Y="820.7825" Z="3630.43" Options="1" Tracking="1" />
-		</If>
-
-		  <!-- and is not completed doesn't work properly.  When it does, move quest before spirit guide -->
-		<If Condition="((HasQuest(&quot;The Perfect Specimen&quot;)) and (not IsQuestCompleted(&quot;The Perfect Specimen&quot;)))">
-			<MoveTo X="6608.674" Y="820.9843" Z="3518.82" />
-			<Wait Seconds="1" />
-			<Python Statement = "SpellManager.UseItem(&quot;Fused Faetouched Splinters&quot;)" />
-			<Wait Seconds="6" />
 		</If>
 
     <TurnInQuest Name="Saving the Spirit Guide" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
@@ -1341,7 +1312,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Marsh Gas Blunderbuss&quot;)" />
 			 </If>
 		</If>
-
    <PickUpQuest Name="Further Exploration" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
     <!-- To Silver Landing Quest -->
 
@@ -1376,7 +1346,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Visionary's Legplates&quot;)" />
 			 </If>
 		</If>
-
     <!-- End of Sunken Marsh Quests -->
 
 		<KillMobsObjective Quest="Further Exploration" Tracking="1">
@@ -1497,7 +1466,6 @@
     <TurnInQuest Name="The Aelfwar Threat" Reward="1" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
 			 </If>
 		</If>
-
    <PickUpQuest Name="Thorn in the Side" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
 
 		<KillMobsObjective Quest="Thorn in the Side" Tracking="1">
@@ -1533,7 +1501,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Vigilant Pauldrons&quot;)" />
 			 </If>
 		</If>
-
     <PickUpQuest Name="The Priestess of Sanctum Watch" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
     <!-- End of Silver Landing Quests -->
 
@@ -1683,7 +1650,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Infamous Sabatons&quot;)" />
 			 </If>
 		</If>
-
     <!-- End of Sanctum Watch Quests -->
 
     <!-- Treant's Grove Quests -->
@@ -1820,7 +1786,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Heavy Treantcleaver&quot;)" />
 			 </If>
 		</If>
-
     <!-- End of Treant's Grove Quests -->
     <PickUpQuest Name="Fateful Vision" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
     <!-- To Wayward Thicket -->
@@ -1873,8 +1838,10 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<!-- hasquest useitem amphibious brew -->
-		<KillMobsObjective Quest="The Mind's Eyes" Tracking="1">
+		<If Condition="((HasQuest(&quot;The Mind's Eyes&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Mind's Eyes&quot;, 1)))">
+			<Python Statement = "SpellManager.UseItem(&quot;Amphibious Brew&quot;)" />
+			
+		 <KillMobsObjective Quest="The Mind's Eyes" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob>Mossback Lasher</Mob>
@@ -1892,7 +1859,8 @@
 			  <Hotspot X="7220.874" Y="818.575" Z="2861.085" />
 			</Hotspots>
 		  </Area>
-		</KillMobsObjective>
+		 </KillMobsObjective>
+		</If>
 
     <TurnInQuest Name="Feeding the Mind" Npc="Dalin Erst" X="6927.3" Y="875.6207" Z="2911.115" />
 		<If Condition="HasQuest(&quot;The Mind's Eyes&quot;)">
@@ -1911,7 +1879,6 @@
     <TurnInQuest Name="The Mind's Eyes" Reward="2" Npc="Dalin Erst" X="6927.3" Y="875.6207" Z="2911.115" />
 			 </If>
 		</If>
-
     <PickUpQuest Name="Tonic of Meditation" Npc="Dalin Erst" X="6927.3" Y="875.6207" Z="2911.115" />
     <TurnInQuest Name="Tonic of Meditation" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
     <!-- End of Wayward Thicket Quests -->
@@ -2073,7 +2040,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Girdle of the Grove&quot;)" />
 			 </If>
 		</If>
-
     <TurnInQuest Name="Aelfwar Conspirators" Npc="Tristan Alecourt" X="6576.343" Y="839.8177" Z="2780.682" />
     <PickUpQuest Name="Lord of the Fae" Npc="Tristan Alecourt" X="6576.343" Y="839.8177" Z="2780.682" />
 
@@ -2110,7 +2076,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Malevolent Shoulderguards&quot;)" />
 			 </If>
 		</If>
-
     <PickUpQuest Name="Back to Argent Glade" Npc="Tristan Alecourt" X="6576.343" Y="839.8177" Z="2780.682" />
     <!-- End of Highglades Lookout Quests -->
 
@@ -2142,41 +2107,33 @@
 		</If>
     <TurnInQuest Name="Skull and Bones" Npc="Fiona Lechtum" X="5962.077" Y="812.1246" Z="3060.189" />
 
-    <!-- I can't do this quest yet, but i'll attempt to script it - Hazers to Hazees
 	<PickUpQuest Name="Hazers to Hazees" Npc="Murbo Malm" X="5981.471" Y="812.1272" Z="3059.051" />
-		<If Condition="HasQuest(&quot;Hazers to Hazees&quot;)">
-			Objective 1:
-			<TalkToNpcObjective Quest="Hazers to Hazees" Npc="Samerre Brightridge" X="5944.049" Y="814.991" Z="3151.908"  Options="1,1" Tracking="1" />
-			<Loot the popup window>
-			
-			Objective 2:
-			<UseObjectsObjective Quest="Hazers to Hazees" Tracking="2">
-			  <Area>
-				<Objects>
-				  <Object>Scattered Rocks</Object>
-				</Objects>
-				<Hotspots>
-					<Hotspot X="6062.839" Y="813.5165" Z="2926.692" />
-				</Hotspots>
-			  </Area>
-			</UseObjectsObjective>
-			
-			Objective 3:
-			<UseItemOnMobsObjective Quest="Hazers to Hazees" Item="Wand of Empowerment" CastTime="3" Cooldown="2" WhenDead="False" Tracking="3">
-			  <Area>
-				<Mobs>
-				  <Mob>Scotty</Mob>
-				</Mobs>
-				<Hotspots>
-					<Hotspot X="6058.771" Y="813.3331" Z="2930.852" />
-				</Hotspots>
-			  </Area>
-			</UseItemOnMobsObjective>
-		</If>
-	<TurnInQuest Name="Hazers to Hazees" Npc="Murbo Malm" X="5981.471" Y="812.1272" Z="3059.051" />
-			-->
+	
+		<TalkToNpcObjective Quest="Hazers to Hazees" Npc="Samerre Brightridge" X="5944.049" Y="814.991" Z="3151.908" Options="1, 1" Tracking="1" />
+		
+		<UseObjectsObjective Quest="Hazers to Hazees" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Scattered Rocks</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6062.839" Y="813.5165" Z="2926.692" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+		<UseItemOnMobsObjective Quest="Hazers to Hazees" Item="Wand of Empowerment" CastTime="3" Cooldown="2" WhenDead="False" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Scotty</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6058.771" Y="813.3331" Z="2930.852" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
 
-    <!-- Mirror of Ages Quests -->
+	<!-- Mirror of Ages Quests -->
  		<If Condition="HasQuest(&quot;Ask the Elders&quot;)">
  			<MoveTo X="5718.144" Y="870.6053" Z="2841.199" />
  			<UseObject Name="Tavra Altar" X="5718.144" Y="870.6053" Z="2841.199" />
@@ -2441,10 +2398,11 @@
 
 		<!-- This one is haywirey - you have to use the Wand of Grace at the location of a 'Fallen Citizen - but you can't target them.  The bot will path to them on it's own, but then nothin. 
 			I could temp fix it and moveto, useitem, wait 4 sec ... but that's ugly. Maybe UseItemAtNpc/Object Objective  where the bot locates something and then uses the item w/in a range of it -->
-		<If Condition="HasQuest(&quot;Bless the Fallen&quot;)">
+		<If Condition="((HasQuest(&quot;Bless the Fallen&quot;)) and (not IsQuestObjectiveCompleted(&quot;Bless the Fallen&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
+		
 		<UseItemOnMobsObjective Quest="Bless the Fallen" Item="Wand of Grace" CastTime="3" Cooldown="2" WhenDead="True" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -2729,7 +2687,6 @@
 		<If Condition="HasQuest(&quot;Tete-a-Tete&quot;)">
 			<Wait Seconds="4" />
 			<Escort Npc="Aelfwar Honor Guard" Quest="Tete-a-Tete" Tracking="1" />
-			<!-- these changes are untested -->
 			<TalkToNpcObjective Quest="Tete-a-Tete" Npc="Prince Hylas" X="6526.388" Y="943.237" Z="3022.437" Options="1" Tracking="1" />
 		</If>
 
@@ -2838,7 +2795,6 @@
 		</If>
 		<!-- You'll want to force sell while you're here -->
     <PickUpQuest Name="A Spiritual Calling" Npc="Loras Tivan" X="6262.274" Y="838.3229" Z="3242.822" />
-		<!-- Npc's inside Keep -->
     <TurnInQuest Name="A Spiritual Calling" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
     <PickUpQuest Name="Clouded Contemplation" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
     <PickUpQuest Name="Discordant Spirits" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
@@ -3138,14 +3094,11 @@
 			 </If>
 		</If>
     <PickUpQuest Name="Dormant Power" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
-
-	<!--
-		<If Condition="HasQuest(&quot;A Tear in Telara&quot;)"> 
+		<If Condition="((HasQuest(&quot;A Tear in Telara&quot;)) and (IsQuestObjectiveCompleted(&quot;A Tear in Telara&quot;, 1)))">
     <TurnInQuest Name="A Tear in Telara" Npc="Rorth Devalm" X="6093" Y="817" Z="3255" />
-				<Wait Seconds="2" />
+			<Wait Seconds="2" />
 			<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sigil of the Planes&quot;)" />
 		</If>
-	-->
 	
 		<UseObjectsObjective Quest="Dormant Power" Tracking="1">
 		  <Area>
@@ -3186,8 +3139,6 @@
     <!-- Go To Gloamwood Quests (Gnarlwood Post) -->
     <PickUpQuest Name="An Age of Darkness" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
     <PickUpQuest Name="Gloamwood Beasts" Npc="Ralph Bonser" X="6037.717" Y="832.3002" Z="3123.418" />
-    <TurnInQuest Name="An Age of Darkness" Npc="Laenaya Niro" X="5395.653" Y="953.5158" Z="2718.086" />
-    <TurnInQuest Name="Gloamwood Beasts" Npc="Waykeeper Brion" X="5380.467" Y="954.0422" Z="2706.434" />
 
     <GrindTo Level="20">
       <GrindArea TargetMinLevel="13" TargetMaxLevel="16">
@@ -3219,11 +3170,11 @@
       </GrindArea>
     </GrindTo>
 	
+    <TurnInQuest Name="An Age of Darkness" Npc="Laenaya Niro" X="5395.653" Y="953.5158" Z="2718.086" />
+    <TurnInQuest Name="Gloamwood Beasts" Npc="Waykeeper Brion" X="5380.467" Y="954.0422" Z="2706.434" />
+	
 			<Python Statement="Logging.Write(&quot;End of Line\nYes, I fight for the Users!&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
-	
-	
-	
 	
     <Loop />
   </Tasks>

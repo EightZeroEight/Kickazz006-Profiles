@@ -898,7 +898,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-	<PickUpQuest Name="Evidence of the Unclean" Npc="Two-Headed Corpse" X="2848.646" Y="1169.327" Z="4368.03" />
+	<PickUpQuest Name="Evidence of the Unclean" Object="Two-Headed Corpse" X="2848.646" Y="1169.327" Z="4368.03" />
 		
 		<UseObjectsObjective Quest="Bahralt's Shrine" Tracking="1">
 		  <Area>
@@ -911,7 +911,7 @@
 		  </Area>
 		</UseObjectsObjective>
 		
-	<PickUpQuest Name="Lost Lore" Npc="Carwin's Journal" X="2809.556" Y="1164.245" Z="4280.622" />
+	<PickUpQuest Name="Lost Lore" Object="Carwin's Journal" X="2809.556" Y="1164.245" Z="4280.622" />
 		
 		<KillMobsObjective Quest="Sacred Recollection" Tracking="1">
 		  <Area>

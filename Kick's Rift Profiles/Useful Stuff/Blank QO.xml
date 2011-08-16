@@ -10,6 +10,9 @@
 			<Python Statement="Logging.Write(&quot;Please manually do quest  objective () - then press start&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
+		
+		<If Condition="((HasQuest(&quot;&quot;)) and (not IsQuestObjectiveCompleted(&quot;&quot;, 1)))">
+		</If>
 		<If Condition="((HasQuest(&quot;&quot;)) and (IsQuestObjectiveCompleted(&quot;&quot;, 1)))">
 		</If>
 		
@@ -51,7 +54,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<UseItemOnMobsObjective Quest="" Item="" CastTime="" Cooldown="" WhenDead="False" Tracking="1">
+		<UseItemOnMobsObjective Quest="" Item="" UseRange="" CastTime="" Cooldown="" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob></Mob>
