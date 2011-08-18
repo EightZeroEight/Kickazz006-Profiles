@@ -31,7 +31,6 @@
     </AddJob>
     <LoadMesh Name="Guardian 6-20" />
 
-		<!--Select rewards-->
 		<If Condition="HasQuest(&quot;A Dim, Dark Eye&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="A Dim, Dark Eye" Npc="Messenger of the Vigil" X="6071.291" Y="820.4066" Z="3961.944" Reward="3" />
@@ -210,7 +209,7 @@
 	<TurnInQuest Name="Offworld Woes" Reward="3" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
-	<TurnInQuest Name="Offworld Woes" Reward="1"Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6"  />
+	<TurnInQuest Name="Offworld Woes" Reward="1" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6"  />
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Hardened Slicer&quot;)" />
 			 </If>
