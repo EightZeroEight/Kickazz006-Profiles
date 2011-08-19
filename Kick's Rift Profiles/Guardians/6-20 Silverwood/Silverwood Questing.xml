@@ -2661,10 +2661,14 @@
 
     <TurnInQuest Name="A Violent Peace Offering" Npc="Vigoth Phar" X="6392.898" Y="901.652" Z="3169.513" />
     <PickUpQuest Name="Tete-a-Tete" Npc="Vigoth Phar" X="6392.898" Y="901.652" Z="3169.513" />
-		<If Condition="HasQuest(&quot;Tete-a-Tete&quot;)">
+	
+		<If Condition="((HasQuest(&quot;Tete-a-Tete&quot;)) and (not IsQuestObjectiveCompleted(&quot;Tete-a-Tete&quot;, 1)))">
 			<Wait Seconds="4" />
 			<Escort Npc="Aelfwar Honor Guard" Quest="Tete-a-Tete" Tracking="1" />
-			<TalkToNpcObjective Quest="Tete-a-Tete" Npc="Prince Hylas" X="6526.388" Y="943.237" Z="3022.437" Options="1" Tracking="1" />
+		</If>
+		
+		<If Condition="((HasQuest(&quot;Tete-a-Tete&quot;)) and (not IsQuestObjectiveCompleted(&quot;Tete-a-Tete&quot;, 2)))">
+			<TalkToNpcObjective Quest="Tete-a-Tete" Npc="Prince Hylas" X="6526.388" Y="943.237" Z="3022.437" Options="1" Tracking="2" />
 		</If>
 
 		<UseObjectsObjective Quest="Remembrance of Things Past" Tracking="1">
