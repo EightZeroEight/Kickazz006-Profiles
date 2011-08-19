@@ -1804,6 +1804,7 @@
 		</KillMobsObjective>
 
 		<If Condition="((HasQuest(&quot;The Mind's Eyes&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Mind's Eyes&quot;, 1)))">
+			<!-- add a hasitem() here -->
 			<Python Statement = "SpellManager.UseItem(&quot;Amphibious Brew&quot;)" />
 			
 		 <KillMobsObjective Quest="The Mind's Eyes" Tracking="1">
@@ -2076,27 +2077,38 @@
 	
 		<TalkToNpcObjective Quest="Hazers to Hazees" Npc="Samerre Brightridge" X="5944.049" Y="814.991" Z="3151.908" Options="1, 1" Tracking="1" />
 		
-		<UseObjectsObjective Quest="Hazers to Hazees" Tracking="2">
+		<!-- tracking 2 - loot popup window -->
+		<If Condition="((HasQuest(&quot;Hazers to Hazees&quot;)) and (not IsQuestObjectiveCompleted(&quot;Hazers to Hazees&quot;, 2)))">
+			<Python Statement="Logging.Write(&quot;Loot the popup window and press start&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		
+		<UseObjectsObjective Quest="Hazers to Hazees" Tracking="3">
 		  <Area>
 			<Objects>
-			  <Object>Scattered Rocks</Object>
+				<Object>Scattered Rocks</Object>
 			</Objects>
 			<Hotspots>
-				<Hotspot X="6062.839" Y="813.5165" Z="2926.692" />
+				<Hotspot X="6063.203" Y="813.5384" Z="2925.799" />
 			</Hotspots>
 		  </Area>
 		</UseObjectsObjective>
 		
-		<UseItemOnMobsObjective Quest="Hazers to Hazees" Item="Wand of Empowerment" CastTime="3" Cooldown="2" WhenDead="False" Tracking="3">
+		<If Condition="((HasQuest(&quot;Hazers to Hazees&quot;)) and (not IsQuestObjectiveCompleted(&quot;Hazers to Hazees&quot;, 4)))">
+				<Wait Seconds="8" />
+				
+		<UseItemOnMobsObjective Quest="Hazers to Hazees" Item="Wand of Empowerment" CastTime="3" Cooldown="2" WhenDead="False" Tracking="4">
 		  <Area>
 			<Mobs>
 			  <Mob>Scotty</Mob>
 			</Mobs>
 			<Hotspots>
-				<Hotspot X="6058.771" Y="813.3331" Z="2930.852" />
+				<Hotspot X="6058.792" Y="813.3774" Z="2929.789" />
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
+		
+		</If>
 
 	<!-- Mirror of Ages Quests -->
  		<If Condition="HasQuest(&quot;Ask the Elders&quot;)">
