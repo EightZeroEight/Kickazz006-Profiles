@@ -2109,6 +2109,8 @@
 		</UseItemOnMobsObjective>
 		
 		</If>
+		
+	<TurnInQuest Name="Hazers to Hazees" Npc="Murbo Malm" X="5981.471" Y="812.1272" Z="3059.051" />
 
 	<!-- Mirror of Ages Quests -->
  		<If Condition="HasQuest(&quot;Ask the Elders&quot;)">
@@ -3040,6 +3042,10 @@
 		</UseObjectsObjective>
 
 		<!-- This one is weird - you have to kil the Greenscale Priests that spawn at about 1/2 HP of Kongeegon (they make him untargettable) ... even the combat bot doesn't want to kill them -->
+		<If Condition="((HasQuest(&quot;Kongeegon, the Glory of the Aelfwar&quot;)) and (not IsQuestObjectiveCompleted(&quot;Kongeegon, the Glory of the Aelfwar&quot;, 2)))">
+			<Python Statement="Logging.Write(&quot;Please manually do quest  objective () - then press start&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
 		<KillMobsObjective Quest="Kongeegon, the Glory of the Aelfwar" Tracking="2">
 		  <Area>
 			<Mobs>
