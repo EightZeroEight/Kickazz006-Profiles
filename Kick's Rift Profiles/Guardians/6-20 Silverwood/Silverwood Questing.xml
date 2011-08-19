@@ -179,25 +179,27 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
-	<TurnInQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067" Reward="1" />
-			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Honored Legmail&quot;)" />
-		  <ElseIf Condition="Me.Class == UnitClass.Mage">
-	<TurnInQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067" Reward="2" />
-			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Enduring Breeches&quot;)" />
-		  </ElseIf>
-		  <ElseIf Condition="Me.Class == UnitClass.Rogue">
-	<TurnInQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067" Reward="3" />
-			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Boiled Leather Pants&quot;)" />
-		  </ElseIf>
-		  <ElseIf Condition="Me.Class == UnitClass.Warrior">
-	<TurnInQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067" Reward="4" />
-			<Wait Seconds="2" />
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Ascended Greaves&quot;)" />
-		  </ElseIf>
+		<If Condition="(HasQuest(&quot;Ghastly Tinder&quot;))">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+		<TurnInQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067" Reward="1" />
+				<Wait Seconds="2" />
+				<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Honored Legmail&quot;)" />
+			  <ElseIf Condition="Me.Class == UnitClass.Mage">
+		<TurnInQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067" Reward="2" />
+				<Wait Seconds="2" />
+				<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Enduring Breeches&quot;)" />
+			  </ElseIf>
+			  <ElseIf Condition="Me.Class == UnitClass.Rogue">
+		<TurnInQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067" Reward="3" />
+				<Wait Seconds="2" />
+				<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Boiled Leather Pants&quot;)" />
+			  </ElseIf>
+			  <ElseIf Condition="Me.Class == UnitClass.Warrior">
+		<TurnInQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067" Reward="4" />
+				<Wait Seconds="2" />
+				<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Ascended Greaves&quot;)" />
+			  </ElseIf>
+			</If>
 		</If>
     <PickUpQuest Name="Out of the Hands of Evil" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067"/>
 	<TurnInQuest Name="Divine Inspiration" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
@@ -350,7 +352,9 @@
 		<!-- Singed Hives.  Bot doesn't want to kill the stupid hives! -->
 		<If Condition="((HasQuest(&quot;Singed Hives&quot;)) and (not IsQuestObjectiveCompleted(&quot;Singed Hives&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<!--
 			<Python Statement="Logging.Write(&quot;Bot doesn't kill Vespid Hives. It walks up to it and then leaves.  If I use combatbot, it kills it - but if i get extra agro, it doesn't re-target afterwards&quot;)" />
+			-->
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 		
@@ -878,9 +882,9 @@
 		<UseObjectsObjective Quest="Trial of the Three Elements" Tracking="1">
 		  <Area>
 			<Objects>
-			  <Object>Fire Ward</Object>
 			  <Object>Fear Ward</Object>
 			  <Object>Knockback Ward</Object>
+			  <Object>Fire Ward</Object>
 			</Objects>
 			<Hotspots>
 			  <Hotspot X="5974.738" Y="812.1942" Z="3063.525" />
@@ -1212,8 +1216,7 @@
     <PickUpQuest Name="Anti-Intelligence Report" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
     <PickUpQuest Name="The Perfect Specimen" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
 
-		<!-- Verify this works and / or tweak this (20-30 range) -->
-		<UseItemOnMobsObjective Quest="Anti-Intelligence Report" UseRange="20" Item="Simplicity Wand" CastTime="3" Cooldown="10" WhenDead="False" Tracking="1">
+		<UseItemOnMobsObjective Quest="Anti-Intelligence Report" UseRange="25" Item="Simplicity Wand" CastTime="3" Cooldown="10" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob>Bogling Thief</Mob>
@@ -1240,7 +1243,8 @@
 			<Wait Seconds="6" />
 		</If>
 
-		<If Condition="HasQuest(&quot;Saving the Spirit Guide&quot;)">
+		<!-- Quest has issues if npc is already out -->
+		<If Condition="((HasQuest(&quot;Saving the Spirit Guide&quot;)) and (not IsQuestObjectiveCompleted(&quot;Saving the Spirit Guide&quot;, 1)))">
 			<MoveTo X="6583.324" Y="820.7825" Z="3630.43" />
 			<UseObject Name="Binding Point" X="6583.324" Y="820.7825" Z="3630.43" />
 			<UseObject Name="Binding Point" X="6583.324" Y="820.7825" Z="3630.43" />
@@ -1619,6 +1623,7 @@
 	<TurnInQuest Name="The Awakened Grove" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
 		</If>
     <PickUpQuest Name="The Angered Wood" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
+    <PickUpQuest Name="Clearing the Forest" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
 
 		<UseObjectsObjective Quest="Clearing the Forest" Tracking="1">
 		  <Area>
