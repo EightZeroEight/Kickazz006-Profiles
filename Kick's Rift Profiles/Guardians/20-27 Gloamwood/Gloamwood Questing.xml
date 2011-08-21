@@ -744,17 +744,20 @@
 			<Python Statement = "SpellManager.UseItem(&quot;Millrush Brew&quot;)" />
 			<Wait Seconds="5" />
 		</If>
-		<UseObjectsObjective Quest="Dead Water" Tracking="2">
-		  <Area>
-			<Objects>
-			  <Object>Athana's Chest</Object>
-			</Objects>
-			<Hotspots>
-				<Hotspot X="4297.844" Y="1058.055" Z="2670.777" />
-			</Hotspots>
-		  </Area>
-		</UseObjectsObjective>
-		<If Condition="HasQuest(&quot;Dead Water&quot;)">
+		
+		<If Condition="((HasQuest(&quot;Dead Water&quot;)) and (not IsQuestObjectiveCompleted(&quot;Dead Water&quot;, 2)))">
+		
+			<UseObjectsObjective Quest="Dead Water" Tracking="2">
+			  <Area>
+				<Objects>
+				  <Object>Athana's Chest</Object>
+				</Objects>
+				<Hotspots>
+					<Hotspot X="4297.844" Y="1058.055" Z="2670.777" />
+				</Hotspots>
+			  </Area>
+			</UseObjectsObjective>
+		
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Millrush Brew&quot;)" />
 			<Wait Seconds="5" />
@@ -972,7 +975,7 @@
 
 	<TurnInQuest Name="Up the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
 	<PickUpQuest Name="A Family Heirloom" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-		<If Condition="((HasQuest(&quot;Mysterious Messages&quot;)) and (not IsQuestObjectiveCompleted(&quot;&quot;, 1)))">
+		<If Condition="((HasQuest(&quot;Mysterious Messages&quot;)) and (not IsQuestObjectiveCompleted(&quot;Mysterious Messages&quot;, 1)))">
 			<MoveTo X="4994.621" Y="1074.922" Z="2715.552" />
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
@@ -1204,19 +1207,19 @@
 			  <Object>Expensive Shelf</Object>
 			</Objects>
 			<Hotspots>
-				<Hotspot X="5191.888" Y="951.1044" Z="3097.303" />
-				<Hotspot X="5188.973" Y="951.1044" Z="3094.714" />
+				<Hotspot X="5191.002" Y="951.1049" Z="3097.621" />
+				<Hotspot X="5189.225" Y="951.0914" Z="3096.108" />
 			</Hotspots>
 		  </Area>
 		</UseObjectsObjective>
 
 	<TurnInQuest Name="Bite Marks" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
 	<PickUpQuest Name="A Burgher with Lies" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
-		<If Condition="HasQuest(&quot;A Burgher with Lies&quot;)">
+		<If Condition="((HasQuest(&quot;A Burgher with Lies&quot;)) and (not IsQuestObjectiveCompleted(&quot;A Burgher with Lies&quot;, 1)))">
 			<MoveTo X="5247.397" Y="987.0558" Z="3078.16" />
-			<Wait Seconds="2" />
-			<!--	sometimes we have the door here, but sometimes not... is there a way to say 'if X is near, use it' - because the bot will stop if there is no object to use
-			<UseObject Name="Vault Door" X="5247.397" Y="987.0558" Z="3078.16" /> -->
+			<Wait Seconds="5" />
+			<!--	sometimes we have the door here, but sometimes not... is there a way to say 'if X is near, use it' - because the bot will stop if there is no object to use -->
+			<UseObject Name="Vault Door" X="5247.397" Y="987.0558" Z="3078.16" />
 			<TalkToNpcObjective Quest="A Burgher with Lies" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" Options="1" Tracking="1" />
 			<!-- Interactwith door - Vault Door
 			<MoveTo X="5252.234" Y="987.0877" Z="3076.445" />
@@ -1342,33 +1345,32 @@
 	<TurnInQuest Name="The Light of Jebiah" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
 	<PickUpQuest Name="Cleansing Fire" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
 		
-		<!-- this quest has major issues -->
-		<If Condition="((HasQuest(&quot;Cleansing Fire&quot;)) and (not IsQuestObjectiveCompleted(&quot;Cleansing Fire&quot;, 1)))">
+		<While Condition="((HasQuest(&quot;Cleansing Fire&quot;)) and (not IsQuestObjectiveCompleted(&quot;Cleansing Fire&quot;, 1)))">
 			<MoveTo X="5237.996" Y="939.1862" Z="3175.519" />
 			<Wait Seconds="1" />
 			<Python Statement = "SpellManager.UseItem(&quot;Cleansing Fire&quot;)" />
 			<Wait Seconds="2" />
 			<MoveTo X="5215.296" Y="943.7283" Z="3192.271" />
-			<Wait Seconds="60" />
-		</If>
+			<Wait Seconds="80" />
+		</While>
 			
-		<If Condition="((HasQuest(&quot;Cleansing Fire&quot;)) and (not IsQuestObjectiveCompleted(&quot;Cleansing Fire&quot;, 2)))">
+		<While Condition="((HasQuest(&quot;Cleansing Fire&quot;)) and (not IsQuestObjectiveCompleted(&quot;Cleansing Fire&quot;, 2)))">
 			<MoveTo X="5208.479" Y="955.5005" Z="3221.969" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Cleansing Fire&quot;)" />
 			<Wait Seconds="2" />
 			<MoveTo X="5195.064" Y="957.3527" Z="3221.723" />
-			<Wait Seconds="60" />
-		</If>
+			<Wait Seconds="80" />
+		</While>
 		
-		<If Condition="((HasQuest(&quot;Cleansing Fire&quot;)) and (not IsQuestObjectiveCompleted(&quot;Cleansing Fire&quot;, 3)))">
+		<While Condition="((HasQuest(&quot;Cleansing Fire&quot;)) and (not IsQuestObjectiveCompleted(&quot;Cleansing Fire&quot;, 3)))">
 			<MoveTo X="5214.01" Y="974.0383" Z="2939.08" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Cleansing Fire&quot;)" />
 			<Wait Seconds="2" />
 			<MoveTo X="5231.413" Y="976.0449" Z="2926.729" />
-			<Wait Seconds="60" />
-		</If>
+			<Wait Seconds="80" />
+		</While>
 		
 		<If Condition="HasQuest(&quot;Cleansing Fire&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
@@ -1421,26 +1423,26 @@
 			<!-- kill Malevolent Shade Well -->
 		</If>
 
-		<If Condition="((HasQuest(&quot;Purification Ritual&quot;)) and (not IsQuestObjectiveCompleted(&quot;Purification Ritual&quot;, 1)))">
+		<While Condition="((HasQuest(&quot;Purification Ritual&quot;)) and (not IsQuestObjectiveCompleted(&quot;Purification Ritual&quot;, 1)))">
 			<MoveTo X="4708.716" Y="1147.294" Z="2604.068" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Shade Ward&quot;)" />
 			<Wait Seconds="5" />
-		</If>
+		</While>
 		
-		<If Condition="((HasQuest(&quot;Purification Ritual&quot;)) and (not IsQuestObjectiveCompleted(&quot;Purification Ritual&quot;, 2)))">
+		<While Condition="((HasQuest(&quot;Purification Ritual&quot;)) and (not IsQuestObjectiveCompleted(&quot;Purification Ritual&quot;, 2)))">
 			<MoveTo X="4579.092" Y="1150.476" Z="2572.798" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Shade Ward&quot;)" />
 			<Wait Seconds="5" />
-		</If>
+		</While>
 
-		<If Condition="((HasQuest(&quot;Purification Ritual&quot;)) and (not IsQuestObjectiveCompleted(&quot;Purification Ritual&quot;, 3)))">
+		<While Condition="((HasQuest(&quot;Purification Ritual&quot;)) and (not IsQuestObjectiveCompleted(&quot;Purification Ritual&quot;, 3)))">
 			<MoveTo X="4483.123" Y="1156.93" Z="2477.797" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Shade Ward&quot;)" />
 			<Wait Seconds="5" />
-		</If>
+		</While>
 		
 		<KillMobsObjective Quest="The Iron Pine Butcher" Tracking="1">
 		  <Area>
@@ -1705,22 +1707,23 @@
 		</If>
 	<PickUpQuest Name="A Hero's Duty" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" /> <!-- To Scarlet Gorge -->
 	
-    <GrindTo Level="27">
-      <GrindArea>
-        <Mobs>
-          <Mob>Goremouth</Mob>
-          <Mob>Mudscale Viper</Mob>
-          <Mob>Mudscale Bilefang</Mob>
-          <Mob>Dusk Bat</Mob>
-          <Mob>Rotshell Grumbler</Mob>
-        </Mobs>
-        <Hotspots>
-          <Hotspot X="4874.237" Y="1040.2" Z="2504.099" />
-          <Hotspot X="4709.434" Y="1045.187" Z="2596.503" />
-          <Hotspot X="4689.567" Y="1044.879" Z="2564.52" />
-        </Hotspots>
-      </GrindArea>
-    </GrindTo>
+		<GrindTo Level="27">
+		  <GrindArea>
+			<Mobs>
+			  <Mob>Fellshade Sentry</Mob>
+			  <Mob>Fellshade Darkflame</Mob>
+			  <Mob>Fellshade Enforcer</Mob>
+			  <Mob>Fellshade Marksman</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4610.545" Y="1182.54" Z="2443.039" />
+				<Hotspot X="4608.4" Y="1194.978" Z="2389.418" />
+				<Hotspot X="4582.083" Y="1182.534" Z="2434.49" />
+				<Hotspot X="4604.271" Y="1209.479" Z="2488.731" />
+				<Hotspot X="4613.138" Y="1181.539" Z="2556.855" />
+			</Hotspots>
+		  </GrindArea>
+		</GrindTo>
 	
 			<MoveTo X="3962.215" Y="1079.18" Z="3028.994" />
 			
