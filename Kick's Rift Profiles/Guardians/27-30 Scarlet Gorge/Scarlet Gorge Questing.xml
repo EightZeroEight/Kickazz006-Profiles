@@ -30,16 +30,19 @@
 		<If Condition="HasQuest(&quot;Into Scarlet Gorge&quot;)">
 			<Python Statement="Logging.Write(&quot;Bot doesn't use elevators - so use it and then turn in 'into scarlet gorge' &quot;)" />
 			<Python Statement="GigaBot.Stop()" />
-		</If>
 	<TurnInQuest Name="Into Scarlet Gorge" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+		</If>
 		<If Condition="HasQuest(&quot;Spreading the Word&quot;)">
 	<TurnInQuest Name="Spreading the Word" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
 		</If>
 	<PickUpQuest Name="Stone Cold Survivors" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
 	
-		<!-- Riverfell Quests - Ignoring Dailies at the N Wardstone -->
+		<!-- Riverfell Quests -->
 	<PickUpQuest Name="Foul Patrols" Npc="Yannis Violet" X="3834.065" Y="979.7368" Z="2912.681" />
 	<PickUpQuest Name="Going Up" Npc="Cheev Nash" X="3833.206" Y="979.4971" Z="2914.862" />
+		<If Condition="HasQuestAvailable(&quot;Agent Gerid Kalos&quot;)">
+	<PickUpQuest Name="Death for the Dead" Npc="Agent Gerid Kalos" X="3835.982" Y="976.5576" Z="2929.76" />
+		</If>
 	
 		<If Condition="HasQuest(&quot;Stone Cold Survivors&quot;)">
 			<TalkToNpcObjective Quest="Stone Cold Survivors" Npc="Stonecrest Survivor" X="4007.363" Y="980.4062" Z="2704.074" Options="1,1" Tracking="1" />

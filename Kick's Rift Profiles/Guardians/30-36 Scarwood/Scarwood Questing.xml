@@ -194,9 +194,10 @@
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
+		
+		<!-- 25-30 yard range - still has issues
 
-		<!-- 25-30 yard range - test this 
-		<UseItemOnMobsObjective Quest="Reaping the Whirlwind" UseRange="25" Item="Sigil of the Stormbreaker" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
+		<UseItemOnMobsObjective Quest="Reaping the Whirlwind" UseRange="35" Item="Sigil of the Stormbreaker" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob>Electrified Naga</Mob>
@@ -210,6 +211,17 @@
 		</UseItemOnMobsObjective>
 		-->
 	
+		<UseObjectsObjective Quest="Reaping the Whirlwind" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Reliquary of the Storm Queen</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3971.263" Y="1068.299" Z="3752.409" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
 		<If Condition="HasQuest(&quot;Reaping the Whirlwind&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Reaping the Whirlwind" Reward="1" Npc="Captain Ledisko" X="3614.544" Y="1105.097" Z="3509.324" />
@@ -382,48 +394,27 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Granitewood Curisass&quot;)" />
 			 </If>
 		</If>
-		<If Condition="HasQuest(&quot;Shrines of Life&quot;)">
-			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
-	<TurnInQuest Name="Shrines of Life" Reward="1" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />
-				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Grovekeeper's Boots&quot;)" />
-			</If>
-			 <If Condition="Me.Class == UnitClass.Mage">
-	<TurnInQuest Name="Shrines of Life" Reward="2" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />
-				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Graniteweave Slippers&quot;)" />
-			 </If>
-			 <If Condition="Me.Class == UnitClass.Rogue">
-	<TurnInQuest Name="Shrines of Life" Reward="3" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />
-				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Grovewalker's Heavy Boots&quot;)" />
-			 </If>
-			 <If Condition="Me.Class == UnitClass.Warrior">
-	<TurnInQuest Name="Shrines of Life" Reward="4" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />
-				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Granitewood Sabatons&quot;)" />
-			 </If>
-		</If>
+	<TurnInQuest Name="Shrines of Life" Npc="Alio Romea" X="3593.971" Y="1105.48" Z="3789.413" />
 		<If Condition="HasQuest(&quot;Benefits of Extermination&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Benefits of Extermination" Reward="1" Npc="Omia Leen" X="3585.32" Y="1104.377" Z="3798.424" />
 				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot; Grovekeeper's Hauberkequip &quot;)" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Grovekeeper's Boots&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
 	<TurnInQuest Name="Benefits of Extermination" Reward="2" Npc="Omia Leen" X="3585.32" Y="1104.377" Z="3798.424" />
 				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Graniteweave Robe&quot;)" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Graniteweave Slippers&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
 	<TurnInQuest Name="Benefits of Extermination" Reward="3" Npc="Omia Leen" X="3585.32" Y="1104.377" Z="3798.424" />
 				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Grovewalker's Tunic&quot;)" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Grovewalker's Heavy Boots&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
 	<TurnInQuest Name="Benefits of Extermination" Reward="4" Npc="Omia Leen" X="3585.32" Y="1104.377" Z="3798.424" />
 				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Granite Curiass&quot;)" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Granitewood Sabatons&quot;)" />
 			 </If>
 		</If>
 	<PickUpQuest Name="Trouble from the Mill" Npc="Lej Hunal" X="3588.209" Y="1104.403" Z="3801.429" />
