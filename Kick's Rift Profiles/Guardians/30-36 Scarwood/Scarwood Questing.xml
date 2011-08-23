@@ -460,6 +460,7 @@
 	<TurnInQuest Name="A Work Stoppage" Npc="Erik Valinez" X="3827.658" Y="1119.912" Z="3690.35" />
 	<PickUpQuest Name="A Wrench in the Works" Npc="Erik Valinez" X="3827.658" Y="1119.912" Z="3690.35" />
 	
+		<!-- Bot won't use this item - manually do it for now -->
 		<UseObjectsObjective Quest="The Score" Tracking="1">
 		  <Area>
 			<Objects>
@@ -607,12 +608,19 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<If Condition="((HasQuest(&quot;&quot;)) and (not IsQuestObjectiveCompleted(&quot;&quot;, 2)))"> <!-- Tracking 2 and 3 -->
+		<While Condition="((HasQuest(&quot;The Finest Cut&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Finest Cut&quot;, 2)))"> <!-- Tracking 2 and 3 -->
+			<MoveTo X="3643.049" Y="1079.671" Z="4000.257" />
+			<Wait Seconds="2" />
+			<Python Statement = "SpellManager.UseItem(&quot;Wolf Liver&quot;)" />
+			<Wait Seconds="8" />
+		</While>
+
+		<While Condition="((HasQuest(&quot;The Finest Cut&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Finest Cut&quot;, 3)))"> <!-- Tracking 2 and 3 -->
 			<MoveTo X="3643.049" Y="1079.671" Z="4000.257" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Wolf Liver&quot;)" />
 			<Wait Seconds="5" />
-		</If>
+		</While>
 
 		<KillMobsObjective Quest="I Could Eat an Ox" Tracking="2">
 		  <Area>
@@ -640,13 +648,13 @@
 		<If Condition="HasQuest(&quot;A Fallen Soldier&quot;)">
 	<TurnInQuest Name="A Fallen Soldier" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
 		</If>
-		<!-- ??
+		<!-- ignoring kain's hunt
 	<PickUpQuest Name="Kain's Hunt" Npc="Vol Spiridon" X="3133.033" Y="1095.086" Z="3890.319" /> -->
 	
 		<If Condition="HasQuest(&quot;Command Training&quot;)">
 			<TalkToNpcObjective Quest="Command Training" Npc="Donal Sumptor" X="3134.281" Y="1095.086" Z="3874.342" Options="1" Tracking="1" />
 			<TalkToNpcObjective Quest="Command Training" Npc="Sir Martyn Myrsol" X="3143.843" Y="1095.122" Z="3874.305" Options="1" Tracking="3" />
-			<TalkToNpcObjective Quest="Command Training" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" Options="1, 1" Tracking="2" /> <!-- Sometimes this fails -->
+			<TalkToNpcObjective Quest="Command Training" Npc="Captain Ledisko" X="3157.802" Y="1095.051" Z="3867.737" Options="1" Tracking="2" /> <!-- Sometimes this fails -->
 		</If>
 		
 	<TurnInQuest Name="Command Training" Npc="Fedor Saveli" X="3146.442" Y="1095.087" Z="3886.82" />
@@ -761,7 +769,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<KillMobsObjective Quest="Supply Run" Tracking="1">
+		<KillMobsObjective Quest="Supply Run" Tracking="3">
 		  <Area>
 			<Mobs>
 			  <Mob>Fellpine Blackthorn</Mob>
@@ -884,7 +892,8 @@
 		  </Area>
 		</KillMobsObjective>
 
-	<PickUpQuest Name="Evidence of the Unclean" Object="Two-Headed Corpse" X="2848.646" Y="1169.327" Z="4368.03" />
+			<!-- change npc to object -->
+	<PickUpQuest Name="Evidence of the Unclean" Npc="Two-Headed Corpse" X="2848.646" Y="1169.327" Z="4368.03" />
 		
 		<UseObjectsObjective Quest="Bahralt's Shrine" Tracking="1">
 		  <Area>
@@ -897,7 +906,8 @@
 		  </Area>
 		</UseObjectsObjective>
 		
-	<PickUpQuest Name="Lost Lore" Object="Carwin's Journal" X="2809.556" Y="1164.245" Z="4280.622" />
+			<!-- change npc to object -->
+	<PickUpQuest Name="Lost Lore" Npc="Carwin's Journal" X="2809.556" Y="1164.245" Z="4280.622" />
 		
 		<KillMobsObjective Quest="Sacred Recollection" Tracking="1">
 		  <Area>
@@ -971,22 +981,22 @@
 	<TurnInQuest Name="Clearing Out the Cobwebs" Npc="Medic Kircher" X="3101.698" Y="1092.86" Z="4063.925" />
 		<If Condition="HasQuest(&quot;A Dirge for the Undying&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
-	<TurnInQuest Name="A Dirge for the Undying" Reward="1" Npc="Sergeant Malsorn" X="3003.334" Y="1120.349" Z="4151.477" />
+	<TurnInQuest Name="A Dirge for the Undying" Reward="1" Npc="Sir Piotr Siennicki" X="3089.546" Y="1092.925" Z="4082.911" />
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip 12th Guard Issued Leggings&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
-	<TurnInQuest Name="A Dirge for the Undying" Reward="2" Npc="Sergeant Malsorn" X="3003.334" Y="1120.349" Z="4151.477" />
+	<TurnInQuest Name="A Dirge for the Undying" Reward="2" Npc="Sir Piotr Siennicki" X="3089.546" Y="1092.925" Z="4082.911" />
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Corpsewidow Silk Leggings&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
-	<TurnInQuest Name="A Dirge for the Undying" Reward="3" Npc="Sergeant Malsorn" X="3003.334" Y="1120.349" Z="4151.477" />
+	<TurnInQuest Name="A Dirge for the Undying" Reward="3" Npc="Sir Piotr Siennicki" X="3089.546" Y="1092.925" Z="4082.911" />
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ageless Breeches&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
-	<TurnInQuest Name="A Dirge for the Undying" Reward="4" Npc="Sergeant Malsorn" X="3003.334" Y="1120.349" Z="4151.477" />
+	<TurnInQuest Name="A Dirge for the Undying" Reward="4" Npc="Sir Piotr Siennicki" X="3089.546" Y="1092.925" Z="4082.911" />
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Dwarven Etched Greaves&quot;)" />
 			 </If>
@@ -1257,7 +1267,7 @@
 	<PickUpQuest Name="A Temporary Solution" Npc="Eminia Andre" X="2601.507" Y="1180.91" Z="3569.497" />
 
 		<If Condition="HasQuest(&quot;A Temporary Solution&quot;)">
-			<TalkToNpcObjective Quest="A Temporary Solution" Npc="Sasha Nikadon" X="2592.945" Y="1185.931" Z="3533.845" Options="1, 1" Tracking="1" />
+			<TalkToNpcObjective Quest="A Temporary Solution" Npc="Sasha Nikadon" X="2592.945" Y="1185.931" Z="3533.845" Options="1" Tracking="1" />
 		</If>
 	
 	<PickUpQuest Name="Endless Correspondence" Npc="Protector Rysilver" X="2636.491" Y="1177.711" Z="3609.119" />
@@ -1860,25 +1870,27 @@
 		  </Area>
 		</KillMobsObjective>
 
+			<!-- change npc to object -->
 		<If Condition="HasQuest(&quot;Paging Doctor Visek&quot;)">
-			<Moveto X="3122.524" Y="1035.805" Z="3221.477" />
-			<Python Statement="Logging.Write(&quot;Please manually turn in Doctor Visek quest at podium and accept / do next quest and then turn it in - Slave No Longer &quot;)" />
-			<Python Statement="GigaBot.Stop()" />
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Paging Doctor Visek" Reward="2" Npc="Doctor Visek's Grimoire" X="3122.601" Y="1035.805" Z="3221.276" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Blood Soaked Staff&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Paging Doctor Visek" Reward="2" Npc="Doctor Visek's Grimoire" X="3122.601" Y="1035.805" Z="3221.276" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Blood Soaked Staff&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Paging Doctor Visek" Reward="1" Npc="Doctor Visek's Grimoire" X="3122.601" Y="1035.805" Z="3221.276" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Paging Doctor Visek" Reward="3" Npc="Doctor Visek's Grimoire" X="3122.601" Y="1035.805" Z="3221.276" />
+			</If>
 		</If>
-
-		<!-- manually turn in quest at podium
-		<UseObjectsObjective Quest="Paging Doctor Visek" Tracking="2">
-		  <Area>
-			<Objects>
-			  <Object>Doctor Visek's Grimoire</Object>
-			</Objects>
-			<Hotspots>
-				<Hotspot X="3122.524" Y="1035.805" Z="3221.477" />
-			</Hotspots>
-		  </Area>
-		</UseObjectsObjective>
-		-->
-		
+	<PickUpQuest Name="Slave No Longer" Npc="Doctor Visek's Grimoire" X="3122.601" Y="1035.805" Z="3221.276" />
+	
 		<UseObjectsObjective Quest="Slave No Longer" Tracking="1">
 		  <Area>
 			<Objects>
@@ -1901,12 +1913,18 @@
 		  </Area>
 		</UseObjectsObjective>
 
+		<!-- combat use item on objective -->
 		<If Condition="((HasQuest(&quot;Slave No Longer&quot;)) and (not IsQuestObjectiveCompleted(&quot;Slave No Longer&quot;, 3)))">
 			<Python Statement="Logging.Write(&quot;Use Quest item on Gnarlbone at 30 percent hp, then take the port out of there that spawns&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 		
 		<If Condition="(HasQuest(&quot;Slave No Longer&quot;))">
+         <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(3124.78, 1035.818, 3233.407)) &lt; 20*20">
+			<Wait Seconds="30" />
+			<MoveTo X="3118.175" Y="1036.329" Z="3231.051" />
+			<Wait Seconds="15" />
+         </If>
 			<MoveTo X="3339.747" Y="1086.808" Z="3556.31" />
 	<TurnInQuest Name="Slave No Longer" Npc="Sir Isaak Kazimir" X="3339.747" Y="1086.808" Z="3556.31" />
 		</If>
@@ -1955,6 +1973,8 @@
 				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Warhelm of the Manticore&quot;)" />
 			 </If>
+				<Wait Seconds="2" />
+				<Python Statement = "SpellManager.UseItem(&quot;Letter of Commendation&quot;)" />
 		</If>
 	<PickUpQuest Name="Passing the Chain of Command" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
 	<PickUpQuest Name="Beyond Solace" Npc="Adela Anka" X="3147.72" Y="1095.086" Z="3883.611" />
