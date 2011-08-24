@@ -1156,7 +1156,8 @@
 	<TurnInQuest Name="A Story Unfinished" Npc="Hadrik Renlo" X="7683.203" Y="911.1753" Z="6647.291" />
 	<PickUpQuest Name="Among Snakes" Npc="Hadrik Renlo" X="7683.203" Y="911.1753" Z="6647.291" />
 
-	<PickUpQuest Name="Tools of the Trade" Object="Charred Sentry" X="7652.69" Y="912.1622" Z="6723.915" />
+		<!-- change npc to object -->
+	<PickUpQuest Name="Tools of the Trade" Npc="Charred Sentry" X="7652.69" Y="912.1622" Z="6723.915" />
 		
 		<KillMobsObjective Quest="For Those Bled" Tracking="1">
 		  <Area>

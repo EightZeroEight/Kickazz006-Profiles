@@ -221,7 +221,7 @@
 		</If>
     <PickUpQuest Name="Wanton Flame" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
     <PickUpQuest Name="Help From Above" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
-	<PickUpQuest Name="Recovered Notes" Object="Scattered Stones" X="6281.302" Y="820.6832" Z="3737.72" />
+	<PickUpQuest Name="Recovered Notes" Npc="Scattered Stones" X="6281.302" Y="820.6832" Z="3737.72" />
 
 		<UseObjectsObjective Quest="Out of the Hands of Evil" Tracking="3">
 		  <Area>
@@ -272,25 +272,14 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<!-- This is a UseItem and then click the AoE Circle on ground(UseItemTargetLocation from WoW).  Do note, this npc is not targettable -->
-
-		<If Condition="((HasQuest(&quot;Wanton Flame&quot;)) and (not IsQuestObjectiveCompleted(&quot;Wanton Flame&quot;, 1)))">
-		  <MoveTo  X="6341" Y="820.9684" Z="3798.137" />
-		  
-		  <Python Statement="Logging.Write(&quot;Bot doesn't Click the AoE Effect after using item&quot;)" />
-		  <Python Statement="GigaBot.Stop()" />
-
-		  <MoveTo  X="6341" Y="820.9684" Z="3798.137" />
-		  <Wait Seconds="2" />
-		  <MoveTo  X="6341.639" Y="821.0468" Z="3797.765" />
-		  <Wait Seconds="2" />
-		  <Python Statement = "SpellManager.UseItem(&quot;Spear of Light&quot;)" />
-		<!-- Click at <Hotspot X="6342.104" Y="821.127" Z="3797.997" /> -->
-		<!--
-		  <Wait Seconds="3" />
-		-->
-		</If>
-
+	  <UseItemOnGroundObjective Quest="Wantom Flame" Item="Spear of Light" Tracking="1" UseRange="10" CastTime="4" >
+        <Area>
+          <Hotspots>
+            <Hotspot X="6341.639" Y="821.0468" Z="3797.765" />
+          </Hotspots>
+        </Area>
+      </UseItemOnGroundObjective>
+	  
     <TurnInQuest Name="Wanton Flame" Npc="Spirit of Carwin" X="6244.929" Y="835.0805" Z="3876.081" />
     <TurnInQuest Name="Out of the Hands of Evil" Reward="1" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067"/>
 		<If Condition="HasQuest(&quot;Help From Above&quot;)">
