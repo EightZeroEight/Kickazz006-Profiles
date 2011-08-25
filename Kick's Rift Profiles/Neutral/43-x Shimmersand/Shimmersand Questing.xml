@@ -132,7 +132,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-	<PickUpQuest Name="Secrets of the Sands" Object="Hiddensands Treasure Map" X="7253.555" Y="948.8688" Z="6776.06" />
+	<PickUpQuest Name="Secrets of the Sands" Npc="Hiddensands Treasure Map" X="7253.555" Y="948.8688" Z="6776.06" />
 	
 		<UseObjectsObjective Quest="Secrets of the Sands" Tracking="1">
 		  <Area>
@@ -202,8 +202,8 @@
 		  </Area>
 		</KillMobsObjective>
 
-	<TurnInQuest Name="Secrets of the Sands" Object="Hiddensands Treasure Map" X="7253.555" Y="948.8688" Z="6776.06" />
-	<PickUpQuest Name="Jewels in the Heights" Object="Hiddensands Treasure Map" X="7253.555" Y="948.8688" Z="6776.06" />
+	<TurnInQuest Name="Secrets of the Sands" Npc="Hiddensands Treasure Map" X="7253.555" Y="948.8688" Z="6776.06" />
+	<PickUpQuest Name="Jewels in the Heights" Npc="Hiddensands Treasure Map" X="7253.555" Y="948.8688" Z="6776.06" />
 
 		<UseObjectsObjective Quest="Jewels in the Heights" Tracking="1">
 		  <Area>

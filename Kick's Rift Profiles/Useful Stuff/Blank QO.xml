@@ -3,7 +3,7 @@
 
 
 	<PickUpQuest Name="" 
-	<TurnInQuest Name="" Reward="1" 
+	<TurnInQuest Name="" Reward="" 
 
 
 		<If Condition="((HasQuest(&quot;&quot;)) and (not IsQuestObjectiveCompleted(&quot;&quot;, 1)))">

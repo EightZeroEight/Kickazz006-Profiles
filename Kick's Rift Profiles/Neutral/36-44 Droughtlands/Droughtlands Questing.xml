@@ -586,7 +586,7 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<UseObjectsObjective Quest="Carousing with the Cartel" Tracking="1">
+		<UseObjectsObjective Quest="Carousing with the Cartel" Tracking="2">
 		  <Area>
 			<Objects>
 			  <Object>Cartel Skins</Object>
@@ -865,12 +865,17 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Jon Tom's Pauldrons&quot;)" />
 			 </If>
 		</If>
-	<TurnInQuest Name="Burning Confrontation" Npc="Ren Greer" X="7694.007" Y="918.2849" Z="6363.008" />
+	<TurnInQuest Name="Burning Confrontation" Npc="Ben Kwally" X="7607.456" Y="915.3589" Z="6406.625" />
 	<PickUpQuest Name="Containment" Npc="Ben Kwally" X="7607.456" Y="915.3589" Z="6406.625" />
 	<PickUpQuest Name="Scout and About" Npc="Ben Kwally" X="7607.456" Y="915.3589" Z="6406.625" />
 	<PickUpQuest Name="Bless and Purge" Npc="Jillian Rale" X="7616.798" Y="915.329" Z="6391.132" />
 	<PickUpQuest Name="In the Bag" Npc="Rorf" X="7630.572" Y="915.3289" Z="6414.58" />
 		
+		<If Condition="((HasQuest(&quot;In the Bag&quot;)) and (not IsQuestObjectiveCompleted(&quot;In the Bag&quot;, 1)))">
+			<Python Statement="Logging.Write(&quot;Please manually do quest In the Bag objective (1) - then press start&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			
+			<!-- bot isn't looting the popup window after using item on -->
 		<UseItemOnMobsObjective Quest="In the Bag" Item="Cub Sack" CastTime="4" Cooldown="1" WhenDead="False" Tracking="1"> <!-- don't use aoe abilities on this quest, loot after useitemon -->
 		  <Area>
 			<Mobs>
@@ -888,6 +893,7 @@
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
+		</If>
 
 		<!-- These are simple moveto quests, but i think useobject will work as well until we get a moveto tracking
 			Scout and About
@@ -905,28 +911,36 @@
 			useobject kickazz rocks
 		-->
 
-		<If Condition="HasQuest(&quot;Scout and About&quot;)"> <!-- find trackings for these -->
+		<If Condition="((HasQuest(&quot;Scout and About&quot;)) and (not IsQuestObjectiveCompleted(&quot;Scout and About&quot;, 1)))">
 			<MoveTo X="7580.647" Y="910.3687" Z="6602.466" />
 			<Wait Seconds="2" />
+		</If>
 			
+		<If Condition="((HasQuest(&quot;Scout and About&quot;)) and (not IsQuestObjectiveCompleted(&quot;Scout and About&quot;, 2)))">
 			<MoveTo X="7509.956" Y="915.4323" Z="6674.357" />
 			<Wait Seconds="2" />
+		</If>
 			
+		<If Condition="((HasQuest(&quot;Scout and About&quot;)) and (not IsQuestObjectiveCompleted(&quot;Scout and About&quot;, 3)))">
 			<MoveTo X="7472.228" Y="914.5984" Z="6601.41" />
 			<Wait Seconds="2" />
+		</If>
 			
-			<MoveTo X="7384.666" Y="913.5285" Z="6564.619" />
+	<PickUpQuest Name="What Once Was Lost" Npc="Swollen Corpse" X="7464.512" Y="917.2245" Z="6624.316" />
+			
+		<If Condition="((HasQuest(&quot;Scout and About&quot;)) and (not IsQuestObjectiveCompleted(&quot;Scout and About&quot;, 4)))">
+			<MoveTo X="7384.666" Y="913.5285" Z="6564.619" /> 
 			<Wait Seconds="2" />
+		</If>
 			
+		<If Condition="((HasQuest(&quot;Scout and About&quot;)) and (not IsQuestObjectiveCompleted(&quot;Scout and About&quot;, 5)))">
 			<MoveTo X="7425.146" Y="899.0653" Z="6426.127" />
 			<Wait Seconds="2" />
 		</If>
 		
 		<If Condition="((HasQuest(&quot;Bless and Purge&quot;)) and (not IsQuestObjectiveCompleted(&quot;Bless and Purge&quot;, 1)))">
-			<Python Statement="Logging.Write(&quot;run around and use the item at corpses&quot;)" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest Bless and Purge objective (1) - then press start&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
-		</If>
-
 		<!-- useitem at location task - move this above the flags -->
 		<UseItemOnMobsObjective Quest="Bless and Purge" Item="Blessed Decanter" CastTime="4" Cooldown="1" WhenDead="False" Tracking="1">
 		  <Area>
@@ -946,6 +960,7 @@
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
+		</If>
 		
 		<KillMobsObjective Quest="Containment" Tracking="1">
 		  <Area>
@@ -970,8 +985,6 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<!-- What Once Was Lost (quest) avali at <Hotspot X="7464.037" Y="917.3021" Z="6624.657" /> from swolen corpse -->
-		
 	<TurnInQuest Name="Containment" Npc="Ben Kwally" X="7607.456" Y="915.3589" Z="6406.625" />
 	<TurnInQuest Name="Scout and About" Npc="Ben Kwally" X="7607.456" Y="915.3589" Z="6406.625" />
 	<TurnInQuest Name="In the Bag" Npc="Rorf" X="7630.572" Y="915.3289" Z="6414.58" />
@@ -1001,6 +1014,7 @@
 	<PickUpQuest Name="Blood Born Beetles" Npc="Mister Opal" X="7620.382" Y="915.329" Z="6386.793" />
 	<PickUpQuest Name="Ocular Onslaught" Npc="Mister Opal" X="7620.382" Y="915.329" Z="6386.793" />
 	<PickUpQuest Name="Not Forgotten" Npc="Atasha Kirren" X="7632.391" Y="915.329" Z="6396.557" />
+	<TurnInQuest Name="What Once Was Lost" Npc="Sally Callens" X="7611.688" Y="915.3314" Z="6408.314" />
 	<PickUpQuest Name="Ridgetooth Massacre" Npc="Sally Callens" X="7611.688" Y="915.3314" Z="6408.314" />
 	<PickUpQuest Name="The Sting" Npc="Ben Kwally" X="7607.456" Y="915.3589" Z="6406.625" />
 
@@ -1098,13 +1112,27 @@
 		  </Area>
 		</KillMobsObjective>
 
+		<!-- Combat UIO or useitematrange - 20 yards
 		<If Condition="((HasQuest(&quot;Blood Born Beetles&quot;)) and (not IsQuestObjectiveCompleted(&quot;Blood Born Beetles&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Use the Tear of Tavril on Bloodlust Scarabs, then kill them (they're elite)&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
+ -->
 
-		<!-- Combat UIO or useitematrange - 20 yards -->
-		<UseItemOnMobsObjective Quest="Blood Born Beetles" UseRange="20" Item="Tear of Tavril" CastTime="2" Cooldown="1" WhenDead="False" Tracking="1">
+		<UseItemOnMobsObjective Quest="Blood Born Beetles" UseRange="25" Item="Tear of Tavril" CastTime="2" Cooldown="15" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Bloodlust Scarab</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7252.93" Y="906.3312" Z="6413.764" />
+				<Hotspot X="7311.445" Y="899.348" Z="6367.9" />
+				<Hotspot X="7383.194" Y="908.0072" Z="6465.855" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<UseItemOnMobsObjective Quest="Blood Born Beetles" UseRange="25" Item="Tear of Tavril" CastTime="2" Cooldown="15" WhenDead="False" Tracking="2">
 		  <Area>
 			<Mobs>
 			  <Mob>Bloodlust Scarab</Mob>
@@ -1186,24 +1214,16 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<If Condition="((HasQuest(&quot;For Those Bled&quot;)) and (not IsQuestObjectiveCompleted(&quot;For Those Bled&quot;, 1)))">
-			<MoveTo X="7652.711" Y="936.0655" Z="6749.724" />
-			<Wait Seconds="2" />
-			<MoveTo X="7652.711" Y="936.0655" Z="6749.724" />
-			<Wait Seconds="2" />
-			<UseObject Name="Cauldron of Purified Blood" X="7652.711" Y="936.0655" Z="6749.724" />
-			<Wait Seconds="5" />
-			
-			<Python Statement="Logging.Write(&quot;Turnin this quest and get next quest (Untamed) - then do that quest manually&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-		</If>
+	<TurnInQuest Name="For Those Bled" Npc="Cauldron of Purified Blood" X="7652.711" Y="936.0655" Z="6749.724" />
+	<PickUpQuest Name="Untamed" Npc="Cauldron of Purified Blood" X="7652.711" Y="936.0655" Z="6749.724" />
 
+		<!-- combat useitemon 
 		<If Condition="((HasQuest(&quot;Untamed&quot;)) and (not IsQuestObjectiveCompleted(&quot;Untamed&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
-
-		<!-- combat / at range - useitemon 
+		-->
+		
 		<UseItemOnMobsObjective Quest="Untamed" Item="Blood Lure" UseRange="20" CastTime="1" Cooldown="1" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -1216,7 +1236,6 @@
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
-		-->
 		
 		<UseObjectsObjective Quest="Tools of the Trade" Tracking="1">
 		  <Area>
@@ -1232,7 +1251,7 @@
 		<UseObjectsObjective Quest="Tools of the Trade" Tracking="2">
 		  <Area>
 			<Objects>
-			  <Object>Ritual Blade</Object>
+			  <Object>The Ritual Blade</Object>
 			</Objects>
 			<Hotspots>
 				<Hotspot X="7589.71" Y="969.4713" Z="6853.14" />
@@ -1263,6 +1282,10 @@
 		</KillMobsObjective>
 
 		<!-- Useitem at location -->
+		<If Condition="((HasQuest(&quot;Deliverance from Servitude&quot;)) and (not IsQuestObjectiveCompleted(&quot;Deliverance from Servitude&quot;, 1)))">
+			<Python Statement="Logging.Write(&quot;Please manually do quest Deliverance from Servitude objective (1) - then press start&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			
 		<UseItemOnMobsObjective Quest="Deliverance from Servitude" Item="Icon of Souls" CastTime="4" Cooldown="1" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -1283,6 +1306,7 @@
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
+		</If>
 
 		<If Condition="HasQuest(&quot;Sothul's Demise&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
@@ -1357,14 +1381,16 @@
 		<!-- Spitescar Bank Quests -->
 	<TurnInQuest Name="One Dodgy Cat" Npc="Cornelius Magrox" X="8231.966" Y="896.4281" Z="6641.675" />
 	<PickUpQuest Name="Turn the Tables" Npc="Tyrolian Burgher " X="8244.529" Y="897.7751" Z="6631.39" />
+	<!-- I need a special before that runs and agros anything within 20 yards while running so that we can defend our guys - optional quest 
 	<PickUpQuest Name="Lantern Hook Run" Npc="Jinanne Tonux" X="8245.218" Y="897.994" Z="6628.192" />
 	
-		<If Condition="((HasQuest(&quot;Lantern Hook Run&quot;)) and (not IsQuestObjectiveCompleted(&quot;Lantern Hook Run&quot;, 1)))"> <!-- Optional Quest -->
-			<TalkToNpcObjective Quest="Lantern Hook Run" Npc="Vic Tarnoh" X="8211.593" Y="892.7358" Z="6656.648" Options="1" Tracking="1" />
+		<If Condition="((HasQuest(&quot;Lantern Hook Run&quot;)) and (not IsQuestObjectiveCompleted(&quot;Lantern Hook Run&quot;, 2)))"> 
+			<TalkToNpcObjective Quest="Lantern Hook Run" Npc="Vic Tarnoh" X="8211.593" Y="892.7358" Z="6656.648" Options="1" Tracking="2" />
 		</If>
-		<If Condition="((HasQuest(&quot;Lantern Hook Run&quot;)) and (not IsQuestObjectiveCompleted(&quot;Lantern Hook Run&quot;, 2)))">
-			<Moveto X="8079.803" Y="893.8595" Z="6507.63" /> <!-- this quest is stupid, do we lose all of our refugee's? -->
+		<If Condition="((HasQuest(&quot;Lantern Hook Run&quot;)) and (not IsQuestObjectiveCompleted(&quot;Lantern Hook Run&quot;, 1)))">
+			<Moveto X="8079.803" Y="893.8595" Z="6507.63" /> 
 		</If>
+		-->
 		
 		<UseObjectsObjective Quest="Turn the Tables" Tracking="1">
 		  <Area>
@@ -1399,7 +1425,8 @@
 		  </Area>
 		</KillMobsObjective>
 
-	<TurnInQuest Name="Lantern Hook Run" Npc="Jinanne Tonux" X="8245.218" Y="897.994" Z="6628.192" /> <!-- Optional Quest -->
+		<!--
+	<TurnInQuest Name="Lantern Hook Run" Npc="Jinanne Tonux" X="8245.218" Y="897.994" Z="6628.192" />  Optional Quest -->
 	<TurnInQuest Name="Turn the Tables" Npc="Tyrolian Burgher " X="8244.529" Y="897.7751" Z="6631.39" />
 	<PickUpQuest Name="What Strange Beasts" Npc="Cornelius Magrox" X="8231.966" Y="896.4281" Z="6641.675" />
 	<PickUpQuest Name="Wrangler Wrangling" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
@@ -1493,7 +1520,7 @@
 		<UseObjectsObjective Quest="Research Recovery" Tracking="3">
 		  <Area>
 			<Objects>
-			  <Object>Speciment Grinder</Object>
+			  <Object>Specimen Grinder</Object>
 			</Objects>
 			<Hotspots>
 				<Hotspot X="7989.471" Y="925.4904" Z="6828.805" />
@@ -1581,6 +1608,7 @@
 			</Mobs>
 			<Hotspots>
 				<Hotspot X="7994.615" Y="924.9677" Z="6911.236" />
+				<Hotspot X="8090.591" Y="927.2869" Z="6867.136" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
@@ -1588,6 +1616,7 @@
 		<UseObjectsObjective Quest="A Piece of History" Tracking="1">
 		  <Area>
 			<Objects>
+			  <Object>Encased Tablet</Object>
 			  <Object>Artifact Tablet</Object>
 			</Objects>
 			<Hotspots>
@@ -1787,13 +1816,14 @@
 		  </Area>
 		</KillMobsObjective>
 
+		<!-- Carrion's Song - combat useitemon / use at range
 		<If Condition="((HasQuest(&quot;Carrion's Song&quot;)) and (not IsQuestObjectiveCompleted(&quot;Carrion's Song&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 
-		<!-- Carrion's Song - combat useitemon / use at range
-		<UseItemOnMobsObjective Quest="Carrion's Song" UseRange="20" Item="Flightsong" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
+		-->
+		<UseItemOnMobsObjective Quest="Carrion's Song" UseRange="25" Item="Flightsong" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob>Carrion</Mob>
@@ -1803,7 +1833,6 @@
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
-		-->
 		
 		<KillMobsObjective Quest="Carrion's Song" Tracking="2">
 		  <Area>
@@ -2423,7 +2452,7 @@
 		</UseObjectsObjective>
 
 		<If Condition="HasQuest(&quot;Thwarting the Emberlord&quot;)">
-			<Wait Seconds="3" />
+			<Wait Seconds="5" />
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Thwarting the Emberlord" Reward="3" Npc="Cathar" X="8847.75" Y="1134.285" Z="6729.647" />
 				<Wait Seconds="2" />
@@ -2473,7 +2502,7 @@
  		<If Condition="(HasQuest(&quot;Words of the Damned&quot;))">
 		 <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(8845.47, 1134.35, 6729.488)) &lt; 10*10">
  			<Wait Seconds="2" />
-			<TalkToNpcObjective Quest="Words of the Damned" Npc="Cathar" X="8847.75" Y="1134.285" Z="6729.647" Options="2, 1" />
+			<TalkToNpcObjective Quest="Words of the Damned" Npc="Cathar" X="8847.75" Y="1134.285" Z="6729.647" Options="1, 1" />
 			<!-- This was supposed to send me to the bluff, but it didn't; it chose gossip option 1 instead of 2 -->
 		 </If>
 		</If>
@@ -2543,12 +2572,15 @@
 		  </GrindArea>
 		</GrindTo>
 	
-			<Python Statement="Logging.Write(&quot;Train - then take the port to Droughtlands and load Shimmersand Profile!&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-		
 		<If Condition="(HasQuest(&quot;Cry for Help&quot;))">
 	<TurnInQuest Name="Cry for Help" Npc="Gunji" X="7039.698" Y="883.7867" Z="6765.427" />
 		</If>
+		
+		<MoveTo X="7039.698" Y="883.7867" Z="6765.427" />
+		
+			<Python Statement="Logging.Write(&quot;Train - then take the port to Droughtlands and load Shimmersand Profile!&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		
 		
     <Loop />
   </Tasks>
