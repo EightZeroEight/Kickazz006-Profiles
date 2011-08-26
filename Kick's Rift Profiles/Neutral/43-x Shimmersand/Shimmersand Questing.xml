@@ -239,6 +239,113 @@
 	<PickUpQuest Name="Behind Their Eyes, A Storm" Npc="Raniyah Sahlah" X="7036.591" Y="884.0159" Z="6767.344" />
 	<PickUpQuest Name="In the Tower's Shadow" Npc="Raniyah Sahlah" X="7036.591" Y="884.0159" Z="6767.344" />
 
+		<KillMobsObjective Quest="In the Tower's Shadow" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Golden Maw Pounder</Mob>
+			  <Mob>Golden Maw Stonebinder</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7117.217" Y="928.4279" Z="6579.102" />
+				<Hotspot X="7127.019" Y="922.163" Z="6516.356" />
+				<Hotspot X="7164.336" Y="921.3325" Z="6510.662" />
+				<Hotspot X="7178.465" Y="923.4107" Z="6534.255" />
+				<Hotspot X="7199.212" Y="923.7612" Z="6549.103" />
+				<Hotspot X="7215.042" Y="923.4758" Z="6529.37" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="Road to Ruins" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Ethian Monument Remnant</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7064.8" Y="930.8888" Z="6636.522" />
+				<Hotspot X="7021.752" Y="927.6633" Z="6653.214" />
+				<Hotspot X="7004.052" Y="928.5908" Z="6660.892" />
+				<Hotspot X="7027.092" Y="933.7681" Z="6674.616" />
+				<Hotspot X="6967.256" Y="927.9023" Z="6689.036" />
+				<Hotspot X="6946.957" Y="928.8171" Z="6680.215" />
+				<Hotspot X="6947.972" Y="929.0961" Z="6719.791" />
+				
+				
+				
+				
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="A Hard Road to Travel" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Storm Legion Supplicant</Mob>
+			  <Mob>Storm Legion Scout</Mob>
+			  <Mob>Storm Legion </Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7064.8" Y="930.8888" Z="6636.522" />
+				<Hotspot X="7021.752" Y="927.6633" Z="6653.214" />
+				<Hotspot X="7004.052" Y="928.5908" Z="6660.892" />
+				<Hotspot X="7027.092" Y="933.7681" Z="6674.616" />
+				<Hotspot X="6967.256" Y="927.9023" Z="6689.036" />
+				<Hotspot X="6946.957" Y="928.8171" Z="6680.215" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+			<!-- Combat UIO -->
+		<UseItemOnMobsObjective Quest="Behind Their Eyes, A Storm" Item="" UseRange="" CastTime="" Cooldown="" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Dominated Trader</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6903.637" Y="930.493" Z="6726.668" />
+				
+				
+				
+				
+				
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+
+		<KillMobsObjective Quest="Wanton Flames" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Wanton Hound</Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Wanton Flames" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Wanton Hound</Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Wanton Flames" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Wanton Hound</Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
 	
 		
 		<!-- 

@@ -338,15 +338,6 @@
     <PickUpQuest Name="Agitated Wildlife"  Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
     <!-- Ignoring Daily - Guardian of Ways and Means - kill 10 creatures from rifts / invasions Npc="Berthold Stronn" X="6208.949" Y="820.8959" Z="3582.466" -->
 
-		<!-- Singed Hives.  Bot doesn't want to kill the stupid hives! -->
-		<If Condition="((HasQuest(&quot;Singed Hives&quot;)) and (not IsQuestObjectiveCompleted(&quot;Singed Hives&quot;, 1)))">
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
-			<!--
-			<Python Statement="Logging.Write(&quot;Bot doesn't kill Vespid Hives. It walks up to it and then leaves.  If I use combatbot, it kills it - but if i get extra agro, it doesn't re-target afterwards&quot;)" />
-			-->
-			<Python Statement="GigaBot.Stop()" />
-		</If>
-		
 		<KillMobsObjective Quest="Singed Hives" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -377,7 +368,6 @@
 		  <Area>
 			<Mobs>
 			  <Mob>Vespid Hiveward</Mob>
-			  <Mob>Vespid Darter</Mob>
 			</Mobs>
 			<Hotspots>
 			  <Hotspot X="6139.002" Y="821.1508" Z="3573.095" />
@@ -2364,17 +2354,10 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<!-- This one is haywirey - you have to use the Wand of Grace at the location of a 'Fallen Citizen - but you can't target them.  The bot will path to them on it's own, but then nothin. 
-			I could temp fix it and moveto, useitem, wait 4 sec ... but that's ugly. Maybe UseItemAtNpc/Object Objective  where the bot locates something and then uses the item w/in a range of it -->
-		<If Condition="((HasQuest(&quot;Bless the Fallen&quot;)) and (not IsQuestObjectiveCompleted(&quot;Bless the Fallen&quot;, 1)))">
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-		</If>
-		
 		<UseItemOnMobsObjective Quest="Bless the Fallen" Item="Wand of Grace" CastTime="3" Cooldown="2" WhenDead="True" Tracking="1">
 		  <Area>
 			<Mobs>
-			  <Mob>Fallen Citizen</Mob>
+			  <Mob>Locator_SW_snarebrushgrot_LaidtoRest</Mob>
 			</Mobs>
 			<Hotspots>
 			  <Hotspot X="5912.623" Y="854.845" Z="2608.618" />
