@@ -1544,8 +1544,8 @@
 	<TurnInQuest Name="Wage a Lonely War" Npc="General Stanig" X="6469.563" Y="928.4256" Z="1429.976" />
 	<PickUpQuest Name="Tools of a Foul Trade" Npc="General Stanig" X="6469.563" Y="928.4256" Z="1429.976" />
 		
-		<If Condition="HasQuest(&quot;Doom Abides&quot;)">
-			<Python Statement="Logging.Write(&quot;Please manually do quest\n\nKill Lesser Golem's and then use the item at the voidspawns location (which spawn from them)&quot;)" />
+		<If Condition="((HasQuest(&quot;Doom Abides&quot;)) and (not IsQuestObjectiveCompleted(&quot;Doom Abides&quot;, 1)))">
+			<Python Statement="Logging.Write(&quot;Please manually do quest Doom Abides\n\nKill Lesser Golem's and then use the item at the voidspawns location (which spawn from them)&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 

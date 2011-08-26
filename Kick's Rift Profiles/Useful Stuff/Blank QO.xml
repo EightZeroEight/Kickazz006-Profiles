@@ -119,7 +119,7 @@
 			<TalkToNpcObjective Quest=""  Options="1" Tracking="1" />
 		</If>
 
-		<If Condition="HasQuest(&quot;&quot;)">
+		<If Condition="((HasQuest(&quot;&quot;)) and (not IsQuestObjectiveCompleted(&quot;&quot;, 1)))">
 			<MoveTo 
 			<Wait Seconds="2" />
 			<MoveTo 

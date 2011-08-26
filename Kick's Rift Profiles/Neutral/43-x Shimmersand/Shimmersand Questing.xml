@@ -481,9 +481,212 @@
 	<PickUpQuest Name="The Sparkling Lure" Npc="Corbin Wembley" X="7010.75" Y="886.2929" Z="7082.274" />
 	<PickUpQuest Name="To Turn Aside the Storm" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
 
+		<UseObjectsObjective Quest="Stone Temple of Earth" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Surfaced Ruin</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7277.863" Y="955.6623" Z="7155.943" />
+				<Hotspot X="7275.244" Y="954.5947" Z="7134.638" />
+				<Hotspot X="7283.015" Y="956.4092" Z="7112.333" />
+				<Hotspot X="7234.659" Y="947.4896" Z="7112.405" />
+				<Hotspot X="7255.605" Y="948.1193" Z="7097.84" />
+				<Hotspot X="7239.545" Y="947.4223" Z="7086.956" />
+				<Hotspot X="7192.229" Y="934.8956" Z="7048.758" />
+				<Hotspot X="7206.132" Y="936.446" Z="7075.649" />
+				<Hotspot X="7200.763" Y="935.2393" Z="7107.037" />
+				<Hotspot X="7179.25" Y="918.3153" Z="7015.011" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 
+		<If Condition="((HasQuest(&quot;To Turn Aside the Storm&quot;)) and (not IsQuestObjectiveCompleted(&quot;To Turn Aside the Storm&quot;, 2)))">
+			<MoveTo X="7333.014" Y="959.8565" Z="7169.873" />
+			<Wait Seconds="5" />
+		</If>
+		
+		<KillMobsObjective Quest="To Turn Aside the Storm" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Golden Maw Enforcer</Mob>
+			  <Mob>Golden Maw Adept</Mob>
+			  <Mob>Golden Maw Convoker</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7265.641" Y="952.8009" Z="7156.787" />
+				<Hotspot X="7307.582" Y="957.6822" Z="7140.131" /> <!-- caroline puck -->
+				<Hotspot X="7277.863" Y="955.6623" Z="7155.943" />
+				<Hotspot X="7275.244" Y="954.5947" Z="7134.638" />
+				<Hotspot X="7283.015" Y="956.4092" Z="7112.333" />
+				<Hotspot X="7234.659" Y="947.4896" Z="7112.405" />
+				<Hotspot X="7255.605" Y="948.1193" Z="7097.84" />
+				<Hotspot X="7239.545" Y="947.4223" Z="7086.956" />
+				<Hotspot X="7192.229" Y="934.8956" Z="7048.758" />
+				<Hotspot X="7206.132" Y="936.446" Z="7075.649" />
+				<Hotspot X="7200.763" Y="935.2393" Z="7107.037" />
+				<Hotspot X="7179.25" Y="918.3153" Z="7015.011" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
 
+		<KillMobsObjective Quest="Blood on the Sand" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Golden Maw Enforcer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7277.863" Y="955.6623" Z="7155.943" />
+				<Hotspot X="7275.244" Y="954.5947" Z="7134.638" />
+				<Hotspot X="7283.015" Y="956.4092" Z="7112.333" />
+				<Hotspot X="7234.659" Y="947.4896" Z="7112.405" />
+				<Hotspot X="7255.605" Y="948.1193" Z="7097.84" />
+				<Hotspot X="7239.545" Y="947.4223" Z="7086.956" />
+				<Hotspot X="7192.229" Y="934.8956" Z="7048.758" />
+				<Hotspot X="7206.132" Y="936.446" Z="7075.649" />
+				<Hotspot X="7200.763" Y="935.2393" Z="7107.037" />
+				<Hotspot X="7179.25" Y="918.3153" Z="7015.011" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
 
+	<PickUpQuest Name="In Remembrance" Npc="Lost Huntress Corpse" X="7590.662" Y="888.777" Z="7080.411" />
+	
+		<UseObjectsObjective Quest="In Remembrance" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>King's Nest</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7636.347" Y="889.5407" Z="7099.144" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="In Remembrance" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Gullet King</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7636.347" Y="889.5407" Z="7099.144" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="The Sparkling Lure" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Raptor Rubbish Nest</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7419.113" Y="888.174" Z="7071.57" />
+				<Hotspot X="7467.066" Y="889.8439" Z="7045.777" />
+				<Hotspot X="7454.103" Y="888.2775" Z="7085.917" />
+				<Hotspot X="7563.638" Y="889.3808" Z="7038.712" />
+				<Hotspot X="7567.382" Y="887.3806" Z="7090.049" />
+				<Hotspot X="7382.942" Y="890.2316" Z="7020.207" />
+				<Hotspot X="7375.381" Y="888.5051" Z="6994.23" />
+				<Hotspot X="7375.381" Y="888.5051" Z="6994.23" />
+				<Hotspot X="7313.459" Y="887.8085" Z="7003.256" />
+				<Hotspot X="7285.323" Y="886.1418" Z="7004.973" />
+				<Hotspot X="7251.994" Y="887.0233" Z="6957.079" />
+				<Hotspot X="7234.566" Y="886.8095" Z="6977.152" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Slash and Roar" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Gullet Savage</Mob>
+			  <Mob>Gullet Pup</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7412.687" Y="886.9724" Z="7076.416" />
+				<Hotspot X="7419.113" Y="888.174" Z="7071.57" />
+				<Hotspot X="7467.066" Y="889.8439" Z="7045.777" />
+				<Hotspot X="7454.103" Y="888.2775" Z="7085.917" />
+				<Hotspot X="7563.638" Y="889.3808" Z="7038.712" />
+				<Hotspot X="7567.382" Y="887.3806" Z="7090.049" />
+				<Hotspot X="7382.942" Y="890.2316" Z="7020.207" />
+				<Hotspot X="7375.381" Y="888.5051" Z="6994.23" />
+				<Hotspot X="7375.381" Y="888.5051" Z="6994.23" />
+				<Hotspot X="7313.459" Y="887.8085" Z="7003.256" />
+				<Hotspot X="7285.323" Y="886.1418" Z="7004.973" />
+				<Hotspot X="7251.994" Y="887.0233" Z="6957.079" />
+				<Hotspot X="7234.566" Y="886.8095" Z="6977.152" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Slash and Roar" Npc="Tendrick Hugh" X="7000.535" Y="886.1386" Z="7086.955" />
+	<TurnInQuest Name="In Remembrance" Npc="Tendrick Hugh" X="7000.535" Y="886.1386" Z="7086.955" />
+	<TurnInQuest Name="Stone Temple of Earth" Npc="Jubileth Pybbelin" X="6996.163" Y="886.0101" Z="7073.786" />
+	<TurnInQuest Name="Blood on the Sand" Npc="Nachri Jucam" X="6992.829" Y="886.2579" Z="7069.261" />
+	<TurnInQuest Name="The Sparkling Lure" Npc="Corbin Wembley" X="7010.75" Y="886.2929" Z="7082.274" />
+	<TurnInQuest Name="To Turn Aside the Storm" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
+	<PickUpQuest Name="Strike the Earth" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
+	<PickUpQuest Name="Monarch's Jewels" Npc="Corbin Wembley" X="7010.75" Y="886.2929" Z="7082.274" />
+	<PickUpQuest Name="Jaws to Crush Bone" Npc="Tendrick Hugh" X="7000.535" Y="886.1386" Z="7086.955" />
+	<PickUpQuest Name="Stories Bones Tell" Npc="Jubileth Pybbelin" X="6996.163" Y="886.0101" Z="7073.786" />
+	<PickUpQuest Name="Vicious Cycle" Npc="Nachri Jucam" X="6992.829" Y="886.2579" Z="7069.261" />
+
+		<UseObjectsObjective Quest="Strike the Earth" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Defense Cyclone Beacon</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7315.01" Y="958.4406" Z="7168.726" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Strike the Earth" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Coffer of the Gilded Drake</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7427.645" Y="974.7523" Z="7178.797" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="((HasQuest(&quot;&quot;)) and (not IsQuestObjectiveCompleted(&quot;&quot;, 1)))">
+			<MoveTo X="7454.127" Y="978.077" Z="7178.668" />
+			<Wait Seconds="2" />
+			<MoveTo X="7454.127" Y="978.077" Z="7178.668" />
+			<Wait Seconds="2" />
+			<Python Statement = "SpellManager.UseItem(&quot;Thedeor's Bottled Wrath&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+	
+		<KillMobsObjective Quest="Vicious Cycle" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Storm Legion Conjurer</Mob>
+			  <Mob>Storm Legion Longfist</Mob>
+			  <Mob>Storm Legion Tasklord</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7410.226" Y="970.6094" Z="7169.562" />
+				<Hotspot X="7445.06" Y="975.9324" Z="7178.896" />
+				
+				
+				
+				
+				
+				
+				
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	
+	
 	
 		<!-- 
 	<PickUpQuest Name="" 
