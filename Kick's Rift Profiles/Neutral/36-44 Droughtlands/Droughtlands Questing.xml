@@ -1882,7 +1882,7 @@
 				<Hotspot X="8264.751" Y="889.4884" Z="7230.466" />
 			</Hotspots>
 		  </Area>
-		</UseItemOnMobsObjective>
+		</UseItemOnGroundObjective>
 		
 		<UseObjectsObjective Quest="The Queen's Prize" Tracking="1">
 		  <Area>

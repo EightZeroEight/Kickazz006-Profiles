@@ -643,7 +643,7 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<UseObjectsObjective Quest="Strike the Earth" Tracking="1">
+		<UseObjectsObjective Quest="Strike the Earth" Tracking="2">
 		  <Area>
 			<Objects>
 			  <Object>Coffer of the Gilded Drake</Object>
@@ -654,7 +654,7 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<If Condition="((HasQuest(&quot;&quot;)) and (not IsQuestObjectiveCompleted(&quot;&quot;, 1)))">
+		<If Condition="((HasQuest(&quot;Strike the Earth&quot;)) and (not IsQuestObjectiveCompleted(&quot;Strike the Earth&quot;, 3)))">
 			<MoveTo X="7454.127" Y="978.077" Z="7178.668" />
 			<Wait Seconds="2" />
 			<MoveTo X="7454.127" Y="978.077" Z="7178.668" />
@@ -663,29 +663,155 @@
 			<Wait Seconds="5" />
 		</If>
 	
+	<PickUpQuest Name="An Unassuming Request" Npc="Pile of Scrap" X="7459.888" Y="999.6162" Z="7173.411" />
+	
+		<UseObjectsObjective Quest="An Unassuming Request" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Power Core</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7448.693" Y="980.642" Z="7153.608" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="An Unassuming Request" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Sourcestone Battery</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7423.732" Y="971.3109" Z="7154.892" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="An Unassuming Request" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Junk Pile</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7446.813" Y="975.5787" Z="7209.702" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="An Unassuming Request" Tracking="4">
+		  <Area>
+			<Objects>
+			  <Object>Pile of Scrap</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7464.738" Y="999.0654" Z="7170.774" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="An Unassuming Request" Tracking="5">
+		  <Area>
+			<Mobs>
+			  <Mob>Gildstone Destroyer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7464.738" Y="999.0654" Z="7170.774" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="An Unassuming Request" Npc="Lester Ironbole" X="7438.333" Y="1002.141" Z="7180.378" />
+		
 		<KillMobsObjective Quest="Vicious Cycle" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob>Storm Legion Conjurer</Mob>
 			  <Mob>Storm Legion Longfist</Mob>
 			  <Mob>Storm Legion Tasklord</Mob>
+			  <Mob>Storm Legion Shadow</Mob>
 			</Mobs>
 			<Hotspots>
 				<Hotspot X="7410.226" Y="970.6094" Z="7169.562" />
 				<Hotspot X="7445.06" Y="975.9324" Z="7178.896" />
-				
-				
-				
-				
-				
-				
-				
-				
+				<Hotspot X="7483.965" Y="996.9044" Z="7173.176" />
+				<Hotspot X="7423.732" Y="971.3109" Z="7154.892" />
+				<Hotspot X="7392.208" Y="970.4606" Z="7149.045" />
+				<Hotspot X="7364.202" Y="964.5046" Z="7175.129" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
 
+		<UseObjectsObjective Quest="Stories Bones Tell" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Calcified Dragon Bone</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7255.971" Y="909.7296" Z="7295.433" />
+				<Hotspot X="7278.103" Y="901.7391" Z="7226.277" />
+				<Hotspot X="7248.067" Y="901.1573" Z="7211.295" />
+				<Hotspot X="7185.569" Y="899.1949" Z="7231.845" />
+				<Hotspot X="7185.569" Y="899.1949" Z="7231.845" />
+				<Hotspot X="7339.317" Y="903.9083" Z="7308.375" />
+				<Hotspot X="7406.679" Y="909.2441" Z="7336.998" />
+				<Hotspot X="7448.12" Y="912.5758" Z="7316.085" />
+				<Hotspot X="7482.073" Y="919.8964" Z="7295.567" />
+				<Hotspot X="7489.763" Y="915.4695" Z="7333.807" />
+				<Hotspot X="7524.774" Y="931.8393" Z="7264.63" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Monarch's Jewels" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Bonedust Monarch</Mob>
+			  <Mob>Bonedust Corpsepicker</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7199.458" Y="888.1248" Z="7186.482" />
+				<Hotspot X="7211.914" Y="893.9949" Z="7244.93" />
+				<Hotspot X="7246.333" Y="895.9489" Z="7256.445" />
+				<Hotspot X="7268.038" Y="900.2667" Z="7233.18" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Jaws to Crush Bone" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Bonedust Corpsepicker</Mob>
+			  <Mob>Bonedust Scavenger</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7199.458" Y="888.1248" Z="7186.482" />
+				<Hotspot X="7185.061" Y="891.394" Z="7172.06" />
+				<Hotspot X="7159.013" Y="891.7863" Z="7224.589" />
+				<Hotspot X="7191.397" Y="899.288" Z="7233.988" />
+				<Hotspot X="7211.914" Y="893.9949" Z="7244.93" />
+				<Hotspot X="7213.876" Y="902.373" Z="7278.281" />
+				<Hotspot X="7260.529" Y="909.8085" Z="7291.73" />
+				<Hotspot X="7248.067" Y="901.1573" Z="7211.295" />
+				<Hotspot X="7234.446" Y="894.1606" Z="7238.5" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Jaws to Crush Bone" Npc="Andro Wells" X="7418.807" Y="910.076" Z="7407.415" />
+	<PickUpQuest Name="Gold in the Hand" Npc="Andro Wells" X="7418.807" Y="910.076" Z="7407.415" />
+	<PickUpQuest Name="Bonedust Brawl" Npc="Myia Heretilli" X="7416.735" Y="910.1971" Z="7409.047" />
+	<PickUpQuest Name="Explosive Reaction" Npc="Myia Heretilli" X="7416.735" Y="910.1971" Z="7409.047" />
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Npc="Sandchewer" X="7365.503" Y="908.8081" Z="7233.677" -->
 	
 	
 		<!-- 
