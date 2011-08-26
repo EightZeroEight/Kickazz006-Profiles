@@ -10,7 +10,7 @@
 			<Healer X="6099.354" Y="979.5236" Z="7291.879" /> <!-- Wyrmbane Spire -->
 			<Healer X="7021.577" Y="886.8774" Z="6777.892" /> <!-- Sandaxle Pit -->
 			<Healer X="6992.08" Y="886.5347" Z="7061.991" /> <!-- Nomad's Furnace -->
-			
+			<Healer X="6659.96" Y="882.0352" Z="6619.787" /> <!-- Deadman Gorge -->
 			
 			
         </Healers>
@@ -24,8 +24,7 @@
 			<Vendor X="6090.015" Y="978.959" Z="7298.863" /> <!-- Wyrmbane Spire -->
 			<Vendor X="7043.081" Y="883.6149" Z="6774.437" /> <!-- Sandaxle Pit -->
 			<Vendor X="7006.137" Y="886.1289" Z="7082.724" /> <!-- Nomad's Furnace -->
-
-			
+			<Vendor X="6644.497" Y="881.7677" Z="6612.417" /> <!-- Deadman Gorge -->
 			
 			
         </Vendors>
@@ -256,6 +255,66 @@
 		  </Area>
 		</KillMobsObjective>
 
+		<KillMobsObjective Quest="Wanton Flames" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Wanton Hound</Mob>
+			  <Mob>Wanton Flamespark</Mob>
+			  <Mob>Wanton Bladelord</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7098.942" Y="936.4642" Z="6556.609" />
+				<Hotspot X="7071.158" Y="939.2811" Z="6556.184" />
+				<Hotspot X="7045.763" Y="941.0307" Z="6558.905" />
+				<Hotspot X="7040.48" Y="941.4503" Z="6549.192" />
+				<Hotspot X="7024.581" Y="945.2388" Z="6529.886" />
+				<Hotspot X="7000.455" Y="945.2682" Z="6583.316" />
+				<Hotspot X="6995.993" Y="945.121" Z="6538.11" />
+				<Hotspot X="6974.635" Y="948.6302" Z="6622.006" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Wanton Flames" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Wanton Hound</Mob>
+			  <Mob>Wanton Flamespark</Mob>
+			  <Mob>Wanton Bladelord</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7098.942" Y="936.4642" Z="6556.609" />
+				<Hotspot X="7071.158" Y="939.2811" Z="6556.184" />
+				<Hotspot X="7045.763" Y="941.0307" Z="6558.905" />
+				<Hotspot X="7040.48" Y="941.4503" Z="6549.192" />
+				<Hotspot X="7024.581" Y="945.2388" Z="6529.886" />
+				<Hotspot X="7000.455" Y="945.2682" Z="6583.316" />
+				<Hotspot X="6995.993" Y="945.121" Z="6538.11" />
+				<Hotspot X="6974.635" Y="948.6302" Z="6622.006" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Wanton Flames" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Wanton Hound</Mob>
+			  <Mob>Wanton Flamespark</Mob>
+			  <Mob>Wanton Bladelord</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7098.942" Y="936.4642" Z="6556.609" />
+				<Hotspot X="7071.158" Y="939.2811" Z="6556.184" />
+				<Hotspot X="7045.763" Y="941.0307" Z="6558.905" />
+				<Hotspot X="7040.48" Y="941.4503" Z="6549.192" />
+				<Hotspot X="7024.581" Y="945.2388" Z="6529.886" />
+				<Hotspot X="7000.455" Y="945.2682" Z="6583.316" />
+				<Hotspot X="6995.993" Y="945.121" Z="6538.11" />
+				<Hotspot X="6974.635" Y="948.6302" Z="6622.006" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
 		<UseObjectsObjective Quest="Road to Ruins" Tracking="1">
 		  <Area>
 			<Objects>
@@ -269,10 +328,9 @@
 				<Hotspot X="6967.256" Y="927.9023" Z="6689.036" />
 				<Hotspot X="6946.957" Y="928.8171" Z="6680.215" />
 				<Hotspot X="6947.972" Y="929.0961" Z="6719.791" />
-				
-				
-				
-				
+				<Hotspot X="6985.798" Y="926.4711" Z="6715.787" />
+				<Hotspot X="6906.902" Y="927.5012" Z="6778.477" />
+				<Hotspot X="6870.808" Y="933.1414" Z="6708.665" />
 			</Hotspots>
 		  </Area>
 		</UseObjectsObjective>
@@ -295,59 +353,138 @@
 		  </Area>
 		</KillMobsObjective>
 
-			<!-- Combat UIO -->
-		<UseItemOnMobsObjective Quest="Behind Their Eyes, A Storm" Item="" UseRange="" CastTime="" Cooldown="" WhenDead="False" Tracking="1">
+		<If Condition="((HasQuest(&quot;Behind Their Eyes, A Storm&quot;)) and (not IsQuestObjectiveCompleted(&quot;Behind Their Eyes, A Storm&quot;, 1)))">
+			<Python Statement="Logging.Write(&quot;Please manually do quest Behind Their Eyes, A Storm objective (1) - then press start&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		
+			<!-- Combat UIO 50% -->
+		<UseItemOnMobsObjective Quest="Behind Their Eyes, A Storm" Item="Water Bucket" UseRange="5" CastTime="1" Cooldown="1" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob>Dominated Trader</Mob>
 			</Mobs>
 			<Hotspots>
 				<Hotspot X="6903.637" Y="930.493" Z="6726.668" />
-				
-				
-				
-				
-				
+				<Hotspot X="7007.419" Y="930.237" Z="6689.452" />
+				<Hotspot X="6928.23" Y="928.9382" Z="6723.876" />
+				<Hotspot X="6851.037" Y="897.3968" Z="6783.727" />
+				<Hotspot X="6883.895" Y="931.537" Z="6714.771" />
+				<Hotspot X="6835.623" Y="929.1017" Z="6710.74" />
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
 
+	<TurnInQuest Name="Road to Ruins" Npc="Thamber Barklynn" X="7033.639" Y="884.3212" Z="6774.675" />
+	<TurnInQuest Name="Wanton Flames" Npc="Thamber Barklynn" X="7033.639" Y="884.3212" Z="6774.675" />
+	<TurnInQuest Name="A Hard Road to Travel" Npc="Tarik" X="7036.423" Y="883.7914" Z="6778.16" />
+	<TurnInQuest Name="Behind Their Eyes, A Storm" Npc="Raniyah Sahlah" X="7036.591" Y="884.0159" Z="6767.344" />
+	<TurnInQuest Name="In the Tower's Shadow" Npc="Raniyah Sahlah" X="7036.591" Y="884.0159" Z="6767.344" />
+	<PickUpQuest Name="Sight Unseen" Npc="Raniyah Sahlah" X="7036.591" Y="884.0159" Z="6767.344" />
+	
+		<If Condition="((HasQuest(&quot;Sight Unseen&quot;)) and (not IsQuestObjectiveCompleted(&quot;Sight Unseen&quot;, 1)))">
+			<MoveTo X="6976.718" Y="946.5207" Z="6569.868" />
+			<Wait Seconds="3" />
+			<MoveTo X="6976.718" Y="946.5207" Z="6569.868" />
+			<Wait Seconds="3" />
+			<Python Statement = "SpellManager.UseItem(&quot;Seal of the Eth Kings&quot;)" />
+			<Wait Seconds="8" />
+			<MoveTo X="6968.214" Y="946.5104" Z="6564.832" />
+			
+			<Python Statement="Logging.Write(&quot;take the elevator upstairs\n\nDon't go far, you may have to move me back down the elevator, too&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
 
-		<KillMobsObjective Quest="Wanton Flames" Tracking="3">
+			<!-- elevator here -->
+		<UseObjectsObjective Quest="Sight Unseen" Tracking="2">
 		  <Area>
-			<Mobs>
-			  <Mob>Wanton Hound</Mob>
-			</Mobs>
+			<Objects>
+			  <Object>First Mirrorstone</Object>
+			</Objects>
 			<Hotspots>
-				
+				<Hotspot X="6961.927" Y="1014.072" Z="6560.672" />
 			</Hotspots>
 		  </Area>
-		</KillMobsObjective>
+		</UseObjectsObjective>
 
-		<KillMobsObjective Quest="Wanton Flames" Tracking="2">
+		<UseObjectsObjective Quest="Sight Unseen" Tracking="4">
 		  <Area>
-			<Mobs>
-			  <Mob>Wanton Hound</Mob>
-			</Mobs>
+			<Objects>
+			  <Object>Third Mirrorstone</Object>
+			</Objects>
 			<Hotspots>
-				
+				<Hotspot X="6945.056" Y="1014.065" Z="6566.508" />
 			</Hotspots>
 		  </Area>
-		</KillMobsObjective>
+		</UseObjectsObjective>
 
-		<KillMobsObjective Quest="Wanton Flames" Tracking="1">
+		<UseObjectsObjective Quest="Sight Unseen" Tracking="3">
 		  <Area>
-			<Mobs>
-			  <Mob>Wanton Hound</Mob>
-			</Mobs>
+			<Objects>
+			  <Object>Second Mirrorstone</Object>
+			</Objects>
 			<Hotspots>
-				
+				<Hotspot X="6955.334" Y="1014.075" Z="6546.711" />
 			</Hotspots>
 		  </Area>
-		</KillMobsObjective>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Sight Unseen" Tracking="5">
+		  <Area>
+			<Objects>
+			  <Object>Dargal's Flame</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6955.334" Y="1014.075" Z="6546.711" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuest(&quot;Sight Unseen&quot;)"> <!-- and Me.Z < 6700 -->
+			<MoveTo X="6968.214" Y="946.5104" Z="6564.832" />
+			<Wait Seconds="3" />
+			<Python Statement = "SpellManager.UseItem(&quot;Seal of the Eth Kings&quot;)" />
+			<Wait Seconds="8" />
+		</If>
+		
+		<If Condition="HasQuest(&quot;Sight Unseen&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Sight Unseen" Reward="4" Npc="Raniyah Sahlah" X="7036.591" Y="884.0159" Z="6767.344" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Firebrand Choker&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Sight Unseen" Reward="4" Npc="Raniyah Sahlah" X="7036.591" Y="884.0159" Z="6767.344" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Firebrand Choker&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Sight Unseen" Reward="3" Npc="Raniyah Sahlah" X="7036.591" Y="884.0159" Z="6767.344" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Chain of the Tower&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Sight Unseen" Reward="2" Npc="Raniyah Sahlah" X="7036.591" Y="884.0159" Z="6767.344" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Raniyah's Desert Chain&quot;)" />
+			</If>
+		</If>
+
+	<PickUpQuest Name="Larger Than Life" Npc="Tarik" X="7036.423" Y="883.7914" Z="6778.16" />
+		<!-- End of Sandaxle Pit Quests -->
+
+		<!-- Nomad's Furnace Quests -->
+	<TurnInQuest Name="Larger Than Life" Npc="Tendrick Hugh" X="7000.535" Y="886.1386" Z="7086.955" />
+	<PickUpQuest Name="Slash and Roar" Npc="Tendrick Hugh" X="7000.535" Y="886.1386" Z="7086.955" />
+	<PickUpQuest Name="Stone Temple of Earth" Npc="Jubileth Pybbelin" X="6996.163" Y="886.0101" Z="7073.786" />
+	<PickUpQuest Name="Blood on the Sand" Npc="Nachri Jucam" X="6992.829" Y="886.2579" Z="7069.261" />
+	<PickUpQuest Name="The Sparkling Lure" Npc="Corbin Wembley" X="7010.75" Y="886.2929" Z="7082.274" />
+	<PickUpQuest Name="To Turn Aside the Storm" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
+
+
+
 
 	
-		
 		<!-- 
 	<PickUpQuest Name="" 
 	<TurnInQuest Name="" 
