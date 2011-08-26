@@ -955,12 +955,12 @@
 	<PickUpQuest Name="His People's Shield" Npc="Sergeant Ognin" X="6507.919" Y="895.0104" Z="2127.267" />
 		
 		<If Condition="((HasQuest(&quot;His People's Shield&quot;)) and (not IsQuestObjectiveCompleted(&quot;His People's Shield&quot;, 1)))">
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest His People's Shield&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 
 		<!-- UseItemTargetLocation quest - you have to use on these purple skull things in the water, cast 4 sec, wait 4 secs and kill a gorvaht's corruption (guy that spawns )
-		<UseItemOnMobsObjective Quest="His People's Shield" Item="Bahralt's Inquisition" CastTime="5" Cooldown="1" WhenDead="False" Tracking="1">
+		<UseItemOnMobsObjective Quest="His People's Shield" Item="Bahralt's Inquisition" CastTime="5" Cooldown="5" WhenDead="False" TargetMobs="False" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob></Mob>
@@ -1219,7 +1219,7 @@
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 
-		<!-- Fragmented History - Collect 8 Bell Fragments 
+		<!-- Fragmented History - Collect 8 Bell Fragments.  <GrindTo Condition=(GetItemCount(&quot;Bell Fragment&quot;) == 8)" >
 		<KillMobsObjective Quest="Fragmented History" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -1235,6 +1235,7 @@
 		  </Area>
 		</KillMobsObjective>
 
+		// this is the actual tracking 1 - useobject Central Bell, not the 'grindto' above
 		<If Condition="HasQuest(&quot;Fragmented History&quot;)">
  			<MoveTo X="6690.958" Y="913.4074" Z="1507.985" />
 			<UseObject Name="Central Bell" X="6690.958" Y="913.4074" Z="1507.985" />
@@ -1445,7 +1446,7 @@
 			<MoveTo X="6986.348" Y="1047.679" Z="1127.269" />
 			<Wait Seconds="5" />
 			
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest The Messenger&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 			<!--
 			<UseObject Name="Bounding Prison" X="6986.774" Y="1047.678" Z="1127.667" />
@@ -1543,12 +1544,12 @@
 	<TurnInQuest Name="Wage a Lonely War" Npc="General Stanig" X="6469.563" Y="928.4256" Z="1429.976" />
 	<PickUpQuest Name="Tools of a Foul Trade" Npc="General Stanig" X="6469.563" Y="928.4256" Z="1429.976" />
 		
-		<!-- Doom Abides - useitem target location on Voidspawns - they spawn from killing Lesser Golem's and they must be alive
 		<If Condition="HasQuest(&quot;Doom Abides&quot;)">
 			<Python Statement="Logging.Write(&quot;Please manually do quest\n\nKill Lesser Golem's and then use the item at the voidspawns location (which spawn from them)&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 
+		<!-- Doom Abides - useitem target location on Voidspawns - they spawn from killing Lesser Golem's and they must be alive
 		<Python Statement="SpellManager.UseItemInWorld(&quot;Demon Suppressor&quot;, GigaRift.Me.Location)" />
 
 		<UseItemOnMobsObjective Quest="Doom Abides" Item="Demon Suppressor" CastTime="1" Cooldown="1" WhenDead="False" Tracking="1">
@@ -1764,7 +1765,7 @@
 		</KillMobsObjective>
 
 		<If Condition="((HasQuest(&quot;Unorthodox Methods&quot;)) and (not IsQuestObjectiveCompleted(&quot;Unorthodox Methods&quot;, 1)))">
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest Unorthodox Methods&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 
@@ -1958,7 +1959,7 @@
 	<TurnInQuest Name="The Drift of Wind and Tide" Npc="General Stanig" X="6469.563" Y="928.4256" Z="1429.976" />
 	<PickUpQuest Name="The Churning Fates" Npc="General Stanig" X="6469.563" Y="928.4256" Z="1429.976" />
 
-		<!-- this doesn't use the item on the mob at all.  it just stands there, it won't even click the mob
+		<!-- this doesn't use the item on the mob at all.  it just stands there, it won't even click the mob - so i did a /tar and useitem name
 		<UseItemOnMobsObjective Quest="The Churning Fates" Item="Imbued Runeguard Hammer" CastTime="15" Cooldown="1" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>

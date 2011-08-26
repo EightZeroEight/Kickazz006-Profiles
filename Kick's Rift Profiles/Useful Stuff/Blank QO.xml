@@ -54,7 +54,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<UseItemOnMobsObjective Quest="" Item="" UseRange="" CastTime="" Cooldown="" WhenDead="False" Tracking="1">
+		<UseItemOnMobsObjective Quest="" Item="" UseRange="" CastTime="" Cooldown="" WhenDead="False" TargetMobs="True" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob></Mob>
@@ -65,7 +65,7 @@
 		  </Area>
 		</UseItemOnMobsObjective>
 
-		<UseItemOnGroundObjective Quest="" Item="" Tracking="" UseRange="" CastTime="" >
+		<UseItemOnGroundObjective Quest="" Item="" UseRange="" CastTime="" Tracking="" >
          <Area>
           <Hotspots>
 			

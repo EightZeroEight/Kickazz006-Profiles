@@ -418,14 +418,20 @@
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 
-		<!-- Gas Tanks - (Vile Brew Quest) 
-		item - Crude Explosives - waittime 4-5 sec
-		hotspots:
+		<!-- Raphus, see if this works -->
+		<UseItemOnMobsObjective Quest="Vile Brew" Item="Crude Explosives" UseRange="5" CastTime="4" Cooldown="3" TargetMobs="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Gas Tank</Mob>
+			</Mobs>
+			<Hotspots>
 				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
 				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
 				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
 				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
-		-->
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
 	
 		<UseObjectsObjective Quest="Unloading the Burden" Tracking="1">
 		  <Area>
@@ -487,14 +493,14 @@
 		-->
 		</If>
 
-		<If Condition="((HasQuest(&quot;End of the Endless&quot;)) and (not IsQuestObjectiveCompleted(&quot;End of the Endless&quot;, 1)))">
+		<While Condition="((HasQuest(&quot;End of the Endless&quot;)) and (not IsQuestObjectiveCompleted(&quot;End of the Endless&quot;, 1)))">
 			<MoveTo X="3936.709" Y="1037.297" Z="3477.728" />
 			<Wait Seconds="5" />
 			<MoveTo X="3934.912" Y="1037.514" Z="3483.258" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Dark Phylactery&quot;)" />
-			<Wait Seconds="1" />
-		</If>
+			<Wait Seconds="4" />
+		</While>
 
 		<KillMobsObjective Quest="End of the Endless" Tracking="2">
 		  <Area>
@@ -963,8 +969,6 @@
 	<PickUpQuest Name="Rise Up" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" /> -->
 	<PickUpQuest Name="Caged and Abused" Npc="Peter Narren" X="4274.768" Y="953.672" Z="3453.574" /> 
 	
-		<!-- put freeing x3 here if they're not avail above -->
-
 		<!-- if con has quest and not hasitem x3 (Jade Key) - farm for 3 keys from smoldering reavers (which are beside cages) -->
 		<UseObjectsObjective Quest="Caged and Abused" Tracking="1">
 		  <Area>
@@ -1046,9 +1050,6 @@
 			<Python Statement="GigaBot.Stop()" />
 
 	<TurnInQuest Name="Into Scarwood Reach" Npc="Kerevik Amblefoot" X="3731.341" Y="1090.634" Z="3223.521" />
-	
-	
-	
 
     <Loop />
   </Tasks>

@@ -895,22 +895,32 @@
 		</UseItemOnMobsObjective>
 		</If>
 
-		<!-- These are simple moveto quests, but i think useobject will work as well until we get a moveto tracking
-			Scout and About
-			// tracking 1
-			<Hotspot X="7580.647" Y="910.3687" Z="6602.466" />
-			// tracking 2
-			<Hotspot X="7509.956" Y="915.4323" Z="6674.357" />
-			// tracking 3
-			<Hotspot X="7472.228" Y="914.5984" Z="6601.41" />
-			// tracking 4
-			<Hotspot X="7384.666" Y="913.5285" Z="6564.619" />
-			// tracking 5
-			<Hotspot X="7425.146" Y="899.0653" Z="6426.127" />
-			
-			useobject kickazz rocks
+		<If Condition="((HasQuest(&quot;Bless and Purge&quot;)) and (not IsQuestObjectiveCompleted(&quot;Bless and Purge&quot;, 1)))">
+			<Python Statement="Logging.Write(&quot;Please manually do quest Bless and Purge objective (1) - then press start&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		<!-- useitem at location task 
+		
+		<UseItemOnMobsObjective Quest="Bless and Purge" Item="Blessed Decanter" CastTime="4" Cooldown="1" WhenDead="False" TargetMobs="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Corpse Victim</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7541.222" Y="911.7343" Z="6602.371" />
+				<Hotspot X="7483.383" Y="914.3052" Z="6590.25" />
+				<Hotspot X="7464.157" Y="913.1595" Z="6578.978" />
+				<Hotspot X="7429.903" Y="908.8348" Z="6543.262" />
+				<Hotspot X="7509.956" Y="915.4323" Z="6674.357" />
+				<Hotspot X="7379.426" Y="914.6672" Z="6584.209" />
+				<Hotspot X="7411.985" Y="916.7952" Z="6605.422" />
+				<Hotspot X="7327.876" Y="902.2943" Z="6439.866" />
+				<Hotspot X="7440.447" Y="900.3818" Z="6427.089" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
 		-->
-
+		
 		<If Condition="((HasQuest(&quot;Scout and About&quot;)) and (not IsQuestObjectiveCompleted(&quot;Scout and About&quot;, 1)))">
 			<MoveTo X="7580.647" Y="910.3687" Z="6602.466" />
 			<Wait Seconds="2" />
@@ -936,30 +946,6 @@
 		<If Condition="((HasQuest(&quot;Scout and About&quot;)) and (not IsQuestObjectiveCompleted(&quot;Scout and About&quot;, 5)))">
 			<MoveTo X="7425.146" Y="899.0653" Z="6426.127" />
 			<Wait Seconds="2" />
-		</If>
-		
-		<If Condition="((HasQuest(&quot;Bless and Purge&quot;)) and (not IsQuestObjectiveCompleted(&quot;Bless and Purge&quot;, 1)))">
-			<Python Statement="Logging.Write(&quot;Please manually do quest Bless and Purge objective (1) - then press start&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-		<!-- useitem at location task - move this above the flags -->
-		<UseItemOnMobsObjective Quest="Bless and Purge" Item="Blessed Decanter" CastTime="4" Cooldown="1" WhenDead="False" Tracking="1">
-		  <Area>
-			<Mobs>
-			  <Mob>Corpse Victim</Mob>
-			</Mobs>
-			<Hotspots>
-				<Hotspot X="7541.222" Y="911.7343" Z="6602.371" />
-				<Hotspot X="7483.383" Y="914.3052" Z="6590.25" />
-				<Hotspot X="7464.157" Y="913.1595" Z="6578.978" />
-				<Hotspot X="7429.903" Y="908.8348" Z="6543.262" />
-				<Hotspot X="7509.956" Y="915.4323" Z="6674.357" />
-				<Hotspot X="7379.426" Y="914.6672" Z="6584.209" />
-				<Hotspot X="7411.985" Y="916.7952" Z="6605.422" />
-				<Hotspot X="7327.876" Y="902.2943" Z="6439.866" />
-				<Hotspot X="7440.447" Y="900.3818" Z="6427.089" />
-			</Hotspots>
-		  </Area>
-		</UseItemOnMobsObjective>
 		</If>
 		
 		<KillMobsObjective Quest="Containment" Tracking="1">
@@ -1286,7 +1272,7 @@
 			<Python Statement="Logging.Write(&quot;Please manually do quest Deliverance from Servitude objective (1) - then press start&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 			
-		<UseItemOnMobsObjective Quest="Deliverance from Servitude" Item="Icon of Souls" CastTime="4" Cooldown="1" WhenDead="False" Tracking="1">
+		<UseItemOnMobsObjective Quest="Deliverance from Servitude" Item="Icon of Souls" CastTime="4" Cooldown="1" WhenDead="False" TargetMobs="False" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob></Mob>
@@ -1425,8 +1411,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<!--
-	<TurnInQuest Name="Lantern Hook Run" Npc="Jinanne Tonux" X="8245.218" Y="897.994" Z="6628.192" />  Optional Quest -->
+		<!-- <TurnInQuest Name="Lantern Hook Run" Npc="Jinanne Tonux" X="8245.218" Y="897.994" Z="6628.192" />  Optional Quest -->
 	<TurnInQuest Name="Turn the Tables" Npc="Tyrolian Burgher " X="8244.529" Y="897.7751" Z="6631.39" />
 	<PickUpQuest Name="What Strange Beasts" Npc="Cornelius Magrox" X="8231.966" Y="896.4281" Z="6641.675" />
 	<PickUpQuest Name="Wrangler Wrangling" Npc="Tassalia Ogron" X="8232.412" Y="896.6674" Z="6637.975" />
@@ -1816,13 +1801,6 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<!-- Carrion's Song - combat useitemon / use at range
-		<If Condition="((HasQuest(&quot;Carrion's Song&quot;)) and (not IsQuestObjectiveCompleted(&quot;Carrion's Song&quot;, 1)))">
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-		</If>
-
-		-->
 		<UseItemOnMobsObjective Quest="Carrion's Song" UseRange="25" Item="Flightsong" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -1881,13 +1859,13 @@
  			<MoveTo X="8282.679" Y="912.5891" Z="7214.784" />
 		</If>
 		
+		<!--
 		<If Condition="((HasQuest(&quot;Pesticide Genocide&quot;)) and (not IsQuestObjectiveCompleted(&quot;Pesticide Genocide&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
-
-		<!-- useitemtargetlocation before / during killing the red ants
-		<UseItemOnMobsObjective Quest="Pesticide Genocide" Item="Vial of Vicious Toxins" CastTime="1" Cooldown="1" WhenDead="False" Tracking="1">
+		-->
+		<UseItemOnGroundObjective Quest="Pesticide Genocide" Item="Vial of Vicious Toxins" UseRange="5" CastTime="1" Tracking="1" >
 		  <Area>
 			<Mobs>
 			  <Mob>Mordant Swarmling</Mob>
@@ -1905,7 +1883,6 @@
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
-		-->
 		
 		<UseObjectsObjective Quest="The Queen's Prize" Tracking="1">
 		  <Area>
@@ -2424,6 +2401,7 @@
 		  </Area>
 		</KillMobsObjective>
 
+		<!-- unless i'm missing something, this guy is very, very hard -->
 		<If Condition="((HasQuest(&quot;Thwarting the Emberlord&quot;)) and (not IsQuestObjectiveCompleted(&quot;Thwarting the Emberlord&quot;, 1)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest Thwarting the Emberlord objective (1) - then press start&quot;)" />
 			<Python Statement="GigaBot.Stop()" />

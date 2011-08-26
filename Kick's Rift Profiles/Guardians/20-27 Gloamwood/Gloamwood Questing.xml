@@ -527,14 +527,14 @@
 	-->
 	<!-- do goblin camps (1), turn in The Waykeeper's Keeper and then 3 / Graul (head 2), then 2, then removing head 3 (cave), then 1 / nizak (head 1) -->
 	
-		<If Condition="((HasQuest(&quot;Fire and Venom&quot;)) and (not IsQuestObjectiveCompleted(&quot;Fire and Venom&quot;, 3)))">
+		<While Condition="((HasQuest(&quot;Fire and Venom&quot;)) and (not IsQuestObjectiveCompleted(&quot;Fire and Venom&quot;, 3)))">
 			<MoveTo X="4916.158" Y="928.3635" Z="2417.971" />
 			<Wait Seconds="2" />
 			<MoveTo X="4916.158" Y="928.3635" Z="2417.971" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Waykeeper's Bomb&quot;)" />
-			<Wait Seconds="5" />
-		</If>
+			<Wait Seconds="7" />
+		</While>
 		
 		<KillMobsObjective Quest="Removing the Head" Tracking="1"> <!-- North -->
 		  <Area>
@@ -558,23 +558,23 @@
 		  </Area>
 		</KillMobsObjective>
 		
-		<If Condition="((HasQuest(&quot;Fire and Venom&quot;)) and (not IsQuestObjectiveCompleted(&quot;Fire and Venom&quot;, 1)))">
+		<While Condition="((HasQuest(&quot;Fire and Venom&quot;)) and (not IsQuestObjectiveCompleted(&quot;Fire and Venom&quot;, 1)))">
 			<MoveTo X="4993.25" Y="982.0694" Z="2237.763" />
 			<Wait Seconds="2" />
 			<MoveTo X="4993.25" Y="982.0694" Z="2237.763" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Waykeeper's Bomb&quot;)" />
-			<Wait Seconds="5" />
-		</If>
+			<Wait Seconds="7" />
+		</While>
 		
-		<If Condition="((HasQuest(&quot;Fire and Venom&quot;)) and (not IsQuestObjectiveCompleted(&quot;Fire and Venom&quot;, 2)))">
+		<While Condition="((HasQuest(&quot;Fire and Venom&quot;)) and (not IsQuestObjectiveCompleted(&quot;Fire and Venom&quot;, 2)))">
 			<MoveTo X="4976.418" Y="928.4117" Z="2374.091" />
 			<Wait Seconds="2" />
 			<MoveTo X="4976.418" Y="928.4117" Z="2374.091" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Waykeeper's Bomb&quot;)" />
-			<Wait Seconds="5" />
-		</If>
+			<Wait Seconds="7" />
+		</While>
 		
 		<KillMobsObjective Quest="Removing the Head" Tracking="3"> <!-- Cave, Central -->
 		  <Area>
@@ -980,7 +980,7 @@
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
-		<!-- this won't work for this quest, you'll have to runto and useitem Rubbing Paper, wait, and run to next and stick it in a while.
+		<!-- this won't work for this quest - they don't have gameobject names that I can see, you'll have to runto and useitem Rubbing Paper, wait, and run to next and stick it in a while.
 		<UseObjectsObjective Quest="Mysterious Messages" Tracking="1">
 		  <Area>
 			<Objects>

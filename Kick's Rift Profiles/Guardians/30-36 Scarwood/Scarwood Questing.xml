@@ -137,7 +137,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<!-- I died a lot on this quest, you gotta pick his legionairres off or you are toast -->
+		<!-- I died a lot on this quest, you gotta pick his legionairres off or you're toast -->
 		<KillMobsObjective Quest="The Gods Are Not to be Defied" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -648,7 +648,7 @@
 		<If Condition="HasQuest(&quot;A Fallen Soldier&quot;)">
 	<TurnInQuest Name="A Fallen Soldier" Npc="Marshal Kain" X="3138.781" Y="1095.122" Z="3877.885" />
 		</If>
-		<!-- ignoring kain's hunt
+		<!-- ignoring kain's hunt - it's a stupid quest
 	<PickUpQuest Name="Kain's Hunt" Npc="Vol Spiridon" X="3133.033" Y="1095.086" Z="3890.319" /> -->
 	
 		<If Condition="HasQuest(&quot;Command Training&quot;)">
@@ -698,7 +698,7 @@
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 
-		<!-- Weird quest.  Combat use item on x3 (at 40%) and then bring back to <Hotspot X="3162.219" Y="1095.153" Z="3873.783" />.  You can get all 3 at once -->
+		<!-- Weird quest.  Combat use item on x3 (at 40%) and then bring back to <Hotspot X="3162.219" Y="1095.153" Z="3873.783" />.  You can get all 3 at once, and the tracking doesn't update until they're all turned in -->
 		<UseItemOnMobsObjective Quest="A Soldier's Dog" Item="Control Collar" CastTime="2" Cooldown="1" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -1343,12 +1343,12 @@
 	<PickUpQuest Name="Rare Berry Collection" Npc="Zerin Golek" X="2601.273" Y="1180.91" Z="3557.243" />
 	<PickUpQuest Name="Draconian Measures" Npc="Pavel Apostol" X="2585.271" Y="1180.909" Z="3557.284" />
 
-		<If Condition="((HasQuest(&quot;Sealing the Portal&quot;)) and (not IsQuestObjectiveCompleted(&quot;Sealing the Portal&quot;, 1)))">
+		<While Condition="((HasQuest(&quot;Sealing the Portal&quot;)) and (not IsQuestObjectiveCompleted(&quot;Sealing the Portal&quot;, 1)))">
 			<MoveTo X="2588.674" Y="1178.476" Z="3522.054" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Nexus Attractor&quot;)" />
 			<Wait Seconds="5" />
-		</If>
+		</While>
 
 		<KillMobsObjective Quest="Sealing the Portal" Tracking="2">
 		  <Area>
@@ -1475,14 +1475,14 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<If Condition="((HasQuest(&quot;Among the Endless&quot;)) and (not IsQuestObjectiveCompleted(&quot;Among the Endless&quot;, 2)))">
+		<While Condition="((HasQuest(&quot;Among the Endless&quot;)) and (not IsQuestObjectiveCompleted(&quot;Among the Endless&quot;, 2)))">
 			<MoveTo X="3008.933" Y="1093.918" Z="3692.542" />
 			<Wait Seconds="2" />
 			<MoveTo X="3008.933" Y="1093.918" Z="3692.542" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Cultist Uniform Piece&quot;)" />
 			<Wait Seconds="8" />
-		</If>
+		</While>
 		<If Condition="((HasQuest(&quot;Among the Endless&quot;)) and (not IsQuestObjectiveCompleted(&quot;Among the Endless&quot;, 3)))">
 			<TalkToNpcObjective Quest="Among the Endless" Npc="High Justicar Vigman" X="3003.722" Y="1096.865" Z="3669.191" Options="1, 1" Tracking="3" />
 		</If>
