@@ -975,34 +975,22 @@
 
 	<TurnInQuest Name="Up the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
 	<PickUpQuest Name="A Family Heirloom" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-		<If Condition="((HasQuest(&quot;Mysterious Messages&quot;)) and (not IsQuestObjectiveCompleted(&quot;Mysterious Messages&quot;, 1)))">
-			<MoveTo X="4994.621" Y="1074.922" Z="2715.552" />
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-		</If>
-		<!-- this won't work for this quest - they don't have gameobject names that I can see, you'll have to runto and useitem Rubbing Paper, wait, and run to next and stick it in a while.
-		<UseObjectsObjective Quest="Mysterious Messages" Tracking="1">
+
+		<UseItemOnGroundObjective Quest="Mysterious Messages" Item="Rubbing Paper" Tracking="1">
 		  <Area>
-			<Objects>
-			  <Object>Standing Stones</Object>
-			</Objects>
 			<Hotspots>
-				<Hotspot X="4994.621" Y="1074.922" Z="2715.552" />
-				<Hotspot X="4989.724" Y="1077.033" Z="2754.507" />
-				<Hotspot X="4947.258" Y="1076.341" Z="2744.43" />
-				<Hotspot X="4930.997" Y="1077.658" Z="2678.912" />
-				<Hotspot X="4969.146" Y="1082.05" Z="2667.395" />
-				<Hotspot X="4986.398" Y="1076.497" Z="2691.058" />
-				<Hotspot X="5011.002" Y="1078.198" Z="2684.25" />
-				<Hotspot X="5023.759" Y="1078.984" Z="2703.725" />
-				<Hotspot X="5020.727" Y="1077.304" Z="2721.085" />
-				<Hotspot X="5002.707" Y="1074.911" Z="2741.864" />
+				<Hotspot X="4915.235" Y="1075.04" Z="2725.405" />
+				<Hotspot X="4958.461" Y="1075.556" Z="2737.51" />
+				<Hotspot X="4969.88" Y="1075.59" Z="2740.546" />
+				<Hotspot X="4981.211" Y="1075.628" Z="2733.183" />
+				<Hotspot X="4989.031" Y="1075.529" Z="2728.541" />
+				<Hotspot X="5001.482" Y="1074.918" Z="2742.129" />
+				<Hotspot X="5019.373" Y="1076.752" Z="2721.555" />
+				<Hotspot X="5023.787" Y="1078.384" Z="2706.087" />
+				<Hotspot X="5009.446" Y="1075.558" Z="2688.678" />
 			</Hotspots>
 		  </Area>
-		</UseObjectsObjective>
-		
-		huge fire invasion atm so i can't do anything
-		-->
+		</UseItemOnGroundObjective>
 	
 	<TurnInQuest Name="Mysterious Messages" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 	<TurnInQuest Name="Trouble in the Wood" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" /> 
@@ -1605,7 +1593,7 @@
 			  </Area>
 			</KillMobsObjective>
 		</If>
-			
+
 		<If Condition="((HasQuest(&quot;A Woman Scorned&quot;)) and (not IsQuestObjectiveCompleted(&quot;A Woman Scorned&quot;, 2)))">
 			<TalkToNpcObjective Quest="A Woman Scorned" Npc="Messenger of the Vigil" X="4686.682" Y="1200.99" Z="2456.472" Options="1, 1" Tracking="2" />
 			<Wait Seconds="15" />
