@@ -752,20 +752,12 @@
 				<Wait Seconds="2" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
-			<Python Statement="Logging.Write(&quot;Abyssal Eradication - I need to know what rewards are on your screen for this turnin (rogue and warrior), please report them to my quest thread
-				\n1 2
-				\n3 4
-				\n5 6
-				\nthat is the order that they come in &quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-			 <!--
-	<TurnInQuest Name="Abyssal Eradication" Reward="" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" /> 
-			-->
+	<TurnInQuest Name="Abyssal Eradication" Reward="1" Npc="Brother Jebiah" X="7278.773" Y="880.6846" Z="2050.186" /> 
 				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Spine Severer&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
-			<Python Statement="Logging.Write(&quot;Abyssal Eradication - I need to know what rewards are on your screen for this turnin (rogue and warrior), please report them to my quest thread
+			<Python Statement="Logging.Write(&quot;Abyssal Eradication - I need to know what rewards are on your screen for this turnin (warrior), please report them to my quest thread
 				\n1 2
 				\n3 4
 				\n5 6
@@ -953,14 +945,9 @@
 
 	<TurnInQuest Name="Regret Wrought in Stone" Npc="Sergeant Ognin" X="6507.919" Y="895.0104" Z="2127.267" />
 	<PickUpQuest Name="His People's Shield" Npc="Sergeant Ognin" X="6507.919" Y="895.0104" Z="2127.267" />
-		
-		<If Condition="((HasQuest(&quot;His People's Shield&quot;)) and (not IsQuestObjectiveCompleted(&quot;His People's Shield&quot;, 1)))">
-			<Python Statement="Logging.Write(&quot;Please manually do quest His People's Shield&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-		</If>
 
-		<!-- UseItemTargetLocation quest - you have to use on these purple skull things in the water, cast 4 sec, wait 4 secs and kill a gorvaht's corruption (guy that spawns )
-		<UseItemOnMobsObjective Quest="His People's Shield" Item="Bahralt's Inquisition" CastTime="5" Cooldown="5" WhenDead="False" TargetMobs="False" Tracking="1">
+		<!-- i had issues w/ the bot not doing this quest unless that item was drug into my bags -->
+		<UseItemOnGroundObjective Quest="His People's Shield" Item="Bahralt's Inquisition" UseRange="2" CastTime="10" Tracking="1" >
 		  <Area>
 			<Mobs>
 			  <Mob></Mob>
@@ -973,8 +960,7 @@
 				<Hotspot X="6438.754" Y="878.1945" Z="2065.044" />
 			</Hotspots>
 		  </Area>
-		</UseItemOnMobsObjective>
-		-->
+		</UseItemOnGroundObjective>
 		
 	<TurnInQuest Name="His People's Shield" Npc="Sergeant Ognin" X="6507.919" Y="895.0104" Z="2127.267" />
 		
@@ -986,6 +972,7 @@
 			</Objects>
 			<Hotspots>
 				<Hotspot X="6382.606" Y="895.9724" Z="1971.77" />
+				<Hotspot X="6448.405" Y="884.9589" Z="2101.13" />
 				<Hotspot X="6373.186" Y="895.972" Z="1981.503" />
 				<Hotspot X="6321.829" Y="909.8604" Z="1947.961" />
 				<Hotspot X="6387.021" Y="880.9987" Z="2058.259" />
