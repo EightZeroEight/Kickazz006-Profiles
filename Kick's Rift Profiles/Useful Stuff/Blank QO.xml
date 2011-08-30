@@ -177,7 +177,7 @@
 		  </GrindArea>
 		</GrindTo>
 	
-
+	<GrindTo Condition="GetItemCount(&quot;Awesome Sword&quot;) &gt;= 3" />
 
 
 		<If Condition="(HasQuest(&quot;&quot;))">

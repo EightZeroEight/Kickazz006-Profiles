@@ -1184,9 +1184,9 @@
 		</UseObjectsObjective>
 
 		<While Condition="((HasQuest(&quot;Eternal Custodian&quot;)) and (not IsQuestObjectiveCompleted(&quot;Eternal Custodian&quot;, 2)))">
-			<MoveTo X="6720.275" Y="923.4541" Z="1458.963" />
+			<MoveTo X="6721.703" Y="923.4587" Z="1457.766" />
 			<Wait Seconds="2" />
-			<MoveTo X="6720.275" Y="923.4541" Z="1458.963" />
+			<MoveTo X="6721.703" Y="923.4587" Z="1457.766" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Stanig's Torch&quot;)" />
 			<Wait Seconds="5" />
@@ -1202,32 +1202,28 @@
 		</While>
 
 		<If Condition="((HasQuest(&quot;Fragmented History&quot;)) and (not IsQuestObjectiveCompleted(&quot;Fragmented History&quot;, 1)))">
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-		</If>
-
-		<!-- Fragmented History - Collect 8 Bell Fragments.  <GrindTo Condition=(GetItemCount(&quot;Bell Fragment&quot;) == 8)" >
-		<KillMobsObjective Quest="Fragmented History" Tracking="1">
-		  <Area>
-			<Mobs>
-			  <Mob>Fallen Runecrafter</Mob>
-			  <Mob>Fallen Hammerlord</Mob>
-			  <Mob>Fallen Inquisitor</Mob>
-			</Mobs>
-			<Hotspots>
-				<Hotspot X="6672.773" Y="909.6705" Z="1626.706" />
-				<Hotspot X="6693.643" Y="909.1595" Z="1562.402" />
-				<Hotspot X="6660.841" Y="912.8443" Z="1509.877" />
-			</Hotspots>
-		  </Area>
-		</KillMobsObjective>
-
-		// this is the actual tracking 1 - useobject Central Bell, not the 'grindto' above
-		<If Condition="HasQuest(&quot;Fragmented History&quot;)">
+			<GrindTo Condition="GetItemCount(&quot;Bell Fragment&quot;) &gt;= 8" >
+			  <GrindArea>
+				<Mobs>
+				  <Mob>Fallen Runecrafter</Mob>
+				  <Mob>Fallen Hammerlord</Mob>
+				  <Mob>Fallen Inquisitor</Mob>
+				</Mobs>
+				<Hotspots>
+					<Hotspot X="6672.773" Y="909.6705" Z="1626.706" />
+					<Hotspot X="6693.643" Y="909.1595" Z="1562.402" />
+					<Hotspot X="6660.841" Y="912.8443" Z="1509.877" />
+				</Hotspots>
+			  </GrindArea>
+			</GrindTo>
+	
  			<MoveTo X="6690.958" Y="913.4074" Z="1507.985" />
+			<Wait Seconds="2" />
+ 			<MoveTo X="6690.958" Y="913.4074" Z="1507.985" />
+			<Wait Seconds="2" />
 			<UseObject Name="Central Bell" X="6690.958" Y="913.4074" Z="1507.985" />
+			<Wait Seconds="2" />
 		</If>
-		-->
 		
 		<KillMobsObjective Quest="Revenge for the Dead" Tracking="1">
 		  <Area>
@@ -1536,10 +1532,9 @@
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 
-		<!-- Doom Abides - useitem target location on Voidspawns - they spawn from killing Lesser Golem's and they must be alive
-		<Python Statement="SpellManager.UseItemInWorld(&quot;Demon Suppressor&quot;, GigaRift.Me.Location)" />
+		<!-- Doom Abides - Combat useitem target location on Voidspawns - they spawn from killing Lesser Golem's and they must be alive -->
 
-		<UseItemOnMobsObjective Quest="Doom Abides" Item="Demon Suppressor" CastTime="1" Cooldown="1" WhenDead="False" Tracking="1">
+		<UseItemOnGroundObjective Quest="Doom Abides" Item="Demon Suppressor" UseRange="10" CastTime="1" Tracking="1" >
 		  <Area>
 			<Mobs>
 			  <Mob>Lesser Golem</Mob>
@@ -1557,8 +1552,7 @@
 				<Hotspot X="6271.936" Y="931.098" Z="1477.091" />
 			</Hotspots>
 		  </Area>
-		</UseItemOnMobsObjective>
-		-->
+		</UseItemOnGroundObjective>
 		
 		<UseObjectsObjective Quest="The King's Craft" Tracking="1">
 		  <Area>
@@ -1834,8 +1828,6 @@
 		  </Area>
 		</UseObjectsObjective>
 
-	<PickUpQuest Name="An Item of Interest" Npc="Strange Looking Rarity" X="6645.11" Y="979.4308" Z="1190.17" />
-		
 		<UseObjectsObjective Quest="Death's Embrace" Tracking="2">
 		  <Area>
 			<Objects>
@@ -1858,6 +1850,10 @@
 		  </Area>
 		</KillMobsObjective>
 
+		<If Condition="HasQuestAvailable(&quot;Strange Looking Rarity&quot;)">
+	<PickUpQuest Name="An Item of Interest" Npc="Strange Looking Rarity" X="6645.11" Y="979.4308" Z="1190.17" />
+		</If>
+		
 		<If Condition="HasQuest(&quot;Death's Embrace&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Death's Embrace" Reward="1" Npc="Captain Haghen" X="6301.842" Y="910.5259" Z="1600.708" />

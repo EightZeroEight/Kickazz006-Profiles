@@ -756,7 +756,23 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<!-- grind to - hasitem x3 (Runed Gem) from technomancers -->
+		<If Condition="((HasQuest(&quot;The Banishing&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Banishing&quot;, 1)))">
+			<GrindTo Condition="GetItemCount(&quot;Runed Gem&quot;) &gt;= 3" />
+			  <GrindArea>
+				<Mobs>
+				  <Mob>Defiant Technomancer</Mob>
+				  <Mob>Golden Maw Technomancer</Mob>
+				</Mobs>
+				<Hotspots>
+					<Hotspot X="4234.147" Y="984.1884" Z="3286.83" />
+					<Hotspot X="4294.164" Y="954.9591" Z="3304.363" />
+					<Hotspot X="4315.009" Y="955.0612" Z="3312.259" />
+					<Hotspot X="4354.287" Y="955.2711" Z="3364.134" />
+					<Hotspot X="4313.449" Y="954.7087" Z="3373.205" />
+				</Hotspots>
+			  </GrindArea>
+			</GrindTo>
+		
 		<UseItemOnMobsObjective Quest="The Banishing" Item="Runed Gem" CastTime="7" Cooldown="5" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -771,6 +787,7 @@
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
+		</If>
 
 	<TurnInQuest Name="The Banishing" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
 		<If Condition="HasQuest(&quot;Colluding with Evil&quot;)">
@@ -970,6 +987,20 @@
 	<PickUpQuest Name="Caged and Abused" Npc="Peter Narren" X="4274.768" Y="953.672" Z="3453.574" /> 
 	
 		<!-- if con has quest and not hasitem x3 (Jade Key) - farm for 3 keys from smoldering reavers (which are beside cages) -->
+		<If Condition="((HasQuest(&quot;Caged and Abused&quot;)) and (not IsQuestObjectiveCompleted(&quot;Caged and Abused&quot;, 1)))">
+			<GrindTo Condition="GetItemCount(&quot;Jade Key&quot;) &gt;= 3" />
+			  <GrindArea>
+				<Mobs>
+				  <Mob>Smoldering Reaver</Mob>
+				</Mobs>
+				<Hotspots>
+					<Hotspot X="4471.756" Y="915.4981" Z="3650.656" />
+					<Hotspot X="4549.542" Y="918.4421" Z="3467.553" />
+					<Hotspot X="4457.613" Y="916.5106" Z="3495.036" />
+				</Hotspots>
+			  </GrindArea>
+			</GrindTo>
+		
 		<UseObjectsObjective Quest="Caged and Abused" Tracking="1">
 		  <Area>
 			<Objects>
@@ -982,6 +1013,7 @@
 			</Hotspots>
 		  </Area>
 		</UseObjectsObjective>
+		</If>
 		
 		<If Condition="HasQuest(&quot;Rise Up&quot;)">
 		<KillMobsObjective Quest="Rise Up" Tracking="1">
