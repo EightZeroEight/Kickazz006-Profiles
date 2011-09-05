@@ -32,29 +32,31 @@
     </AddJob>
     <LoadMesh Name="Shimmersand" />
 	
-    <GrindTo Level="43">
-      <GrindArea TargetMinLevel="1" TargetMaxLevel="46">
-        <Mobs>
-          <Mob>Fleshrend Defender</Mob>
-          <Mob>Fleshrend Warrior</Mob>
-          <Mob>Blackhorn Grazer</Mob>
-          <Mob>Longtooth Hunter</Mob>
-          <Mob>Storm Idol</Mob>
-          <Mob>Burning Idol</Mob>
-          <Mob>Living Idol</Mob>
-          <Mob>Geotic Idol</Mob>
-          <Mob>Endless Idol</Mob>
-        </Mobs>
-        <Hotspots>
-          <Hotspot X="7900.248" Y="891.4436" Z="6420.652" />
-          <Hotspot X="8006.461" Y="903.6537" Z="6598.638" />
-          <Hotspot X="8086.001" Y="890.9511" Z="6559.859" />
-          <Hotspot X="8222.338" Y="898.0765" Z="6535.527" />
-          <Hotspot X="8051.951" Y="891.5494" Z="6456.686" />
-          <Hotspot X="7905.292" Y="891.5" Z="6382.604" />
-        </Hotspots>
-      </GrindArea>
-    </GrindTo>
+		<GrindTo Level="43">
+		  <GrindArea TargetMinLevel="1" TargetMaxLevel="46">
+			<Mobs>
+			  <Mob>Sandstone Striker</Mob>
+			  <Mob>Sandstone Scourge</Mob>
+			  <Mob>Sandstone Sultan</Mob>
+			  <Mob>Sunwarmed Stoneling</Mob>
+			  <Mob>Skittering Stoneling</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7110.862" Y="888.2352" Z="6875.478" />
+				<Hotspot X="7082.669" Y="893.3545" Z="6787.188" />
+				<Hotspot X="7044.874" Y="885.3742" Z="6821.518" />
+				<Hotspot X="6996.054" Y="885.8483" Z="6838.442" />
+				<Hotspot X="7001.271" Y="886.2075" Z="6863.457" />
+				<Hotspot X="7043.03" Y="884.1102" Z="6858.015" />
+				<Hotspot X="7070.225" Y="886.212" Z="6844.949" />
+				<Hotspot X="7088.473" Y="885.0508" Z="6862.876" />
+				<Hotspot X="7055.332" Y="890.7195" Z="6931.263" />
+				<Hotspot X="6988.302" Y="881.6392" Z="6920.736" />
+				<Hotspot X="6938.53" Y="882.4925" Z="6954.952" />
+				<Hotspot X="7044.492" Y="880.7719" Z="7028.318" />
+			</Hotspots>
+		  </GrindArea>
+		</GrindTo>
 
 		<If Condition="(HasQuest(&quot;Cry for Help&quot;))">
 	<TurnInQuest Name="Cry for Help" Npc="Gunji" X="7039.698" Y="883.7867" Z="6765.427" />
@@ -1097,7 +1099,7 @@
 		
 		<!-- porticulum master
 		<Hotspot X="6719.901" Y="892.8559" Z="7087.15" /> // fortune's shore (se side)
-		
+		<Hotspot X="6080.955" Y="989.3517" Z="7335.951" /> // wyrmbane spire
 		-->
 		
 		
