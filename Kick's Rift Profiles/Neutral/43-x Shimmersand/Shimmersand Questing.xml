@@ -11,7 +11,7 @@
 			<Healer X="7021.577" Y="886.8774" Z="6777.892" /> <!-- Sandaxle Pit -->
 			<Healer X="6992.08" Y="886.5347" Z="7061.991" /> <!-- Nomad's Furnace -->
 			<Healer X="6659.96" Y="882.0352" Z="6619.787" /> <!-- Deadman Gorge -->
-			
+			<Healer X="6365.223" Y="881.012" Z="6902.443" /> <!-- Khaliti Row -->
 			
         </Healers>
       </MendSoul>
@@ -25,7 +25,7 @@
 			<Vendor X="7043.081" Y="883.6149" Z="6774.437" /> <!-- Sandaxle Pit -->
 			<Vendor X="7006.137" Y="886.1289" Z="7082.724" /> <!-- Nomad's Furnace -->
 			<Vendor X="6644.497" Y="881.7677" Z="6612.417" /> <!-- Deadman Gorge -->
-			
+			<Vendor X="6374.21" Y="886.2565" Z="6943.739" /> <!-- Khaliti Row -->
 			
         </Vendors>
       </Vendor>
@@ -802,16 +802,265 @@
 	<PickUpQuest Name="Bonedust Brawl" Npc="Myia Heretilli" X="7416.735" Y="910.1971" Z="7409.047" />
 	<PickUpQuest Name="Explosive Reaction" Npc="Myia Heretilli" X="7416.735" Y="910.1971" Z="7409.047" />
 	
+		<UseObjectsObjective Quest="Explosive Reaction" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Golden Ward</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7536.914" Y="943.1511" Z="7331.795" />
+				<Hotspot X="7535.348" Y="941.4981" Z="7346.979" />
+				<Hotspot X="7516.319" Y="940.8892" Z="7376.822" />
+				<Hotspot X="7460.801" Y="952.3179" Z="7424.118" />
+				<Hotspot X="7433.7" Y="968.1511" Z="7454.177" />
+				<Hotspot X="7426.318" Y="978.3878" Z="7502.122" />
+				<Hotspot X="7387.519" Y="975.5908" Z="7444.346" />
+				<Hotspot X="7324.772" Y="977.8051" Z="7473.393" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Gold in the Hand" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Crystalline Servant</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7536.914" Y="943.1511" Z="7331.795" />
+				<Hotspot X="7548.995" Y="942.2841" Z="7350.432" />
+				<Hotspot X="7516.319" Y="940.8892" Z="7376.822" />
+				<Hotspot X="7557.739" Y="941.3502" Z="7417.058" />
+				<Hotspot X="7504.274" Y="945.5685" Z="7413.851" />
+				<Hotspot X="7516.319" Y="940.8892" Z="7376.822" />
+				<Hotspot X="7460.801" Y="952.3179" Z="7424.118" />
+				<Hotspot X="7433.7" Y="968.1511" Z="7454.177" />
+				<Hotspot X="7426.318" Y="978.3878" Z="7502.122" />
+				<Hotspot X="7387.519" Y="975.5908" Z="7444.346" />
+				<Hotspot X="7324.772" Y="977.8051" Z="7473.393" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Gold in the Hand" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Melanoid Aversary</Mob>
+			  <Mob>Melanoid Sentinel</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7550.936" Y="938.5798" Z="7313.941" />
+				<Hotspot X="7535.348" Y="941.4981" Z="7346.979" />
+				<Hotspot X="7557.739" Y="941.3502" Z="7417.058" />
+				<Hotspot X="7504.274" Y="945.5685" Z="7413.851" />
+				<Hotspot X="7516.319" Y="940.8892" Z="7376.822" />
+				<Hotspot X="7460.801" Y="952.3179" Z="7424.118" />
+				<Hotspot X="7433.7" Y="968.1511" Z="7454.177" />
+				<Hotspot X="7426.318" Y="978.3878" Z="7502.122" />
+				<Hotspot X="7387.519" Y="975.5908" Z="7444.346" />
+				<Hotspot X="7324.772" Y="977.8051" Z="7473.393" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Bonedust Brawl" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Sandstone Mauler</Mob>
+			  <Mob>Sandstone Brute</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7407.572" Y="910.9071" Z="7377.06" />
+				<Hotspot X="7417.023" Y="909.2548" Z="7336.558" />
+				<Hotspot X="7463.412" Y="914.2059" Z="7328.131" />
+				<Hotspot X="7494.973" Y="920.494" Z="7302.628" />
+				<Hotspot X="7518.563" Y="929.5878" Z="7270.09" />
+				<Hotspot X="7588.795" Y="940.4171" Z="7262.046" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Gold in the Hand" Npc="Andro Wells" X="7418.807" Y="910.076" Z="7407.415" />
+	<TurnInQuest Name="Bonedust Brawl" Npc="Myia Heretilli" X="7416.735" Y="910.1971" Z="7409.047" />
+		<If Condition="HasQuest(&quot;Explosive Reaction&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Explosive Reaction" Reward="1" Npc="Myia Heretilli" X="7416.735" Y="910.1971" Z="7409.047" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Hauberk of the Warden&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Explosive Reaction" Reward="2" Npc="Myia Heretilli" X="7416.735" Y="910.1971" Z="7409.047" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sandwarden's Robe&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Explosive Reaction" Reward="3" Npc="Myia Heretilli" X="7416.735" Y="910.1971" Z="7409.047" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Saboteur's Jerkin&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Explosive Reaction" Reward="4" Npc="Myia Heretilli" X="7416.735" Y="910.1971" Z="7409.047" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Recycled Construct Torso&quot;)" />
+			</If>
+		</If>
+		<!-- End of Gnawbone Valley Quests -->
+		
+		<If Condition="HasQuest(&quot;Strike the Earth&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Strike the Earth" Reward="1" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Thedeor's Blessed Gauntlets&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Strike the Earth" Reward="2" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Double Stitched Gloves&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Strike the Earth" Reward="3" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Gloves of the Disruptor&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Strike the Earth" Reward="4" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Handguards of Wrath&quot;)" />
+			</If>
+		</If>
+	<PickUpQuest Name="News from the East" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
+	<TurnInQuest Name="Monarch's Jewels" Npc="Corbin Wembley" X="7010.75" Y="886.2929" Z="7082.274" />
+	<TurnInQuest Name="Stories Bones Tell" Npc="Jubileth Pybbelin" X="6996.163" Y="886.0101" Z="7073.786" />
+	<TurnInQuest Name="Vicious Cycle" Npc="Nachri Jucam" X="6992.829" Y="886.2579" Z="7069.261" />
+		<!-- ignoring rift daily outside of east Fortune's Shore -->
+		
+		<!-- Fortune's Shore Quests -->
+	<PickUpQuest Name="The Sourcestone Market" Npc="Kostiker" X="6867.31" Y="885.8834" Z="6931.816" />
+	<TurnInQuest Name="The Sourcestone Market" Npc="Kaseem Owan" X="6630.127" Y="890.1964" Z="7095.607" />
+	<PickUpQuest Name="Pillaged Goods" Npc="Kaseem Owan" X="6630.127" Y="890.1964" Z="7095.607" />
+	<PickUpQuest Name="Participation in Government" Npc="Kaseem Owan" X="6630.127" Y="890.1964" Z="7095.607" />
+	
+		<UseObjectsObjective Quest="Participation in Government" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Sourcestone Shipment</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6597.213" Y="880.1757" Z="7022.706" />
+				<Hotspot X="6590.633" Y="880.3646" Z="6994.565" />
+				<Hotspot X="6591.115" Y="880.5703" Z="6955.987" />
+				<Hotspot X="6580.662" Y="880.2298" Z="7038.073" />
+				<Hotspot X="6669.812" Y="883.7455" Z="7018.403" />
+				<Hotspot X="6624.292" Y="880.7245" Z="6949.636" />
+				<Hotspot X="6623.125" Y="880.7289" Z="6916.283" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+	
+		<If Condition="HasQuest(&quot;Participation in Government&quot;)"> <!-- gossip, then loot window -->
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+
+			<TalkToNpcObjective Quest="Participation in Government" Npc="Jaaved Ramza" X="6641.81" Y="883.3625" Z="7092.765" Options="1, 1" Tracking="4" />
+			<TalkToNpcObjective Quest="Participation in Government" Npc="Neesha Glade" X="6660.071" Y="884.6456" Z="7117.862" Options="1, 1" Tracking="2" />
+			<TalkToNpcObjective Quest="Participation in Government" Npc="Namir" X="6595.604" Y="880.1158" Z="7060.018" Options="1, 1" Tracking="3" />
+		</If>
+
+	<TurnInQuest Name="Participation in Government" Npc="Kaseem Owan" X="6630.127" Y="890.1964" Z="7095.607" />
+	
+		<!-- Guardian Only -->
+	<TurnInQuest Name="News from the East" Npc="Tam Daggerborne" X="6571.573" Y="897.6365" Z="7065.983" /> 
+	<PickUpQuest Name="Respecting the Locals" Npc="Tam Daggerborne" X="6571.573" Y="897.6365" Z="7065.983" /> 
+	<PickUpQuest Name="Unnatural Means" Npc="Fayne Doran" X="6565.907" Y="897.6365" Z="7064.838" />
+		<If Condition="HasQuest(&quot;Respecting the Locals&quot;)">
+			<TalkToNpcObjective Quest="Respecting the Locals" Npc="Winstin" X="6605.487" Y="880.2611" Z="7040.349"  Options="1" Tracking="1" />
+			<TalkToNpcObjective Quest="Respecting the Locals" Npc="Tzevi Durdana" X="6637.907" Y="883.8979" Z="7110.163" Options="1" Tracking="3" />
+			<TalkToNpcObjective Quest="Respecting the Locals" Npc="Jennia Riyad" X="6646.006" Y="891.6543" Z="7116.916" Options="1" Tracking="2" />
+		</If>
+	<TurnInQuest Name="Respecting the Locals" Npc="Tam Daggerborne" X="6571.573" Y="897.6365" Z="7065.983" /> 
+		<!-- End of Guardian Only -->
+		
+	<PickUpQuest Name="Marked for Death" Npc="Jabarik" X="6602.932" Y="881.8691" Z="7018.317" />
+	<PickUpQuest Name="Nesting Terrors" Npc="Alee Nassar" X="6649.375" Y="879.7839" Z="6990.982" />
+	<PickUpQuest Name="I Hope You Like Surprises" Npc="Janelyn" X="6680.573" Y="883.3376" Z="7044.15" />
+		<UseObjectsObjective Quest="I Hope You Like Surprises" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Adorned Chest</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6791.779" Y="880.1509" Z="7056.14" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+	<TurnInQuest Name="I Hope You Like Surprises" Npc="Rex Cantor" X="6611.673" Y="884.3878" Z="7160.688" />
+	<PickUpQuest Name="Miracle of Modern Magic" Npc="Rex Cantor" X="6611.673" Y="884.3878" Z="7160.688" />
+
+		<UseObjectsObjective Quest="Miracle of Modern Magic" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Strong Alcohol</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6595.186" Y="880.1855" Z="7057.329" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Miracle of Modern Magic" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Fibrous Reed</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6625.375" Y="876.4066" Z="6995.785" />
+				<Hotspot X="6601.639" Y="875.7828" Z="6987.864" />
+				<Hotspot X="6589.735" Y="877.994" Z="6979.656" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Miracle of Modern Magic" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Medicinal Balm</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6364.924" Y="886.8842" Z="6946.484" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Miracle of Modern Magic" Npc="Rex Cantor" X="6611.673" Y="884.3878" Z="7160.688" />
+
+		<!-- lady's favor dropquest falls from harpies -->
+		<UseObjectsObjective Quest="Nesting Terrors" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Harpy Roost</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6404.665" Y="955.1964" Z="6825.356" />
+				<Hotspot X="6415.052" Y="952.7818" Z="6869.421" />
+				<Hotspot X="6469.61" Y="955.5698" Z="6801.064" />
+				<Hotspot X="6432.052" Y="957.7703" Z="6733.175" />
+				
+				
+				
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+
 	
 	
 	
 	
 	
 	
-	
-	
-	
-	<!-- Npc="Sandchewer" X="7365.503" Y="908.8081" Z="7233.677" -->
+	<!-- Npc="Sandchewer" X="7365.503" Y="908.8081" Z="7233.677"
+		Npc="Rockfist" X="7671.891" Y="910.523" Z="7284.103" (elite)
+
+	-->
 	
 	
 		<!-- 
@@ -846,7 +1095,10 @@
 		
 		
 		
+		<!-- porticulum master
+		<Hotspot X="6719.901" Y="892.8559" Z="7087.15" /> // fortune's shore (se side)
 		
+		-->
 		
 		
 		
