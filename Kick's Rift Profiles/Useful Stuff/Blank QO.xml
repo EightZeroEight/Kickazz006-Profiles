@@ -25,6 +25,8 @@
 		</If>
 		
 		<!-- Npc Name -->
+		<If Condition="(HasQuest(&quot;&quot;))">
+		</If>
 		<If Condition="HasQuestAvailable(&quot;&quot;)">
 		</If>
 

@@ -443,7 +443,7 @@
 		</UseObjectsObjective>
 
 		<If Condition="HasQuest(&quot;Sight Unseen&quot;)"> <!-- and Me.Z < 6700 -->
-			<MoveTo X="6968.214" Y="946.5104" Z="6564.832" />
+			<MoveTo X="6970.049" Y="946.5062" Z="6565.673" />
 			<Wait Seconds="3" />
 			<Python Statement = "SpellManager.UseItem(&quot;Seal of the Eth Kings&quot;)" />
 			<Wait Seconds="8" />
@@ -471,7 +471,6 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Raniyah's Desert Chain&quot;)" />
 			</If>
 		</If>
-
 	<PickUpQuest Name="Larger Than Life" Npc="Tarik" X="7036.423" Y="883.7914" Z="6778.16" />
 		<!-- End of Sandaxle Pit Quests -->
 
@@ -481,7 +480,14 @@
 	<PickUpQuest Name="Stone Temple of Earth" Npc="Jubileth Pybbelin" X="6996.163" Y="886.0101" Z="7073.786" />
 	<PickUpQuest Name="Blood on the Sand" Npc="Nachri Jucam" X="6992.829" Y="886.2579" Z="7069.261" />
 	<PickUpQuest Name="The Sparkling Lure" Npc="Corbin Wembley" X="7010.75" Y="886.2929" Z="7082.274" />
-	<PickUpQuest Name="To Turn Aside the Storm" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
+	
+		<!-- I think these 2 quests are faction specific ? -->
+		<If Condition="HasQuestAvailable(&quot;Horace Pinkston&quot;)">
+	<PickUpQuest Name="To Turn Aside the Storm" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" /> <!-- Guardian Quest -->
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Fenzari Kranalin&quot;)">
+	<PickUpQuest Name="Binding the Lightning" Npc="Fenzari Kranalin" X="6996.313" Y="886.8541" Z="7062.044" /> <!-- Defiant -->
+		</If>
 
 		<UseObjectsObjective Quest="Stone Temple of Earth" Tracking="1">
 		  <Area>
@@ -503,6 +509,7 @@
 		  </Area>
 		</UseObjectsObjective>
 
+		<!-- Guardian -->
 		<If Condition="((HasQuest(&quot;To Turn Aside the Storm&quot;)) and (not IsQuestObjectiveCompleted(&quot;To Turn Aside the Storm&quot;, 2)))">
 			<MoveTo X="7333.014" Y="959.8565" Z="7169.873" />
 			<Wait Seconds="5" />
@@ -532,6 +539,36 @@
 		  </Area>
 		</KillMobsObjective>
 
+		<!-- Defiant -->
+		<If Condition="((HasQuest(&quot;Binding the Lightning&quot;)) and (not IsQuestObjectiveCompleted(&quot;To Turn Aside the Storm&quot;, 2)))">
+			<MoveTo X="7333.014" Y="959.8565" Z="7169.873" />
+			<Wait Seconds="5" />
+		</If>
+		
+		<KillMobsObjective Quest="Binding the Lightning" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Golden Maw Enforcer</Mob>
+			  <Mob>Golden Maw Adept</Mob>
+			  <Mob>Golden Maw Convoker</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7265.641" Y="952.8009" Z="7156.787" />
+				<Hotspot X="7307.582" Y="957.6822" Z="7140.131" /> <!-- caroline puck -->
+				<Hotspot X="7277.863" Y="955.6623" Z="7155.943" />
+				<Hotspot X="7275.244" Y="954.5947" Z="7134.638" />
+				<Hotspot X="7283.015" Y="956.4092" Z="7112.333" />
+				<Hotspot X="7234.659" Y="947.4896" Z="7112.405" />
+				<Hotspot X="7255.605" Y="948.1193" Z="7097.84" />
+				<Hotspot X="7239.545" Y="947.4223" Z="7086.956" />
+				<Hotspot X="7192.229" Y="934.8956" Z="7048.758" />
+				<Hotspot X="7206.132" Y="936.446" Z="7075.649" />
+				<Hotspot X="7200.763" Y="935.2393" Z="7107.037" />
+				<Hotspot X="7179.25" Y="918.3153" Z="7015.011" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
 		<KillMobsObjective Quest="Blood on the Sand" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -627,8 +664,18 @@
 	<TurnInQuest Name="Stone Temple of Earth" Npc="Jubileth Pybbelin" X="6996.163" Y="886.0101" Z="7073.786" />
 	<TurnInQuest Name="Blood on the Sand" Npc="Nachri Jucam" X="6992.829" Y="886.2579" Z="7069.261" />
 	<TurnInQuest Name="The Sparkling Lure" Npc="Corbin Wembley" X="7010.75" Y="886.2929" Z="7082.274" />
-	<TurnInQuest Name="To Turn Aside the Storm" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
-	<PickUpQuest Name="Strike the Earth" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
+		<If Condition="(HasQuest(&quot;To Turn Aside the Storm&quot;))">
+	<TurnInQuest Name="To Turn Aside the Storm" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" /> <!-- Guardian -->
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Horace Pinkston&quot;)">
+	<PickUpQuest Name="Strike the Earth" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" /> <!-- Guardian -->
+		</If>
+		<If Condition="(HasQuest(&quot;Binding the Lightning&quot;))">
+	<TurnInQuest Name="Binding the Lightning" Npc="Fenzari Kranalin" X="6996.313" Y="886.8541" Z="7062.044" /> <!-- Defiant -->
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Fenzari Kranalin&quot;)">
+	<PickUpQuest Name="The Prize and the Power" Npc="Fenzari Kranalin" X="6996.313" Y="886.8541" Z="7062.044" /> <!-- Defiant -->
+		</If>
 	<PickUpQuest Name="Monarch's Jewels" Npc="Corbin Wembley" X="7010.75" Y="886.2929" Z="7082.274" />
 	<PickUpQuest Name="Jaws to Crush Bone" Npc="Tendrick Hugh" X="7000.535" Y="886.1386" Z="7086.955" />
 	<PickUpQuest Name="Stories Bones Tell" Npc="Jubileth Pybbelin" X="6996.163" Y="886.0101" Z="7073.786" />
@@ -662,6 +709,37 @@
 			<MoveTo X="7454.127" Y="978.077" Z="7178.668" />
 			<Wait Seconds="2" />
 			<Python Statement = "SpellManager.UseItem(&quot;Thedeor's Bottled Wrath&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+	
+		<UseObjectsObjective Quest="The Prize and the Power" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Defense Cyclone Beacon</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7315.01" Y="958.4406" Z="7168.726" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="The Prize and the Power" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Coffer of the Gilded Drake</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7427.645" Y="974.7523" Z="7178.797" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="((HasQuest(&quot;The Prize and the Power&quot;)) and (not IsQuestObjectiveCompleted(&quot;The Prize and the Power&quot;, 3)))">
+			<MoveTo X="7454.127" Y="978.077" Z="7178.668" />
+			<Wait Seconds="2" />
+			<MoveTo X="7454.127" Y="978.077" Z="7178.668" />
+			<Wait Seconds="2" />
+			<Python Statement = "SpellManager.UseItem(&quot;Orb of Volatile Fluid&quot;)" />
 			<Wait Seconds="5" />
 		</If>
 	
@@ -907,7 +985,7 @@
 		</If>
 		<!-- End of Gnawbone Valley Quests -->
 		
-		<If Condition="HasQuest(&quot;Strike the Earth&quot;)">
+		<If Condition="HasQuest(&quot;Strike the Earth&quot;)"> <!-- Guardian -->
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Strike the Earth" Reward="1" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
 				<Wait Seconds="2" />
@@ -929,7 +1007,35 @@
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Handguards of Wrath&quot;)" />
 			</If>
 		</If>
-	<PickUpQuest Name="News from the East" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" />
+		<If Condition="HasQuestAvailable(&quot;Horace Pinkston&quot;)">
+	<PickUpQuest Name="News from the East" Npc="Horace Pinkston" X="7017.312" Y="886.0997" Z="7075.228" /> <!-- Guardian -->
+		</If>
+		<If Condition="HasQuest(&quot;The Prize and the Power&quot;)"> <!-- Defiant -->
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="The Prize and the Power" Reward="1" Npc="Fenzari Kranalin" X="6996.313" Y="886.8541" Z="7062.044" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Relic Hunter's Gloves&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="The Prize and the Power" Reward="2" Npc="Fenzari Kranalin" X="6996.313" Y="886.8541" Z="7062.044" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Volatile Handwraps&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="The Prize and the Power" Reward="3" Npc="Fenzari Kranalin" X="6996.313" Y="886.8541" Z="7062.044" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Technician's Gloves&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="The Prize and the Power" Reward="4" Npc="Fenzari Kranalin" X="6996.313" Y="886.8541" Z="7062.044" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Gauntlets of Wrecking&quot;)" />
+			</If>
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Fenzari Kranalin&quot;)">
+	<PickUpQuest Name="Asha and the Oculus" Npc="Fenzari Kranalin" X="6996.313" Y="886.8541" Z="7062.044" /> <!-- Defiant -->
+		</If>
+
 	<TurnInQuest Name="Monarch's Jewels" Npc="Corbin Wembley" X="7010.75" Y="886.2929" Z="7082.274" />
 	<TurnInQuest Name="Stories Bones Tell" Npc="Jubileth Pybbelin" X="6996.163" Y="886.0101" Z="7073.786" />
 	<TurnInQuest Name="Vicious Cycle" Npc="Nachri Jucam" X="6992.829" Y="886.2579" Z="7069.261" />
@@ -957,29 +1063,70 @@
 			</Hotspots>
 		  </Area>
 		</UseObjectsObjective>
-	
-		<If Condition="HasQuest(&quot;Participation in Government&quot;)"> <!-- gossip, then loot window -->
+
+		<!-- gossip, then loot window -->
+		<If Condition="((HasQuest(&quot;Participation in Government&quot;)) and (not IsQuestObjectiveCompleted(&quot;Participation in Government&quot;, 4)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 
 			<TalkToNpcObjective Quest="Participation in Government" Npc="Jaaved Ramza" X="6641.81" Y="883.3625" Z="7092.765" Options="1, 1" Tracking="4" />
+		</If>
+		<If Condition="((HasQuest(&quot;Participation in Government&quot;)) and (not IsQuestObjectiveCompleted(&quot;Participation in Government&quot;, 2)))">
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+
 			<TalkToNpcObjective Quest="Participation in Government" Npc="Neesha Glade" X="6660.071" Y="884.6456" Z="7117.862" Options="1, 1" Tracking="2" />
+		</If>
+		<If Condition="((HasQuest(&quot;Participation in Government&quot;)) and (not IsQuestObjectiveCompleted(&quot;Participation in Government&quot;, 3)))">
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+
 			<TalkToNpcObjective Quest="Participation in Government" Npc="Namir" X="6595.604" Y="880.1158" Z="7060.018" Options="1, 1" Tracking="3" />
 		</If>
 
 	<TurnInQuest Name="Participation in Government" Npc="Kaseem Owan" X="6630.127" Y="890.1964" Z="7095.607" />
 	
 		<!-- Guardian Only -->
+		<If Condition="(HasQuest(&quot;News from the East&quot;))">
 	<TurnInQuest Name="News from the East" Npc="Tam Daggerborne" X="6571.573" Y="897.6365" Z="7065.983" /> 
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Tam Daggerborne&quot;)">
 	<PickUpQuest Name="Respecting the Locals" Npc="Tam Daggerborne" X="6571.573" Y="897.6365" Z="7065.983" /> 
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Fayne Doran&quot;)">
 	<PickUpQuest Name="Unnatural Means" Npc="Fayne Doran" X="6565.907" Y="897.6365" Z="7064.838" />
+		</If>
 		<If Condition="HasQuest(&quot;Respecting the Locals&quot;)">
 			<TalkToNpcObjective Quest="Respecting the Locals" Npc="Winstin" X="6605.487" Y="880.2611" Z="7040.349"  Options="1" Tracking="1" />
 			<TalkToNpcObjective Quest="Respecting the Locals" Npc="Tzevi Durdana" X="6637.907" Y="883.8979" Z="7110.163" Options="1" Tracking="3" />
 			<TalkToNpcObjective Quest="Respecting the Locals" Npc="Jennia Riyad" X="6646.006" Y="891.6543" Z="7116.916" Options="1" Tracking="2" />
 		</If>
+		<If Condition="(HasQuest(&quot;Respecting the Locals&quot;))">
 	<TurnInQuest Name="Respecting the Locals" Npc="Tam Daggerborne" X="6571.573" Y="897.6365" Z="7065.983" /> 
+		</If>
 		<!-- End of Guardian Only -->
+		
+		<!-- Defiant Only -->
+		<If Condition="(HasQuest(&quot;Asha and the Oculus&quot;))">
+			<MoveTo X="6652.485" Y="893.5625" Z="7050.882" />
+	<TurnInQuest Name="Asha and the Oculus" Npc="Asha Catari" X="6652.5" Y="893.5625" Z="7051.015" />
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Asha Catari&quot;)">
+	<PickUpQuest Name="Due Respect" Npc="Asha Catari" X="6652.5" Y="893.5625" Z="7051.015" />
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Kaspar Massi&quot;)">
+	<PickUpQuest Name="Cruel Methods" Npc="Kaspar Massi" X="6663.241" Y="887.5661" Z="7074.01" />
+		</If>
+		<If Condition="(HasQuest(&quot;Due Respect&quot;))">
+			<TalkToNpcObjective Quest="Due Respect" Npc="Winstin" X="6605.487" Y="880.2611" Z="7040.349"  Options="1" Tracking="1" />
+			<TalkToNpcObjective Quest="Due Respect" Npc="Tzevi Durdana" X="6637.907" Y="883.8979" Z="7110.163" Options="1" Tracking="3" />
+			<TalkToNpcObjective Quest="Due Respect" Npc="Jennia Riyad" X="6646.006" Y="891.6543" Z="7116.916" Options="1" Tracking="2" />
+		</If>
+		<If Condition="(HasQuest(&quot;Due Respect&quot;))">
+			<MoveTo X="6652.485" Y="893.5625" Z="7050.882" />
+	<TurnInQuest Name="Due Respect" Npc="Asha Catari" X="6652.5" Y="893.5625" Z="7051.015" />
+		</If>
+		<!-- End of Defiant Only -->
 		
 	<PickUpQuest Name="Marked for Death" Npc="Jabarik" X="6602.932" Y="881.8691" Z="7018.317" />
 	<PickUpQuest Name="Nesting Terrors" Npc="Alee Nassar" X="6649.375" Y="879.7839" Z="6990.982" />
@@ -1045,24 +1192,912 @@
 				<Hotspot X="6415.052" Y="952.7818" Z="6869.421" />
 				<Hotspot X="6469.61" Y="955.5698" Z="6801.064" />
 				<Hotspot X="6432.052" Y="957.7703" Z="6733.175" />
-				
-				
-				
+				<Hotspot X="6417.72" Y="955.1896" Z="6777.028" />
+				<Hotspot X="6359.233" Y="951.7841" Z="6719.613" />
+				<Hotspot X="6375.397" Y="953.0989" Z="6755.187" />
+				<Hotspot X="6366.205" Y="953.1919" Z="6801.237" />
+				<Hotspot X="6350.029" Y="952.2917" Z="6860.678" />
+				<Hotspot X="6440.331" Y="952.1558" Z="6683.778" />
 			</Hotspots>
 		  </Area>
 		</UseObjectsObjective>
 
+		<KillMobsObjective Quest="Marked for Death" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Jovox</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6480.934" Y="881.9947" Z="6631.536" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
 
-	
-	
-	
-	
-	
-	
-	<!-- Npc="Sandchewer" X="7365.503" Y="908.8081" Z="7233.677"
-		Npc="Rockfist" X="7671.891" Y="910.523" Z="7284.103" (elite)
+		<UseObjectsObjective Quest="Pillaged Goods" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Pillaged Shipment</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6471.887" Y="882.8583" Z="6605.533" />
+				<Hotspot X="6481.459" Y="882.0365" Z="6636.209" />
+				<Hotspot X="6489.441" Y="881.6697" Z="6643.766" />
+				<Hotspot X="6523.897" Y="880.4059" Z="6650.372" />
+				<Hotspot X="6546.805" Y="882.2949" Z="6708.381" />
+				<Hotspot X="6489.321" Y="881.5151" Z="6762.561" />
+				<Hotspot X="6451.539" Y="882.5685" Z="6761.4" />
+				<Hotspot X="6550.238" Y="881.1956" Z="6792.899" />
+				<Hotspot X="6402.433" Y="881.8821" Z="6596.472" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 
-	-->
+		<KillMobsObjective Quest="Unnatural Means" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Cutthroat Mercenary</Mob>
+			  <Mob>Cutthroat Enforcer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6471.887" Y="882.8583" Z="6605.533" />
+				<Hotspot X="6481.459" Y="882.0365" Z="6636.209" />
+				<Hotspot X="6489.441" Y="881.6697" Z="6643.766" />
+				<Hotspot X="6523.897" Y="880.4059" Z="6650.372" />
+				<Hotspot X="6546.805" Y="882.2949" Z="6708.381" />
+				<Hotspot X="6489.321" Y="881.5151" Z="6762.561" />
+				<Hotspot X="6451.539" Y="882.5685" Z="6761.4" />
+				<Hotspot X="6550.238" Y="881.1956" Z="6792.899" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Cruel Methods" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Cutthroat Mercenary</Mob>
+			  <Mob>Cutthroat Enforcer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6471.887" Y="882.8583" Z="6605.533" />
+				<Hotspot X="6481.459" Y="882.0365" Z="6636.209" />
+				<Hotspot X="6489.441" Y="881.6697" Z="6643.766" />
+				<Hotspot X="6523.897" Y="880.4059" Z="6650.372" />
+				<Hotspot X="6546.805" Y="882.2949" Z="6708.381" />
+				<Hotspot X="6489.321" Y="881.5151" Z="6762.561" />
+				<Hotspot X="6451.539" Y="882.5685" Z="6761.4" />
+				<Hotspot X="6550.238" Y="881.1956" Z="6792.899" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Pillaged Goods" Npc="Kaseem Owan" X="6630.127" Y="890.1964" Z="7095.607" />
+	<TurnInQuest Name="Marked for Death" Npc="Jabarik" X="6602.932" Y="881.8691" Z="7018.317" />
+	<TurnInQuest Name="Nesting Terrors" Npc="Alee Nassar" X="6649.375" Y="879.7839" Z="6990.982" />
+	
+		<If Condition="HasQuest(&quot;Cruel Methods&quot;)"> <!-- Defiant -->
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Cruel Methods" Reward="1" Npc="Kaspar Massi" X="6663.241" Y="887.5661" Z="7074.01" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Fused Ringmail Leggings&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Cruel Methods" Reward="2" Npc="Kaspar Massi" X="6663.241" Y="887.5661" Z="7074.01" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Plane Weaved Leggings&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Cruel Methods" Reward="3" Npc="Kaspar Massi" X="6663.241" Y="887.5661" Z="7074.01" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Recovered Mercenary Legs&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Cruel Methods" Reward="4" Npc="Kaspar Massi" X="6663.241" Y="887.5661" Z="7074.01" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Reconstructed Leg Guards&quot;)" />
+			</If>
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Kaspar Massi&quot;)"> <!-- Defiant -->
+	<PickUpQuest Name="Assistance for Sylver" Npc="Kaspar Massi" X="6663.241" Y="887.5661" Z="7074.01" />
+		</If>
+		<If Condition="(HasQuest(&quot;Assistance for Sylver&quot;))"> <!-- Defiant -->
+	<TurnInQuest Name="Assistance for Sylver" Npc="Sylver Valis" X="6768.821" Y="882.6616" Z="6584.642" />
+		</If>
+		
+		<!-- Veiled Bastion Quests (Defiant) -->
+		<If Condition="HasQuestAvailable(&quot;Sylver Valis&quot;)"> <!-- Defiant -->
+	<PickUpQuest Name="Universal Controller" Npc="Sylver Valis" X="6768.821" Y="882.6616" Z="6584.642" />
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Sayid Ahzab&quot;)"> <!-- Defiant -->
+	<PickUpQuest Name="Compromised Equipment" Npc="Sayid Ahzab" X="6767.502" Y="882.6771" Z="6586.242" />
+		</If>
+		
+		
+		<If Condition="((HasQuest(&quot;Universal Controller&quot;)) and (not IsQuestObjectiveCompleted(&quot;Universal Controller&quot;, 1)))">
+			<Python Statement="Logging.Write(&quot;Please manually do quest Universal Controller objective (1) - then press start&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		
+		<!-- Combat UIO () -->
+		<UseItemOnMobsObjective Quest="Universal Controller" Item="Makeshift Golem Controller" UseRange="5" CastTime="1" Cooldown="5" WhenDead="False" TargetMobs="True" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Mithril Keeper</Mob>
+			  <Mob>Iron Keeper</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6755.997" Y="881.0862" Z="6616.192" />
+				<Hotspot X="6712.38" Y="883.1219" Z="6674.342" />
+				<Hotspot X="6681.654" Y="886.0167" Z="6710.752" />
+				<Hotspot X="6686.76" Y="884.3338" Z="6745.425" />
+				<Hotspot X="6726.595" Y="884.9382" Z="6674.525" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<UseObjectsObjective Quest="Compromised Equipment" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Golem Control Unit</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6690.56" Y="886.6405" Z="6721.247" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<PickUpQuest Name="Acquired Taste" Npc="Garem Nassar" X="6764.76" Y="880.2853" Z="6665.269" />
+	
+		<UseObjectsObjective Quest="Compromised Equipment" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Golem Control Unit</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6794.184" Y="880.1295" Z="6623.086" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Compromised Equipment" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Golem Control Unit</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6868.501" Y="882.5281" Z="6516.587" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Acquired Taste" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Gorge Strutter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6750.956" Y="883.199" Z="6703.453" />
+				<Hotspot X="6739.467" Y="887.6749" Z="6733.45" />
+				<Hotspot X="6709.859" Y="887.8174" Z="6722.371" />
+				<Hotspot X="6697.48" Y="884.7792" Z="6765.562" />
+				<Hotspot X="6659.341" Y="882.107" Z="6780.888" />
+				<Hotspot X="6655.813" Y="880.0793" Z="6751.658" />
+				<Hotspot X="6841.275" Y="881.3997" Z="6602.582" />
+				<Hotspot X="6839.55" Y="879.5563" Z="6500.448" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Acquired Taste" Npc="Garem Nassar" X="6764.76" Y="880.2853" Z="6665.269" /> <!-- N -->
+		<If Condition="HasQuest(&quot;Universal Controller&quot;)"> <!-- Defiant -->
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Universal Controller" Reward="3" Npc="Sylver Valis" X="6768.821" Y="882.6616" Z="6584.642" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Fabricated Zapper&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Universal Controller" Reward="3" Npc="Sylver Valis" X="6768.821" Y="882.6616" Z="6584.642" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Fabricated Zapper&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Universal Controller" Reward="2" Npc="Sylver Valis" X="6768.821" Y="882.6616" Z="6584.642" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Bloodstrutter Hunter's Bow&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Universal Controller" Reward="2" Npc="Sylver Valis" X="6768.821" Y="882.6616" Z="6584.642" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Bloodstrutter Hunter's Bow&quot;)" />
+			</If>
+		</If>
+		<If Condition="(HasQuest(&quot;Compromised Equipment&quot;))"> <!-- Defiant -->
+	<TurnInQuest Name="Compromised Equipment" Npc="Sayid Ahzab" X="6767.502" Y="882.6771" Z="6586.242" />
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Sayid Ahzab&quot;)"> <!-- Defiant -->
+	<PickUpQuest Name="Oh No They Don't" Npc="Sayid Ahzab" X="6767.502" Y="882.6771" Z="6586.242" />
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Sylver Valis&quot;)"> <!-- Defiant -->
+	<PickUpQuest Name="Trouble at The Flatyard" Npc="Sylver Valis" X="6768.821" Y="882.6616" Z="6584.642" />
+		</If>
+
+		<UseObjectsObjective Quest="Oh No They Don't" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Escape Dinghy</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6520.996" Y="880.5842" Z="6431.956" />
+				<Hotspot X="6551.88" Y="881.0712" Z="6343.61" />
+				<Hotspot X="6551.88" Y="881.0712" Z="6343.61" />
+				<Hotspot X="6654.819" Y="879.5618" Z="6258.423" />
+				<Hotspot X="6763" Y="880.3958" Z="6256.929" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<PickUpQuest Name="Making a Deal" Npc="Su'kia" X="6674.179" Y="880.9581" Z="6206.724" /> <!-- N -->
+	
+		<UseObjectsObjective Quest="Making a Deal" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Siren Trap</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6626.128" Y="880.1525" Z="6251.582" />
+				<Hotspot X="6578.151" Y="880.9352" Z="6264.101" />
+				<Hotspot X="6528.328" Y="880.4085" Z="6355.509" />
+				<Hotspot X="6484.566" Y="881.439" Z="6311.282" />
+				<Hotspot X="6626.136" Y="880.7296" Z="6253.46" />
+				<Hotspot X="6705.478" Y="880.5265" Z="6249.168" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Making a Deal" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Sunscale Gator</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6645.55" Y="879.5666" Z="6242.594" />
+				<Hotspot X="6578.151" Y="880.9352" Z="6264.101" />
+				<Hotspot X="6542.529" Y="886.7165" Z="6263.277" />
+				<Hotspot X="6528.328" Y="880.4085" Z="6355.509" />
+				<Hotspot X="6484.566" Y="881.439" Z="6311.282" />
+				<Hotspot X="6466.582" Y="883.1399" Z="6315.435" />
+				<Hotspot X="6626.136" Y="880.7296" Z="6253.46" />
+				<Hotspot X="6705.478" Y="880.5265" Z="6249.168" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+	
+		<KillMobsObjective Quest="Trouble at The Flatyard" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Escaped Inmate</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6520.996" Y="880.5842" Z="6431.956" />
+				<Hotspot X="6551.88" Y="881.0712" Z="6343.61" />
+				<Hotspot X="6551.88" Y="881.0712" Z="6343.61" />
+				<Hotspot X="6654.819" Y="879.5618" Z="6258.423" />
+				<Hotspot X="6763" Y="880.3958" Z="6256.929" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="((HasQuest(&quot;Trouble at The Flatyard&quot;)) and (not IsQuestObjectiveCompleted(&quot;Trouble at The Flatyard&quot;, 1)))">
+			<MoveTo X="6757.335" Y="882.0296" Z="6275.933" /> <!-- Is this correct? -->
+			<!-- maybe this one is better? <Hotspot X="6684.577" Y="879.7534" Z="6264.035" /> -->
+		</If>
+
+	<TurnInQuest Name="Making a Deal" Npc="Su'kia" X="6674.179" Y="880.9581" Z="6206.724" /> <!-- N -->
+		<If Condition="(HasQuest(&quot;Oh No They Don't&quot;))"> <!-- Defiant -->
+	<TurnInQuest Name="Oh No They Don't" Npc="Sayid Ahzab" X="6767.502" Y="882.6771" Z="6586.242" />
+		</If>
+		<If Condition="(HasQuest(&quot;Trouble at The Flatyard&quot;))"> <!-- Defiant -->
+	<TurnInQuest Name="Trouble at The Flatyard" Npc="Sylver Valis" X="6768.821" Y="882.6616" Z="6584.642" />
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Sylver Valis&quot;)"> <!-- Defiant -->
+	<PickUpQuest Name="Undying Loyalty" Npc="Sylver Valis" X="6768.821" Y="882.6616" Z="6584.642" />
+		</If>
+		<If Condition="(HasQuest(&quot;Undying Loyalty&quot;))"> <!-- Defiant -->
+	<TurnInQuest Name="Undying Loyalty" Npc="Kasia Phelorn" X="6643.589" Y="953.3357" Z="6458.17" />
+		</If>
+		<!-- I hope it's N after this, skip passed Guardian set -->
+		<!-- End of Defiant Only -->
+	
+	
+		<If Condition="HasQuest(&quot;Unnatural Means&quot;)"> <!-- Guardian -->
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Unnatural Means" Reward="" Npc="Fayne Doran" X="6565.907" Y="897.6365" Z="7064.838" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Cutthroat Leg Guards&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Unnatural Means" Reward="" Npc="Fayne Doran" X="6565.907" Y="897.6365" Z="7064.838" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Fayne's Meditation Legwraps&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Unnatural Means" Reward="" Npc="Fayne Doran" X="6565.907" Y="897.6365" Z="7064.838" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Leggings of the Cove&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Unnatural Means" Reward="" Npc="Fayne Doran" X="6565.907" Y="897.6365" Z="7064.838" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Repossession Legplates&quot;)" />
+			</If>
+			
+			<Python Statement="Logging.Write(&quot;What quest is offered for guardians?&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		<!-- script the guardian one
+	<PickUpQuest Name="" Npc="Fayne Doran" X="6565.907" Y="897.6365" Z="7064.838" />
+	turnin
+	Npc="Brother Jebiah" X="6636.803" Y="881.5804" Z="6611.063" 
+	somewhere in there
+		-->
+		<!-- End of Guardian Only -->
+		
+		<!-- The Flatyard Quests -->
+	<PickUpQuest Name="Unknown Interference" Npc="Kasia Phelorn" X="6643.589" Y="953.3357" Z="6458.17" />
+	<PickUpQuest Name="Inmates on the Walls" Npc="Kasia Phelorn" X="6643.589" Y="953.3357" Z="6458.17" />
+	
+		<UseObjectsObjective Quest="Unknown Interference" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Eth Security Generator</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6588.717" Y="953.4069" Z="6486.362" />
+				<Hotspot X="6564.541" Y="953.3999" Z="6431.51" />
+				<Hotspot X="6640.117" Y="953.3984" Z="6350.25" />
+				<Hotspot X="6694.86" Y="953.4035" Z="6324.293" />
+				<Hotspot X="6807.866" Y="953.3944" Z="6319.413" />
+				<Hotspot X="6832.369" Y="953.4061" Z="6375.028" />
+				<Hotspot X="6778.709" Y="953.3948" Z="6400.433" />
+				<Hotspot X="6757.545" Y="953.4024" Z="6457.313" />
+				<Hotspot X="6782.226" Y="964.5269" Z="6511.542" />
+				<Hotspot X="6727.764" Y="964.5177" Z="6536.165" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Inmates on the Walls" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Rioting Thug</Mob>
+			  <Mob>Rioting Ruffian</Mob>
+			  <Mob>Rioting Hooligan</Mob>
+			  <Mob>Rioting </Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6588.717" Y="953.4069" Z="6486.362" />
+				<Hotspot X="6564.541" Y="953.3999" Z="6431.51" />
+				<Hotspot X="6640.117" Y="953.3984" Z="6350.25" />
+				<Hotspot X="6694.86" Y="953.4035" Z="6324.293" />
+				<Hotspot X="6807.866" Y="953.3944" Z="6319.413" />
+				<Hotspot X="6832.369" Y="953.4061" Z="6375.028" />
+				<Hotspot X="6778.709" Y="953.3948" Z="6400.433" />
+				<Hotspot X="6757.545" Y="953.4024" Z="6457.313" />
+				<Hotspot X="6782.226" Y="964.5269" Z="6511.542" />
+				<Hotspot X="6727.764" Y="964.5177" Z="6536.165" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Unknown Interference" Npc="Kasia Phelorn" X="6643.589" Y="953.3357" Z="6458.17" />
+		<If Condition="HasQuest(&quot;Inmates on the Walls&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Inmates on the Walls" Reward="1" Npc="Kasia Phelorn" X="6643.589" Y="953.3357" Z="6458.17" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Handguards of Restored Order&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Inmates on the Walls" Reward="2" Npc="Kasia Phelorn" X="6643.589" Y="953.3357" Z="6458.17" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Knitted Inmate Gloves&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Inmates on the Walls" Reward="3" Npc="Kasia Phelorn" X="6643.589" Y="953.3357" Z="6458.17" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Rioting Inmate Gloves&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Inmates on the Walls" Reward="4" Npc="Kasia Phelorn" X="6643.589" Y="953.3357" Z="6458.17" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Barricade Gauntlets&quot;)" />
+			</If>
+		</If>
+	<PickUpQuest Name="Inside Job" Npc="Kasia Phelorn" X="6643.589" Y="953.3357" Z="6458.17" />
+	<TurnInQuest Name="Inside Job" Npc="Anthon Eskar" X="6760.002" Y="929.8672" Z="6526.665" />
+	<PickUpQuest Name="Slither the Voice" Npc="Anthon Eskar" X="6760.002" Y="929.8672" Z="6526.665" />
+
+		<If Condition="((HasQuest(&quot;Slither the Voice&quot;)) and (not IsQuestObjectiveCompleted(&quot;Slither the Voice&quot;, 1)))">
+			<TalkToNpcObjective Quest="Slither the Voice" Npc="Anthon Eskar" X="6760.002" Y="929.8672" Z="6526.665" Options="1, 2" Tracking="1" />
+			<!-- Loot -->
+			<Python Statement="Logging.Write(&quot;Loot the window&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		<If Condition="HasQuest(&quot;Slither the Voice&quot;)">
+			<Python Statement = "SpellManager.UseItem(&quot;Inmate's Guise&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+		<If Condition="((HasQuest(&quot;Slither the Voice&quot;)) and (not IsQuestObjectiveCompleted(&quot;Slither the Voice&quot;, 2)))">
+			<TalkToNpcObjective Quest="Slither the Voice" Npc="Slither" X="6696.257" Y="920.913" Z="6409.205" Options="1" Tracking="2" />
+		</If>
+
+	<TurnInQuest Name="Slither the Voice" Npc="Slither" X="6696.257" Y="920.913" Z="6409.205" />
+	<PickUpQuest Name="Welcome to the Yard" Npc="Slither" X="6696.257" Y="920.913" Z="6409.205" />
+	
+		<If Condition="HasQuest(&quot;Welcome to the Yard&quot;)">
+			<Python Statement = "SpellManager.UseItem(&quot;Inmate's Guise&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+		
+		<KillMobsObjective Quest="Welcome to the Yard" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Flatyard New Blood</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6627.203" Y="917.1838" Z="6438.356" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Welcome to the Yard" Npc="Slither" X="6696.257" Y="920.913" Z="6409.205" />
+	<PickUpQuest Name="A Man Who Can Get Things" Npc="Slither" X="6696.257" Y="920.913" Z="6409.205" />
+	<PickUpQuest Name="Balance of Power" Npc="Slither" X="6696.257" Y="920.913" Z="6409.205" />
+	
+		<If Condition="HasQuest(&quot;A Man Who Can Get Things&quot;)">
+			<Python Statement = "SpellManager.UseItem(&quot;Inmate's Guise&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+		
+		<UseObjectsObjective Quest="A Man Who Can Get Things" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Boyd's Stash</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6730.062" Y="921.022" Z="6398.503" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Balance of Power" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Bargaining Table</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6797.164" Y="925.1234" Z="6361.948" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<!-- Must be behind target -->
+		<UseItemOnMobsObjective Quest="Balance of Power" Item="Slither's Shiv" UseRange="5" CastTime="3" Cooldown="1" WhenDead="False" TargetMobs="True" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Cyann Kilkenny</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6797.164" Y="925.1234" Z="6361.948" />
+				<Hotspot X="6769.998" Y="925.1647" Z="6375.271" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<If Condition="HasQuest(&quot;A Man Who Can Get Things&quot;)">
+			<TalkToNpcObjective Quest="A Man Who Can Get Things" Npc="Torga" X="6748.369" Y="925.9549" Z="6427.365" Options="1" Tracking="2" />
+			<TalkToNpcObjective Quest="A Man Who Can Get Things" Npc="Yelinda" X="6735.266" Y="926.4669" Z="6366.714" Options="1" Tracking="4" />
+			<TalkToNpcObjective Quest="A Man Who Can Get Things" Npc="Ailish Vineslicer" X="6650.311" Y="926.7225" Z="6395.915" Options="1" Tracking="3" />
+		</If>
+		
+	<TurnInQuest Name="A Man Who Can Get Things" Npc="Slither" X="6696.257" Y="920.913" Z="6409.205" />
+	<TurnInQuest Name="Balance of Power" Npc="Slither" X="6696.257" Y="920.913" Z="6409.205" />
+	<PickUpQuest Name="The Mastermind" Npc="Slither" X="6696.257" Y="920.913" Z="6409.205" />
+	
+		<If Condition="HasQuest(&quot;The Mastermind&quot;)">
+			<Python Statement = "SpellManager.UseItem(&quot;Inmate's Guise&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+		<If Condition="HasQuest(&quot;The Mastermind&quot;)">
+			<TalkToNpcObjective Quest="The Mastermind" Npc="Hazeed's Enforcer" X="6691.259" Y="928.9644" Z="6362.036" Options="1, 1" Tracking="1" />
+		</If>
+		
+	<TurnInQuest Name="The Mastermind" Npc="Hazeed" X="6670.551" Y="904.3486" Z="6386.753" />
+	<PickUpQuest Name="Loose Ends" Npc="Hazeed" X="6670.551" Y="904.3486" Z="6386.753" />
+	
+		<!-- This quest may have issues talking to the enforcer; it's not going to closest guy, it's going to farthest npc to interact with -->
+		<If Condition="((HasQuest(&quot;Loose Ends&quot;)) and (not IsQuestObjectiveCompleted(&quot;Loose Ends&quot;, 1)))"> <!-- add x y and / or z to this condition -->
+			<TalkToNpcObjective Quest="Loose Ends" Npc="Hazeed's Enforcer" X="6668.656" Y="904.5158" Z="6401.59" Options="1, 1" />
+		</If>
+		
+		<If Condition="HasQuest(&quot;Loose Ends&quot;)">
+			<Python Statement = "SpellManager.UseItem(&quot;Inmate's Guise&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+
+		<KillMobsObjective Quest="Loose Ends" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfwar Inmate</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6659.676" Y="926.5159" Z="6393.902" />
+				<Hotspot X="6681.497" Y="926.5252" Z="6391.519" />
+				<Hotspot X="6664.545" Y="921.0131" Z="6424.708" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Loose Ends" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Court Inmate</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6708.272" Y="926.5158" Z="6386.113" />
+				<Hotspot X="6733.887" Y="926.553" Z="6364.007" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Loose Ends" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Wanton Inmate</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6593.708" Y="923.4821" Z="6438.247" />
+				<Hotspot X="6638.685" Y="921.2871" Z="6431.54" />
+				<Hotspot X="6692.168" Y="926.3994" Z="6448.034" />
+				<Hotspot X="6751.711" Y="926.277" Z="6418.405" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Loose Ends" Tracking="4">
+		  <Area>
+			<Mobs>
+			  <Mob>Storm Legion Inmate</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6623.095" Y="922.5022" Z="6458.168" />
+				<Hotspot X="6742.158" Y="921.0061" Z="6392.64" />
+				<Hotspot X="6785.55" Y="925.1185" Z="6367.679" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="HasQuest(&quot;Loose Ends&quot;)">
+			<TalkToNpcObjective Quest="Loose Ends" Npc="Hazeed's Enforcer" X="6691.259" Y="928.9644" Z="6362.036" Options="1, 1" />
+		</If>
+	
+	<TurnInQuest Name="Loose Ends" Npc="Hazeed" X="6670.551" Y="904.3486" Z="6386.753" />
+	<PickUpQuest Name="Final Preparations" Npc="Hazeed" X="6670.551" Y="904.3486" Z="6386.753" />
+	
+		<If Condition="((HasQuest(&quot;Final Preparations&quot;)) and (not IsQuestObjectiveCompleted(&quot;Final Preparations&quot;, 1)))"> <!-- add x y and / or z to this condition -->
+			<TalkToNpcObjective Quest="Final Preparations" Npc="Hazeed's Enforcer" X="6668.656" Y="904.5158" Z="6401.59" Options="1, 1" />
+		</If>
+		
+		<If Condition="HasQuest(&quot;Final Preparations&quot;)">
+			<Python Statement = "SpellManager.UseItem(&quot;Inmate's Guise&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+
+		<UseObjectsObjective Quest="Final Preparations" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Unmarked Crate</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6694.979" Y="905.6289" Z="6364.613" />
+				<Hotspot X="6713.938" Y="894.8912" Z="6346.138" />
+				<Hotspot X="6698.054" Y="894.1646" Z="6347.865" />
+				<Hotspot X="6666.069" Y="886.5455" Z="6346.96" />
+				<Hotspot X="6667.839" Y="886.5594" Z="6361.802" />
+				<Hotspot X="6665.865" Y="886.8522" Z="6333.317" />
+				<Hotspot X="6682.437" Y="886.5972" Z="6323.3" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<While Condition="( (HasQuest(&quot;Final Preparations&quot;)) and (not IsQuestObjectiveCompleted(&quot;Final Preparations&quot;, 1)) and (not HasItem(&quot;Captain's Key&quot;)) )">
+			<MoveTo X="6621.568" Y="882.3846" Z="6181.035" />
+		</While>
+		
+		<UseObjectsObjective Quest="Final Preparations" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Focuser Chest</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6637.462" Y="882.7281" Z="6199.102" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuest(&quot;Final Preparations&quot;)">
+			<TalkToNpcObjective Quest="Final Preparations" Npc="Hazeed's Enforcer" X="6691.259" Y="928.9644" Z="6362.036" Options="1, 1" />
+		</If>
+	
+		<If Condition="HasQuest(&quot;Final Preparations&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Final Preparations" Reward="2" Npc="Hazeed" X="6670.551" Y="904.3486" Z="6386.753" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Earthforce Ring&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Final Preparations" Reward="2" Npc="Hazeed" X="6670.551" Y="904.3486" Z="6386.753" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Earthforce Ring&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Final Preparations" Reward="3" Npc="Hazeed" X="6670.551" Y="904.3486" Z="6386.753" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Hazeed's Bloody Ring&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Final Preparations" Reward="3" Npc="Hazeed" X="6670.551" Y="904.3486" Z="6386.753" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Hazeed's Bloody Ring&quot;)" />
+			</If>
+		</If>
+	<PickUpQuest Name="The Hour is at Hand" Npc="Hazeed" X="6670.551" Y="904.3486" Z="6386.753" />
+		<If Condition="HasQuest(&quot;The Hour is at Hand&quot;)"> <!-- add x y and / or z to this condition -->
+			<Python Statement = "SpellManager.UseItem(&quot;Inmate's Guise&quot;)" />
+			<Wait Seconds="5" />
+			
+			<TalkToNpcObjective Quest="Final Preparations" Npc="Hazeed's Enforcer" X="6668.656" Y="904.5158" Z="6401.59" Options="1, 1" />
+		</If>
+	<TurnInQuest Name="The Hour is at Hand" Npc="Kasia Phelorn" X="6643.589" Y="953.3357" Z="6458.17" />
+	<PickUpQuest Name="Foiled Plans" Npc="Kasia Phelorn" X="6643.589" Y="953.3357" Z="6458.17" />
+
+		<If Condition="HasQuest(&quot;Foiled Plans&quot;)">
+			<Python Statement = "SpellManager.UseItem(&quot;Inmate's Guise&quot;)" />
+			<Wait Seconds="5" />
+			
+			<TalkToNpcObjective Quest="Foiled Plans" Npc="Hazeed's Enforcer" X="6691.259" Y="928.9644" Z="6362.036" Options="1, 1" />
+		</If>
+		
+		<UseObjectsObjective Quest="Foiled Plans" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Hazeed's Rift Machine</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6666.7" Y="888.485" Z="6388.709" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Foiled Plans" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Hazeed</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6666.7" Y="888.485" Z="6388.709" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="HasQuest(&quot;Foiled Plans&quot;)">
+			<Wait Seconds="10" />
+		</If>
+
+		<If Condition="HasQuest(&quot;Foiled Plans&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Foiled Plans" Reward="1" Npc="Jabarik" X="6602.932" Y="881.8691" Z="7018.317" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Linked Informer's Spaulders&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Foiled Plans" Reward="2" Npc="Jabarik" X="6602.932" Y="881.8691" Z="7018.317" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Emissary's Shoulderpads&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Foiled Plans" Reward="3" Npc="Jabarik" X="6602.932" Y="881.8691" Z="7018.317" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Blackened Shoulderguards&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Foiled Plans" Reward="4" Npc="Jabarik" X="6602.932" Y="881.8691" Z="7018.317" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Prison Guard's Pauldrons&quot;)" />
+			</If>
+		</If>
+
+		<!-- Defiant Only -->
+		<If Condition="HasQuestAvailable(&quot;Jabarik&quot;)"> <!-- Defiant -->
+	<PickUpQuest Name="A Curious Dagger" Npc="Jabarik" X="6602.932" Y="881.8691" Z="7018.317" />
+		</If>
+		<!-- Ignoring Dungeon quest on 1st floor -->
+		<If Condition="(HasQuest(&quot;A Curious Dagger&quot;))"> <!-- Defiant -->
+			<MoveTo X="6652.485" Y="893.5625" Z="7050.882" />
+	<TurnInQuest Name="A Curious Dagger" Npc="Asha Catari" X="6652.485" Y="893.5625" Z="7050.882" />
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Asha Catari&quot;)"> <!-- Defiant -->
+	<PickUpQuest Name="Traitors Among Us" Npc="Asha Catari" X="6652.485" Y="893.5625" Z="7050.882" />
+		</If>
+		
+		<If Condition="((HasQuest(&quot;Traitors Among Us&quot;)) and (not IsQuestObjectiveCompleted(&quot;Traitors Among Us&quot;, 1)))">
+			<TalkToNpcObjective Quest="Traitors Among Us" Npc="Noah Andern" X="6699.831" Y="884.498" Z="7036.689" Options="1, 1, 2, 1" Tracking="1" />
+		</If>
+		<If Condition="((HasQuest(&quot;Traitors Among Us&quot;)) and (not IsQuestObjectiveCompleted(&quot;Traitors Among Us&quot;, 2)))">
+			<TalkToNpcObjective Quest="Traitors Among Us" Npc="Companion" X="6565.068" Y="891.2401" Z="7153.482" Options="1, 2, 1, 1" Tracking="2" />
+		</If>
+		<UseObjectsObjective Quest="Traitors Among Us" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Suspicious Garbage</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6576.162" Y="890.3702" Z="7162.927" />
+				<Hotspot X="6558.741" Y="899.096" Z="7134.021" />
+				<Hotspot X="6598.399" Y="888.3094" Z="7211.546" />
+				<Hotspot X="6625.927" Y="886.7828" Z="7191.391" />
+				<Hotspot X="6649.656" Y="883.8361" Z="7155.123" />
+				<Hotspot X="6677.44" Y="884.4012" Z="7137.945" />
+				<Hotspot X="6643.424" Y="884.2064" Z="7148.49" />
+				<Hotspot X="6624.95" Y="883.5818" Z="7145.995" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		<If Condition="((HasQuest(&quot;Traitors Among Us&quot;)) and (not IsQuestObjectiveCompleted(&quot;Traitors Among Us&quot;, 4)))">
+			<TalkToNpcObjective Quest="Traitors Among Us" Npc="Edward Macklen" X="6626.886" Y="885.2797" Z="7166.125" Options="1, 1, 1" Tracking="4" />
+			<Wait Seconds="3" />
+		</If>
+		<If Condition="((HasQuest(&quot;Traitors Among Us&quot;)) and (not IsQuestObjectiveCompleted(&quot;Traitors Among Us&quot;, 5)))">
+			<TalkToNpcObjective Quest="Traitors Among Us" Npc="Edward Macklen" X="6626.886" Y="885.2797" Z="7166.125" Options="1" Tracking="5" />
+		</If>
+		<If Condition="((HasQuest(&quot;Traitors Among Us&quot;)) and (not IsQuestObjectiveCompleted(&quot;Traitors Among Us&quot;, 6)))">
+			<TalkToNpcObjective Quest="Traitors Among Us" Npc="Ellera Marin" X="6662.575" Y="884.8287" Z="7154.546" Options="1, 1" />
+			
+			<KillMobsObjective Quest="Traitors Among Us" Tracking="6">
+			  <Area>
+				<Mobs>
+				  <Mob>Ellera Marin</Mob>
+				</Mobs>
+				<Hotspots>
+					<Hotspot X="6662.575" Y="884.8287" Z="7154.546" />
+				</Hotspots>
+			  </Area>
+			</KillMobsObjective>
+		
+		</If>
+
+		<If Condition="(HasQuest(&quot;Traitors Among Us&quot;))"> <!-- Defiant -->
+			<MoveTo X="6652.485" Y="893.5625" Z="7050.882" />
+	<TurnInQuest Name="Traitors Among Us" Npc="Asha Catari" X="6652.485" Y="893.5625" Z="7050.882" />
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Asha Catari&quot;)"> <!-- Defiant -->
+	<PickUpQuest Name="Street Cleaning" Npc="Asha Catari" X="6652.485" Y="893.5625" Z="7050.882" />
+		</If>
+
+		<UseObjectsObjective Quest="Street Cleaning" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Gunpowder Barrel</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6622.446" Y="883.4315" Z="7132.401" />
+				<Hotspot X="6644.472" Y="884.1506" Z="7150.423" />
+				<Hotspot X="6697.044" Y="892.8952" Z="7132.897" />
+				<Hotspot X="6697.044" Y="862.3234" Z="7192.858" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Street Cleaning" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Gutterborn Streetrat</Mob>
+			  <Mob>Gutterborn Operator</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6614.867" Y="883.5079" Z="7135.194" />
+				<Hotspot X="6644.472" Y="884.1506" Z="7150.423" />
+				<Hotspot X="6666.403" Y="884.5004" Z="7122.741" />
+				<Hotspot X="6702.496" Y="893.7103" Z="7148.53" />
+				<Hotspot X="6697.044" Y="892.8952" Z="7132.897" />
+				<Hotspot X="6697.044" Y="862.3234" Z="7192.858" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Street Cleaning" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Steeljaw Chaser</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6614.867" Y="883.5079" Z="7135.194" />
+				<Hotspot X="6644.472" Y="884.1506" Z="7150.423" />
+				<Hotspot X="6666.403" Y="884.5004" Z="7122.741" />
+				<Hotspot X="6702.496" Y="893.7103" Z="7148.53" />
+				<Hotspot X="6697.044" Y="892.8952" Z="7132.897" />
+				<Hotspot X="6697.044" Y="862.3234" Z="7192.858" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="(HasQuest(&quot;Street Cleaning&quot;))"> <!-- Defiant -->
+			<MoveTo X="6652.485" Y="893.5625" Z="7050.882" />
+	<TurnInQuest Name="Street Cleaning" Npc="Asha Catari" X="6652.485" Y="893.5625" Z="7050.882" />
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Asha Catari&quot;)"> <!-- Defiant -->
+	<PickUpQuest Name="Explosive Awakening" Npc="Asha Catari" X="6652.485" Y="893.5625" Z="7050.882" />
+		</If>
+		
+		<UseObjectsObjective Quest="Explosive Awakening" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Fireplace</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6546.325" Y="896.3353" Z="7254.323" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuest(&quot;Explosive Awakening&quot;)"> <!-- Defiant -->
+			<MoveTo X="6652.485" Y="893.5625" Z="7050.882" />
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Explosive Awakening" Reward="3" Npc="Asha Catari" X="6652.485" Y="893.5625" Z="7050.882" />
+				<Wait Seconds="2" />
+				<!--
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Hooligan's Cudgel&quot;)" />
+				-->
+			</If>
+			<If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Explosive Awakening" Reward="2" Npc="Asha Catari" X="6652.485" Y="893.5625" Z="7050.882" />
+				<Wait Seconds="2" />
+				<!--
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Blade of the Plotter&quot;)" />
+				-->
+			</If>
+			<If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Explosive Awakening" Reward="1" Npc="Asha Catari" X="6652.485" Y="893.5625" Z="7050.882" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Axe of Bitter Endings&quot;)" />
+			</If>
+			<If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Explosive Awakening" Reward="4" Npc="Asha Catari" X="6652.485" Y="893.5625" Z="7050.882" />
+				<Wait Seconds="2" />
+				<!--
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Assassin's Steel Cutlass&quot;)" />
+				-->
+			</If>
+		</If>
+		<If Condition="HasQuestAvailable(&quot;Asha Catari&quot;)"> <!-- Defiant -->
+	<PickUpQuest Name="Grains of Sand" Npc="Asha Catari" X="6652.485" Y="893.5625" Z="7050.882" />
+		</If>
+		<If Condition="(HasQuest(&quot;Grains of Sand&quot;))"> <!-- Defiant -->
+	<TurnInQuest Name="Grains of Sand" Npc="Essam Fudail" X="6527.116" Y="951.1266" Z="7427.408" />
+		</If>
+		<!-- End of Defiant only -->
+		
+		<!-- Windfury Post Quests -->
+	<PickUpQuest Name="Bait and Smash" Npc="Essam Fudail" X="6527.116" Y="951.1266" Z="7427.408" />
+	<PickUpQuest Name="I Saw Them First" Npc="Cantara Ayah" X="6528.059" Y="951.2336" Z="7433.269" />
+	<PickUpQuest Name="Stolen Heritage" Npc="Cantara Ayah" X="6528.059" Y="951.2336" Z="7433.269" />
+	<PickUpQuest Name="Engineering Disaster" Npc="Zahrah Nasira" X="6522.966" Y="951.2242" Z="7433.72" />
+	<PickUpQuest Name="The Harder They Fall" Npc="Anwar Ghalib" X="6516.498" Y="950.7845" Z="7418.218" />
+	<PickUpQuest Name="Not Right in the Head" Npc="Anwar Ghalib" X="6516.498" Y="950.7845" Z="7418.218" />
+		
+		
+		
+		
+		
+	
 	
 	
 		<!-- 
