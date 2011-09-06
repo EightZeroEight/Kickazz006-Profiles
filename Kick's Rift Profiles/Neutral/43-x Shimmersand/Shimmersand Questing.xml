@@ -2085,6 +2085,8 @@
 		</If>
 		<!-- End of Defiant only -->
 		
+		<!-- we need to script the guardian quests here -->
+		
 		<!-- Windfury Post Quests -->
 	<PickUpQuest Name="Bait and Smash" Npc="Essam Fudail" X="6527.116" Y="951.1266" Z="7427.408" />
 	<PickUpQuest Name="I Saw Them First" Npc="Cantara Ayah" X="6528.059" Y="951.2336" Z="7433.269" />
@@ -2093,10 +2095,138 @@
 	<PickUpQuest Name="The Harder They Fall" Npc="Anwar Ghalib" X="6516.498" Y="950.7845" Z="7418.218" />
 	<PickUpQuest Name="Not Right in the Head" Npc="Anwar Ghalib" X="6516.498" Y="950.7845" Z="7418.218" />
 		
+		<UseObjectsObjective Quest="Stolen Heritage" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Gust Spun Drill</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6435.261" Y="942.3941" Z="7547.622" />
+				<Hotspot X="6517.055" Y="957.9526" Z="7608.798" />
+				<Hotspot X="6299.28" Y="987.925" Z="7647.571" />
+				<Hotspot X="6332.315" Y="1020.122" Z="7739.743" />
+				<Hotspot X="6389.886" Y="1018.811" Z="7657.253" />
+				<Hotspot X="6476.253" Y="1035.692" Z="7681.438" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="I Saw Them First" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Raw Sourcestone</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6536.106" Y="962.2064" Z="7602.477" />
+				<Hotspot X="6530.166" Y="961.6544" Z="7584.066" />
+				<Hotspot X="6402.476" Y="948.9233" Z="7534.409" />
+				<Hotspot X="6479.345" Y="946.6867" Z="7536.975" />
+				<Hotspot X="6500.852" Y="963.5307" Z="7616.981" />
+				<Hotspot X="6323.955" Y="982.2584" Z="7588.729" />
+				<Hotspot X="6276.123" Y="993.2045" Z="7665.261" />
+				<Hotspot X="6351.697" Y="1025.903" Z="7738.597" />
+				<Hotspot X="6355.684" Y="1026.191" Z="7730.872" />
+				<Hotspot X="6360.556" Y="1023.701" Z="7655.897" />
+				<Hotspot X="6389.886" Y="1018.811" Z="7657.253" />
+				<Hotspot X="6547.154" Y="1046.394" Z="7665.602" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="I Saw Them First" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Storm Legion Overseer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6351.697" Y="1025.903" Z="7738.597" />
+				<Hotspot X="6355.684" Y="1026.191" Z="7730.872" />
+				<Hotspot X="6360.556" Y="1023.701" Z="7655.897" />
+				<Hotspot X="6547.154" Y="1046.394" Z="7665.602" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Not Right in the Head" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Enthralled Howler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6424.745" Y="938.6297" Z="7493.844" />
+				<Hotspot X="6435.261" Y="942.3941" Z="7547.622" />
+				<Hotspot X="6517.055" Y="957.9526" Z="7608.798" />
+				<Hotspot X="6299.28" Y="987.925" Z="7647.571" />
+				<Hotspot X="6332.315" Y="1020.122" Z="7739.743" />
+				<Hotspot X="6536.106" Y="962.2064" Z="7602.477" />
+				<Hotspot X="6530.166" Y="961.6544" Z="7584.066" />
+				<Hotspot X="6402.476" Y="948.9233" Z="7534.409" />
+				<Hotspot X="6479.345" Y="946.6867" Z="7536.975" />
+				<Hotspot X="6500.852" Y="963.5307" Z="7616.981" />
+				<Hotspot X="6323.955" Y="982.2584" Z="7588.729" />
+				<Hotspot X="6276.123" Y="993.2045" Z="7665.261" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="I Saw Them First" Npc="Cantara Ayah" X="6528.059" Y="951.2336" Z="7433.269" />
+	<TurnInQuest Name="Stolen Heritage" Npc="Cantara Ayah" X="6528.059" Y="951.2336" Z="7433.269" />
+	<TurnInQuest Name="Not Right in the Head" Npc="Anwar Ghalib" X="6516.498" Y="950.7845" Z="7418.218" />
 		
+		<UseObjectsObjective Quest="Bait and Smash" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Hypnotic Repeater</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6454.399" Y="975.3447" Z="7102.546" />
+				<Hotspot X="6418.416" Y="988.8536" Z="7057.729" />
+				<Hotspot X="6400.618" Y="972.4103" Z="7136.617" />
+				<Hotspot X="6346.951" Y="973.2314" Z="7111.193" />
+				<Hotspot X="6344.173" Y="973.7139" Z="7064.991" />
+				<Hotspot X="6303.027" Y="972.3711" Z="7065.326" />
+				<Hotspot X="6306.689" Y="969.5318" Z="7106.3" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Engineering Disaster" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Storm Legion Diviner</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6456.535" Y="970.6507" Z="7122.71" />
+				<Hotspot X="6454.399" Y="975.3447" Z="7102.546" />
+				<Hotspot X="6400.618" Y="972.4103" Z="7136.617" />
+				<Hotspot X="6346.951" Y="973.2314" Z="7111.193" />
+				<Hotspot X="6306.689" Y="969.5318" Z="7106.3" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
 		
-		
-		
+		<KillMobsObjective Quest="The Harder They Fall" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Ridgeline Stoneface</Mob>
+			  <Mob>Ridgeline Thunderer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6272.404" Y="963.478" Z="6946.355" />
+				<Hotspot X="6236.616" Y="969.8663" Z="6970.44" />
+				<Hotspot X="6211.875" Y="966.7889" Z="6946.507" />
+				<Hotspot X="6069.865" Y="977.8193" Z="6968.36" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Bait and Smash" Npc="Essam Fudail" X="6527.116" Y="951.1266" Z="7427.408" />
+	<TurnInQuest Name="Engineering Disaster" Npc="Zahrah Nasira" X="6522.966" Y="951.2242" Z="7433.72" />
+	<TurnInQuest Name="The Harder They Fall" Npc="Anwar Ghalib" X="6516.498" Y="950.7845" Z="7418.218" />
+	<PickUpQuest Name="A Chilling Conclusion" Npc="Zahrah Nasira" X="6522.966" Y="951.2242" Z="7433.72" />
+	<PickUpQuest Name="Under Pressure" Npc="Zahrah Nasira" X="6522.966" Y="951.2242" Z="7433.72" />
+	<PickUpQuest Name="Servants of Air" Npc="Essam Fudail" X="6527.116" Y="951.1266" Z="7427.408" />
+	
 	
 	
 	
@@ -2106,7 +2236,9 @@
 		-->
 
 		
-		
+		<!-- Reilly Torrence - elite asshole lvl 48
+		<Hotspot X="6576.993" Y="931.1804" Z="7608.841" />
+		-->
 		
 		
 		
