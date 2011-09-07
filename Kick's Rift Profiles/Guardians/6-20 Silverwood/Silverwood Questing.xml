@@ -272,7 +272,7 @@
 		  </Area>
 		</KillMobsObjective>
 
-	  <UseItemOnGroundObjective Quest="Wantom Flame" Item="Spear of Light" Tracking="1" UseRange="10" CastTime="4" >
+	  <UseItemOnGroundObjective Quest="Wanton Flame" Item="Spear of Light" Tracking="1" UseRange="10" CastTime="4" >
         <Area>
           <Hotspots>
             <Hotspot X="6341.639" Y="821.0468" Z="3797.765" />

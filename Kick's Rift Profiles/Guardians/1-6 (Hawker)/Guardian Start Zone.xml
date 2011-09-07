@@ -559,6 +559,7 @@
 		</If>
     <TurnInQuest Name="Rightful Owners" Npc="Marshal Kain" X="1030.569" Y="838.2336" Z="1044.145" />
     <PickUpQuest Name="Shot in the Back" Npc="Marshal Kain" X="1030.569" Y="838.2336" Z="1044.145" />
+    <PickUpQuest Name="Gathering Strength" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
 
 		<UseObjectsObjective Quest="Shot in the Back" Tracking="2">
 		  <Area>
@@ -575,29 +576,6 @@
 			</Hotspots>
 		  </Area>
 		</UseObjectsObjective>
-
-		 <If Condition="HasQuest(&quot;Shot in the Back&quot;)">
-   <TurnInQuest Name="Shot in the Back" Npc="Marshal Kain" X="1030.569" Y="838.2336" Z="1044.145" />
-		   <Wait Seconds="5" />
-	   </If>
-    <PickUpQuest Name="Gathering Strength" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
-
-		<If Condition="((HasQuest(&quot;Gathering Strength&quot;)) and (not IsQuestObjectiveCompleted(&quot;Gathering Strength&quot;, 1)))">
-		  <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Relentless Leg Guards&quot;)" />
-		  </If>
-		  <If Condition="GigaRift.Me.Class == UnitClass.Mage">
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Relentless Leggings&quot;)" />
-		  </If>
-		  <If Condition="GigaRift.Me.Class == UnitClass.Rogue">
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Relentless Trousers&quot;)" />
-		  </If>
-		  <If Condition="GigaRift.Me.Class == UnitClass.Warrior">
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Relentless Greaves&quot;)" />
-		  </If>
-
-		  <MoveTo X="933.2256" Y="825.3702" Z="971.3724" />
-		</If>
 
 		  <UseItemOnMobsObjective Quest="Gathering Strength" Item="Cyril's Bridle" CastTime="3" Cooldown="4" WhenDead="False" Tracking="1">
 			<Area>
@@ -623,6 +601,25 @@
 			</AddJob>
 		</If>
 
+		 <If Condition="HasQuest(&quot;Shot in the Back&quot;)">
+   <TurnInQuest Name="Shot in the Back" Npc="Marshal Kain" X="1030.569" Y="838.2336" Z="1044.145" />
+		  <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Relentless Leg Guards&quot;)" />
+		  </If>
+		  <If Condition="GigaRift.Me.Class == UnitClass.Mage">
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Relentless Leggings&quot;)" />
+		  </If>
+		  <If Condition="GigaRift.Me.Class == UnitClass.Rogue">
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Relentless Trousers&quot;)" />
+		  </If>
+		  <If Condition="GigaRift.Me.Class == UnitClass.Warrior">
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Relentless Greaves&quot;)" />
+		  </If>
+	   </If>
     <TurnInQuest Name="Gathering Strength" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" Reward="1"/>
     <PickUpQuest Name="A Dim, Dark Eye" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
 
@@ -646,9 +643,9 @@
 		</UseObjectsObjective>
 	
 		<If Condition="((HasQuest(&quot;A Dim, Dark Eye&quot;)) and (not IsQuestObjectiveCompleted(&quot;A Dim, Dark Eye&quot;, 2)))">
-		  <Wait Seconds="15" />
+			<Wait Seconds="15" />
+			<Escort Npc="Borrin Gammult" Quest="A Dim, Dark Eye" Tracking="2" />
 		</If>
-		<Escort Npc="Borrin Gammult" Quest="A Dim, Dark Eye" Tracking="2" />
 
 		<UseItemOnMobsObjective Quest="A Dim, Dark Eye" Item="Hammer of the Vigil" CastTime="3" Cooldown="4" WhenDead="True" Tracking="3">
 		  <Area>
