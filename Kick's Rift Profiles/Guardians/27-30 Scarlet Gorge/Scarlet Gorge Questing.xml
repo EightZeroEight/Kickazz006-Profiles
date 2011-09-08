@@ -1082,6 +1082,13 @@
 			<Python Statement="GigaBot.Stop()" />
 
 	<TurnInQuest Name="Into Scarwood Reach" Npc="Kerevik Amblefoot" X="3731.341" Y="1090.634" Z="3223.521" />
+	
+	
+		<LoadProfile Name="..\30-36 Scarwood\Scarwood Questing" />
+			<Wait Seconds="5" />
+	
+
+
 
     <Loop />
   </Tasks>

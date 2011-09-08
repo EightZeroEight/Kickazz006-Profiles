@@ -690,6 +690,9 @@
 
     <PickUpQuest Name="The Return" Npc="Messenger of the Vigil" X="6071.291" Y="820.4066" Z="3961.944" />
 		
+		<LoadProfile Name="..\6-20 Silverwood\Silverwood Questing" />
+			<Wait Seconds="5" />
+	
 
 			<Python Statement="Logging.Write(&quot;End of Profile\n\nPlease load the Silverwood Questing Profile and press start\n\nMake sure you: Train, delete the non-sellable items from bags, and put talent points in!&quot;)" />
 			<Python Statement="GigaBot.Stop()" />

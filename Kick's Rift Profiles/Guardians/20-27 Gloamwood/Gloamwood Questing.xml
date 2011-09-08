@@ -1715,6 +1715,9 @@
 	
 			<MoveTo X="3962.215" Y="1079.18" Z="3028.994" />
 			
+		<LoadProfile Name="..\27-30 Scarlet Gorge\Scarlet Gorge Questing" />
+			<Wait Seconds="5" />
+	
 			<Python Statement="Logging.Write(&quot;End of Line&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 

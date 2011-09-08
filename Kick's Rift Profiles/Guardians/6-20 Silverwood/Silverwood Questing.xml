@@ -2354,10 +2354,12 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<UseItemOnMobsObjective Quest="Bless the Fallen" Item="Wand of Grace" CastTime="3" Cooldown="2" WhenDead="True" Tracking="1">
+			<!-- Bless the Fallen - this syntax no longer works
+		<UseItemOnMobsObjective Quest="Bless the Fallen" Item="Wand of Grace" CastTime="3" Cooldown="2" TargetMobs="False" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob>Locator_SW_snarebrushgrot_LaidtoRest</Mob>
+			  <Mob>Fallen Citizen</Mob>
 			</Mobs>
 			<Hotspots>
 			  <Hotspot X="5912.623" Y="854.845" Z="2608.618" />
@@ -2368,6 +2370,20 @@
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
+			-->
+			
+		<UseItemOnGroundObjective Quest="Bless the Fallen" Item="Wand of Grace" UseRange="2" CastTime="5" Tracking="1" >
+         <Area>
+          <Hotspots>
+			  <Hotspot X="5912.623" Y="854.845" Z="2608.618" />
+			  <Hotspot X="5932.339" Y="855.1109" Z="2633.826" />
+			  <Hotspot X="5912.624" Y="854.8494" Z="2608.781" />
+			  <Hotspot X="5992.974" Y="854.7604" Z="2679.256" />
+			  <Hotspot X="5979.774" Y="855.4684" Z="2639.802" />
+          </Hotspots>
+         </Area>
+		</UseItemOnGroundObjective>
+	  
 
 		<!-- This Quest bugs out if you die (ie: you lose the buff and you have to go and get it again.  if condition !me.hasaura(Blessing of the Vigil) - then interact with Sacred Mark (from up above - tracking 1) -->
 		<KillMobsObjective Quest="Power of the Vigil" Tracking="2">
@@ -2666,6 +2682,8 @@
 		  <Area>
 			<Mobs>
 			  <Mob>Aelfwar Stoneroot</Mob>
+			  <Mob>Aelfwar Mystic</Mob>
+			  <Mob>Aelfwar Defender</Mob>
 			</Mobs>
 			<Hotspots>
 			  <Hotspot X="6379.762" Y="895.1133" Z="3206.53" />
@@ -3013,11 +3031,11 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<!-- This one is weird - you have to kil the Greenscale Priests that spawn at about 1/2 HP of Kongeegon (they make him untargettable) ... even the combat bot doesn't want to kill them -->
+		<!-- This one is weird - you have to kil the Greenscale Priests that spawn at about 1/2 HP of Kongeegon (they make him untargettable) ... even the combat bot doesn't want to kill them
 		<If Condition="((HasQuest(&quot;Kongeegon, the Glory of the Aelfwar&quot;)) and (not IsQuestObjectiveCompleted(&quot;Kongeegon, the Glory of the Aelfwar&quot;, 2)))">
 			<Python Statement="Logging.Write(&quot;Please manually do quest  objective () - then press start&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
-		</If>
+		</If> -->
 		<KillMobsObjective Quest="Kongeegon, the Glory of the Aelfwar" Tracking="2">
 		  <Area>
 			<Mobs>
@@ -3094,6 +3112,8 @@
 			 </If>
 		</If>
     <!-- End of Overwatch Keep Quests -->
+	
+	<!-- I have a Kelgnaw's Fang in my inventory - turns in at overwatch keep -->
 
     <!-- Go To Gloamwood Quests (Gnarlwood Post) -->
     <PickUpQuest Name="An Age of Darkness" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
@@ -3131,6 +3151,10 @@
 	
     <TurnInQuest Name="An Age of Darkness" Npc="Laenaya Niro" X="5395.653" Y="953.5158" Z="2718.086" />
     <TurnInQuest Name="Gloamwood Beasts" Npc="Waykeeper Brion" X="5380.467" Y="954.0422" Z="2706.434" />
+	
+		<LoadProfile Name="..\20-27 Gloamwood\Gloamwood Questing" />
+			<Wait Seconds="5" />
+	
 	
 			<Python Statement="Logging.Write(&quot;End of Line\nYes, I fight for the Users!&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
