@@ -29,6 +29,13 @@
     </AddJob>
     <LoadMesh Name="Gloamwood" />
 
+ 		<If Condition="(HasQuest(&quot;An Age of Darkness&quot;))">
+   <TurnInQuest Name="An Age of Darkness" Npc="Laenaya Niro" X="5395.653" Y="953.5158" Z="2718.086" />
+		</If>
+ 		<If Condition="(HasQuest(&quot;Gloamwood Beasts&quot;))">
+   <TurnInQuest Name="Gloamwood Beasts" Npc="Waykeeper Brion" X="5380.467" Y="954.0422" Z="2706.434" />
+		</If>
+	
 		<!-- Gloamwood Post Quests (Entrance to Gloamwood) -->
 	<PickUpQuest Name="The Apothecary" Npc="Waykeeper Brion" X="5385.407" Y="953.9913" Z="2705.846" />
 	<PickUpQuest Name="A Shadow on the Path" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> <!-- To Gloamwood Pines -->

@@ -2547,6 +2547,11 @@
 		
 		<MoveTo X="7039.698" Y="883.7867" Z="6765.427" />
 		
+		
+		<LoadProfile Name="..\43-x Shimmersand\Shimmersand Questing" />
+			<Wait Seconds="5" />
+	
+		
 			<Python Statement="Logging.Write(&quot;Train - then take the port to Droughtlands and load Shimmersand Profile!&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		

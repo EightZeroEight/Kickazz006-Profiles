@@ -2005,6 +2005,11 @@
 
 	<TurnInQuest Name="Passing the Chain of Command" Npc="Borrin Gammult" X="7515.816" Y="888.6716" Z="3047.613" />
 	<PickUpQuest Name="The Lost Dwarves" Npc="Borrin Gammult" X="7515.816" Y="888.6716" Z="3047.613" />
+	
+		<LoadProfile Name="..\36-40 Moonshade Highlands\Moonshade Highlands Questing" />
+			<Wait Seconds="5" />
+	
+	
 
     <Loop />
   </Tasks>
